@@ -1,0 +1,21 @@
+%h1 Listing laser_gems
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @laser_gems.each do |laser_gem|
+      %tr
+        %td= laser_gem.name
+        %td= link_to 'Show', laser_gem
+        %td= link_to 'Edit', edit_laser_gem_path(laser_gem)
+        %td= link_to 'Destroy', laser_gem, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Laser gem', new_laser_gem_path

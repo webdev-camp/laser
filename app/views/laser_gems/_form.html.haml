@@ -1,0 +1,13 @@
+= form_for @laser_gem do |f|
+  - if @laser_gem.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@laser_gem.errors.count, "error")} prohibited this laser_gem from being saved:"
+      %ul
+        - @laser_gem.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'
