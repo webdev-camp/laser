@@ -1,0 +1,2 @@
+class GemGit < ApplicationRecord
+end
