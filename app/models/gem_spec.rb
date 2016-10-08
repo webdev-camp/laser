@@ -1,0 +1,2 @@
+class GemSpec < ApplicationRecord
+end

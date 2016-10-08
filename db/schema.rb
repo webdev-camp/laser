@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008144006) do
+ActiveRecord::Schema.define(version: 20161008151248) do
 
   create_table "gem_gits", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20161008144006) do
     t.integer  "open_issues_count"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "gem_specs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "info"
+    t.string   "current_version"
+    t.integer  "current_version_downloads"
+    t.integer  "total_downloads"
+    t.string   "rubygem_uri"
+    t.string   "documentation_uri"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "laser_gems", force: :cascade do |t|
