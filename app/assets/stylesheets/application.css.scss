@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/2,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  container-position: center,
+  debug: (
+    image: hide,
+    color: lightgreen,
+    output: background
+  )
+);
+
+body { @include container(100%);}
