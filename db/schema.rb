@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008120531) do
+ActiveRecord::Schema.define(version: 20161008144006) do
+
+  create_table "gem_gits", force: :cascade do |t|
+    t.string   "name"
+    t.string   "homepage"
+    t.date     "last_commit"
+    t.integer  "forks_count"
+    t.integer  "stargazers_count"
+    t.integer  "watchers_count"
+    t.integer  "open_issues_count"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "laser_gems", force: :cascade do |t|
     t.string   "name"
