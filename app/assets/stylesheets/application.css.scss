@@ -35,12 +35,33 @@ body { @include container(100%);}
 .header {
   height: 200px;
   width: 100%;
-  background-color: red;
+  background-color: #ff0066;
   margin-top: -35px;
 }
 
 .footer {
-  height: 150px;
+  height: 200px;
   width: 100%;
-  background-color: black;
+  background-color: #ff0066;
+  .sponsor {
+    @include span(2);
+    p {
+      padding-top: 20px;
+      margin-bottom: 1px;
+      font-size: 15px;
+      font-family: sans-serif;
+      color: white;
+    }
+    img {
+      width: 50%;
+      margin-left: 40px;
+    }
+    p {
+      margin-top: 1px;
+      font-weight: bold;
+      font-size: 15px;
+      font-family: sans-serif;
+      color: white;
+    }
+  }
 }
