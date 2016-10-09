@@ -24,10 +24,23 @@ $susy: (
   gutter-position: inside,
   container-position: center,
   debug: (
-    image: hide,
+    image: hide, //show
     color: lightgreen,
     output: background
   )
 );
 
 body { @include container(100%);}
+
+.header {
+  height: 200px;
+  width: 100%;
+  background-color: red;
+  margin-top: -35px;
+}
+
+.footer {
+  height: 150px;
+  width: 100%;
+  background-color: black;
+}
