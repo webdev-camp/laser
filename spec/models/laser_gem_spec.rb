@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 RSpec.describe LaserGem, type: :model do
   it "has working factory" do

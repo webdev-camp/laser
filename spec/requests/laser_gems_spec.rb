@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 RSpec.describe "LaserGems", type: :request do
   describe "GET /laser_gems" do

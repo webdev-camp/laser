@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 RSpec.describe "laser_gems/index", type: :view do
   before(:each) do
