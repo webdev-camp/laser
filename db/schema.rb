@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008151248) do
+ActiveRecord::Schema.define(version: 20161009132426) do
+
+  create_table "gem_dependencies", force: :cascade do |t|
+    t.integer  "laser_gem_id"
+    t.integer  "dependency_id"
+    t.string   "version"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["dependency_id"], name: "index_gem_dependencies_on_dependency_id"
+    t.index ["laser_gem_id", "dependency_id"], name: "index_gem_dependencies_on_laser_gem_id_and_dependency_id", unique: true
+    t.index ["laser_gem_id"], name: "index_gem_dependencies_on_laser_gem_id"
+  end
 
   create_table "gem_gits", force: :cascade do |t|
     t.string   "name"
