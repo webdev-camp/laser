@@ -1,10 +1,7 @@
-require 'rails_helper'
 
 RSpec.describe "laser_gems/new", type: :view do
   before(:each) do
-    assign(:laser_gem, LaserGem.new(
-      :name => "MyString"
-    ))
+    assign(:laser_gem, build( :laser_gem))
   end
 
   it "renders new laser_gem form" do
