@@ -10,11 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
 @import "susy";
+@import "breakpoint";
 
 $susy: (
   columns: 12,
@@ -30,19 +30,22 @@ $susy: (
   )
 );
 
+@import "faq";
+@import "about";
+
 body { @include container(100%);}
 
 .header {
   height: 200px;
   width: 100%;
-  background-color: #ff0066;
+  background-color: #FF0066;
   margin-top: -35px;
 }
 
 .footer {
   height: 200px;
   width: 100%;
-  background-color: #ff0066;
+  background-color: #E6E8E6;
   .sponsor {
     @include span(2);
     p {

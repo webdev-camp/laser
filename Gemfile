@@ -9,7 +9,10 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
 gem 'susy'
+gem 'breakpoint'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -18,7 +21,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use haml-rails as a templating engine for HTML
-gem "haml-rails"
+gem 'haml-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
