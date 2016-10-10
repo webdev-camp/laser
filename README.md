@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/webdev-camp/laser.svg?branch=master)](https://travis-ci.org/webdev-camp/laser)
+
 With the increasing in numbers of Ruby Gems, it becomes progressively important to be able to distinguish them apart.
 L.A.S.E.R. is here to do just that.
 
