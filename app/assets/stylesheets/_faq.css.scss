@@ -1,0 +1,8 @@
+.faq_body_inner {
+  @include span(8);
+  background-color: red;
+}
+.gap {
+  @include span(2);
+  background-color: blue;
+}
