@@ -45,6 +45,7 @@ body { @include container(100%);}
 .footer {
   height: 200px;
   width: 100%;
+  clear: both;
   background-color: #E6E8E6;
   .sponsor {
     @include span(2);
