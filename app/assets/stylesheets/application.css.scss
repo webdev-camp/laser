@@ -35,14 +35,14 @@ body { @include container(100%);}
 .header {
   height: 200px;
   width: 100%;
-  background-color: #ff0066;
+  background-color: #FF0066;
   margin-top: -35px;
 }
 
 .footer {
   height: 200px;
   width: 100%;
-  background-color: #ff0066;
+  background-color: #E6E8E6;
   .sponsor {
     @include span(2);
     p {
