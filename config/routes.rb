@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   match "laser_gems"        , to: "laser_gems#index" , via: [:get, :post]
-  get   "laser_gem/:name"  , to: "laser_gems#show" , as: :show_laser_gem
+  get   "laser_gem/:name"  , to: "laser_gems#show" , as: :laser_gem
 
   root to: "main#home"
     get '/about', to: 'main#about', as: 'about'
