@@ -5,9 +5,9 @@ class LaserGemsController < ApplicationController
     @laser_gems = LaserGem.all
   end
 
-  # GET /laser_gems/1
+  # GET /laser_gems/gem_name
   def show
-    @laser_gem = LaserGem.find(params[:id])
+    @laser_gem = LaserGem.find_by_name(params[:name])
   end
 
   private

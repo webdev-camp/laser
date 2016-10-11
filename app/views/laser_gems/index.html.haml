@@ -1,19 +1,45 @@
-%h1 Listing laser_gems
+.searchbox
+  /%form{method: "", action: ""}
+  %input{id: "search_results", name: "searchbox", type: "text", placeholder: "Search..."}
+  %button{class: "icon", type: "submit"}
+    %i{class: "fa fa-search"}
+  / search_object = gets.chomp
+  %h3 You have searched for "search_object"
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
+.results
+  .options
+    #filter
+      %label{for: "filter"}Filter by:
+      %select{name: "filter_choice"}
+        %option{value: ""}
+        %option{value: "fhgdfkgu"} fhgdfkgu
+        %option{value: "fhgdfkgu"} fhgdfkgu
+        %option{value: "fhgdfkgu"} fhgdfkgu
+    #order
+      %label{for: "order"}Order by:
+      %select{name: "order_choice"}
+        %option{value: ""}
+        %option{value: "fhgdfkgu"} fhgdfkgu
+        %option{value: "fhgdfkgu"} fhgdfkgu
+        %option{value: "fhgdfkgu"} fhgdfkgu
+  %br
+  %br
+  .display
     - @laser_gems.each do |laser_gem|
-      %tr
-        %td= laser_gem.name
-        %td= link_to 'Show', laser_gem
-        %td= link_to 'Edit', edit_laser_gem_path(laser_gem)
-        %td= link_to 'Destroy', laser_gem, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %div{class: "gem_element"}
+        -# laser_gem
+        = link_to(laser_gem.name, laser_gem)
 
-%br
+.featured
+  %h3 Featured Gem of the Month
+  #gem_featured
+    %h4 Example
+    %p Example is a nice thing that helps you to get an idea of a concept.
+    %a{href: ""} Learn More
+  %br
+  =link_to('How do we choose the featured gem of the month?', '/faq')
+
+.popular
+  %h3 Most popular
+  %h4 Gems
+  %h4 Tags
