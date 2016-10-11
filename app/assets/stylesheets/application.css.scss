@@ -40,6 +40,15 @@ body { @include container(100%);}
 
 a {
   text-decoration: none;
+  color: #FF0066;
+  &:hover {
+    color: #FF0066;
+    font-weight: bold;
+  }
+  &:visited {
+    color: #FF89B8;
+    font-weight: lighter;
+  }
 }
 
 .header {

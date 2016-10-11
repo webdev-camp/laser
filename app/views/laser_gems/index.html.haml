@@ -28,7 +28,7 @@
     - @laser_gems.each do |laser_gem|
       %div{class: "gem_element"}
         -# laser_gem
-        = link_to(laser_gem.name, laser_gem)
+        = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
 
 .featured
   %h3 Featured Gem of the Month
@@ -41,5 +41,7 @@
 
 .popular
   %h3 Most popular
-  %h4 Gems
-  %h4 Tags
+  #gem_popular
+    %h4 Gems
+  #tag_popular
+    %h4 Tags
