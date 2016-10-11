@@ -10,7 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *
  *= require_self
+ *= require index
  */
 
 @import "susy";
@@ -32,8 +34,13 @@ $susy: (
 
 @import "faq";
 @import "about";
+@import "laser_gems";
 
 body { @include container(100%);}
+
+a {
+  text-decoration: none;
+}
 
 .header {
   height: 200px;
@@ -42,11 +49,15 @@ body { @include container(100%);}
   margin-top: -35px;
 }
 
+.content {
+  @include container(85%);
+}
+
 .footer {
   height: 200px;
   width: 100%;
   clear: both;
-  background-color: #E6E8E6;
+  background-color: #F1F1F2;
   .sponsor {
     @include span(2);
     p {
@@ -54,7 +65,7 @@ body { @include container(100%);}
       margin-bottom: 1px;
       font-size: 15px;
       font-family: sans-serif;
-      color: white;
+      color: black;
     }
     img {
       width: 50%;
@@ -65,7 +76,7 @@ body { @include container(100%);}
       font-weight: bold;
       font-size: 15px;
       font-family: sans-serif;
-      color: white;
+      color: black;
     }
   }
 }

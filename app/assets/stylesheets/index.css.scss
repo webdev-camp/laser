@@ -1,0 +1,76 @@
+@import "susy";
+
+.searchbox {
+  @include full;
+  padding-top: 20px;
+  input#search_results {
+    width: 45%;
+    height: 35px;
+    border-radius: 15px;
+  }
+  button {
+    height: 50px;
+    width: 50px;
+    background-color: #FF0066;
+    border-radius: 50%;
+  }
+}
+
+.results {
+  clear: both;
+  @include span(8 of 12);
+  .options {
+    @include span(last 2);
+    margin-bottom: 15px;
+    #filter, #order{
+      display: inline;
+    }
+    label {
+      padding: 5px;
+    }
+    select {
+      height: 25px;
+      width: 20%;
+      border-radius: 15px;
+    }
+  }
+
+  .display {
+    .gem_element {
+      border-radius: 15px;
+      border-color: #FF0066;
+      border-style: dotted;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.featured {
+  //clear: both;
+  @include span(4 at 9 of 12);
+  background-color: #F1F1F2;
+  border-radius: 25px;
+  margin-top: 15px;
+  text-align: center;
+  h3 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+  }
+  #gem_featured {
+    text-align: left;
+  }
+}
+
+.popular {
+  clear: both;
+  @include span(4 at 9 of 12);
+  background-color: #F1F1F2;
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  h3 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    text-align: center;
+  }
+}

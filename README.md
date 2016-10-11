@@ -1,5 +1,9 @@
 # README
 
+[![Build Status](https://travis-ci.org/webdev-camp/laser.svg?branch=master)](https://travis-ci.org/webdev-camp/laser)
+[![Code Climate](https://codeclimate.com/github/webdev-camp/laser/badges/gpa.svg)](https://codeclimate.com/github/webdev-camp/laser)
+[![Test Coverage](https://codeclimate.com/github/webdev-camp/laser/badges/coverage.svg)](https://codeclimate.com/github/webdev-camp/laser/coverage)
+
 With the increasing in numbers of Ruby Gems, it becomes progressively important to be able to distinguish them apart.
 L.A.S.E.R. is here to do just that.
 
