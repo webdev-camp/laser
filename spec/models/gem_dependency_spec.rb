@@ -8,8 +8,14 @@ RSpec.describe GemDependency, type: :model do
   it "is not valid without both a laser_gem and a gem_dependency" do
     gem_dependency = build :gem_dependency, laser_gem: nil, dependency: nil
     expect(gem_dependency.save).to be false
+  end
+
+  it "is not valid without a laser_gem" do
     gem_dependency = build :gem_dependency, laser_gem: nil
     expect(gem_dependency.save).to be false
+  end
+
+  it "is not valid without a dependency" do
     gem_dependency = build :gem_dependency, dependency: nil
     expect(gem_dependency.save).to be false
   end
