@@ -12,7 +12,7 @@
  *
  *
  *= require_self
- *= require index
+ *
  */
 
 @import "susy";
@@ -35,6 +35,7 @@ $susy: (
 @import "faq";
 @import "about";
 @import "laser_gems";
+@import "index";
 
 body { @include container(100%);}
 
@@ -51,6 +52,7 @@ a {
   }
 }
 
+
 .header {
   height: 200px;
   width: 100%;
@@ -58,9 +60,6 @@ a {
   margin-top: -35px;
 }
 
-.content {
-  @include container(85%);
-}
 
 .footer {
   height: 200px;
@@ -68,7 +67,7 @@ a {
   clear: both;
   background-color: #F1F1F2;
   .sponsor {
-    @include span(2);
+    @include span(2 of 12);
     p {
       padding-top: 20px;
       margin-bottom: 1px;
