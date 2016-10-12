@@ -1,12 +1,31 @@
-.gap
-.faq_body_inner
-  .title FAQ
-
-  Table of Contents
-
+.faq_content
+  %h1 FAQ
+  %h2
+    Table of Contents
   %p
-    %a{:href =>"#codeword"} Blue Words, Blue Words
-    %p
-      %a{:name => "codeword"} Lerem ipsum...
+    %a{:href =>"#faq1"} What is a gem?
+  %p
+    %a{:href =>"#faq2"} No, really, what is a gem?
+  %p
+    %a{:href =>"#faq3"} Who made this?
 
-.gap
+  %h2 Answers
+
+  .q
+    %a{:name => "faq1"} What is a gem?
+  %p
+    A
+    %b gem
+    is a precious or semi-precious stone - especially when cut and polished or engraved.
+  .q
+    %a{:name => "faq2"}
+    No, really, what is a gem?
+  %p
+    A gem is a standard format for distributing Ruby programs and libraries.
+  .q
+    %a{:name => "faq3"}
+    Who made this?
+  %p
+    You can read more about the developers our
+    =link_to('about us', '/about')
+    page.

@@ -1,8 +1,9 @@
-.faq_body_inner {
-  @include span(8);
-  background-color: red;
-}
-.gap {
-  @include span(2);
-  background-color: blue;
+.faq_content {
+  margin-left: span(2);
+  margin-right: span(2);
+  @include span(8 of 12);
+  .q {
+    background-color: #ffcf96;
+  }
+
 }

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :laser_gems
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match "laser_gems"        , to: "laser_gems#index" , via: [:get, :post]
+  get   "laser_gem/:name"  , to: "laser_gems#show" , as: :laser_gem
+
   root to: "main#home"
     get '/about', to: 'main#about', as: 'about'
     get '/faq', to: 'main#faq', as: 'faq'

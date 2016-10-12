@@ -1,1 +1,0 @@
-json.partial! "laser_gems/laser_gem", laser_gem: @laser_gem
