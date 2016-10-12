@@ -39,4 +39,9 @@ RSpec.describe GemGit, type: :model do
     gem_git = build :gem_git, open_issues_count: nil
     expect(gem_git.save).to be false
   end
+
+  it "checks gem_git has only one laser_gem" do
+    gem_git = build :gem_git_with_laser_gem
+    expect(gem_git.laser_gem).not_to be nil
+  end
 end

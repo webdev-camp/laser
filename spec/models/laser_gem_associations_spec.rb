@@ -54,3 +54,10 @@ RSpec.describe LaserGem, type: :model do
     end
   end
 end
+
+RSpec.describe LaserGem, type: :model do
+  it "has one GemGit " do
+    laser_gem = create :laser_gem_with_gem_git
+    expect(laser_gem.gem_git).not_to be nil
+  end
+end

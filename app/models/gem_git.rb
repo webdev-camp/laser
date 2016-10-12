@@ -7,4 +7,5 @@ class GemGit < ApplicationRecord
   validates :watchers_count, presence: true
   validates :open_issues_count, presence: true
 
+  belongs_to :laser_gem , required: false
 end
