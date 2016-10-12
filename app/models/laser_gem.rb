@@ -7,6 +7,7 @@ class LaserGem < ApplicationRecord
   has_many :dependents, :through => :gem_dependents, source: :laser_gem
 
   has_one :gem_spec
+  has_one :gem_git
   #
   # Add a gem as a dependency of this one.
   #

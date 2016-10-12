@@ -1,21 +1,21 @@
 .searchbox
   /%form{method: "", action: ""}
-  %input{id: "search_results", name: "searchbox", type: "text", placeholder: "Search..."}
-  %button{class: "icon", type: "submit"}
-    %i{class: "fa fa-search"}
+  %input.search_results{ name: "searchbox", type: "text", placeholder: "Search..."}
+  %button.icon{type: "submit"}
+    %i.fa.fa-search
   / search_object = gets.chomp
   %h3 You have searched for "search_object"
 
 .results
   .options
-    #filter
+    .filter
       %label{for: "filter"}Filter by:
       %select{name: "filter_choice"}
         %option{value: ""}
         %option{value: "fhgdfkgu"} fhgdfkgu
         %option{value: "fhgdfkgu"} fhgdfkgu
         %option{value: "fhgdfkgu"} fhgdfkgu
-    #order
+    .order
       %label{for: "order"}Order by:
       %select{name: "order_choice"}
         %option{value: ""}
@@ -26,13 +26,13 @@
   %br
   .display
     - @laser_gems.each do |laser_gem|
-      %div{class: "gem_element"}
+      .gem_element
         -# laser_gem
         = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
 
 .featured
   %h3 Featured Gem of the Month
-  #gem_featured
+  .gem_featured
     %h4 Example
     %p Example is a nice thing that helps you to get an idea of a concept.
     %a{href: ""} Learn More
@@ -41,7 +41,8 @@
 
 .popular
   %h3 Most popular
-  #gem_popular
+  .gem_popular
     %h4 Gems
-  #tag_popular
+  .tag_popular
     %h4 Tags
+    .ui.tag.black.label development

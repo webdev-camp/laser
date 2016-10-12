@@ -3,8 +3,8 @@
 .searchbox {
   @include full;
   padding-top: 20px;
-  input#search_results {
-    width: 45%;
+  input.search_results {
+    @include span(8 of 12) ;
     height: 35px;
     border-radius: 15px;
   }
@@ -20,18 +20,20 @@
   clear: both;
   @include span(8 of 12);
   .options {
-    @include span(last 2);
+    @include span(last 5 of 8);
     margin-bottom: 15px;
-    #filter, #order{
+    .filter, .order{
+      @include span(4 of 8);
       display: inline;
     }
     label {
+      @include span(4 of 8);
       padding: 5px;
     }
     select {
+      @include span(4 of 8);
       height: 25px;
-      width: 20%;
-      border-radius: 15px;
+      border-radius: 25px;
     }
   }
 
@@ -47,7 +49,7 @@
 
 .featured {
   //clear: both;
-  @include span(4 at 9 of 12);
+  @include span(4 of 12);
   background-color: #F1F1F2;
   border-radius: 25px;
   margin-top: 15px;
@@ -58,7 +60,7 @@
     font-size: 30px;
     margin-bottom: 15px;
   }
-  #gem_featured {
+  .gem_featured {
     text-align: left;
     margin-left: 30px;
     margin-right: 30px;
@@ -84,7 +86,7 @@
     font-size: 30px;
     margin-bottom: 15px;
   }
-  #gem_popular, #tag_popular {
+  .gem_popular, .tag_popular {
     margin-left: 30px;
     margin-right: 30px;
     h4{
