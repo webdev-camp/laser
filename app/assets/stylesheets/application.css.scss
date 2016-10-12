@@ -37,33 +37,24 @@ $susy: (
 @import "laser_gems";
 @import "index";
 
-body { @include container(100%);}
-
-a {
-  text-decoration: none;
-  color: #FF0066;
-  &:hover {
-    color: #FF0066;
-    font-weight: bold;
-  }
-  &:visited {
-    color: #FF89B8;
-    font-weight: lighter;
-  }
-}
-
-
-.header {
-  height: 200px;
+body{
   width: 100%;
+  margin: 0px;
+}
+.header {
+  @include container(100%);
+  height: 200px;
   background-color: #FF0066;
   margin-top: -35px;
 }
 
+.content{
+  @include container(85%);
+}
 
 .footer {
+  @include container(100%);
   height: 200px;
-  width: 100%;
   clear: both;
   background-color: #F1F1F2;
   .sponsor {
@@ -86,5 +77,18 @@ a {
       font-family: sans-serif;
       color: black;
     }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #FF0066;
+  &:hover {
+    color: #FF0066;
+    font-weight: bold;
+  }
+  &:visited {
+    color: #FF89B8;
+    font-weight: lighter;
   }
 }
