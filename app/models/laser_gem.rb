@@ -1,12 +1,12 @@
 class LaserGem < ApplicationRecord
   validates :name, length: { in: 2..30}, format: { without: /\s/, message: "must contain no spaces" }
-
   has_many :gem_dependencies
   has_many :dependencies, :through => :gem_dependencies
 
   has_many :gem_dependents, class_name: "GemDependency", foreign_key: :dependency_id
   has_many :dependents, :through => :gem_dependents, source: :laser_gem
 
+  has_one :gem_spec
   #
   # Add a gem as a dependency of this one.
   #
