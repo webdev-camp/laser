@@ -1,0 +1,15 @@
+.wrap {
+  @include span(12);
+}
+
+.show_column_left {
+  @include span(6);
+  margin-left: span(1);
+  margin-right: span(0.5);
+}
+
+.show_column_right {
+  @include span(3);
+  margin-left: span(0.5);
+  margin-right: span(1);
+}   
