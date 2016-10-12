@@ -26,6 +26,18 @@ RSpec.describe LaserGem, type: :model do
       laser_gem.register_dependency(laser_gem2, "1.0.0")
       expect(laser_gem.gem_dependencies.map(&:dependency)).to eq [laser_gem2]
     end
+
+    it "does not allow a gem to be added as a dependency to the same parent gem twice" do
+      laser_gem = create :laser_gem
+      laser_gem2 = create :laser_gem
+      laser_gem.register_dependency(laser_gem2, "1.0.0")
+      expect(laser_gem.gem_dependencies.count).to eq 1
+      expect { laser_gem.register_dependency(laser_gem2, "2.0.0") }.to raise_error(
+        ActiveRecord::RecordNotUnique
+      )
+      laser_gem.reload
+      expect(laser_gem.gem_dependencies.count).to eq 1
+    end
   end
 
   describe "#remove_dependency" do

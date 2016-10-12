@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/doabit/semantic-ui-sass.git
+  remote: https://github.com/doabit/semantic-ui-sass.git
   revision: 119c166f490682c40fe0274f7d3ccb86e384fa0a
   specs:
     semantic-ui-sass (2.2.4.0)

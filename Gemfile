@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'susy'
 gem 'breakpoint'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass', git: "https://github.com/doabit/semantic-ui-sass.git"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
