@@ -9,5 +9,10 @@ FactoryGirl.define do
     total_downloads 23
     rubygem_uri "SomeURI"
     documentation_uri "SomeDocURI"
+
+    factory :gem_spec_with_laser_gem do
+      laser_gem
+    end
   end
+
 end
