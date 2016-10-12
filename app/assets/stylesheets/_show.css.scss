@@ -12,4 +12,10 @@
   @include span(3);
   margin-left: span(0.5);
   margin-right: span(1);
-}   
+}
+
+.show_bottom_row {
+  @include span(10);
+  margin-left: span(1);
+  margin-right: span(1);
+}

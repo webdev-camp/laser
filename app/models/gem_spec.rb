@@ -6,4 +6,6 @@ class GemSpec < ApplicationRecord
   validates :total_downloads, presence: true
   validates :rubygem_uri, presence: true
   validates :documentation_uri, presence: true
+
+  belongs_to :laser_gem, required: false 
 end

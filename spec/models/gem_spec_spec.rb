@@ -39,4 +39,9 @@ RSpec.describe GemSpec, type: :model do
     gem_spec = build :gem_spec, documentation_uri: ""
     expect(gem_spec.save).to be false
   end
+
+  it "checks gem-spec has laser-gem" do
+    gem_spec_with_laser_gem = create :gem_spec_with_laser_gem
+    expect(gem_spec_with_laser_gem.laser_gem).not_to be nil
+  end
 end

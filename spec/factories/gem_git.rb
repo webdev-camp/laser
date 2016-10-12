@@ -9,5 +9,8 @@ FactoryGirl.define do
      stargazers_count 6
      watchers_count 6
      open_issues_count 6
+     factory :gem_git_with_laser_gem do
+       laser_gem
+     end
   end
 end

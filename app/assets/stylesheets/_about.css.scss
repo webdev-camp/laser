@@ -1,0 +1,18 @@
+.aboutus_content {
+  margin-left: span(2);
+  margin-right: span(2);
+  @include span(8 of 12);
+}
+
+  img {
+  margin-left: span(2);
+  margin-right: span(2);
+  @include span(8 of 12);
+  width: 30%;
+  margin-left: 40px;
+  }
+
+.about_body {
+  @include span(12);
+  background-color: white;
+}
