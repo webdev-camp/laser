@@ -15,8 +15,8 @@
  *
  */
 
-@import "susy";
-@import "breakpoint";
+@import 'susy';
+@import 'breakpoint';
 @import 'semantic-ui/elements/label';
 
 $susy: (
@@ -33,63 +33,69 @@ $susy: (
   )
 );
 
-@import "faq";
-@import "about";
-@import "laser_gems";
-@import "index";
+@import 'faq';
+@import 'about';
+@import 'laser_gems';
+@import 'index';
 
-body{
+body {
+  margin: 0;
   width: 100%;
-  margin: 0px;
 }
+
 .header {
   @include container(100%);
+  background-color: #ff0066;
   height: 200px;
-  background-color: #FF0066;
   margin-top: -35px;
 }
 
-.content{
+.content {
   @include container(85%);
 }
 
 .footer {
   @include container(100%);
+  background-color: #f1f1f2;
   height: 200px;
   clear: both;
-  background-color: #F1F1F2;
   .sponsor {
     @include span(2 of 12);
+    
     p {
-      padding-top: 20px;
+      color: #000000;
+      font-family: sans-serif;
+      font-size: 15px;
       margin-bottom: 1px;
-      font-size: 15px;
-      font-family: sans-serif;
-      color: black;
+      padding-top: 20px;
     }
+
     img {
-      width: 50%;
       margin-left: 40px;
+      width: 50%;
     }
+
     p {
-      margin-top: 1px;
-      font-weight: bold;
-      font-size: 15px;
+      color: #000000;
       font-family: sans-serif;
-      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 1px;
     }
   }
 }
 
 a {
   text-decoration: none;
-  color: #FF0066;
+  color: #ff0066;
+
   &:hover {
-    color: #FF0066;
+    color: #ff0066;
     font-weight: bold;
   }
+
   &:visited {
-    color: #FF89B8;
+    color: #ff89b8;
     font-weight: lighter;
   }
 }

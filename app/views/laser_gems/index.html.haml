@@ -1,12 +1,12 @@
-.searchbox
-  /%form{method: "", action: ""}
-  %input.search_results{ name: "searchbox", type: "text", placeholder: "Search..."}
-  %button.icon{type: "submit"}
-    %i.fa.fa-search
-  / search_object = gets.chomp
-  %h3 You have searched for "search_object"
-
-.results
+.search
+  .searchbox
+    /%form{method: "", action: ""}
+    %input.search_results{ name: "searchbox", type: "text", placeholder: "Search..."}
+    %button.icon{type: "submit"}
+      %i.fa.fa-search
+    / search_object = gets.chomp
+    %h3 You have searched for "search_object"
+    
   .options
     .filter
       %label{for: "filter"}Filter by:
@@ -22,13 +22,13 @@
         %option{value: "fhgdfkgu"} fhgdfkgu
         %option{value: "fhgdfkgu"} fhgdfkgu
         %option{value: "fhgdfkgu"} fhgdfkgu
-  %br
-  %br
-  .display
-    - @laser_gems.each do |laser_gem|
-      .gem_element
-        -# laser_gem
-        = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
+
+  .results
+    .display
+      - @laser_gems.each do |laser_gem|
+        .gem_element
+          -# laser_gem
+          = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
 
 .featured
   %h3 Featured Gem of the Month
@@ -45,4 +45,7 @@
     %h4 Gems
   .tag_popular
     %h4 Tags
-    .ui.tag.black.label development
+    .ui.labels
+      %a.ui.label style
+      %a.ui.purple.label develop
+      %a.ui.grey.label test
