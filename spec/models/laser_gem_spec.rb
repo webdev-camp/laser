@@ -19,6 +19,16 @@ RSpec.describe LaserGem, type: :model do
     expect(laser_gem.save).to be false
   end
 
+  it "has working laser_gem_with_spec factory" do
+    laser_gem_with_spec = build :laser_gem_with_spec
+    expect(laser_gem_with_spec.save).to be true
+  end
+
+  it "checks laser-gem has a gem spec" do
+    laser_gem_with_spec = create :laser_gem_with_spec
+    expect(laser_gem_with_spec.gem_spec).not_to eq nil
+  end
+
   describe "#register_dependency" do
     it "creates a gem dependency" do
       laser_gem = create :laser_gem
@@ -32,9 +42,8 @@ RSpec.describe LaserGem, type: :model do
       laser_gem2 = create :laser_gem
       laser_gem.register_dependency(laser_gem2, "1.0.0")
       expect(laser_gem.gem_dependencies.count).to eq 1
-      expect { laser_gem.register_dependency(laser_gem2, "2.0.0") }.to raise_error(
-        ActiveRecord::RecordNotUnique
-      )
+      expect { laser_gem.register_dependency(laser_gem2, "2.0.0") }
+      .to raise_error(ActiveRecord::RecordNotUnique)
       laser_gem.reload
       expect(laser_gem.gem_dependencies.count).to eq 1
     end
@@ -50,15 +59,4 @@ RSpec.describe LaserGem, type: :model do
       expect(laser_gem.gem_dependencies.map(&:dependency)).to eq []
     end
   end
-
-  it "has working laser_gem_with_spec factory" do
-    laser_gem_with_spec = build :laser_gem_with_spec
-    expect(laser_gem_with_spec.save).to be true
-  end
-
-  it "checks laser-gem has a gem spec" do
-    laser_gem_with_spec = create :laser_gem_with_spec
-    expect(laser_gem_with_spec.gem_spec).not_to eq nil
-  end
-
 end
