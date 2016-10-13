@@ -56,7 +56,6 @@
 }
 
 .featured {
-  //clear: both;
   @include span(4 of 12);
   background-color: #f1f1f2;
   border-radius: 25px;
@@ -84,7 +83,6 @@
 }
 
 .popular {
-  clear: both;
   @include span(4 at 9 of 12);
   background-color: #f1f1f2;
   border-radius: 25px;
@@ -114,7 +112,7 @@
 
     .tag_element {
       @extend .ui.labels;
-      
+
       a{
         @extend .ui.label;
       }
