@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013091552) do
+ActiveRecord::Schema.define(version: 20161013092659) do
 
   create_table "gem_dependencies", force: :cascade do |t|
     t.integer  "laser_gem_id"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 20161013091552) do
   end
 
   create_table "laser_gems", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
