@@ -8,6 +8,7 @@ class LaserGem < ApplicationRecord
 
   has_one :gem_spec
   has_one :gem_git
+
   #
   # Add a gem as a dependency of this one.
   #
@@ -24,10 +25,10 @@ class LaserGem < ApplicationRecord
   # Remove a dependency
   #
   def remove_dependency(dep)
-    GemDependency.destroy_all(
+    GemDependency.where(
       laser_gem: self,
       dependency: dep,
-    )
+    ).destroy_all
     self.reload
   end
 end
