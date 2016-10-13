@@ -3,11 +3,11 @@
   @include span(8 of 12);
 
   .searchbox {
-    @include span(8);
+    @include span(7);
     padding-top: 20px;
 
     input.search_results {
-      @include span(11);
+      @include span(10);
       border-radius: 15px;
       height: 35px;
     }
@@ -23,7 +23,7 @@
 
   .options {
     //clear: left;
-    @include span(last 4);
+    @include span(last 5);
     margin-bottom: 15px;
     padding-top: 30px;
 
