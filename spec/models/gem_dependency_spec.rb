@@ -24,4 +24,12 @@ RSpec.describe GemDependency, type: :model do
     gem_dependency = build :gem_dependency, version: ""
     expect(gem_dependency.save).to be false
   end
+
+  describe "#not_self_dependent" do
+    it "prevents a laser_gem from having itself as a dependency" do
+      laser_gem = create :laser_gem
+      expect { laser_gem.register_dependency(laser_gem, "1.2.0") }
+      .to raise_error(ActiveRecord::RecordInvalid)
+    end
+  end
 end
