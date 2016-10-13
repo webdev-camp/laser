@@ -37,6 +37,7 @@ $susy: (
 @import 'about';
 @import 'laser_gems';
 @import 'index';
+@import 'show';
 
 body {
   margin: 0;
@@ -61,7 +62,7 @@ body {
   clear: both;
   .sponsor {
     @include span(2 of 12);
-    
+
     p {
       color: #000000;
       font-family: sans-serif;

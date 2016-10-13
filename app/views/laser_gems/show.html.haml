@@ -1,8 +1,32 @@
-%p#notice= notice
+.show_wrap
+  .gem_column
+    .gem_elements_left
+      %h1 Name
+      =@laser_gem.name
+      %h3 Description
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis suscipit pulvinar.
+      %h3 Version
 
-%p
-  %b Name:
-  = @laser_gem.name
+      %h3 Author
+
+      %h3 GitHub Page
 
 
-= link_to 'Back', laser_gems_path
+    .gem_elements_right
+      %h3 Downloads
+
+      %h3 Rank & Position
+
+      %h3 Related Gems
+
+      %h3 Suggestions
+
+
+    .comments
+      %h3 Comments
+
+  .tag_column
+    %h1 Tag Name
+    %p Data
+    %p Related Gems
+    %p Related Tags
