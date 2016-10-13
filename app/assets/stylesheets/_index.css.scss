@@ -109,4 +109,15 @@
       margin-top: 15px;
     }
   }
+
+  .tag_popular {
+
+    .tag_element {
+      @extend .ui.labels;
+      
+      a{
+        @extend .ui.label;
+      }
+    }
+  }
 }
