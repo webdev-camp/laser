@@ -1,0 +1,36 @@
+@import 'susy';
+
+.show_wrap {
+  @include span(12);
+  text-align: justify;
+
+  .gem_column {
+    @include span(8 of 12);
+    background-color: #f1f1f2;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    .gem_elements_left {
+    @include span(6);
+    }
+
+    .gem_elements_right {
+    @include span(6);
+    }
+
+    .comments {
+      clear: both;
+    }
+  }
+
+  .tag_column {
+    @include span(4 of 12);
+    background-color: #f1f1f2;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
