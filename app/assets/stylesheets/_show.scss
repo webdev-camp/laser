@@ -1,21 +1,36 @@
-.wrap {
+@import 'susy';
+
+.show_wrap {
   @include span(12);
-}
+  text-align: justify;
 
-.show_column_left {
-  @include span(6);
-  margin-left: span(1);
-  margin-right: span(0.5);
-}
+  .gem_column {
+    @include span(8 of 12);
+    background-color: #f1f1f2;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
 
-.show_column_right {
-  @include span(3);
-  margin-left: span(0.5);
-  margin-right: span(1);
-}
+    .gem_elements_left {
+    @include span(6);
+    }
 
-.show_bottom_row {
-  @include span(10);
-  margin-left: span(1);
-  margin-right: span(1);
+    .gem_elements_right {
+    @include span(6);
+    }
+
+    .comments {
+      clear: both;
+    }
+  }
+
+  .tag_column {
+    @include span(4 of 12);
+    background-color: #f1f1f2;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
 }
