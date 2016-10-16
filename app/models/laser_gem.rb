@@ -11,7 +11,7 @@ class LaserGem < ApplicationRecord
   has_one :gem_spec
   has_one :gem_git
 
-  has_many :owners
+  has_many :ownerships
   #
   # Add a gem as a dependency of this one.
   #

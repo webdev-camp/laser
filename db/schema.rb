@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016025337) do
+ActiveRecord::Schema.define(version: 20161016133611) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(version: 20161016025337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "owners", force: :cascade do |t|
+  create_table "ownerships", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "email"
     t.integer  "laser_gem_id"
-    t.index ["laser_gem_id"], name: "index_owners_on_laser_gem_id"
+    t.index ["laser_gem_id"], name: "index_ownerships_on_laser_gem_id"
   end
 
   create_table "users", force: :cascade do |t|
