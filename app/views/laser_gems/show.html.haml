@@ -1,32 +1,48 @@
 .show_wrap
   .gem_column
     .gem_elements_left
-      %h1 Name
-      =@laser_gem.name
-      %h3 Description
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis suscipit pulvinar.
-      %h3 Version
+      %h1 rails_best_practices
+      %p A code metric tool for rails codes, written in Ruby.
+      %h3 Last version: 1.17.0
 
-      %h3 Author
+      %h3 Authors: Richard Huang
 
-      %h3 GitHub Page
+      %a{href:"https://github.com/railsbp/rails_best_practices", target:"_blank"} GitHub Page
 
 
     .gem_elements_right
-      %h3 Downloads
+      %h3 Total downloads
+      %p 1,761,049
 
       %h3 Rank & Position
 
-      %h3 Related Gems
+      %ul Related Gems:
+      %a.li{href:"https://github.com/colszowka/simplecov", target:"_blank"} simplecov
+      %br
+      %a.li{href:"https://github.com/bbatsov/rubocop", target:"_blank"} rubocop
+      %br
+      %a.li{href:"https://github.com/troessner/reek", target:"_blank"} reek
+      %br
+      %a.li{href:"https://github.com/lemurheavy/coveralls-ruby", target:"_blank"} coveralls
+
 
       %h3 Suggestions
 
 
     .comments
-      %h3 Comments
+      %p Comments
+      I sometimes use `model`.save, return the object and later check for `model`.errors
+      so this approach would raise `check return value of save` but its not the case.
 
   .tag_column
-    %h1 Tag Name
+    %h4 Tags
+    %ul
+    %a.li rails
+    %br
+    %a.li ruby
+    %br
+    %a.li metric tool
+
     %p Data
     %p Related Gems
     %p Related Tags
