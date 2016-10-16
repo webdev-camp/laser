@@ -1,9 +1,8 @@
 RSpec.describe Owner, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
 
   it "has working factory" do
     owner = build :owner
-      expect(owner.save).to be true
+    expect(owner.save).to be true
   end
 
   it "checks name attribute" do
@@ -23,6 +22,11 @@ RSpec.describe Owner, type: :model do
 
   it "checks email attribute - no .end" do
     owner = build :owner, email: "myemail@"
+    expect(owner.save).to be false
+  end
+
+  it "is not valid without a laser_gem" do
+    owner = build :owner, laser_gem: nil
     expect(owner.save).to be false
   end
 end

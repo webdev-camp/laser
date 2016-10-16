@@ -6,7 +6,7 @@
       %i.fa.fa-search
     / search_object = gets.chomp
     %h3 You have searched for "search_object"
-    
+
   .options
     .filter
       %label{for: "filter"}Filter by:
@@ -27,8 +27,27 @@
     .display
       - @laser_gems.each do |laser_gem|
         .gem_element
-          -# laser_gem
-          = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
+          .gem_name
+            %h2= link_to(laser_gem.name, laser_gem_path(laser_gem.name))
+            %span - 0.0.0
+          .gem_main
+            .gem_description
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque mattis suscipit pulvinar.
+            .gem_tags
+              %h4 Related tags
+              %a tag
+              %a tag
+              %a tag
+              %a tag
+              %a tag
+          .gem_numbers
+            .gem_statistic
+              .value 5000
+              .label Downloads
+            .gem_favorites
+              .meta
+                %a 100 favorites
 
 .featured
   %h3 Featured Gem of the Month
@@ -43,9 +62,21 @@
   %h3 Most popular
   .gem_popular
     %h4 Gems
+    .gem_popular_container
+      %ul.cloud
+        %li rails
+        %li susy
+        %li breakpoint
+        %li rake
+        %li bundler
+        %li sass
+        %li rspec
+        %li haml
+        %li nokogiri
+        %li json
   .tag_popular
     %h4 Tags
-    .ui.labels
-      %a.ui.label style
-      %a.ui.purple.label develop
-      %a.ui.grey.label test
+    .tag_popular_container
+      %a style
+      %a develop
+      %a test
