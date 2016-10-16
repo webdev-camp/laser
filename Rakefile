@@ -4,3 +4,12 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+namespace :laser do
+  desc "Load Gem and dependencies"
+  task :load_gem => :environment do
+    loader = GemLoader.new
+    rails_laser_gem = LaserGem.create!(name: "rails")
+    loader.populate_data(rails_laser_gem)
+  end
+end
