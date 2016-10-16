@@ -35,11 +35,6 @@ RSpec.describe GemSpec, type: :model do
     expect(gem_spec.save).to be false
   end
 
-  it "checks documentation_uri attribute" do
-    gem_spec = build :gem_spec, documentation_uri: ""
-    expect(gem_spec.save).to be false
-  end
-
   it "checks gem spec has laser gem using gem_spec_with_laser_gem factory" do
     gem_spec_with_laser_gem = create :gem_spec_with_laser_gem
     expect(gem_spec_with_laser_gem.laser_gem).not_to be nil
