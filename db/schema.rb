@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013153222) do
+ActiveRecord::Schema.define(version: 20161016025337) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20161013153222) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "laser_gem_id"
+    t.string   "source_code_uri"
+    t.string   "homepage_uri"
   end
 
   create_table "laser_gems", force: :cascade do |t|
