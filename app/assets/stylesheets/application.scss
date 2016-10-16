@@ -17,7 +17,12 @@
 
 @import 'susy';
 @import 'breakpoint';
+@import 'semantic-ui/globals/variables';
+@import 'semantic-ui/elements/icon';
+@import 'semantic-ui/elements/divider';
 @import 'semantic-ui/elements/label';
+@import 'semantic-ui/views/feed';
+@import 'semantic-ui/views/statistic';
 
 $susy: (
   columns: 12,
