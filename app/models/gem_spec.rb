@@ -8,5 +8,5 @@ class GemSpec < ApplicationRecord
   validates :rubygem_uri, presence: true
   # validates :documentation_uri, presence: true
 
-  belongs_to :laser_gem, required: false 
+  belongs_to :laser_gem
 end
