@@ -6,7 +6,7 @@
       %i.fa.fa-search
     / search_object = gets.chomp
     %h3 You have searched for "search_object"
-    
+
   .options
     .filter
       %label{for: "filter"}Filter by:
@@ -43,9 +43,21 @@
   %h3 Most popular
   .gem_popular
     %h4 Gems
+    .gem_popular_container
+      %ul.cloud
+        %li rails
+        %li susy
+        %li breakpoint
+        %li rake
+        %li bundler
+        %li sass
+        %li rspec
+        %li haml
+        %li nokogiri
+        %li json
   .tag_popular
     %h4 Tags
-    .ui.labels
-      %a.ui.label style
-      %a.ui.purple.label develop
-      %a.ui.grey.label test
+    .tag_popular_container
+      %a style
+      %a develop
+      %a test

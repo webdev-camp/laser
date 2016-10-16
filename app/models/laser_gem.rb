@@ -6,9 +6,12 @@ class LaserGem < ApplicationRecord
   has_many :gem_dependents, class_name: "GemDependency", foreign_key: :dependency_id
   has_many :dependents, :through => :gem_dependents, source: :laser_gem
 
+  has_many :comments
+
   has_one :gem_spec
   has_one :gem_git
 
+  has_many :owners
   #
   # Add a gem as a dependency of this one.
   #
