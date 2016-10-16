@@ -80,6 +80,7 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     ffi (1.9.14)
+    gems (0.8.3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -229,6 +230,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
   factory_girl_rails
+  gems (~> 0.8.3)
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
