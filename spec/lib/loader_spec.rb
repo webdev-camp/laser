@@ -41,14 +41,14 @@ RSpec.describe GemLoader do
       expect { loader.populate_data(laser_gem) }.to raise_error(ActiveRecord::RecordInvalid)
     end
 
-   xit "saves an instance of GemSpec for each laser_gem" do
+   it "saves an instance of GemSpec for each laser_gem" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.populate_data(laser_gem)
       expect(GemSpec.exists?(name: "activesupport")).to be true
     end
 
-    xit "correctly populates GemSpec for each laser_gem" do
+    it "correctly populates GemSpec for each laser_gem" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.populate_data(laser_gem)
@@ -57,21 +57,21 @@ RSpec.describe GemLoader do
       expect(as_gem.rubygem_uri).to eq "https://rubygems.org/gems/activesupport"
     end
 
-    xit "saves instances of LaserGem for the dependents of the given laser_gem that dont already exist" do
+    it "saves instances of LaserGem for the dependents of the given laser_gem that dont already exist" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.populate_data(laser_gem)
       expect(LaserGem.exists?(name: "minitest")).to be true
     end
 
-    xit "saves instances of GemDependency for the dependents with the given laser_gem" do
+    it "saves instances of GemDependency for the dependents with the given laser_gem" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.populate_data(laser_gem)
       expect(laser_gem.dependencies.map(&:name)).to eq ["concurrent-ruby", "i18n", "minitest", "tzinfo"]
     end
 
-    xit "calls populate_data recursively for the dependents of the given laser_gem, creating their GemSpec's and GemDependencies with their depenendents" do
+    it "calls populate_data recursively for the dependents of the given laser_gem, creating their GemSpec's and GemDependencies with their depenendents" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.populate_data(laser_gem)
