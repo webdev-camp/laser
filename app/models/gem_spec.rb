@@ -1,4 +1,5 @@
 class GemSpec < ApplicationRecord
+
   validates :name, length: { in: 2..30}
   validates :info, presence: true
   validates :current_version, presence: true

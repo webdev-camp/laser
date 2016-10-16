@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use gems to access the rubygems.org api
+gem 'gems', '~> 0.8.3'
 
 gem 'susy'
 gem 'breakpoint'
