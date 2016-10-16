@@ -19,11 +19,6 @@ RSpec.describe LaserGem, type: :model do
     expect(laser_gem.save).to be false
   end
 
-  it "has working laser_gem_with_spec factory" do
-    laser_gem_with_spec = build :laser_gem_with_spec
-    expect(laser_gem_with_spec.save).to be true
-  end
-
   it "checks laser-gem has a gem spec" do
     laser_gem_with_spec = create :laser_gem_with_spec
     expect(laser_gem_with_spec.gem_spec).not_to eq nil
