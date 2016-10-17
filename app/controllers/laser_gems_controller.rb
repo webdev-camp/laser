@@ -10,6 +10,13 @@ class LaserGemsController < ApplicationController
     @laser_gem = LaserGem.find_by_name(params[:name])
   end
 
+  def add_tag
+    @laser_gem = LaserGem.find_by_name(params[:name])
+    @laser_gem.tag_list.add(params[:tag])
+    @laser_gem.save
+    redirect_to laser_gem_path(@laser_gem.name)
+  end
+
   private
 
 end
