@@ -71,6 +71,15 @@ RSpec.describe GemLoader do
       expect(laser_gem.dependencies.map(&:name)).to eq ["concurrent-ruby", "i18n", "minitest", "tzinfo"]
     end
 
+    # The problem with this test is that if the dependency for tzinfo changes the test will no longer be effective
+    it "does not save a GemDependency if it already exists", :ci => true do
+      loader = GemLoader.new
+      laser_gem = LaserGem.create!(name: "tzinfo")
+      dep_gem = LaserGem.create!(name: "thread-safe")
+      laser_gem.register_dependency(dep_gem, "1.1.1")
+      expect{ loader.populate_data(laser_gem) }.not_to raise_error
+    end
+
     it "calls populate_data recursively for the dependents of the given laser_gem, creating their GemSpec's and GemDependencies with their depenendents", :ci => true  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
@@ -80,7 +89,6 @@ RSpec.describe GemLoader do
       expect(dep_spec.name).to eq "tzinfo"
       expect(dep_spec.rubygem_uri).to eq "https://rubygems.org/gems/tzinfo"
       expect(dep.dependencies.map(&:name)).to eq ["thread_safe"]
-
     end
   end
 end
