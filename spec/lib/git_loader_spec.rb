@@ -3,10 +3,10 @@ RSpec.describe GitLoader do
     expect(GitLoader.new).not_to be nil
   end
 
-  it "saves an instance of GemGit for each laser_gem" do
+  it "saves an instance of GemGit for each laser_gem", :ci => true do
      loader = GitLoader.new
      laser_gem = LaserGem.create!(name: "rails")
-     gem_spec = create :gem_spec,
+     create :gem_spec,
          name: "rails",
          source_code_uri: "http://github.com/rails/rails",
          laser_gem_id: laser_gem.id
