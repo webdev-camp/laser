@@ -11,6 +11,8 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 # Use gems to access the rubygems.org api
 gem 'gems', '~> 0.8.3'
+# Use octokit to access the github api
+gem "octokit", "~> 4.0"
 
 gem 'susy'
 gem 'breakpoint'
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem "capybara"
+  gem 'pry-rails'
 end
 
 group :development do
