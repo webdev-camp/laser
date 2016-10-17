@@ -26,6 +26,10 @@ gem 'coffee-rails', '~> 4.2'
 # Use haml-rails as a templating engine for HTML
 gem 'haml-rails'
 
+# Use acts-as-taggable-on to specify an arbitrary number of tags
+gem 'acts-as-taggable-on'
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
