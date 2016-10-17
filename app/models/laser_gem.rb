@@ -14,6 +14,10 @@ class LaserGem < ApplicationRecord
   has_one :gem_git
 
   has_many :ownerships
+
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+
+
   #
   # Add a gem as a dependency of this one.
   #
