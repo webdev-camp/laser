@@ -1,18 +1,22 @@
 .show_wrap
   .gem_column
     .gem_elements_left
-      %h1 rails_best_practices
-      %p A code metric tool for rails codes, written in Ruby.
-      %h3 Last version: 1.17.0
+      %h1
+        = @laser_gem.name
+      %p
+        = @laser_gem.gem_spec.info
+      %h3
+        Last version:
+        = @laser_gem.gem_spec.current_version
 
-      %h3 Authors: Richard Huang
-
-      %a{href:"https://github.com/railsbp/rails_best_practices", target:"_blank"} GitHub Page
-
+      %h3
+        Authors: khkjhkjhl
+      = link_to("GitHub Page", @laser_gem.gem_spec.source_code_uri)
 
     .gem_elements_right
       %h3 Total downloads
-      %p 1,761,049
+      %p
+        = @laser_gem.gem_spec.total_downloads
 
       %h3 Rank & Position
 
