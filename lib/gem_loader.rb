@@ -39,7 +39,7 @@ class GemLoader
      info: "info",
      current_version: "version",
      current_version_downloads: "version_downloads",
-     total_downloads: "version_downloads",
+     total_downloads: "downloads",
      rubygem_uri: "project_uri",
      documentation_uri: "documentation_uri",
      source_code_uri: "source_code_uri",
