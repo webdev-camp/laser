@@ -2,17 +2,39 @@
   margin-left: span(2);
   margin-right: span(2);
   @include span(8 of 12);
+
+h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+  text-align: center;
 }
 
-  img {
-  margin-left: span(2);
-  margin-right: span(2);
+}
+.title {
   @include span(8 of 12);
-  width: 30%;
-  margin-left: 40px;
-  }
+}
+
+.t {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 20px;
+  background-color: #f1f1f2;;
+}
 
 .about_body {
   @include span(12);
   background-color: white;
+}
+
+.nested_images {
+  margin-left: span(3);
+  margin-right: span(3);
+  @include span(4 of 8);
+  }
+
+.n {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
+  margin-bottom: 15px;
+  display: inline;
+  @include span(4);
 }
