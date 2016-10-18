@@ -23,5 +23,11 @@ FactoryGirl.define do
           create :gem_git, laser_gem: laser_gem
         end
       end
+      factory :laser_gem_with_source_code_uri do
+        after(:create) do |laser_gem, evaluator|
+          create :gem_spec, laser_gem: laser_gem,
+                             source_code_uri: "http://github.com/rails/rails"
+        end
+      end
   end
 end
