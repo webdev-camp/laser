@@ -17,7 +17,7 @@ class GitLoader
       git_attributes.each do |k,v|
         attribs[k] = @git_data[v]
       end
-      GemGit.create!(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
+      GemGit.find_or_create_by!(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
     end
   end
 
