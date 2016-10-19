@@ -8,4 +8,5 @@ class GemGit < ApplicationRecord
   validates :open_issues_count, presence: true
 
   belongs_to :laser_gem , required: false
+  validates_uniqueness_of :laser_gem_id
 end

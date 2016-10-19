@@ -1,6 +1,6 @@
 class LaserGem < ApplicationRecord
   validates :name, length: { in: 2..30}, format: { without: /\s/, message: "must contain no spaces" }
-  # validates_uniqueness_of :name
+  validates_uniqueness_of :name
 
   has_many :gem_dependencies
   has_many :dependencies, :through => :gem_dependencies
