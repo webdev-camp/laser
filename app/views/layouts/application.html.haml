@@ -10,6 +10,10 @@
     %link{href: "https://fonts.googleapis.com/css?family=Kaushan+Script|Satisfy", rel:"stylesheet"}
   %body
     .header
+    .message
+      -flash.each do |name, message|
+        =name
+        =message
     .content
       =yield
     .footer
