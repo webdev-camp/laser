@@ -6,7 +6,8 @@ RSpec.describe GemSpec, type: :model do
   end
 
   it "checks name attribute" do
-    gem_spec = build :gem_spec, name: ""
+    gem_spec = build :gem_spec
+    gem_spec.name = ""
     expect(gem_spec.save).to be false
   end
 

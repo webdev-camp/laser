@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :gem_spec do
     sequence :name do |n|
-       "RubySpec#{n}"
+       "ruby_spec#{n}"
      end
     info "SomeInfo"
     current_version "1.2.3"
@@ -9,7 +9,7 @@ FactoryGirl.define do
     total_downloads 23
     rubygem_uri "SomeURI"
     documentation_uri "SomeDocURI"
-    laser_gem
+    laser_gem { create :laser_gem , name: name }
   end
 
 end

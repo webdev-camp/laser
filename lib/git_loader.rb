@@ -11,19 +11,19 @@ class GitLoader
   def populate_data(laser_gem)
     github = laser_gem.gem_spec.source_code_uri
     if github.include?('github.com/')
-      repo_name = github.split('github.com/')[1]
+      repo_name = github.split('github.com/').last
       @git_data = get_git_by_name(repo_name)
       attribs = {}
       git_attributes.each do |k,v|
         attribs[k] = @git_data[v]
       end
-      GemGit.create!(attribs.merge laser_gem_id: laser_gem.id)
+      GemGit.create!(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
     end
   end
 
   def git_attributes
   {
-    name: "name",
+    name: "full_name",
     homepage: "homepage",
     last_commit: "pushed_at",
     forks_count: "forks_count",
