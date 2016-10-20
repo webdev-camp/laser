@@ -4,7 +4,7 @@ RSpec.describe "LaserGemShowPage" do
     laser_gem = create :laser_gem_with_spec
     visit laser_gem_path(laser_gem.name)
     fill_in(:tag , with: tag)
-    click_button('Save')
+    click_button('save_tag')
   end
 
   it "adds tag" do

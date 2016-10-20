@@ -15,7 +15,7 @@
         = form_tag(add_tag_path(@laser_gem.name)) do
           = text_field_tag(:tag)
           //= submit_tag 'Save'
-          %button.icon{type: "submit"}
+          %button.icon{id: "save_tag", type: "submit"}
             %i.plus.icon
     .gem_owners
       %h3 Owners
