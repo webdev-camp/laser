@@ -38,7 +38,7 @@ RSpec.describe LaserGem, type: :model do
       laser_gem.register_dependency(laser_gem2, "1.0.0")
       expect(laser_gem.gem_dependencies.count).to eq 1
       expect { laser_gem.register_dependency(laser_gem2, "2.0.0") }
-      .to raise_error(ActiveRecord::RecordNotUnique)
+      .to raise_error(ActiveRecord::RecordInvalid)
       laser_gem.reload
       expect(laser_gem.gem_dependencies.count).to eq 1
     end
