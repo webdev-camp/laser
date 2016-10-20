@@ -10,11 +10,6 @@ RSpec.describe GemGit, type: :model do
     expect(gem_git.save).to be false
   end
 
-  it "checks homepage attribute" do
-    gem_git = build :gem_git, homepage: ""
-    expect(gem_git.save).to be false
-  end
-
   it "checks last_commit attribute" do
     gem_git = build :gem_git, last_commit: nil
     expect(gem_git.save).to be false

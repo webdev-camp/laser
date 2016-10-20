@@ -1,6 +1,6 @@
 class GemGit < ApplicationRecord
   validates :name, length: {in: 2..30}
-  validates :homepage, presence: true
+  # validates :homepage, presence: true
   validates :last_commit, presence: true
   validates :forks_count, presence: true
   validates :stargazers_count, presence: true
