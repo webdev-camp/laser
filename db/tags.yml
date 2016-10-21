@@ -1,0 +1,959 @@
+---
+a_b_testing:
+- vanity
+- split
+- seven_minute_abs
+- bandit
+- abingo
+active_record_db_adapters:
+- activerecord_jdbc_adapter
+- activerecord_sqlserver_adapter
+- activerecord_jdbcmysql_adapter
+- activerecord_jdbcpostgresql_adapter
+- activerecord_jdbcderby_adapter
+active_record_enumerations:
+- enumerize
+- enumerated_attribute
+- simple_enum
+- active_enum
+- classy_enum
+active_record_named_scopes:
+- ransack
+- searchlogic
+- pacecar
+- randumb
+- can_search
+active_record_sharding:
+- octopus
+- db_charmer
+- masochism
+- multi_db
+- data_fabric
+active_record_sortables:
+- acts_as_list
+- ranked_model
+- sortable
+- resort
+- and_acts_as_restful_list
+active_record_value_cleanup:
+- attribute_normalizer
+- strip_attributes
+- nilify_blanks
+- auto_strip_attributes
+- scrubby
+amazon_dynamodb:
+- dynamoid
+- fake_dynamo
+- active_dynamodb
+- and_dynoid
+api_builders:
+- grape
+- rabl
+- jbuilder
+- active_model_serializers
+- acts_as_api
+app_instrumentation:
+- new_relic_rpm
+- dashing
+- better_errors
+- fnordmetric
+- bullet
+asset_management:
+- jammit
+- asset_packager
+- assethat
+- bundle_fu
+- smurf
+atom_rss_feed_parsing:
+- feedzirra
+- simple_rss
+- feed_normalizer
+- ratom
+- rfeedparser
+backups:
+- backup
+- astrails_safe
+- backup_fu
+- db2fog
+- db2s3
+blog_engines:
+- octopress
+- publify
+- toto
+- blogit
+- serious
+browser_testing:
+- capybara
+- webrat
+- capybara_webkit
+- poltergeist
+- culerity
+calendars:
+- event_calendar
+- ri_cal
+- calendar_helper
+- icalendar
+- weekly_builder
+cli_progress_bars:
+- ruby_progressbar
+- progressbar
+- progress_bar
+- powerbar
+- progress
+concurrent_processing:
+- eventmachine
+- celluloid
+- cool_io
+- dataflow
+- workers
+content_management:
+- refinery_cms
+- browsercms
+- locomotive
+- radiant
+- comfortable_mexican_sofa
+continuous_testing:
+- guard
+- guard_rspec
+- watchr
+- autotest
+- kicker
+crm_apps:
+- fat_free_crm
+- mongo_crm
+- railscrm
+- myitcrm2
+- cohort
+csv_parsers:
+- fastercsv
+- smarter_csv
+- postgres_copy
+- ccsv
+- csv_pirate
+cucumber_tools:
+- viewcumber
+- cucumber_nagios
+- yard_cucumber
+- cucumber_sinatra
+- cuke_sniffer
+daemon_management:
+- foreman
+- daemon_controller
+- lunchy
+- and_daemon_spawn
+dependency_management:
+- bundler
+- berkshelf
+- librarian
+- braid
+- isolate
+deprecation_tools:
+- deprecated_and_structured_warnings
+documentation_generators:
+- rdoc
+- yard
+- sdoc
+- documentup
+- rocco
+e_mail_processing:
+- mailman
+- fetcher
+- griddler
+- newman
+- mail_fetcher
+encryption:
+- attr_encrypted
+- strongbox
+- crypt_keeper
+- symmetric_encryption
+- sentry
+exchange_clients:
+- viewpoint
+- exchanger
+- rews
+- rexchange
+- and_ews_api
+form_builders:
+- simple_form
+- formtastic
+- nested_form
+- cocoon
+- twitter_bootstrap_form_for
+game_libraries:
+- gosu
+- chingu
+- gioco
+- gamebox
+- ray
+gem_creation:
+- hoe
+- jeweler
+- enginex
+- echoe
+- newgem
+gem_hosting:
+- geminabox
+- stickler
+- and_gemfury
+git_tools:
+- grit
+- githug
+- ruby_git
+- rugged
+- gitolite
+gui_frameworks:
+- shoes
+- fxruby
+- ruby_gtk2
+- qtbindings
+- wxruby
+http_clients:
+- rest_client
+- httparty
+- faraday
+- multipart_post
+- excon
+i18n:
+- i18n
+- i18n_js
+- r18n
+- http_accept_language
+- translate_routes
+inline_css_for_e_mail:
+- premailer
+- roadie
+- mail_style
+- inline_style
+- premailer_rails3
+irb_tools:
+- dotfiles
+- awesome_print
+- hirb
+- wirble
+- pry_rails
+javascript_runtimes:
+- execjs_and_therubyracer
+javascript_tools:
+- sprockets
+- uglifier
+- coffee_script
+- gon
+- opal
+ldap:
+- devise_ldap_authenticatable
+- omniauth_ldap
+- authlogic_ldap
+- ruby_net_ldap
+- ldap_activerecord_gateway
+logging:
+- log4r
+- logging
+- gelf
+- yell
+- mongodb_logger
+markup_processors:
+- markup
+- redcarpet
+- redcloth
+- vkhater_redcarpet
+- rdiscount
+mocking:
+- rspec_mocks
+- mocha
+- rr
+- mock_redis
+- flexmock
+mongodb_clients:
+- mongoid
+- mongo_ruby_driver
+- mongomapper
+- mongomatic
+- perpetuity
+music_midi:
+- archaeopteryx
+- jazztoolbox
+- unimidi
+- midiator
+- midilib
+object_relational_mapping:
+- active_record
+- orm_adapter
+- sequel
+- datamapper
+- squeel
+packaging_systems:
+- rubygems
+- rip
+- rpg
+- coral
+- and_slimgems
+pagination:
+- will_paginate
+- kaminari
+- sorted
+- ajax_pagination
+- paged_scopes
+pdf_generation:
+- prawn
+- pdfkit
+- wicked_pdf
+- wkhtmltopdf
+- prawnto
+presentation_software:
+- showoff
+- csss
+- coderdeck
+- slidedown
+- jquery_presentation
+prototype_replacements:
+- jrails
+- jquery_ui_rails_helpers
+- right_rails
+- and_yui_on_rails
+rails_activity_feeds:
+- public_activity
+- timelinefu
+- pfeed
+- streama
+- unread
+rails_app_templates:
+- rails3_application_templates
+- rails_apps_composer
+- rails_templates
+- suspenders
+- bigoldrailstemplate
+rails_authorization:
+- cancan
+- declarative_authorization
+- rolify
+- pundit
+- acl9
+rails_class_diagrams:
+- rails_erd_and_railroady
+rails_controller_abstractions:
+- inherited_resources
+- decentexposure
+- resource_controller
+- make_resourceful
+- resources_controller
+rails_file_uploads:
+- paperclip
+- carrierwave
+- attachment_fu
+- dragonfly
+- imagery
+rails_in_place_editing:
+- rest_in_place
+- bestinplace
+- jrails_in_place_editing
+- on_the_spot
+- better_edit_in_place
+rails_permalinks_slugs:
+- friendlyid
+- stringex
+- babosa
+- permalink_fu
+- obfuscateid
+rails_ratings:
+- ajaxful_rating
+- ajaxful_rating
+- letsrate
+- acts_as_rateable
+- mongoid_rateable
+rails_subdomains:
+- subdomain_fu
+- subdomain_routes
+- subdomain_account
+- sso_what
+- and_submarine
+rails_wizards:
+- wicked
+- actsaswizard
+- wizardly
+- wizard
+- partially_valid
+recommendation_engines:
+- recommendify
+- recommendable
+- coletivo
+- slope_one
+- and_similus
+redis_clients:
+- redis_ruby
+- redis_store
+- redis_objects
+- ohm
+- redis_orm
+reputation_engines:
+- activerecord_reputation_system
+- merit
+- honor
+- recognition
+- and_reputation
+ruby_version_management:
+- rbenv
+- rvm
+- ruby_build
+- chruby
+- pik
+scripting_frameworks:
+- rake
+- thor
+- main
+- boson
+- and_sake
+server_monitoring:
+- god
+- bluepill
+- amon
+- sensu
+- outpost
+social_network_builders:
+- insoshi
+- communityengine
+- lovd_by_less
+- socialstream
+- enginey
+sql_database_adapters:
+- pg
+- mysql2
+- sqlite3
+- mysql
+- sqlite3_ruby
+static_website_generation:
+- jekyll
+- middleman
+- high_voltage
+- nanoc
+- stasis
+syntax_highlighting:
+- coderay
+- rouge
+- albino
+- jquery_syntax
+- harsh
+table_builders:
+- datagrid
+- wice_grid
+- tabletastic
+- table_cloth
+- table_for_collection
+terminal_coloring:
+- term_ansicolor
+- ansi
+- colored
+- colorize
+- rainbow
+test_unit_extensions:
+- shoulda
+- context
+- contest
+- and_pending
+time_warping:
+- timecop
+- delorean
+- time_warp
+- time_travel
+- quantum_leap
+url_rewriting:
+- rack_rewrite
+- refraction
+- redirect
+- and_desviar
+user_messaging_systems:
+- mailboxer
+- rails_messaging
+- acts_as_messageable
+- maktoub
+- inboxes
+web_analytics:
+- gattica
+- gabba
+- rack_google_analytics
+- garb
+- google_analytics_rails
+web_content_scrapers:
+- pismo
+- data_miner
+- metainspector
+- cobweb
+- sinew
+wiki_apps:
+- gollum
+- git_wiki
+- instiki
+- irwi
+- olelo
+acceptance_test_frameworks:
+- cucumber
+- steak
+- turnip
+- spinach
+- coulda
+active_record_default_values:
+- default_value_for_and_active_record_defaults
+active_record_index_assistants:
+- foreigner
+- rails_indexes
+- schema_plus
+- lol_dba
+- immigrant
+active_record_nesting:
+- awesome_nested_set
+- ancestry
+- acts_as_tree
+- closure_tree
+- better_nested_set
+active_record_soft_delete:
+- rails3_acts_as_paranoid
+- paranoia
+- acts_as_paranoid
+- acts_as_archive
+- permanent_records
+active_record_user_stamping:
+- userstamp
+- user_stamp
+- acts_as_audited
+- record_activities
+- acts_as_loggable
+active_record_versioning:
+- papertrail
+- audited
+- vestal_versions
+- acts_as_versioned
+- acts_as_revisable
+amazon_web_services:
+- fog
+- aws_sdk
+- aws_s3
+- rightaws
+- amazon_ec2
+api_clients:
+- twitter
+- koala
+- fb_graph
+- linkedin
+- youtube_it
+asset_distribution:
+- asset_sync
+- jammit_s3
+- cloudfront_asset_host
+- and_asset_hash
+asynchronous_e_mail:
+- resque_mailer
+- mail_queue
+- mailhopper
+- resque_mail_queue
+- and_popthis
+background_jobs:
+- resque
+- delayed_job
+- sidekiq
+- bunny
+- beanstalkd
+benchmarking:
+- method_profiler
+- rbench
+- bench_press
+- better_benchmark
+- tach
+breadcrumb_builders:
+- breadcrumbs_on_rails
+- crummy
+- gretel
+- breadcrumbs
+- ariane
+bundler_tools:
+- rubygems_bundler
+- appraisal
+- guard_bundler
+- spitball
+- noexec
+cli_option_parsers:
+- highline
+- slop
+- cocaine
+- mixlib_cli
+- trollop
+code_metrics:
+- simplecov
+- rails_best_practices
+- rcov
+- rubocop
+- cane
+configuration_management:
+- dotenv
+- settingslogic
+- figaro
+- dotenv_rails
+- configuration
+continuous_integration:
+- travis
+- cruisecontrol_rb
+- cijoe
+- jenkins_rb
+- integrity
+couchdb_clients:
+- couchrest
+- couchrest_model
+- couch_potato
+- couchrest_rails
+- simplystored
+css_with_ruby:
+- sass
+- compass
+- sass_rails
+- bootstrap_sass
+- twitter_bootstrap_rails
+cucumber_steps:
+- email_spec
+- pickle
+- aruba
+- cucumber_factory
+- mundopepino
+daemonizing:
+- daemons
+- daemon_kit
+- daemon_generator
+- dante
+- robustthread
+data_migration:
+- taps_and_mysql2psql
+deployment_automation:
+- capistrano
+- heroku
+- mina
+- moonshine
+- git_deploy
+distributed_testing:
+- spork
+- zeus
+- parallel_tests
+- spring
+- hydra
+e_mail_preview:
+- letter_opener
+- mailcatcher
+- mail_view
+- rails_email_preview
+- sanitize_email
+e_mail_sending:
+- action_mailer
+- mail
+- pony
+- tmail
+- capistrano_mailer
+exception_notification:
+- errbit
+- airbrake
+- exception_notification
+- exceptional
+- honeybadger
+font_face_servers:
+- fontue
+- fistface
+- and_rack_fontserve
+forum_systems:
+- forem
+- altered_beast
+- thredded
+- forum_monster
+- and_engagecsm
+gem_and_library_inspection:
+- open_gem
+- qwandry
+- and_gemedit
+gem_doc_viewers:
+- bdoc
+- sinatra_rubygems
+- docbox
+- and_gembox
+geocoding_maps:
+- geocoder
+- geokit
+- gmaps4rails
+- rgeo
+- geokit_rails
+graphing:
+- lazy_high_charts
+- googlecharts
+- gruff
+- open_flash_chart
+- tufte_graph
+html_parsing:
+- nokogiri
+- hpricot
+- libxml_ruby
+- scrubyt
+- scrapi
+http_pub_sub:
+- websocket
+- faye
+- em_websocket
+- libwebsocket
+- private_pub
+image_processing:
+- chunky_png
+- rmagick
+- minimagick
+- image_science
+- image_sorcery
+irb_alternatives:
+- pry_and_ripl
+irc_bots:
+- cinch
+- autumn
+- isaac
+- rbot
+- summer
+javascript_testing:
+- jasmine
+- testswarm
+- blue_ridge
+- konacha
+- evergreen
+json_parsers:
+- json
+- multi_json
+- yajl_ruby
+- json_pure
+- crack
+log_analysis:
+- logstash
+- graylog2
+- request_log_analyzer
+- central_logger
+- ntail
+maintenance_mode:
+- turnout_and_rack_maintenance
+microformats:
+- mofo
+- microformats_helper
+- prism
+- and_html_schema
+mocking_web_requests:
+- webmock
+- vcr
+- jquery_mockjax
+- fakeweb
+- artifice
+multitenancy:
+- milia
+- apartment
+- acts_as_tenant
+- multitenant
+- acts_as_restricted_subdomain
+natural_language_date_parsing:
+- chronic
+- chronic_duration
+- nickel
+- tickle
+- kronic
+online_shops:
+- spree
+- ror_ecommerce
+- invoicing
+- shippinglogic
+- nimbleshop
+packaging_to_executables:
+- ocra
+- releasy
+- crate
+- and_rubyscript2exe
+payments:
+- active_merchant
+- braintree
+- stripe
+- paypal_adaptive
+- paypal_express
+pdf_processing:
+- pdf_reader
+- pdf_info
+- and_stevedore
+project_management:
+- gitlabhq
+- redmine
+- teambox
+- fulcrum
+- chiliproject
+qr_codes:
+- rqrcode
+- rqrcode_rails3
+- rqrcode_png
+- zxing
+- zbar
+rails_admin_interfaces:
+- activeadmin
+- rails_admin
+- activescaffold
+- typus
+- streamlined
+rails_authentication:
+- devise
+- omniauth
+- authlogic
+- restful_authentication
+- sorcery
+rails_captcha:
+- recaptcha
+- negative_captcha
+- simple_captcha_mirror
+- galetahub_simple_captcha
+- humanizer
+rails_comments:
+- juvia
+- acts_as_commentable_with_threading
+- acts_as_commentable
+- disqus
+- opinio
+rails_db_bootstrapping:
+- seed_fu
+- populator
+- seedbank
+- bootstrapper
+- db_populate
+rails_fixture_replacement:
+- factory_girl
+- machinist
+- fabrication
+- fixturebuilder
+- object_daddy
+rails_menu_builders:
+- simple_navigation
+- tabs_on_rails
+- semantic_menu
+- navigasmic
+- active_link_to
+rails_presenters:
+- draper
+- cells
+- apotomo
+- active_presenter
+- activedecorator
+rails_search:
+- sunspot
+- sunspot_rails
+- tire
+- thinking_sphinx
+- rsolr
+rails_tagging:
+- acts_as_taggable_on
+- is_taggable
+- rocket_tag
+- acts_as_taggable_redux
+- acts_as_taggable_on_steroids
+random_data_generation:
+- faker
+- ffaker
+- forgery
+- randexp
+- random_data
+recurring_events:
+- ice_cube
+- recurrence
+- schedule_fu
+- runt
+- recurring_event
+reports_spreadsheets:
+- spreadsheet
+- axlsx
+- roo
+- ruport
+- google_spreadsheet_ruby
+ruby_core_extensions:
+- active_support
+- hashie
+- extlib
+- hamster
+- facets
+scheduling:
+- whenever
+- resque_scheduler
+- rufus_scheduler
+- clockwork
+- craken
+security_tools:
+- brakeman
+- loofah
+- tarantula
+- xss_terminate
+- rails_xss
+soap_clients:
+- savon
+- handsoap
+- lolsoap
+- and_serviceproxy
+spam_detection:
+- rakismet
+- defender
+- defensio_ruby
+- akismetor
+- rdefensio
+state_machines:
+- state_machine
+- aasm
+- workflow
+- transitions
+- ruote
+subscription_management:
+- freemium
+- jackpot
+- fastspring_saasy
+- subscriptionfu
+- and_subly
+system_provisioning:
+- vagrant
+- chef
+- puppet
+- babushka
+- sprinkle
+template_engines:
+- erubis
+- tilt
+- haml
+- slim
+- liquid
+testing_rails_engines:
+- combustion
+- test_engine
+- and_multiengine
+text_editors_in_ruby:
+- redcar
+- ruco
+- arcadia
+- diakonos
+- and_ruber
+unit_test_frameworks:
+- rspec
+- minitest
+- test_unit
+- bacon
+- riot
+user_agent_detection:
+- useragent
+- browser
+- mobylette
+- agent_orange
+- user_agent
+visualizing_data:
+- raphael
+- ruby_graphviz
+- and_ruby_processing
+web_app_frameworks:
+- ruby_on_rails
+- rack
+- sinatra
+- padrino
+- cramp
+web_servers:
+- thin
+- unicorn
+- passenger
+- puma
+- pow
+xml_mapping:
+- nori
+- gyoku
+- happymapper
+- sax_machine
+- roxml

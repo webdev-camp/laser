@@ -31,6 +31,8 @@ gem 'haml-rails'
 # Use acts-as-taggable-on to specify an arbitrary number of tags
 gem 'acts-as-taggable-on'
 
+# Use 'mechanize' to scrape data
+gem 'mechanize'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
