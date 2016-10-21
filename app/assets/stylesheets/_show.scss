@@ -1,36 +1,125 @@
 @import 'susy';
 
-.show_wrap {
+.gem_element {
   @include span(12);
-  text-align: justify;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
 
-  .gem_column {
-    @include span(8 of 12);
-    background-color: #f1f1f2;
-    border-radius: 25px;
-    margin-top: 15px;
-    padding-bottom: 20px;
-    text-align: center;
+.gem_element .gem_main {
+  @include span(9);
+  padding-left: 0;
 
-    .gem_elements_left {
-    @include span(6);
-    }
+  .gem_name {
+    border-color: Crimson;
+    border-style: dashed;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-transform: capitalize;
 
-    .gem_elements_right {
-    @include span(6);
-    }
+    h1, span { display: inline; }
 
-    .comments {
-      clear: both;
+    span {
+      @include span(last);
+      padding-top: 0.7em;
     }
   }
 
-  .tag_column {
-    @include span(4 of 12);
-    background-color: #f1f1f2;
-    border-radius: 25px;
-    margin-top: 15px;
-    padding-bottom: 20px;
-    text-align: center;
+  .gem_description {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+
+  .gem_tags {
+    margin-bottom: 1em;
+    padding: 1em;
+
+    .list {
+      @extend .ui.labels;
+      margin-bottom: 1em;
+
+      p {
+        @extend .ui.label;
+        display: inline;
+      }
+    }
+
+    .input {
+      @extend .ui.icon.input;
+    }
+  }
+  .gem_owners {
+    margin-bottom: 1em;
+    padding: 1em;
+
+    p { display: inline; }
+  }
+  .gem_dependecies {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+  .gem_dependents {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+
+  .gem_suggestions {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+}
+
+.gem_element .gem_stats {
+  @include span(3);
+  text-align: center;
+
+  .gem_rank {
+    margin-bottom: 1em;
+    padding: 1em;
+    @extend .ui.statistic;
+  }
+
+  .gem_downloads {
+    border-color: Crimson;
+    border-style: dashed;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    padding: 1em;
+
+      .gem_downloads_total { @extend .ui.statistic; }
+      .gem_downloads_current_version {
+        @extend .ui.statistic;
+        margin-left: 0 !important; }
+  }
+
+  .gem_activity {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+  .gem_github {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+}
+
+.gem_element .comments_section {
+  @include span(12);
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding: 1em;
+  max-width: none;
+  @extend .ui.comments;
+
+  h3 { @extend .ui.horizontal.divider; }
+
+  textarea {
+    @include span(12);
+    border-radius: 15px;
+    resize: vertical; }
+
+  .ui.labeled.submit.icon.button {
+    @include span(last);
+    margin-top: 0.5em;
   }
 }
