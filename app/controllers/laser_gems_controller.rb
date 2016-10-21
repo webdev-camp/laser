@@ -2,7 +2,7 @@ class LaserGemsController < ApplicationController
 
   # GET /laser_gems
   def index
-    @laser_gems = LaserGem.all
+    @laser_gems = LaserGem.all.includes(:gem_spec)
   end
 
   # GET /laser_gems/gem_name

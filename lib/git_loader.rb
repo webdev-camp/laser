@@ -8,29 +8,39 @@ class GitLoader
     @data = @client.repo(repo_name)
   end
 
-  def fetch_and_create_gem_git(laser_gem)
+  def parse_git_uri(laser_gem)
     if laser_gem.gem_spec
-      github = laser_gem.gem_spec.source_code_uri
-      if github.include?('github.com/')
-        repo_name = github.split('github.com/').last
-        @git_data = get_git_from_api(repo_name)
-        attribs = {}
-        git_attributes.each do |k,v|
-          attribs[k] = @git_data[v]
-        # Need an else here to return an error to user/uploader
+      if laser_gem.gem_spec.source_code_uri != nil
+        uri = laser_gem.gem_spec.source_code_uri
+        rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
+        matches = rex.match(uri)
+        if !!(rex.match uri)
+          @repo_name = matches[1]
         end
-        GemGit.find_or_create_by!(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
       end
+    end
+  end
+
+  def fetch_and_create_gem_git(laser_gem)
+    parse_git_uri(laser_gem)
+    if @repo_name
+      @git_data = get_git_from_api(@repo_name)
+      attribs = {}
+      git_attributes.each do |k,v|
+        attribs[k] = @git_data[v]
+      end
+      GemGit.find_or_create_by(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
       fetch_git_for_deps(laser_gem)
-    # Need an else here - either to call GemLoader or to return an error
+      # Need an else here to return an error to user/uploader
     end
   end
 
   def fetch_git_for_deps(laser_gem)
     laser_gem.dependencies.map(&:name).each do |dep|
-      lg_dep = LaserGem.find_or_create_by!(name: dep)
-      laser_gem.register_dependency(lg_dep, ver) unless GemDependency.where("laser_gem_id = ? and dependency_id = ?", laser_gem.id, lg_dep.id).exists?
-      fetch_and_create_gem_git(lg_dep)  if lg_dep.gem_git.nil?
+      lg_dep = LaserGem.find_by(name: dep)
+      if lg_dep
+        fetch_and_create_gem_git(lg_dep)  if lg_dep.gem_git.nil?
+      end
     end
   end
 
