@@ -22,18 +22,19 @@
       %a.ui.olive.empty.circular.label;
       %a.ui.olive.empty.circular.label;
       %a.ui.olive.empty.circular.label;
+
     .gem_dependecies
-      %h3 Gem Dependecies
-      %ul
-        %li gem
-        %li gem
-        %li gem
+      %h3 Depends on the following gems
+      .list
+        -@laser_gem.dependencies.each do |dependency|
+          =dependency.name
+
     .gem_dependents
-      %h3 Gem Dependents
-      %ul
-        %li gem
-        %li gem
-        %li gem
+      %h3 Depending gems
+      .list
+        -@laser_gem.dependents.each do |dependent|
+          =dependent.name
+
     .gem_suggestions
       %h3 Suggestions
       %ul
