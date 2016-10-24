@@ -1,0 +1,12 @@
+.home{
+  @include span(12);
+  text-align: center;
+  padding-top: 20vh ;
+  padding-bottom: 20vh;
+  .title{
+    @include span(12);
+  }
+  .search{
+    @include span(12);
+  }
+}

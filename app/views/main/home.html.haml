@@ -1,5 +1,7 @@
-%h1 Welcome to LASER !!!
+.home
+  .title
+    Welcome to LASER !!!
 
-=link_to('about us', '/about')
-=link_to('FAQ', '/faq')
-=link_to('Ruby for Newbies', '/ruby_for_newbies')
+  .search
+    = form_tag(laser_gems_path) do
+      = text_field_tag "Search"
