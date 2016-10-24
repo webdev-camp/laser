@@ -1,959 +1,5398 @@
 ---
-a_b_testing:
-- vanity
-- split
-- seven_minute_abs
-- bandit
-- abingo
-active_record_db_adapters:
-- activerecord_jdbc_adapter
-- activerecord_sqlserver_adapter
-- activerecord_jdbcmysql_adapter
-- activerecord_jdbcpostgresql_adapter
-- activerecord_jdbcderby_adapter
-active_record_enumerations:
-- enumerize
-- enumerated_attribute
-- simple_enum
-- active_enum
-- classy_enum
-active_record_named_scopes:
-- ransack
-- searchlogic
-- pacecar
-- randumb
-- can_search
-active_record_sharding:
-- octopus
-- db_charmer
-- masochism
-- multi_db
-- data_fabric
-active_record_sortables:
-- acts_as_list
-- ranked_model
-- sortable
-- resort
-- and_acts_as_restful_list
-active_record_value_cleanup:
-- attribute_normalizer
-- strip_attributes
-- nilify_blanks
-- auto_strip_attributes
-- scrubby
-amazon_dynamodb:
-- dynamoid
-- fake_dynamo
-- active_dynamodb
-- and_dynoid
-api_builders:
-- grape
-- rabl
-- jbuilder
-- active_model_serializers
-- acts_as_api
-app_instrumentation:
-- new_relic_rpm
-- dashing
-- better_errors
-- fnordmetric
-- bullet
-asset_management:
-- jammit
-- asset_packager
-- assethat
-- bundle_fu
-- smurf
-atom_rss_feed_parsing:
-- feedzirra
-- simple_rss
-- feed_normalizer
-- ratom
-- rfeedparser
-backups:
-- backup
-- astrails_safe
-- backup_fu
-- db2fog
-- db2s3
-blog_engines:
-- octopress
-- publify
-- toto
-- blogit
-- serious
-browser_testing:
-- capybara
-- webrat
-- capybara_webkit
-- poltergeist
-- culerity
-calendars:
-- event_calendar
-- ri_cal
-- calendar_helper
-- icalendar
-- weekly_builder
-cli_progress_bars:
-- ruby_progressbar
-- progressbar
-- progress_bar
-- powerbar
-- progress
-concurrent_processing:
-- eventmachine
-- celluloid
-- cool_io
-- dataflow
-- workers
-content_management:
-- refinery_cms
-- browsercms
-- locomotive
-- radiant
-- comfortable_mexican_sofa
-continuous_testing:
-- guard
-- guard_rspec
-- watchr
-- autotest
-- kicker
-crm_apps:
-- fat_free_crm
-- mongo_crm
-- railscrm
-- myitcrm2
-- cohort
-csv_parsers:
-- fastercsv
-- smarter_csv
-- postgres_copy
-- ccsv
-- csv_pirate
-cucumber_tools:
-- viewcumber
-- cucumber_nagios
-- yard_cucumber
-- cucumber_sinatra
-- cuke_sniffer
-daemon_management:
-- foreman
-- daemon_controller
-- lunchy
-- and_daemon_spawn
-dependency_management:
-- bundler
-- berkshelf
-- librarian
-- braid
-- isolate
-deprecation_tools:
-- deprecated_and_structured_warnings
-documentation_generators:
-- rdoc
-- yard
-- sdoc
-- documentup
-- rocco
-e_mail_processing:
-- mailman
-- fetcher
-- griddler
-- newman
-- mail_fetcher
-encryption:
-- attr_encrypted
-- strongbox
-- crypt_keeper
-- symmetric_encryption
-- sentry
-exchange_clients:
-- viewpoint
-- exchanger
-- rews
-- rexchange
-- and_ews_api
-form_builders:
-- simple_form
-- formtastic
-- nested_form
-- cocoon
-- twitter_bootstrap_form_for
-game_libraries:
-- gosu
-- chingu
-- gioco
-- gamebox
-- ray
-gem_creation:
-- hoe
-- jeweler
-- enginex
-- echoe
-- newgem
-gem_hosting:
-- geminabox
-- stickler
-- and_gemfury
-git_tools:
-- grit
-- githug
-- ruby_git
-- rugged
-- gitolite
-gui_frameworks:
-- shoes
-- fxruby
-- ruby_gtk2
-- qtbindings
-- wxruby
-http_clients:
-- rest_client
-- httparty
-- faraday
-- multipart_post
-- excon
-i18n:
-- i18n
-- i18n_js
-- r18n
-- http_accept_language
-- translate_routes
-inline_css_for_e_mail:
-- premailer
-- roadie
-- mail_style
-- inline_style
-- premailer_rails3
-irb_tools:
-- dotfiles
-- awesome_print
-- hirb
-- wirble
-- pry_rails
-javascript_runtimes:
-- execjs_and_therubyracer
-javascript_tools:
-- sprockets
-- uglifier
-- coffee_script
-- gon
-- opal
-ldap:
-- devise_ldap_authenticatable
-- omniauth_ldap
-- authlogic_ldap
-- ruby_net_ldap
-- ldap_activerecord_gateway
-logging:
-- log4r
-- logging
-- gelf
-- yell
-- mongodb_logger
-markup_processors:
-- markup
-- redcarpet
-- redcloth
-- vkhater_redcarpet
-- rdiscount
-mocking:
-- rspec_mocks
-- mocha
-- rr
-- mock_redis
-- flexmock
-mongodb_clients:
-- mongoid
-- mongo_ruby_driver
-- mongomapper
-- mongomatic
-- perpetuity
-music_midi:
-- archaeopteryx
-- jazztoolbox
-- unimidi
-- midiator
-- midilib
-object_relational_mapping:
-- active_record
-- orm_adapter
-- sequel
-- datamapper
-- squeel
-packaging_systems:
-- rubygems
-- rip
-- rpg
-- coral
-- and_slimgems
-pagination:
-- will_paginate
-- kaminari
-- sorted
-- ajax_pagination
-- paged_scopes
-pdf_generation:
-- prawn
-- pdfkit
-- wicked_pdf
-- wkhtmltopdf
-- prawnto
-presentation_software:
-- showoff
-- csss
-- coderdeck
-- slidedown
-- jquery_presentation
-prototype_replacements:
-- jrails
-- jquery_ui_rails_helpers
-- right_rails
-- and_yui_on_rails
-rails_activity_feeds:
-- public_activity
-- timelinefu
-- pfeed
-- streama
-- unread
-rails_app_templates:
-- rails3_application_templates
-- rails_apps_composer
-- rails_templates
-- suspenders
-- bigoldrailstemplate
-rails_authorization:
-- cancan
-- declarative_authorization
-- rolify
-- pundit
-- acl9
-rails_class_diagrams:
-- rails_erd_and_railroady
-rails_controller_abstractions:
-- inherited_resources
-- decentexposure
-- resource_controller
-- make_resourceful
-- resources_controller
-rails_file_uploads:
-- paperclip
-- carrierwave
-- attachment_fu
-- dragonfly
-- imagery
-rails_in_place_editing:
-- rest_in_place
-- bestinplace
-- jrails_in_place_editing
-- on_the_spot
-- better_edit_in_place
-rails_permalinks_slugs:
-- friendlyid
-- stringex
-- babosa
-- permalink_fu
-- obfuscateid
-rails_ratings:
-- ajaxful_rating
-- ajaxful_rating
-- letsrate
-- acts_as_rateable
-- mongoid_rateable
-rails_subdomains:
-- subdomain_fu
-- subdomain_routes
-- subdomain_account
-- sso_what
-- and_submarine
-rails_wizards:
-- wicked
-- actsaswizard
-- wizardly
-- wizard
-- partially_valid
-recommendation_engines:
-- recommendify
-- recommendable
-- coletivo
-- slope_one
-- and_similus
-redis_clients:
-- redis_ruby
-- redis_store
-- redis_objects
-- ohm
-- redis_orm
-reputation_engines:
-- activerecord_reputation_system
-- merit
-- honor
-- recognition
-- and_reputation
-ruby_version_management:
-- rbenv
-- rvm
-- ruby_build
-- chruby
-- pik
-scripting_frameworks:
-- rake
-- thor
-- main
-- boson
-- and_sake
-server_monitoring:
-- god
-- bluepill
-- amon
-- sensu
-- outpost
-social_network_builders:
-- insoshi
-- communityengine
-- lovd_by_less
-- socialstream
-- enginey
-sql_database_adapters:
-- pg
-- mysql2
-- sqlite3
-- mysql
-- sqlite3_ruby
-static_website_generation:
-- jekyll
-- middleman
-- high_voltage
-- nanoc
-- stasis
-syntax_highlighting:
-- coderay
-- rouge
-- albino
-- jquery_syntax
-- harsh
-table_builders:
-- datagrid
-- wice_grid
-- tabletastic
-- table_cloth
-- table_for_collection
-terminal_coloring:
-- term_ansicolor
-- ansi
-- colored
-- colorize
-- rainbow
-test_unit_extensions:
-- shoulda
-- context
-- contest
-- and_pending
-time_warping:
-- timecop
-- delorean
-- time_warp
-- time_travel
-- quantum_leap
-url_rewriting:
-- rack_rewrite
-- refraction
-- redirect
-- and_desviar
-user_messaging_systems:
-- mailboxer
-- rails_messaging
-- acts_as_messageable
-- maktoub
-- inboxes
-web_analytics:
-- gattica
-- gabba
-- rack_google_analytics
-- garb
-- google_analytics_rails
-web_content_scrapers:
-- pismo
-- data_miner
-- metainspector
-- cobweb
-- sinew
-wiki_apps:
-- gollum
-- git_wiki
-- instiki
-- irwi
-- olelo
-acceptance_test_frameworks:
-- cucumber
-- steak
-- turnip
-- spinach
-- coulda
-active_record_default_values:
-- default_value_for_and_active_record_defaults
-active_record_index_assistants:
-- foreigner
-- rails_indexes
-- schema_plus
-- lol_dba
-- immigrant
-active_record_nesting:
-- awesome_nested_set
-- ancestry
-- acts_as_tree
-- closure_tree
-- better_nested_set
-active_record_soft_delete:
-- rails3_acts_as_paranoid
-- paranoia
-- acts_as_paranoid
-- acts_as_archive
-- permanent_records
-active_record_user_stamping:
-- userstamp
-- user_stamp
-- acts_as_audited
-- record_activities
-- acts_as_loggable
-active_record_versioning:
-- papertrail
-- audited
-- vestal_versions
-- acts_as_versioned
-- acts_as_revisable
-amazon_web_services:
-- fog
-- aws_sdk
-- aws_s3
-- rightaws
-- amazon_ec2
-api_clients:
-- twitter
-- koala
-- fb_graph
-- linkedin
-- youtube_it
-asset_distribution:
-- asset_sync
-- jammit_s3
-- cloudfront_asset_host
-- and_asset_hash
-asynchronous_e_mail:
-- resque_mailer
-- mail_queue
-- mailhopper
-- resque_mail_queue
-- and_popthis
-background_jobs:
-- resque
-- delayed_job
-- sidekiq
-- bunny
-- beanstalkd
-benchmarking:
-- method_profiler
-- rbench
-- bench_press
-- better_benchmark
-- tach
-breadcrumb_builders:
-- breadcrumbs_on_rails
-- crummy
-- gretel
-- breadcrumbs
-- ariane
-bundler_tools:
-- rubygems_bundler
-- appraisal
-- guard_bundler
-- spitball
-- noexec
-cli_option_parsers:
-- highline
-- slop
-- cocaine
-- mixlib_cli
-- trollop
-code_metrics:
-- simplecov
-- rails_best_practices
-- rcov
-- rubocop
-- cane
-configuration_management:
-- dotenv
-- settingslogic
-- figaro
-- dotenv_rails
-- configuration
-continuous_integration:
-- travis
-- cruisecontrol_rb
-- cijoe
-- jenkins_rb
-- integrity
-couchdb_clients:
-- couchrest
-- couchrest_model
-- couch_potato
-- couchrest_rails
-- simplystored
-css_with_ruby:
-- sass
-- compass
-- sass_rails
-- bootstrap_sass
-- twitter_bootstrap_rails
-cucumber_steps:
-- email_spec
-- pickle
-- aruba
-- cucumber_factory
-- mundopepino
-daemonizing:
-- daemons
-- daemon_kit
-- daemon_generator
-- dante
-- robustthread
-data_migration:
-- taps_and_mysql2psql
-deployment_automation:
-- capistrano
-- heroku
-- mina
-- moonshine
-- git_deploy
-distributed_testing:
-- spork
-- zeus
-- parallel_tests
-- spring
-- hydra
-e_mail_preview:
-- letter_opener
-- mailcatcher
-- mail_view
-- rails_email_preview
-- sanitize_email
-e_mail_sending:
-- action_mailer
-- mail
-- pony
-- tmail
-- capistrano_mailer
+split:
+- testing
+- a-b-testing
+vanity:
+- testing
+- a-b-testing
+bandit:
+- testing
+- a-b-testing
+absurdity:
+- testing
+- a-b-testing
+fluidfeatures-rails:
+- testing
+- a-b-testing
+validation_issues:
+- testing
+- a-b-testing
+abingo_port:
+- testing
+- a-b-testing
+fluidfeatures:
+- testing
+- a-b-testing
+cucumber:
+- testing
+- acceptance-test-frameworks
+turnip:
+- testing
+- acceptance-test-frameworks
+steak:
+- testing
+- acceptance-test-frameworks
+spinach:
+- testing
+- acceptance-test-frameworks
+coulda:
+- testing
+- acceptance-test-frameworks
+stella:
+- testing
+- acceptance-test-frameworks
+unencumbered:
+- testing
+- acceptance-test-frameworks
+bewildr:
+- testing
+- acceptance-test-frameworks
+stories:
+- testing
+- acceptance-test-frameworks
+filet:
+- testing
+- acceptance-test-frameworks
+saki:
+- testing
+- acceptance-test-frameworks
+mountain_berry_fields:
+- testing
+- acceptance-test-frameworks
+activerecord-sqlserver-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-jdbc-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-jdbcmysql-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-jdbcpostgresql-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-jdbcderby-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-oracle_enhanced-adapter:
+- active-record-plugins
+- active-record-db-adapters
+activerecord-nulldb-adapter:
+- active-record-plugins
+- active-record-db-adapters
+oracle-enhanced-enhanced:
+- active-record-plugins
+- active-record-db-adapters
+default_value_for:
+- active-record-plugins
+- active-record-default-values
+active_record_defaults:
+- active-record-plugins
+- active-record-default-values
+enumerize:
+- active-record-plugins
+- active-record-enumerations
+simple_enum:
+- active-record-plugins
+- active-record-enumerations
+enumerated_attribute:
+- active-record-plugins
+- active-record-enumerations
+classy_enum:
+- active-record-plugins
+- active-record-enumerations
+enumerate_it:
+- active-record-plugins
+- active-record-enumerations
+active_enum:
+- active-record-plugins
+- active-record-enumerations
+enum_column3:
+- active-record-plugins
+- active-record-enumerations
+power_enum:
+- active-record-plugins
+- active-record-enumerations
+enumerate_by:
+- active-record-plugins
+- active-record-enumerations
+enumify:
+- active-record-plugins
+- active-record-enumerations
+attribute_choices:
+- active-record-plugins
+- active-record-enumerations
+const_enum:
+- active-record-plugins
+- active-record-enumerations
+easy_attributes:
+- active-record-plugins
+- active-record-enumerations
+foreigner:
+- active-record-plugins
+- active-record-index-assistants
+schema_plus:
+- active-record-plugins
+- active-record-index-assistants
+lol_dba:
+- active-record-plugins
+- active-record-index-assistants
+immigrant:
+- active-record-plugins
+- active-record-index-assistants
+redhillonrails_core:
+- active-record-plugins
+- active-record-index-assistants
+automatic_foreign_key:
+- active-record-plugins
+- active-record-index-assistants
+ransack:
+- active-record-plugins
+- active-record-named-scopes
+searchlogic:
+- active-record-plugins
+- active-record-named-scopes
+pacecar:
+- active-record-plugins
+- active-record-named-scopes
+filterrific:
+- active-record-plugins
+- active-record-named-scopes
+randumb:
+- active-record-plugins
+- active-record-named-scopes
+utility_scopes:
+- active-record-plugins
+- active-record-named-scopes
+sexy_scopes:
+- active-record-plugins
+- active-record-named-scopes
+scope-builder:
+- active-record-plugins
+- active-record-named-scopes
+trixy_scopes:
+- active-record-plugins
+- active-record-named-scopes
+random_record:
+- active-record-plugins
+- active-record-named-scopes
+awesome_nested_set:
+- active-record-plugins
+- active-record-nesting
+ancestry:
+- active-record-plugins
+- active-record-nesting
+acts_as_tree:
+- active-record-plugins
+- active-record-nesting
+closure_tree:
+- active-record-plugins
+- active-record-nesting
+acts_as_ordered_tree:
+- active-record-plugins
+- active-record-nesting
+acts_as_dag:
+- active-record-plugins
+- active-record-nesting
+arboreal:
+- active-record-plugins
+- active-record-nesting
+ar-octopus:
+- active-record-plugins
+- active-record-sharding
+db-charmer:
+- active-record-plugins
+- active-record-sharding
+multi_db:
+- active-record-plugins
+- active-record-sharding
+data_fabric:
+- active-record-plugins
+- active-record-sharding
+activerecord-turntable:
+- active-record-plugins
+- active-record-sharding
+paranoia:
+- active-record-plugins
+- active-record-soft-delete
+rails3_acts_as_paranoid:
+- active-record-plugins
+- active-record-soft-delete
+acts_as_paranoid:
+- active-record-plugins
+- active-record-soft-delete
+acts_as_archive:
+- active-record-plugins
+- active-record-soft-delete
+permanent_records:
+- active-record-plugins
+- active-record-soft-delete
+destroyed_at:
+- active-record-plugins
+- active-record-soft-delete
+immortal:
+- active-record-plugins
+- active-record-soft-delete
+soft_deletion:
+- active-record-plugins
+- active-record-soft-delete
+paranoid2:
+- active-record-plugins
+- active-record-soft-delete
+paranoid:
+- active-record-plugins
+- active-record-soft-delete
+acts_as_list:
+- active-record-plugins
+- active-record-sortables
+ranked-model:
+- active-record-plugins
+- active-record-sortables
+sortable:
+- active-record-plugins
+- active-record-sortables
+resort:
+- active-record-plugins
+- active-record-sortables
+acts_as_restful_list:
+- active-record-plugins
+- active-record-sortables
+userstamp:
+- active-record-plugins
+- active-record-user-stamping
+acts_as_audited:
+- active-record-plugins
+- active-record-user-stamping
+ar-audit-tracer:
+- active-record-plugins
+- active-record-user-stamping
+attribute_normalizer:
+- active-record-plugins
+- active-record-value-cleanup
+strip_attributes:
+- active-record-plugins
+- active-record-value-cleanup
+symbolize:
+- active-record-plugins
+- active-record-value-cleanup
+auto_strip_attributes:
+- active-record-plugins
+- active-record-value-cleanup
+scrubby:
+- active-record-plugins
+- active-record-value-cleanup
+sanitized_attributes:
+- active-record-plugins
+- active-record-value-cleanup
+attr_symbol:
+- active-record-plugins
+- active-record-value-cleanup
+vacuum_cleaner:
+- active-record-plugins
+- active-record-value-cleanup
+normatron:
+- active-record-plugins
+- active-record-value-cleanup
+strip_control_chars:
+- active-record-plugins
+- active-record-value-cleanup
+clean_room:
+- active-record-plugins
+- active-record-value-cleanup
+paper_trail:
+- active-record-plugins
+- active-record-versioning
+audited:
+- active-record-plugins
+- active-record-versioning
+vestal_versions:
+- active-record-plugins
+- active-record-versioning
+acts_as_versioned:
+- active-record-plugins
+- active-record-versioning
+espinita:
+- active-record-plugins
+- active-record-versioning
+simple_audit:
+- active-record-plugins
+- active-record-versioning
+acts_as_revisable:
+- active-record-plugins
+- active-record-versioning
+version_fu:
+- active-record-plugins
+- active-record-versioning
+auditable:
+- active-record-plugins
+- active-record-versioning
+acts_as_revisionable:
+- active-record-plugins
+- active-record-versioning
+has_draft:
+- active-record-plugins
+- active-record-versioning
+acts-as-approvable:
+- active-record-plugins
+- active-record-versioning
+simply_versioned:
+- active-record-plugins
+- active-record-versioning
+shadow:
+- active-record-plugins
+- active-record-versioning
+changeling:
+- active-record-plugins
+- active-record-versioning
+record_history:
+- active-record-plugins
+- active-record-versioning
+historical:
+- active-record-plugins
+- active-record-versioning
+dynamoid:
+- data-persistence
+- amazon-dynamodb
+fake_dynamo:
+- data-persistence
+- amazon-dynamodb
+active_dynamodb:
+- data-persistence
+- amazon-dynamodb
+dynoid:
+- data-persistence
+- amazon-dynamodb
+aws-sdk:
+- provision-deploy-host
+- amazon-web-services
+fog:
+- provision-deploy-host
+- amazon-web-services
+aws-s3:
+- provision-deploy-host
+- amazon-web-services
+right_aws:
+- provision-deploy-host
+- amazon-web-services
+s3:
+- provision-deploy-host
+- amazon-web-services
+amazon-ec2:
+- provision-deploy-host
+- amazon-web-services
+aws-ses:
+- provision-deploy-host
+- amazon-web-services
+aws:
+- provision-deploy-host
+- amazon-web-services
+s3_direct_upload:
+- provision-deploy-host
+- amazon-web-services
+vfs:
+- provision-deploy-host
+- amazon-web-services
+ec2-blackout:
+- provision-deploy-host
+- amazon-web-services
+amazon-ses:
+- provision-deploy-host
+- amazon-web-services
+s3utils:
+- provision-deploy-host
+- amazon-web-services
+jbuilder:
+- web-apps-services-interaction
+- api-builders
+grape:
+- web-apps-services-interaction
+- api-builders
+active_model_serializers:
+- web-apps-services-interaction
+- api-builders
+rabl:
+- web-apps-services-interaction
+- api-builders
+roar:
+- web-apps-services-interaction
+- api-builders
+rocket_pants:
+- web-apps-services-interaction
+- api-builders
+versionist:
+- web-apps-services-interaction
+- api-builders
+versioncake:
+- web-apps-services-interaction
+- api-builders
+acts_as_api:
+- web-apps-services-interaction
+- api-builders
+roy:
+- web-apps-services-interaction
+- api-builders
+api-versions:
+- web-apps-services-interaction
+- api-builders
+bldr:
+- web-apps-services-interaction
+- api-builders
+apiary:
+- web-apps-services-interaction
+- api-builders
+windsor:
+- web-apps-services-interaction
+- api-builders
+xmlrpc-rack_server:
+- web-apps-services-interaction
+- api-builders
+twitter:
+- web-apps-services-interaction
+- api-clients
+koala:
+- web-apps-services-interaction
+- api-clients
+octokit:
+- web-apps-services-interaction
+- api-clients
+fb_graph:
+- web-apps-services-interaction
+- api-clients
+github_api:
+- web-apps-services-interaction
+- api-clients
+linkedin:
+- web-apps-services-interaction
+- api-clients
+gibbon:
+- web-apps-services-interaction
+- api-clients
+youtube_it:
+- web-apps-services-interaction
+- api-clients
+jenkins_api_client:
+- web-apps-services-interaction
+- api-clients
+bitly:
+- web-apps-services-interaction
+- api-clients
+tinder:
+- web-apps-services-interaction
+- api-clients
+twitter-stream:
+- web-apps-services-interaction
+- api-clients
+tweetstream:
+- web-apps-services-interaction
+- api-clients
+twitter_oauth:
+- web-apps-services-interaction
+- api-clients
+amazon-ecs:
+- web-apps-services-interaction
+- api-clients
+flickraw:
+- web-apps-services-interaction
+- api-clients
+foursquare2:
+- web-apps-services-interaction
+- api-clients
+hominid:
+- web-apps-services-interaction
+- api-clients
+video_info:
+- web-apps-services-interaction
+- api-clients
+vimeo:
+- web-apps-services-interaction
+- api-clients
+mixpanel_client:
+- web-apps-services-interaction
+- api-clients
+google_calendar:
+- web-apps-services-interaction
+- api-clients
+contacts:
+- web-apps-services-interaction
+- api-clients
+vacuum:
+- web-apps-services-interaction
+- api-clients
+fedex:
+- web-apps-services-interaction
+- api-clients
+ebay:
+- web-apps-services-interaction
+- api-clients
+createsend:
+- web-apps-services-interaction
+- api-clients
+clickatell:
+- web-apps-services-interaction
+- api-clients
+octopi:
+- web-apps-services-interaction
+- api-clients
+flickr_fu:
+- web-apps-services-interaction
+- api-clients
+routo:
+- web-apps-services-interaction
+- api-clients
+grackle:
+- web-apps-services-interaction
+- api-clients
+asin:
+- web-apps-services-interaction
+- api-clients
+quimby:
+- web-apps-services-interaction
+- api-clients
+freshbooks.rb:
+- web-apps-services-interaction
+- api-clients
+google-translate:
+- web-apps-services-interaction
+- api-clients
+lighthouse-api:
+- web-apps-services-interaction
+- api-clients
+vk-ruby:
+- web-apps-services-interaction
+- api-clients
+rebay:
+- web-apps-services-interaction
+- api-clients
+tumblr:
+- web-apps-services-interaction
+- api-clients
+twitter4r:
+- web-apps-services-interaction
+- api-clients
+hudson-remote-api:
+- web-apps-services-interaction
+- api-clients
+ruby-freshbooks:
+- web-apps-services-interaction
+- api-clients
+amazon-product-advertising-api:
+- web-apps-services-interaction
+- api-clients
+www-delicious:
+- web-apps-services-interaction
+- api-clients
+imdb:
+- web-apps-services-interaction
+- api-clients
+foursquare-api:
+- web-apps-services-interaction
+- api-clients
+twitterland:
+- web-apps-services-interaction
+- api-clients
+diffbot:
+- web-apps-services-interaction
+- api-clients
+webfinger:
+- web-apps-services-interaction
+- api-clients
+ruby-github:
+- web-apps-services-interaction
+- api-clients
+musicbrainz:
+- web-apps-services-interaction
+- api-clients
+fql:
+- web-apps-services-interaction
+- api-clients
+gnip-rule:
+- web-apps-services-interaction
+- api-clients
+groupme:
+- web-apps-services-interaction
+- api-clients
+runkeeper:
+- web-apps-services-interaction
+- api-clients
+disqus_api:
+- web-apps-services-interaction
+- api-clients
+ruby-dmm:
+- web-apps-services-interaction
+- api-clients
+ruby-bitly:
+- web-apps-services-interaction
+- api-clients
+zeus-api:
+- web-apps-services-interaction
+- api-clients
+google_safe_browsing:
+- web-apps-services-interaction
+- api-clients
+ns_connector:
+- web-apps-services-interaction
+- api-clients
+tuiter:
+- web-apps-services-interaction
+- api-clients
+semrush:
+- web-apps-services-interaction
+- api-clients
+tedkulp-freshbooks.rb:
+- web-apps-services-interaction
+- api-clients
+food_info:
+- web-apps-services-interaction
+- api-clients
+spotlite:
+- web-apps-services-interaction
+- api-clients
+feedly_api:
+- web-apps-services-interaction
+- api-clients
+colombo:
+- web-apps-services-interaction
+- api-clients
+rockstar:
+- web-apps-services-interaction
+- api-clients
+analytics-rb:
+- web-apps-services-interaction
+- api-clients
+trans-api:
+- web-apps-services-interaction
+- api-clients
+rjiffy:
+- web-apps-services-interaction
+- api-clients
+arena:
+- web-apps-services-interaction
+- api-clients
+smslist:
+- web-apps-services-interaction
+- api-clients
+freshbooks:
+- web-apps-services-interaction
+- api-clients
+omniauth-cloudsdale:
+- web-apps-services-interaction
+- api-clients
+freshbooks2:
+- web-apps-services-interaction
+- api-clients
+right_flexiscale:
+- web-apps-services-interaction
+- api-clients
+quakelive_api:
+- web-apps-services-interaction
+- api-clients
+tickspot-rb:
+- web-apps-services-interaction
+- api-clients
+eztz:
+- web-apps-services-interaction
+- api-clients
+runkeeper-activites:
+- web-apps-services-interaction
+- api-clients
+newrelic_rpm:
+- maintenance-monitoring
+- app-instrumentation
+dashing:
+- maintenance-monitoring
+- app-instrumentation
+better_errors:
+- maintenance-monitoring
+- app-instrumentation
+bullet:
+- maintenance-monitoring
+- app-instrumentation
+fnordmetric:
+- maintenance-monitoring
+- app-instrumentation
+meta_request:
+- maintenance-monitoring
+- app-instrumentation
+peek:
+- maintenance-monitoring
+- app-instrumentation
+rails-footnotes:
+- maintenance-monitoring
+- app-instrumentation
+dashing-rails:
+- maintenance-monitoring
+- app-instrumentation
+rack-bug:
+- maintenance-monitoring
+- app-instrumentation
+metriks:
+- maintenance-monitoring
+- app-instrumentation
+rails_metrics:
+- maintenance-monitoring
+- app-instrumentation
+rack-insight:
+- maintenance-monitoring
+- app-instrumentation
+rackamole:
+- maintenance-monitoring
+- app-instrumentation
+harness:
+- maintenance-monitoring
+- app-instrumentation
+fozzie:
+- maintenance-monitoring
+- app-instrumentation
+system-metrics:
+- maintenance-monitoring
+- app-instrumentation
+slowgrowl:
+- maintenance-monitoring
+- app-instrumentation
+rails_view_annotator:
+- maintenance-monitoring
+- app-instrumentation
+query_trace:
+- maintenance-monitoring
+- app-instrumentation
+fozzie_rails:
+- maintenance-monitoring
+- app-instrumentation
+rails_instrument:
+- maintenance-monitoring
+- app-instrumentation
+metriksd:
+- maintenance-monitoring
+- app-instrumentation
+how_slow:
+- maintenance-monitoring
+- app-instrumentation
+asset_sync:
+- provision-deploy-host
+- asset-distribution
+jammit-s3:
+- provision-deploy-host
+- asset-distribution
+cloudfront_asset_host:
+- provision-deploy-host
+- asset-distribution
+asset_hash:
+- provision-deploy-host
+- asset-distribution
+jammit:
+- provision-deploy-host
+- asset-management
+asset_packager:
+- provision-deploy-host
+- asset-management
+css_splitter:
+- provision-deploy-host
+- asset-management
+half-pipe:
+- provision-deploy-host
+- asset-management
+asset_hat:
+- provision-deploy-host
+- asset-management
+smurf:
+- provision-deploy-host
+- asset-management
+smart_asset:
+- provision-deploy-host
+- asset-management
+active_assets:
+- provision-deploy-host
+- asset-management
+sprocketize:
+- provision-deploy-host
+- asset-management
+raptest:
+- provision-deploy-host
+- asset-management
+resque_mailer:
+- communication
+- asynchronous-e-mail
+mailhopper:
+- communication
+- asynchronous-e-mail
+resque_mail_queue:
+- communication
+- asynchronous-e-mail
+popthis:
+- communication
+- asynchronous-e-mail
+feedzirra:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+simple-rss:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+ratom:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+feed-normalizer:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rfeedparser:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+feed_parser:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+feed_me:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+feedtosis:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+ruby-feedparser:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+opds:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+feedme:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+syndication:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rss-atom-feed_history:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rss-motor:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rss-dcterms:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rss-nokogiri:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+rss-opds:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+opds_monster:
+- web-apps-services-interaction
+- atom-rss-feed-parsing
+resque:
+- background-processing
+- background-jobs
+sidekiq:
+- background-processing
+- background-jobs
+delayed_job:
+- background-processing
+- background-jobs
+bunny:
+- background-processing
+- background-jobs
+concurrent-ruby:
+- background-processing
+- background-jobs
+delayed_job_active_record:
+- background-processing
+- background-jobs
+sucker_punch:
+- background-processing
+- background-jobs
+amqp:
+- background-processing
+- background-jobs
+girl_friday:
+- background-processing
+- background-jobs
+queue_classic:
+- background-processing
+- background-jobs
+cloud-crowd:
+- background-processing
+- background-jobs
+workling:
+- background-processing
+- background-jobs
+starling:
+- background-processing
+- background-jobs
+qu:
+- background-processing
+- background-jobs
+backburner:
+- background-processing
+- background-jobs
+navvy:
+- background-processing
+- background-jobs
+stalker:
+- background-processing
+- background-jobs
+beetle:
+- background-processing
+- background-jobs
+backgrounded:
+- background-processing
+- background-jobs
+frenzy_bunnies:
+- background-processing
+- background-jobs
+lazy_caching:
+- background-processing
+- background-jobs
+bj:
+- background-processing
+- background-jobs
+rabbit_jobs:
+- background-processing
+- background-jobs
+quebert:
+- background-processing
+- background-jobs
+rock-queue:
+- background-processing
+- background-jobs
+resque-mongo:
+- background-processing
+- background-jobs
+runner:
+- background-processing
+- background-jobs
+later:
+- background-processing
+- background-jobs
+acts_as_executor:
+- background-processing
+- background-jobs
+job_reactor:
+- background-processing
+- background-jobs
+backup:
+- provision-deploy-host
+- backups
+astrails-safe:
+- provision-deploy-host
+- backups
+db2fog:
+- provision-deploy-host
+- backups
+db2s3:
+- provision-deploy-host
+- backups
+dumper:
+- provision-deploy-host
+- backups
+dbmanager:
+- provision-deploy-host
+- backups
+backupit:
+- provision-deploy-host
+- backups
+porter:
+- provision-deploy-host
+- backups
+sweety_backy:
+- provision-deploy-host
+- backups
+dotbox:
+- provision-deploy-host
+- backups
+method_profiler:
+- developer-tools
+- benchmarking
+bench_press:
+- developer-tools
+- benchmarking
+rbench:
+- developer-tools
+- benchmarking
+better-benchmark:
+- developer-tools
+- benchmarking
+dev_panel:
+- developer-tools
+- benchmarking
+tach:
+- developer-tools
+- benchmarking
+benchmarkable:
+- developer-tools
+- benchmarking
+typo:
+- content-management-blogging
+- blog-engines
+toto:
+- content-management-blogging
+- blog-engines
+blogit:
+- content-management-blogging
+- blog-engines
+serious:
+- content-management-blogging
+- blog-engines
+governor:
+- content-management-blogging
+- blog-engines
+refinerycms-blog:
+- content-management-blogging
+- blog-engines
+breadcrumbs_on_rails:
+- html-markup
+- breadcrumb-builders
+gretel:
+- html-markup
+- breadcrumb-builders
+crummy:
+- html-markup
+- breadcrumb-builders
+breadcrumbs:
+- html-markup
+- breadcrumb-builders
+ariane:
+- html-markup
+- breadcrumb-builders
+breadcrumble:
+- html-markup
+- breadcrumb-builders
+crumble:
+- html-markup
+- breadcrumb-builders
+capybara:
+- testing
+- browser-testing
+selenium-webdriver:
+- testing
+- browser-testing
+poltergeist:
+- testing
+- browser-testing
+capybara-webkit:
+- testing
+- browser-testing
+webrat:
+- testing
+- browser-testing
+headless:
+- testing
+- browser-testing
+watir-webdriver:
+- testing
+- browser-testing
+site_prism:
+- testing
+- browser-testing
+culerity:
+- testing
+- browser-testing
+watir:
+- testing
+- browser-testing
+celerity:
+- testing
+- browser-testing
+selenium-client:
+- testing
+- browser-testing
+akephalos:
+- testing
+- browser-testing
+polonium:
+- testing
+- browser-testing
+tooth:
+- testing
+- browser-testing
+rubygems-bundler:
+- package-dependency-management
+- bundler-tools
+appraisal:
+- package-dependency-management
+- bundler-tools
+guard-bundler:
+- package-dependency-management
+- bundler-tools
+noexec:
+- package-dependency-management
+- bundler-tools
+spitball:
+- package-dependency-management
+- bundler-tools
+bundler-auto-update:
+- package-dependency-management
+- bundler-tools
+icalendar:
+- time-space
+- calendars
+event_calendar:
+- time-space
+- calendars
+ri_cal:
+- time-space
+- calendars
+calendar_helper:
+- time-space
+- calendars
+later_dude:
+- time-space
+- calendars
+event_cal:
+- time-space
+- calendars
+calendrier:
+- time-space
+- calendars
+selene:
+- time-space
+- calendars
+highline:
+- developer-tools
+- cli-option-parsers
+slop:
+- developer-tools
+- cli-option-parsers
+trollop:
+- developer-tools
+- cli-option-parsers
+cocaine:
+- developer-tools
+- cli-option-parsers
+mixlib-cli:
+- developer-tools
+- cli-option-parsers
+gli:
+- developer-tools
+- cli-option-parsers
+commander:
+- developer-tools
+- cli-option-parsers
+clamp:
+- developer-tools
+- cli-option-parsers
+choice:
+- developer-tools
+- cli-option-parsers
+methadone:
+- developer-tools
+- cli-option-parsers
+cri:
+- developer-tools
+- cli-option-parsers
+docopt:
+- developer-tools
+- cli-option-parsers
+cmdparse:
+- developer-tools
+- cli-option-parsers
+clap:
+- developer-tools
+- cli-option-parsers
+acclaim:
+- developer-tools
+- cli-option-parsers
+optitron:
+- developer-tools
+- cli-option-parsers
+getopt:
+- developer-tools
+- cli-option-parsers
+micro-optparse:
+- developer-tools
+- cli-option-parsers
+quickl:
+- developer-tools
+- cli-option-parsers
+config_parser:
+- developer-tools
+- cli-option-parsers
+OptionParser:
+- developer-tools
+- cli-option-parsers
+getoptions:
+- developer-tools
+- cli-option-parsers
+arg0:
+- developer-tools
+- cli-option-parsers
+ruby-progressbar:
+- developer-tools
+- cli-progress-bars
+fuubar:
+- developer-tools
+- cli-progress-bars
+progress_bar:
+- developer-tools
+- cli-progress-bars
+progressbar:
+- developer-tools
+- cli-progress-bars
+progress:
+- developer-tools
+- cli-progress-bars
+powerbar:
+- developer-tools
+- cli-progress-bars
+spinning_cursor:
+- developer-tools
+- cli-progress-bars
+multi_progress_bar:
+- developer-tools
+- cli-progress-bars
+shell-spinner:
+- developer-tools
+- cli-progress-bars
+progress-meter:
+- developer-tools
+- cli-progress-bars
+simplecov:
+- code-quality
+- code-metrics
+rubocop:
+- code-quality
+- code-metrics
+rails_best_practices:
+- code-quality
+- code-metrics
+reek:
+- code-quality
+- code-metrics
+coveralls:
+- code-quality
+- code-metrics
+cane:
+- code-quality
+- code-metrics
+rcov:
+- code-quality
+- code-metrics
+flog:
+- code-quality
+- code-metrics
+rubycritic:
+- code-quality
+- code-metrics
+foodcritic:
+- code-quality
+- code-metrics
+flay:
+- code-quality
+- code-metrics
+metric_fu:
+- code-quality
+- code-metrics
+roodi:
+- code-quality
+- code-metrics
+sandi_meter:
+- code-quality
+- code-metrics
+guard-rubocop:
+- code-quality
+- code-metrics
+pelusa:
+- code-quality
+- code-metrics
+cover_me:
+- code-quality
+- code-metrics
+tailor:
+- code-quality
+- code-metrics
+jslint_on_rails:
+- code-quality
+- code-metrics
+Saikuro:
+- code-quality
+- code-metrics
+coco:
+- code-quality
+- code-metrics
+rcov_plugin:
+- code-quality
+- code-metrics
+code_statistics:
+- code-quality
+- code-metrics
+outlaw:
+- code-quality
+- code-metrics
+code_stats2:
+- code-quality
+- code-metrics
+metric_abc:
+- code-quality
+- code-metrics
+eventmachine:
+- developer-tools
+- concurrent-processing
+celluloid:
+- developer-tools
+- concurrent-processing
+cool.io:
+- developer-tools
+- concurrent-processing
+workers:
+- developer-tools
+- concurrent-processing
+dataflow:
+- developer-tools
+- concurrent-processing
+tribe:
+- developer-tools
+- concurrent-processing
+wires:
+- developer-tools
+- concurrent-processing
+dotenv:
+- developer-tools
+- configuration-management
+dotenv-rails:
+- developer-tools
+- configuration-management
+figaro:
+- developer-tools
+- configuration-management
+settingslogic:
+- developer-tools
+- configuration-management
+rails_config:
+- developer-tools
+- configuration-management
+ledermann-rails-settings:
+- developer-tools
+- configuration-management
+configatron:
+- developer-tools
+- configuration-management
+configuration:
+- developer-tools
+- configuration-management
+configliere:
+- developer-tools
+- configuration-management
+simpleconfig:
+- developer-tools
+- configuration-management
+rails-settings:
+- developer-tools
+- configuration-management
+global:
+- developer-tools
+- configuration-management
+confstruct:
+- developer-tools
+- configuration-management
+configurable_engine:
+- developer-tools
+- configuration-management
+rconfig:
+- developer-tools
+- configuration-management
+app:
+- developer-tools
+- configuration-management
+store_configurable:
+- developer-tools
+- configuration-management
+yettings:
+- developer-tools
+- configuration-management
+app_config:
+- developer-tools
+- configuration-management
+configus:
+- developer-tools
+- configuration-management
+configtoolkit:
+- developer-tools
+- configuration-management
+optimism:
+- developer-tools
+- configuration-management
+application_configuration:
+- developer-tools
+- configuration-management
+gaston:
+- developer-tools
+- configuration-management
+micon:
+- developer-tools
+- configuration-management
+configulations:
+- developer-tools
+- configuration-management
+configurability:
+- developer-tools
+- configuration-management
+dynamic_configuration:
+- developer-tools
+- configuration-management
+constantinople:
+- developer-tools
+- configuration-management
+amberbit-config:
+- developer-tools
+- configuration-management
+acts_as_configurable:
+- developer-tools
+- configuration-management
+configloader:
+- developer-tools
+- configuration-management
+config_fun:
+- developer-tools
+- configuration-management
+config_newton:
+- developer-tools
+- configuration-management
+config-me:
+- developer-tools
+- configuration-management
+user_config:
+- developer-tools
+- configuration-management
+squire:
+- developer-tools
+- configuration-management
+dotconfig:
+- developer-tools
+- configuration-management
+informante:
+- developer-tools
+- configuration-management
+refinerycms:
+- content-management-blogging
+- content-management
+browsercms:
+- content-management-blogging
+- content-management
+locomotive_cms:
+- content-management-blogging
+- content-management
+comfortable_mexican_sofa:
+- content-management-blogging
+- content-management
+radiant:
+- content-management-blogging
+- content-management
+nesta:
+- content-management-blogging
+- content-management
+alchemy_cms:
+- content-management-blogging
+- content-management
+zena:
+- content-management-blogging
+- content-management
+static:
+- content-management-blogging
+- content-management
+ubiquo:
+- content-management-blogging
+- content-management
+refinerycms-menus:
+- content-management-blogging
+- content-management
+regulate:
+- content-management-blogging
+- content-management
+casein:
+- content-management-blogging
+- content-management
+copy:
+- content-management-blogging
+- content-management
+lolita:
+- content-management-blogging
+- content-management
+fullstack-cms:
+- content-management-blogging
+- content-management
+station:
+- content-management-blogging
+- content-management
+Opal:
+- content-management-blogging
+- content-management
+manageable_content:
+- content-management-blogging
+- content-management
+zen:
+- content-management-blogging
+- content-management
+puffer_pages:
+- content-management-blogging
+- content-management
+snippr:
+- content-management-blogging
+- content-management
+cijoe:
+- provision-deploy-host
+- continuous-integration
+integrity:
+- provision-deploy-host
+- continuous-integration
+jenkins:
+- provision-deploy-host
+- continuous-integration
+tddium:
+- provision-deploy-host
+- continuous-integration
+goldberg:
+- provision-deploy-host
+- continuous-integration
+cap_gun:
+- provision-deploy-host
+- continuous-integration
+cerberus:
+- provision-deploy-host
+- continuous-integration
+update_status:
+- provision-deploy-host
+- continuous-integration
+ci-go-nfo:
+- provision-deploy-host
+- continuous-integration
+guard:
+- testing
+- continuous-testing
+guard-rspec:
+- testing
+- continuous-testing
+ZenTest:
+- testing
+- continuous-testing
+watchr:
+- testing
+- continuous-testing
+rack-livereload:
+- testing
+- continuous-testing
+autotest:
+- testing
+- continuous-testing
+kicker:
+- testing
+- continuous-testing
+autotest-growl:
+- testing
+- continuous-testing
+autotest-fsevent:
+- testing
+- continuous-testing
+tork:
+- testing
+- continuous-testing
+tconsole:
+- testing
+- continuous-testing
+infinity_test:
+- testing
+- continuous-testing
+couchrest:
+- data-persistence
+- couchdb-clients
+couchrest_model:
+- data-persistence
+- couchdb-clients
+couch_potato:
+- data-persistence
+- couchdb-clients
+simply_stored:
+- data-persistence
+- couchdb-clients
+couch_foo:
+- data-persistence
+- couchdb-clients
+relaxdb:
+- data-persistence
+- couchdb-clients
+quilt:
+- data-persistence
+- couchdb-clients
+nutshell-crm:
+- communication
+- crm-apps
+alchemy_crm:
+- communication
+- crm-apps
+sass:
+- css
+- css-with-ruby
+sass-rails:
+- css
+- css-with-ruby
+bootstrap-sass:
+- css
+- css-with-ruby
+compass:
+- css
+- css-with-ruby
+bourbon:
+- css
+- css-with-ruby
+twitter-bootstrap-rails:
+- css
+- css-with-ruby
+less:
+- css
+- css-with-ruby
+deadweight:
+- css
+- css-with-ruby
+anjlab-bootstrap-rails:
+- css
+- css-with-ruby
+twitter-bootswatch-rails:
+- css
+- css-with-ruby
+stylus:
+- css
+- css-with-ruby
+smurfville:
+- css
+- css-with-ruby
+twitter-bootswatch-rails-helpers:
+- css
+- css-with-ruby
+rainpress:
+- css
+- css-with-ruby
+twitter-bootswatch-rails-fontawesome:
+- css
+- css-with-ruby
+stylish:
+- css
+- css-with-ruby
+patterns:
+- css
+- css-with-ruby
+fastercsv:
+- data-persistence
+- csv-parsers
+smarter_csv:
+- data-persistence
+- csv-parsers
+postgres-copy:
+- data-persistence
+- csv-parsers
+ccsv:
+- data-persistence
+- csv-parsers
+csv_pirate:
+- data-persistence
+- csv-parsers
+conformist:
+- data-persistence
+- csv-parsers
+fasterer-csv:
+- data-persistence
+- csv-parsers
+tabular:
+- data-persistence
+- csv-parsers
+simple_importer:
+- data-persistence
+- csv-parsers
+csv_importer:
+- data-persistence
+- csv-parsers
+rcsvreader:
+- data-persistence
+- csv-parsers
+hasherize_csv:
+- data-persistence
+- csv-parsers
+email_spec:
+- testing
+- cucumber-steps
+aruba:
+- testing
+- cucumber-steps
+pickle:
+- testing
+- cucumber-steps
+cucumber_factory:
+- testing
+- cucumber-steps
+macros4cuke:
+- testing
+- cucumber-steps
+mundo-pepino:
+- testing
+- cucumber-steps
+cucumber-farmer:
+- testing
+- cucumber-steps
+viewcumber:
+- testing
+- cucumber-tools
+cucumber-nagios:
+- testing
+- cucumber-tools
+yard-cucumber:
+- testing
+- cucumber-tools
+cuke_sniffer:
+- testing
+- cucumber-tools
+cucumber-sinatra:
+- testing
+- cucumber-tools
+cuporter:
+- testing
+- cucumber-tools
+stepdown:
+- testing
+- cucumber-tools
+cucumber-screenshot:
+- testing
+- cucumber-tools
+cucover:
+- testing
+- cucumber-tools
+cucumberator:
+- testing
+- cucumber-tools
+cukesparse:
+- testing
+- cucumber-tools
+cucumber-in-the-yard:
+- testing
+- cucumber-tools
+cucumber-pride:
+- testing
+- cucumber-tools
+daemons:
+- background-processing
+- daemonizing
+daemon-kit:
+- background-processing
+- daemonizing
+dante:
+- background-processing
+- daemonizing
+daemons-rails:
+- background-processing
+- daemonizing
+fallen:
+- background-processing
+- daemonizing
+robustthread:
+- background-processing
+- daemonizing
+daemonizer:
+- background-processing
+- daemonizing
+simple-daemon:
+- background-processing
+- daemonizing
+titan:
+- background-processing
+- daemonizing
+looper:
+- background-processing
+- daemonizing
+foreverb:
+- background-processing
+- daemonizing
+foreman:
+- background-processing
+- daemon-management
+daemon_controller:
+- background-processing
+- daemon-management
+lunchy:
+- background-processing
+- daemon-management
+daemon-spawn:
+- background-processing
+- daemon-management
+taps:
+- data-persistence
+- data-migration
+active_importer:
+- data-persistence
+- data-migration
+mysql2psql:
+- data-persistence
+- data-migration
+bundler:
+- package-dependency-management
+- dependency-management
+berkshelf:
+- package-dependency-management
+- dependency-management
+librarian:
+- package-dependency-management
+- dependency-management
+braid:
+- package-dependency-management
+- dependency-management
+isolate:
+- package-dependency-management
+- dependency-management
+brewdler:
+- package-dependency-management
+- dependency-management
+giternal:
+- package-dependency-management
+- dependency-management
+piston:
+- package-dependency-management
+- dependency-management
+gemrat:
+- package-dependency-management
+- dependency-management
+motion-bundler:
+- package-dependency-management
+- dependency-management
+checkzilla:
+- package-dependency-management
+- dependency-management
+externals:
+- package-dependency-management
+- dependency-management
+bling:
+- package-dependency-management
+- dependency-management
+capistrano:
+- provision-deploy-host
+- deployment-automation
+heroku:
+- provision-deploy-host
+- deployment-automation
+mina:
+- provision-deploy-host
+- deployment-automation
+git-deploy:
+- provision-deploy-host
+- deployment-automation
+heroku_san:
+- provision-deploy-host
+- deployment-automation
+dandelion:
+- provision-deploy-host
+- deployment-automation
+vlad:
+- provision-deploy-host
+- deployment-automation
+whiskey_disk:
+- provision-deploy-host
+- deployment-automation
+deprec:
+- provision-deploy-host
+- deployment-automation
+inploy:
+- provision-deploy-host
+- deployment-automation
+heroku-rails:
+- provision-deploy-host
+- deployment-automation
+rubber:
+- provision-deploy-host
+- deployment-automation
+paratrooper:
+- provision-deploy-host
+- deployment-automation
+blazing:
+- provision-deploy-host
+- deployment-automation
+shelly:
+- provision-deploy-host
+- deployment-automation
+pulsar:
+- provision-deploy-host
+- deployment-automation
+negroku:
+- provision-deploy-host
+- deployment-automation
+gofer:
+- provision-deploy-host
+- deployment-automation
+hercules:
+- provision-deploy-host
+- deployment-automation
+instance_selector:
+- provision-deploy-host
+- deployment-automation
+debloy:
+- provision-deploy-host
+- deployment-automation
+ruploy:
+- provision-deploy-host
+- deployment-automation
+vigil:
+- provision-deploy-host
+- deployment-automation
+deprecated:
+- developer-tools
+- deprecation-tools
+structured_warnings:
+- developer-tools
+- deprecation-tools
+spring:
+- testing
+- distributed-testing
+parallel_tests:
+- testing
+- distributed-testing
+spork:
+- testing
+- distributed-testing
+zeus:
+- testing
+- distributed-testing
+hydra:
+- testing
+- distributed-testing
+spin:
+- testing
+- distributed-testing
+test-queue:
+- testing
+- distributed-testing
+specjour:
+- testing
+- distributed-testing
+testbot:
+- testing
+- distributed-testing
+zeus-parallel_tests:
+- testing
+- distributed-testing
+rdoc:
+- documentation-tools
+- documentation-generators
+sdoc:
+- documentation-tools
+- documentation-generators
+yard:
+- documentation-tools
+- documentation-generators
+rspec_api_documentation:
+- documentation-tools
+- documentation-generators
+apipie-rails:
+- documentation-tools
+- documentation-generators
+ronn:
+- documentation-tools
+- documentation-generators
+rocco:
+- documentation-tools
+- documentation-generators
+hanna:
+- documentation-tools
+- documentation-generators
+md2man:
+- documentation-tools
+- documentation-generators
+annotator:
+- documentation-tools
+- documentation-generators
+binman:
+- documentation-tools
+- documentation-generators
+doc:
+- documentation-tools
+- documentation-generators
+erbook:
+- documentation-tools
+- documentation-generators
+mailcatcher:
+- communication
+- e-mail-preview
+letter_opener:
+- communication
+- e-mail-preview
+mail_view:
+- communication
+- e-mail-preview
+rails_email_preview:
+- communication
+- e-mail-preview
+sanitize_email:
+- communication
+- e-mail-preview
+post_office:
+- communication
+- e-mail-preview
+griddler:
+- communication
+- e-mail-processing
+mailman:
+- communication
+- e-mail-processing
+mail_room:
+- communication
+- e-mail-processing
+newman:
+- communication
+- e-mail-processing
+tinnef:
+- communication
+- e-mail-processing
+sortah:
+- communication
+- e-mail-processing
+actionmailer:
+- communication
+- e-mail-sending
+mail:
+- communication
+- e-mail-sending
+pony:
+- communication
+- e-mail-sending
+tmail:
+- communication
+- e-mail-sending
+sendgrid-rails:
+- communication
+- e-mail-sending
+capistrano_mailer:
+- communication
+- e-mail-sending
+mailit:
+- communication
+- e-mail-sending
+attr_encrypted:
+- security
+- encryption
+strongbox:
+- security
+- encryption
+crypt_keeper:
+- security
+- encryption
+symmetric-encryption:
+- security
+- encryption
+encrypted_strings:
+- security
+- encryption
+mongoid-encrypted-fields:
+- security
+- encryption
+sentry:
+- security
+- encryption
+pkcs11:
+- security
+- encryption
+airbrake:
+- maintenance-monitoring
+- exception-notification
 exception_notification:
-- errbit
-- airbrake
-- exception_notification
-- exceptional
-- honeybadger
-font_face_servers:
-- fontue
-- fistface
-- and_rack_fontserve
-forum_systems:
-- forem
-- altered_beast
-- thredded
-- forum_monster
-- and_engagecsm
-gem_and_library_inspection:
-- open_gem
-- qwandry
-- and_gemedit
-gem_doc_viewers:
-- bdoc
-- sinatra_rubygems
-- docbox
-- and_gembox
-geocoding_maps:
-- geocoder
-- geokit
-- gmaps4rails
-- rgeo
-- geokit_rails
-graphing:
-- lazy_high_charts
-- googlecharts
-- gruff
-- open_flash_chart
-- tufte_graph
-html_parsing:
-- nokogiri
-- hpricot
-- libxml_ruby
-- scrubyt
-- scrapi
-http_pub_sub:
-- websocket
-- faye
-- em_websocket
-- libwebsocket
-- private_pub
-image_processing:
-- chunky_png
-- rmagick
-- minimagick
-- image_science
-- image_sorcery
-irb_alternatives:
-- pry_and_ripl
-irc_bots:
-- cinch
-- autumn
-- isaac
-- rbot
-- summer
-javascript_testing:
-- jasmine
-- testswarm
-- blue_ridge
-- konacha
-- evergreen
-json_parsers:
-- json
-- multi_json
-- yajl_ruby
-- json_pure
-- crack
-log_analysis:
-- logstash
-- graylog2
-- request_log_analyzer
-- central_logger
-- ntail
-maintenance_mode:
-- turnout_and_rack_maintenance
-microformats:
-- mofo
-- microformats_helper
-- prism
-- and_html_schema
-mocking_web_requests:
-- webmock
-- vcr
-- jquery_mockjax
-- fakeweb
-- artifice
-multitenancy:
-- milia
-- apartment
-- acts_as_tenant
-- multitenant
-- acts_as_restricted_subdomain
-natural_language_date_parsing:
-- chronic
-- chronic_duration
-- nickel
-- tickle
-- kronic
-online_shops:
-- spree
-- ror_ecommerce
-- invoicing
-- shippinglogic
-- nimbleshop
-packaging_to_executables:
-- ocra
-- releasy
-- crate
-- and_rubyscript2exe
-payments:
-- active_merchant
-- braintree
-- stripe
-- paypal_adaptive
-- paypal_express
-pdf_processing:
-- pdf_reader
-- pdf_info
-- and_stevedore
-project_management:
-- gitlabhq
-- redmine
-- teambox
-- fulcrum
-- chiliproject
-qr_codes:
-- rqrcode
-- rqrcode_rails3
-- rqrcode_png
-- zxing
-- zbar
-rails_admin_interfaces:
-- activeadmin
-- rails_admin
-- activescaffold
-- typus
-- streamlined
-rails_authentication:
-- devise
-- omniauth
-- authlogic
-- restful_authentication
-- sorcery
-rails_captcha:
-- recaptcha
-- negative_captcha
-- simple_captcha_mirror
-- galetahub_simple_captcha
-- humanizer
-rails_comments:
-- juvia
-- acts_as_commentable_with_threading
-- acts_as_commentable
-- disqus
-- opinio
-rails_db_bootstrapping:
-- seed_fu
-- populator
-- seedbank
-- bootstrapper
-- db_populate
-rails_fixture_replacement:
-- factory_girl
-- machinist
-- fabrication
-- fixturebuilder
-- object_daddy
-rails_menu_builders:
-- simple_navigation
-- tabs_on_rails
-- semantic_menu
-- navigasmic
-- active_link_to
-rails_presenters:
-- draper
-- cells
-- apotomo
-- active_presenter
-- activedecorator
-rails_search:
-- sunspot
-- sunspot_rails
-- tire
-- thinking_sphinx
-- rsolr
-rails_tagging:
-- acts_as_taggable_on
-- is_taggable
-- rocket_tag
-- acts_as_taggable_redux
-- acts_as_taggable_on_steroids
-random_data_generation:
-- faker
-- ffaker
-- forgery
-- randexp
-- random_data
-recurring_events:
-- ice_cube
-- recurrence
-- schedule_fu
-- runt
-- recurring_event
-reports_spreadsheets:
-- spreadsheet
-- axlsx
-- roo
-- ruport
-- google_spreadsheet_ruby
-ruby_core_extensions:
-- active_support
-- hashie
-- extlib
-- hamster
-- facets
-scheduling:
-- whenever
-- resque_scheduler
-- rufus_scheduler
-- clockwork
-- craken
-security_tools:
-- brakeman
-- loofah
-- tarantula
-- xss_terminate
-- rails_xss
-soap_clients:
-- savon
-- handsoap
-- lolsoap
-- and_serviceproxy
-spam_detection:
-- rakismet
-- defender
-- defensio_ruby
-- akismetor
-- rdefensio
-state_machines:
-- state_machine
-- aasm
-- workflow
-- transitions
-- ruote
-subscription_management:
-- freemium
-- jackpot
-- fastspring_saasy
-- subscriptionfu
-- and_subly
-system_provisioning:
-- vagrant
-- chef
-- puppet
-- babushka
-- sprinkle
-template_engines:
-- erubis
-- tilt
-- haml
-- slim
-- liquid
-testing_rails_engines:
-- combustion
-- test_engine
-- and_multiengine
-text_editors_in_ruby:
-- redcar
-- ruco
-- arcadia
-- diakonos
-- and_ruber
-unit_test_frameworks:
-- rspec
-- minitest
-- test_unit
-- bacon
-- riot
-user_agent_detection:
-- useragent
-- browser
-- mobylette
-- agent_orange
-- user_agent
-visualizing_data:
-- raphael
-- ruby_graphviz
-- and_ruby_processing
-web_app_frameworks:
-- ruby_on_rails
-- rack
-- sinatra
-- padrino
-- cramp
-web_servers:
-- thin
-- unicorn
-- passenger
-- puma
-- pow
-xml_mapping:
-- nori
-- gyoku
-- happymapper
-- sax_machine
-- roxml
+- maintenance-monitoring
+- exception-notification
+rollbar:
+- maintenance-monitoring
+- exception-notification
+honeybadger:
+- maintenance-monitoring
+- exception-notification
+bugsnag:
+- maintenance-monitoring
+- exception-notification
+toadhopper:
+- maintenance-monitoring
+- exception-notification
+exceptional:
+- maintenance-monitoring
+- exception-notification
+raygun4ruby:
+- maintenance-monitoring
+- exception-notification
+rails_exception_handler:
+- maintenance-monitoring
+- exception-notification
+lilypad:
+- maintenance-monitoring
+- exception-notification
+exception_engine:
+- maintenance-monitoring
+- exception-notification
+rack_hoptoad:
+- maintenance-monitoring
+- exception-notification
+viewpoint:
+- communication
+- exchange-clients
+exchanger:
+- communication
+- exchange-clients
+rews:
+- communication
+- exchange-clients
+ews-api:
+- communication
+- exchange-clients
+rexchange:
+- communication
+- exchange-clients
+fistface:
+- css
+- font-face-servers
+rack-fontserve:
+- css
+- font-face-servers
+simple_form:
+- html-markup
+- form-builders
+formtastic:
+- html-markup
+- form-builders
+nested_form:
+- html-markup
+- form-builders
+cocoon:
+- html-markup
+- form-builders
+twitter_bootstrap_form_for:
+- html-markup
+- form-builders
+bootstrap_form:
+- html-markup
+- form-builders
+bootstrap_forms:
+- html-markup
+- form-builders
+formula:
+- html-markup
+- form-builders
+formize:
+- html-markup
+- form-builders
+parsley_simple_form:
+- html-markup
+- form-builders
+campo:
+- html-markup
+- form-builders
+mongoid_form:
+- html-markup
+- form-builders
+forum_monster:
+- communication
+- forum-systems
+engagecsm:
+- communication
+- forum-systems
+gosu:
+- fun
+- game-libraries
+chingu:
+- fun
+- game-libraries
+gamebox:
+- fun
+- game-libraries
+ray:
+- fun
+- game-libraries
+chipmunk:
+- fun
+- game-libraries
+rubygame:
+- fun
+- game-libraries
+metro:
+- fun
+- game-libraries
+fidgit:
+- fun
+- game-libraries
+jemini:
+- fun
+- game-libraries
+gioco:
+- fun
+- game-libraries
+gosu_android:
+- fun
+- game-libraries
+kolb:
+- fun
+- game-libraries
+flonkerton:
+- fun
+- game-libraries
+open_gem:
+- developer-tools
+- gem-and-library-inspection
+qwandry:
+- developer-tools
+- gem-and-library-inspection
+gemedit:
+- developer-tools
+- gem-and-library-inspection
+hoe:
+- developer-tools
+- gem-creation
+jeweler:
+- developer-tools
+- gem-creation
+enginex:
+- developer-tools
+- gem-creation
+gem-release:
+- developer-tools
+- gem-creation
+bones:
+- developer-tools
+- gem-creation
+echoe:
+- developer-tools
+- gem-creation
+ore:
+- developer-tools
+- gem-creation
+newgem:
+- developer-tools
+- gem-creation
+rubygems-tasks:
+- developer-tools
+- gem-creation
+gem_hadar:
+- developer-tools
+- gem-creation
+inochi:
+- developer-tools
+- gem-creation
+simple-gem:
+- developer-tools
+- gem-creation
+rag:
+- developer-tools
+- gem-creation
+rookie:
+- developer-tools
+- gem-creation
+gem-newgem:
+- developer-tools
+- gem-creation
+bdoc:
+- documentation-tools
+- gem-doc-viewers
+gembox:
+- documentation-tools
+- gem-doc-viewers
+geminabox:
+- package-dependency-management
+- gem-hosting
+stickler:
+- package-dependency-management
+- gem-hosting
+gemfury:
+- package-dependency-management
+- gem-hosting
+geocoder:
+- time-space
+- geocoding-maps
+geokit:
+- time-space
+- geocoding-maps
+gmaps4rails:
+- time-space
+- geocoding-maps
+geokit-rails:
+- time-space
+- geocoding-maps
+rgeo:
+- time-space
+- geocoding-maps
+activerecord-postgis-adapter:
+- time-space
+- geocoding-maps
+graticule:
+- time-space
+- geocoding-maps
+GeoRuby:
+- time-space
+- geocoding-maps
+georuby:
+- time-space
+- geocoding-maps
+nofxx-georuby:
+- time-space
+- geocoding-maps
+acts_as_geocodable:
+- time-space
+- geocoding-maps
+ppe-georuby:
+- time-space
+- geocoding-maps
+leaflet-rails:
+- time-space
+- geocoding-maps
+postgis_adapter:
+- time-space
+- geocoding-maps
+mongoid_geospatial:
+- time-space
+- geocoding-maps
+address_standardization:
+- time-space
+- geocoding-maps
+gdal:
+- time-space
+- geocoding-maps
+georuby-ext:
+- time-space
+- geocoding-maps
+autometal-geoip:
+- time-space
+- geocoding-maps
+cartographie:
+- time-space
+- geocoding-maps
+map_layers:
+- time-space
+- geocoding-maps
+gdal-helper:
+- time-space
+- geocoding-maps
+georuby_remake:
+- time-space
+- geocoding-maps
+georuby_box:
+- time-space
+- geocoding-maps
+rgdal:
+- time-space
+- geocoding-maps
+githug:
+- developer-tools
+- git-tools
+git:
+- developer-tools
+- git-tools
+grit:
+- developer-tools
+- git-tools
+rugged:
+- developer-tools
+- git-tools
+gitolite:
+- developer-tools
+- git-tools
+gas:
+- developer-tools
+- git-tools
+gritano:
+- developer-tools
+- git-tools
+gitsu:
+- developer-tools
+- git-tools
+ezgit:
+- developer-tools
+- git-tools
+octonore:
+- developer-tools
+- git-tools
+chartkick:
+- graphics
+- graphing
+gruff:
+- graphics
+- graphing
+googlecharts:
+- graphics
+- graphing
+google_visualr:
+- graphics
+- graphing
+highcharts-rails:
+- graphics
+- graphing
+rubyvis:
+- graphics
+- graphing
+gchartrb:
+- graphics
+- graphing
+sparklines:
+- graphics
+- graphing
+seer:
+- graphics
+- graphing
+scruffy:
+- graphics
+- graphing
+graphite-api:
+- graphics
+- graphing
+gchart:
+- graphics
+- graphing
+rchart:
+- graphics
+- graphing
+ofc2:
+- graphics
+- graphing
+technical_graph:
+- graphics
+- graphing
+shoes:
+- developer-tools
+- gui-frameworks
+fxruby:
+- developer-tools
+- gui-frameworks
+gtk2:
+- developer-tools
+- gui-frameworks
+qtbindings:
+- developer-tools
+- gui-frameworks
+wxruby:
+- developer-tools
+- gui-frameworks
+monkeybars:
+- developer-tools
+- gui-frameworks
+ffi-tk:
+- developer-tools
+- gui-frameworks
+nokogiri:
+- web-apps-services-interaction
+- html-parsing
+hpricot:
+- web-apps-services-interaction
+- html-parsing
+libxml-ruby:
+- web-apps-services-interaction
+- html-parsing
+scrubyt:
+- web-apps-services-interaction
+- html-parsing
+scrapi:
+- web-apps-services-interaction
+- html-parsing
+nikkou:
+- web-apps-services-interaction
+- html-parsing
+xml-motor:
+- web-apps-services-interaction
+- html-parsing
+rest-client:
+- web-apps-services-interaction
+- http-clients
+faraday:
+- web-apps-services-interaction
+- http-clients
+multipart-post:
+- web-apps-services-interaction
+- http-clients
+httparty:
+- web-apps-services-interaction
+- http-clients
+excon:
+- web-apps-services-interaction
+- http-clients
+httpclient:
+- web-apps-services-interaction
+- http-clients
+mechanize:
+- web-apps-services-interaction
+- http-clients
+curb:
+- web-apps-services-interaction
+- http-clients
+httpi:
+- web-apps-services-interaction
+- http-clients
+typhoeus:
+- web-apps-services-interaction
+- http-clients
+em-http-request:
+- web-apps-services-interaction
+- http-clients
+patron:
+- web-apps-services-interaction
+- http-clients
+nestful:
+- web-apps-services-interaction
+- http-clients
+restfulie:
+- web-apps-services-interaction
+- http-clients
+weary:
+- web-apps-services-interaction
+- http-clients
+api_smith:
+- web-apps-services-interaction
+- http-clients
+hyperclient:
+- web-apps-services-interaction
+- http-clients
+rapidash:
+- web-apps-services-interaction
+- http-clients
+activeresource-response:
+- web-apps-services-interaction
+- http-clients
+remotely:
+- web-apps-services-interaction
+- http-clients
+streamly:
+- web-apps-services-interaction
+- http-clients
+wrest:
+- web-apps-services-interaction
+- http-clients
+persistent_httparty:
+- web-apps-services-interaction
+- http-clients
+api-client:
+- web-apps-services-interaction
+- http-clients
+frenetic:
+- web-apps-services-interaction
+- http-clients
+http-requestor:
+- web-apps-services-interaction
+- http-clients
+htcp:
+- web-apps-services-interaction
+- http-clients
+websocket:
+- web-apps-services-interaction
+- http-pub-sub
+faye:
+- web-apps-services-interaction
+- http-pub-sub
+em-websocket:
+- web-apps-services-interaction
+- http-pub-sub
+libwebsocket:
+- web-apps-services-interaction
+- http-pub-sub
+private_pub:
+- web-apps-services-interaction
+- http-pub-sub
+tubesock:
+- web-apps-services-interaction
+- http-pub-sub
+faye-rails:
+- web-apps-services-interaction
+- http-pub-sub
+websocket-rails:
+- web-apps-services-interaction
+- http-pub-sub
+websocket-rack:
+- web-apps-services-interaction
+- http-pub-sub
+socky-server:
+- web-apps-services-interaction
+- http-pub-sub
+danthes:
+- web-apps-services-interaction
+- http-pub-sub
+i18n:
+- time-space
+- i18n
+i18n-js:
+- time-space
+- i18n
+globalize:
+- time-space
+- i18n
+http_accept_language:
+- time-space
+- i18n
+i18n-tasks:
+- time-space
+- i18n
+fast_gettext:
+- time-space
+- i18n
+delocalize:
+- time-space
+- i18n
+numbers_and_words:
+- time-space
+- i18n
+globalize2:
+- time-space
+- i18n
+localeapp:
+- time-space
+- i18n
+copycopter_client:
+- time-space
+- i18n
+i18n_routing:
+- time-space
+- i18n
+tr8n:
+- time-space
+- i18n
+globalize3:
+- time-space
+- i18n
+phrase:
+- time-space
+- i18n
+to_lang:
+- time-space
+- i18n
+i15r:
+- time-space
+- i18n
+puret:
+- time-space
+- i18n
+i18n-inflector-rails:
+- time-space
+- i18n
+ready_for_i18n:
+- time-space
+- i18n
+it:
+- time-space
+- i18n
+has_translations:
+- time-space
+- i18n
+locale_detector:
+- time-space
+- i18n
+mongo-i18n:
+- time-space
+- i18n
+model_translations:
+- time-space
+- i18n
+rails-i18nterface:
+- time-space
+- i18n
+human_attribute:
+- time-space
+- i18n
+rails_locale_detection:
+- time-space
+- i18n
+rack-locale_chooser:
+- time-space
+- i18n
+c3po:
+- time-space
+- i18n
+talk_like_a_pirate:
+- time-space
+- i18n
+mongoid_translate:
+- time-space
+- i18n
+rails-translate-models:
+- time-space
+- i18n
+i18n_auto_scoping:
+- time-space
+- i18n
+activerecord_translatable:
+- time-space
+- i18n
+rack-i18n_routes:
+- time-space
+- i18n
+rack-user-locale:
+- time-space
+- i18n
+traduction:
+- time-space
+- i18n
+pig_latin:
+- time-space
+- i18n
+chunky_png:
+- graphics
+- image-processing
+mini_magick:
+- graphics
+- image-processing
+rmagick:
+- graphics
+- image-processing
+image_science:
+- graphics
+- image-processing
+image_sorcery:
+- graphics
+- image-processing
+magickly:
+- graphics
+- image-processing
+skeptick:
+- graphics
+- image-processing
+paperclip-optimizer:
+- graphics
+- image-processing
+devil:
+- graphics
+- image-processing
+mojo_magick:
+- graphics
+- image-processing
+core_image:
+- graphics
+- image-processing
+image_squeeze:
+- graphics
+- image-processing
+MIAConverter:
+- graphics
+- image-processing
+premailer:
+- communication
+- inline-css-for-e-mail
+roadie:
+- communication
+- inline-css-for-e-mail
+mail_style:
+- communication
+- inline-css-for-e-mail
+actionmailer_inline_css:
+- communication
+- inline-css-for-e-mail
+inline-style:
+- communication
+- inline-css-for-e-mail
+premailer-rails3:
+- communication
+- inline-css-for-e-mail
+inline_styles:
+- communication
+- inline-css-for-e-mail
+incurve:
+- communication
+- inline-css-for-e-mail
+inline_styles_mailer:
+- communication
+- inline-css-for-e-mail
+packrat:
+- communication
+- inline-css-for-e-mail
+pry:
+- developer-tools
+- irb-alternatives
+ripl:
+- developer-tools
+- irb-alternatives
+awesome_print:
+- developer-tools
+- irb-tools
+pry-rails:
+- developer-tools
+- irb-tools
+hirb:
+- developer-tools
+- irb-tools
+wirble:
+- developer-tools
+- irb-tools
+table_print:
+- developer-tools
+- irb-tools
+bond:
+- developer-tools
+- irb-tools
+irbtools:
+- developer-tools
+- irb-tools
+every_day_irb:
+- developer-tools
+- irb-tools
+racksh:
+- developer-tools
+- irb-tools
+interactive_editor:
+- developer-tools
+- irb-tools
+looksee:
+- developer-tools
+- irb-tools
+clipboard:
+- developer-tools
+- irb-tools
+wirb:
+- developer-tools
+- irb-tools
+marco-polo:
+- developer-tools
+- irb-tools
+fancy_irb:
+- developer-tools
+- irb-tools
+sketches:
+- developer-tools
+- irb-tools
+ori:
+- developer-tools
+- irb-tools
+alias:
+- developer-tools
+- irb-tools
+irbtools-more:
+- developer-tools
+- irb-tools
+cinch:
+- communication
+- irc-bots
+autumn:
+- communication
+- irc-bots
+isaac:
+- communication
+- irc-bots
+rbot:
+- communication
+- irc-bots
+ponder:
+- communication
+- irc-bots
+lita-irc:
+- communication
+- irc-bots
+em-irc:
+- communication
+- irc-bots
+cogbot:
+- communication
+- irc-bots
+gifbot:
+- communication
+- irc-bots
+irc-qik-bot:
+- communication
+- irc-bots
+execjs:
+- javascript
+- javascript-runtimes
+therubyracer:
+- javascript
+- javascript-runtimes
+jasmine:
+- javascript
+- javascript-testing
+konacha:
+- javascript
+- javascript-testing
+evergreen:
+- javascript
+- javascript-testing
+teaspoon:
+- javascript
+- javascript-testing
+screw-unit:
+- javascript
+- javascript-testing
+hanoi:
+- javascript
+- javascript-testing
+opal-spec:
+- javascript
+- javascript-testing
+screw-unit-server:
+- javascript
+- javascript-testing
+jcov:
+- javascript
+- javascript-testing
+gerbil-rails:
+- javascript
+- javascript-testing
+sprockets:
+- javascript
+- javascript-tools
+uglifier:
+- javascript
+- javascript-tools
+coffee-script:
+- javascript
+- javascript-tools
+gon:
+- javascript
+- javascript-tools
+opal:
+- javascript
+- javascript-tools
+wiselinks:
+- javascript
+- javascript-tools
+juicer:
+- javascript
+- javascript-tools
+paloma:
+- javascript
+- javascript-tools
+barista:
+- javascript
+- javascript-tools
+opal-rails:
+- javascript
+- javascript-tools
+mousetrap-rails:
+- javascript
+- javascript-tools
+vendorer:
+- javascript
+- javascript-tools
+packr:
+- javascript
+- javascript-tools
+jake:
+- javascript
+- javascript-tools
+jabs:
+- javascript
+- javascript-tools
+SrBuj:
+- javascript
+- javascript-tools
+rake-minify:
+- javascript
+- javascript-tools
+rack-jquery:
+- javascript
+- javascript-tools
+dom_routes:
+- javascript
+- javascript-tools
+indexable:
+- javascript
+- javascript-tools
+poke_js:
+- javascript
+- javascript-tools
+dynamojs_rails:
+- javascript
+- javascript-tools
+multi_json:
+- web-apps-services-interaction
+- json-parsers
+json:
+- web-apps-services-interaction
+- json-parsers
+json_pure:
+- web-apps-services-interaction
+- json-parsers
+yajl-ruby:
+- web-apps-services-interaction
+- json-parsers
+crack:
+- web-apps-services-interaction
+- json-parsers
+oj:
+- web-apps-services-interaction
+- json-parsers
+json-jruby:
+- web-apps-services-interaction
+- json-parsers
+net-ldap:
+- security
+- ldap
+devise_ldap_authenticatable:
+- security
+- ldap
+omniauth-ldap:
+- security
+- ldap
+ruby-net-ldap:
+- security
+- ldap
+treequel:
+- security
+- ldap
+ruby-activeldap:
+- security
+- ldap
+simple_ldap_authenticator:
+- security
+- ldap
+request-log-analyzer:
+- maintenance-monitoring
+- log-analysis
+central_logger:
+- maintenance-monitoring
+- log-analysis
+ntail:
+- maintenance-monitoring
+- log-analysis
+indy:
+- maintenance-monitoring
+- log-analysis
+log_file:
+- maintenance-monitoring
+- log-analysis
+logging:
+- maintenance-monitoring
+- logging
+log4r:
+- maintenance-monitoring
+- logging
+lograge:
+- maintenance-monitoring
+- logging
+cabin:
+- maintenance-monitoring
+- logging
+fluentd:
+- maintenance-monitoring
+- logging
+gelf:
+- maintenance-monitoring
+- logging
+yell:
+- maintenance-monitoring
+- logging
+mongodb_logger:
+- maintenance-monitoring
+- logging
+httplog:
+- maintenance-monitoring
+- logging
+whoops:
+- maintenance-monitoring
+- logging
+logging-rails:
+- maintenance-monitoring
+- logging
+lumber:
+- maintenance-monitoring
+- logging
+clogger:
+- maintenance-monitoring
+- logging
+hatchet:
+- maintenance-monitoring
+- logging
+best_boy:
+- maintenance-monitoring
+- logging
+frogger:
+- maintenance-monitoring
+- logging
+logging_assist:
+- maintenance-monitoring
+- logging
+justlogging-rails:
+- maintenance-monitoring
+- logging
+rake_bubbler:
+- maintenance-monitoring
+- logging
+turnout:
+- maintenance-monitoring
+- maintenance-mode
+rack-maintenance:
+- maintenance-monitoring
+- maintenance-mode
+markup:
+- html-markup
+- markup-processors
+redcarpet:
+- html-markup
+- markup-processors
+kramdown:
+- html-markup
+- markup-processors
+vkhater-redcarpet:
+- html-markup
+- markup-processors
+RedCloth:
+- html-markup
+- markup-processors
+rdiscount:
+- html-markup
+- markup-processors
+maruku:
+- html-markup
+- markup-processors
+bluecloth:
+- html-markup
+- markup-processors
+creole:
+- html-markup
+- markup-processors
+pandoc-ruby:
+- html-markup
+- markup-processors
+minidown:
+- html-markup
+- markup-processors
+rpeg-markdown:
+- html-markup
+- markup-processors
+mcbean:
+- html-markup
+- markup-processors
+multi_markdown:
+- html-markup
+- markup-processors
+stupid_formatter:
+- html-markup
+- markup-processors
+smiley:
+- html-markup
+- markup-processors
+mofo:
+- html-markup
+- microformats
+prism:
+- html-markup
+- microformats
+microformats_helper:
+- html-markup
+- microformats
+html-schema:
+- html-markup
+- microformats
+rspec-mocks:
+- testing
+- mocking
+mocha:
+- testing
+- mocking
+mock_redis:
+- testing
+- mocking
+rr:
+- testing
+- mocking
+flexmock:
+- testing
+- mocking
+bogus:
+- testing
+- mocking
+spy:
+- testing
+- mocking
+surrogate:
+- testing
+- mocking
+facon:
+- testing
+- mocking
+verified_double:
+- testing
+- mocking
+simple_mock:
+- testing
+- mocking
+cross-stub:
+- testing
+- mocking
+mocoso:
+- testing
+- mocking
+webmock:
+- testing
+- mocking-web-requests
+vcr:
+- testing
+- mocking-web-requests
+fakeweb:
+- testing
+- mocking-web-requests
+artifice:
+- testing
+- mocking-web-requests
+rest-assured:
+- testing
+- mocking-web-requests
+netrecorder:
+- testing
+- mocking-web-requests
+mocktra:
+- testing
+- mocking-web-requests
+stale_fish:
+- testing
+- mocking-web-requests
+mockjax:
+- testing
+- mocking-web-requests
+sonar:
+- testing
+- mocking-web-requests
+mongo:
+- data-persistence
+- mongodb-clients
+mongo_mapper:
+- data-persistence
+- mongodb-clients
+mongoid:
+- data-persistence
+- mongodb-clients
+perpetuity:
+- data-persistence
+- mongodb-clients
+mongomatic:
+- data-persistence
+- mongodb-clients
+mongodb_model:
+- data-persistence
+- mongodb-clients
+mince:
+- data-persistence
+- mongodb-clients
+apartment:
+- web-apps-services-interaction
+- multitenancy
+acts_as_tenant:
+- web-apps-services-interaction
+- multitenancy
+milia:
+- web-apps-services-interaction
+- multitenancy
+multitenant:
+- web-apps-services-interaction
+- multitenancy
+activerecord-connections:
+- web-apps-services-interaction
+- multitenancy
+whitelabel:
+- web-apps-services-interaction
+- multitenancy
+multitenant-pg:
+- web-apps-services-interaction
+- multitenancy
+multitenant-mysql:
+- web-apps-services-interaction
+- multitenancy
+unimidi:
+- fun
+- music-midi
+midiator:
+- fun
+- music-midi
+midilib:
+- fun
+- music-midi
+micromidi:
+- fun
+- music-midi
+diamond:
+- fun
+- music-midi
+gitara:
+- fun
+- music-midi
+patchmaster:
+- fun
+- music-midi
+music_player:
+- fun
+- music-midi
+cultome_player:
+- fun
+- music-midi
+chronic:
+- time-space
+- natural-language-date-parsing
+chronic_duration:
+- time-space
+- natural-language-date-parsing
+nickel:
+- time-space
+- natural-language-date-parsing
+tickle:
+- time-space
+- natural-language-date-parsing
+kronic:
+- time-space
+- natural-language-date-parsing
+chronic_between:
+- time-space
+- natural-language-date-parsing
+text_parser:
+- time-space
+- natural-language-date-parsing
+activerecord:
+- data-persistence
+- object-relational-mapping
+orm_adapter:
+- data-persistence
+- object-relational-mapping
+sequel:
+- data-persistence
+- object-relational-mapping
+dm-core:
+- data-persistence
+- object-relational-mapping
+squeel:
+- data-persistence
+- object-relational-mapping
+rom:
+- data-persistence
+- object-relational-mapping
+og:
+- data-persistence
+- object-relational-mapping
+spree:
+- e-commerce-and-payments
+- online-shops
+invoicing:
+- e-commerce-and-payments
+- online-shops
+shippinglogic:
+- e-commerce-and-payments
+- online-shops
+nimbleshop:
+- e-commerce-and-payments
+- online-shops
+carter:
+- e-commerce-and-payments
+- online-shops
+radiant-shop-extension:
+- e-commerce-and-payments
+- online-shops
+rubygems-update:
+- package-dependency-management
+- packaging-systems
+rip:
+- package-dependency-management
+- packaging-systems
+slimgems:
+- package-dependency-management
+- packaging-systems
+ocra:
+- package-dependency-management
+- packaging-to-executables
+releasy:
+- package-dependency-management
+- packaging-to-executables
+crate:
+- package-dependency-management
+- packaging-to-executables
+rubyscript2exe:
+- package-dependency-management
+- packaging-to-executables
+kaminari:
+- active-record-plugins
+- pagination
+will_paginate:
+- active-record-plugins
+- pagination
+sorted:
+- active-record-plugins
+- pagination
+kaminari-bootstrap:
+- active-record-plugins
+- pagination
+ajax_pagination:
+- active-record-plugins
+- pagination
+paged_scopes:
+- active-record-plugins
+- pagination
+simply_paginate:
+- active-record-plugins
+- pagination
+activemerchant:
+- e-commerce-and-payments
+- payments
+stripe:
+- e-commerce-and-payments
+- payments
+braintree:
+- e-commerce-and-payments
+- payments
+paypal-express:
+- e-commerce-and-payments
+- payments
+stripe_event:
+- e-commerce-and-payments
+- payments
+paypal_adaptive:
+- e-commerce-and-payments
+- payments
+adyen:
+- e-commerce-and-payments
+- payments
+remit:
+- e-commerce-and-payments
+- payments
+sepa_king:
+- e-commerce-and-payments
+- payments
+amazon_flex_pay:
+- e-commerce-and-payments
+- payments
+gmo:
+- e-commerce-and-payments
+- payments
+datatrans:
+- e-commerce-and-payments
+- payments
+pin_up:
+- e-commerce-and-payments
+- payments
+paypal-sdk-invoice:
+- e-commerce-and-payments
+- payments
+mundipagg:
+- e-commerce-and-payments
+- payments
+pagseguro_v2:
+- e-commerce-and-payments
+- payments
+paypal_calculator:
+- e-commerce-and-payments
+- payments
+prawn:
+- documents-reports
+- pdf-generation
+wicked_pdf:
+- documents-reports
+- pdf-generation
+pdfkit:
+- documents-reports
+- pdf-generation
+wkhtmltopdf:
+- documents-reports
+- pdf-generation
+prawnto:
+- documents-reports
+- pdf-generation
+kitabu:
+- documents-reports
+- pdf-generation
+gimli:
+- documents-reports
+- pdf-generation
+princely:
+- documents-reports
+- pdf-generation
+rghost:
+- documents-reports
+- pdf-generation
+wisepdf:
+- documents-reports
+- pdf-generation
+shrimp:
+- documents-reports
+- pdf-generation
+prawn-rails:
+- documents-reports
+- pdf-generation
+rtex:
+- documents-reports
+- pdf-generation
+prawnto_2:
+- documents-reports
+- pdf-generation
+doc_raptor:
+- documents-reports
+- pdf-generation
+acts_as_flying_saucer:
+- documents-reports
+- pdf-generation
+gambas:
+- documents-reports
+- pdf-generation
+pdf-reader:
+- documents-reports
+- pdf-processing
+pdf_info:
+- documents-reports
+- pdf-processing
+stevedore:
+- documents-reports
+- pdf-processing
+showoff:
+- developer-tools
+- presentation-software
+slidedown:
+- developer-tools
+- presentation-software
+parade:
+- developer-tools
+- presentation-software
+slideshow:
+- developer-tools
+- presentation-software
+pickler:
+- developer-tools
+- project-management
+git_time_extractor:
+- developer-tools
+- project-management
+branston:
+- developer-tools
+- project-management
+jrails:
+- javascript
+- prototype-replacements
+right-rails:
+- javascript
+- prototype-replacements
+rqrcode:
+- graphics
+- qr-codes
+rqrcode-rails3:
+- graphics
+- qr-codes
+rqrcode_png:
+- graphics
+- qr-codes
+zxing:
+- graphics
+- qr-codes
+zbar:
+- graphics
+- qr-codes
+qrscanner:
+- graphics
+- qr-codes
+rqr:
+- graphics
+- qr-codes
+qrencoder:
+- graphics
+- qr-codes
+pngqr:
+- graphics
+- qr-codes
+qrtools:
+- graphics
+- qr-codes
+public_activity:
+- rails-plugins
+- rails-activity-feeds
+timeline_fu:
+- rails-plugins
+- rails-activity-feeds
+unread:
+- rails-plugins
+- rails-activity-feeds
+streama:
+- rails-plugins
+- rails-activity-feeds
+my_feeds:
+- rails-plugins
+- rails-activity-feeds
+chalk_dust:
+- rails-plugins
+- rails-activity-feeds
+activeadmin:
+- rails-plugins
+- rails-admin-interfaces
+rails_admin:
+- rails-plugins
+- rails-admin-interfaces
+active_scaffold:
+- rails-plugins
+- rails-admin-interfaces
+typus:
+- rails-plugins
+- rails-admin-interfaces
+puffer:
+- rails-plugins
+- rails-admin-interfaces
+inline_forms:
+- rails-plugins
+- rails-admin-interfaces
+admin_assistant:
+- rails-plugins
+- rails-admin-interfaces
+dry_crud:
+- rails-plugins
+- rails-admin-interfaces
+admin_data:
+- rails-plugins
+- rails-admin-interfaces
+ab_admin:
+- rails-plugins
+- rails-admin-interfaces
+lipsiadmin:
+- rails-plugins
+- rails-admin-interfaces
+admin_interface:
+- rails-plugins
+- rails-admin-interfaces
+qadmin:
+- rails-plugins
+- rails-admin-interfaces
+fullstack-admin:
+- rails-plugins
+- rails-admin-interfaces
+suspenders:
+- rails-plugins
+- rails-app-templates
+rails_apps_composer:
+- rails-plugins
+- rails-app-templates
+rails_templater:
+- rails-plugins
+- rails-app-templates
+prologue:
+- rails-plugins
+- rails-app-templates
+thesilverspoon:
+- rails-plugins
+- rails-app-templates
+cybele:
+- rails-plugins
+- rails-app-templates
+appscrolls:
+- rails-plugins
+- rails-app-templates
+icebreaker:
+- rails-plugins
+- rails-app-templates
+appsta:
+- rails-plugins
+- rails-app-templates
+devise:
+- security
+- rails-authentication
+omniauth:
+- security
+- rails-authentication
+authlogic:
+- security
+- rails-authentication
+sorcery:
+- security
+- rails-authentication
+clearance:
+- security
+- rails-authentication
+doorkeeper:
+- security
+- rails-authentication
+switch_user:
+- security
+- rails-authentication
+devise_oauth2_providable:
+- security
+- rails-authentication
+rpx_now:
+- security
+- rails-authentication
+monban:
+- security
+- rails-authentication
+adauth:
+- security
+- rails-authentication
+rack-cas:
+- security
+- rails-authentication
+letmein:
+- security
+- rails-authentication
+userbin:
+- security
+- rails-authentication
+authorizme:
+- security
+- rails-authentication
+current_user:
+- security
+- rails-authentication
+cz_auth:
+- security
+- rails-authentication
+cancan:
+- security
+- rails-authorization
+pundit:
+- security
+- rails-authorization
+cancancan:
+- security
+- rails-authorization
+rolify:
+- security
+- rails-authorization
+declarative_authorization:
+- security
+- rails-authorization
+authority:
+- security
+- rails-authorization
+acl9:
+- security
+- rails-authorization
+the_role:
+- security
+- rails-authorization
+six:
+- security
+- rails-authorization
+role_model:
+- security
+- rails-authorization
+cantango:
+- security
+- rails-authorization
+cream:
+- security
+- rails-authorization
+canable:
+- security
+- rails-authorization
+protector:
+- security
+- rails-authorization
+aegis:
+- security
+- rails-authorization
+easy_roles:
+- security
+- rails-authorization
+consul:
+- security
+- rails-authorization
+canard:
+- security
+- rails-authorization
+restful_acl:
+- security
+- rails-authorization
+allowy:
+- security
+- rails-authorization
+roleable:
+- security
+- rails-authorization
+walruz:
+- security
+- rails-authorization
+trust:
+- security
+- rails-authorization
+rend-acl:
+- security
+- rails-authorization
+moulin_rouge:
+- security
+- rails-authorization
+recaptcha:
+- security
+- rails-captcha
+galetahub-simple_captcha:
+- security
+- rails-captcha
+humanizer:
+- security
+- rails-captcha
+acts_as_textcaptcha:
+- security
+- rails-captcha
+gotcha:
+- security
+- rails-captcha
+captcha:
+- security
+- rails-captcha
+jike_captcha:
+- security
+- rails-captcha
+rails-erd:
+- rails-plugins
+- rails-class-diagrams
+railroady:
+- rails-plugins
+- rails-class-diagrams
+acts_as_commentable:
+- active-record-plugins
+- rails-comments
+disqus:
+- active-record-plugins
+- rails-comments
+commontator:
+- active-record-plugins
+- rails-comments
+opinio:
+- active-record-plugins
+- rails-comments
+is_reviewable:
+- active-record-plugins
+- rails-comments
+commenter:
+- active-record-plugins
+- rails-comments
+inherited_resources:
+- web-apps-services-interaction
+- rails-controller-abstractions
+decent_exposure:
+- web-apps-services-interaction
+- rails-controller-abstractions
+resource_controller:
+- web-apps-services-interaction
+- rails-controller-abstractions
+arcane:
+- web-apps-services-interaction
+- rails-controller-abstractions
+toast:
+- web-apps-services-interaction
+- rails-controller-abstractions
+redirect_on_back:
+- web-apps-services-interaction
+- rails-controller-abstractions
+customs:
+- web-apps-services-interaction
+- rails-controller-abstractions
+seed-fu:
+- active-record-plugins
+- rails-db-bootstrapping
+seedbank:
+- active-record-plugins
+- rails-db-bootstrapping
+populator:
+- active-record-plugins
+- rails-db-bootstrapping
+seed_dumper:
+- active-record-plugins
+- rails-db-bootstrapping
+has_alter_ego:
+- active-record-plugins
+- rails-db-bootstrapping
+dibber:
+- active-record-plugins
+- rails-db-bootstrapping
+paperclip:
+- rails-plugins
+- rails-file-uploads
+carrierwave:
+- rails-plugins
+- rails-file-uploads
+dragonfly:
+- rails-plugins
+- rails-file-uploads
+refile:
+- rails-plugins
+- rails-file-uploads
+jquery.fileupload-rails:
+- rails-plugins
+- rails-file-uploads
+imagery:
+- rails-plugins
+- rails-file-uploads
+attached:
+- rails-plugins
+- rails-file-uploads
+papermill:
+- rails-plugins
+- rails-file-uploads
+fileuploader-rails:
+- rails-plugins
+- rails-file-uploads
+fileclip:
+- rails-plugins
+- rails-file-uploads
+simple-image-uploader:
+- rails-plugins
+- rails-file-uploads
+factory_girl:
+- testing
+- rails-fixture-replacement
+machinist:
+- testing
+- rails-fixture-replacement
+fabrication:
+- testing
+- rails-fixture-replacement
+fixture_builder:
+- testing
+- rails-fixture-replacement
+object_daddy:
+- testing
+- rails-fixture-replacement
+dm-sweatshop:
+- testing
+- rails-fixture-replacement
+fixjour:
+- testing
+- rails-fixture-replacement
+miniskirt:
+- testing
+- rails-fixture-replacement
+to_factory:
+- testing
+- rails-fixture-replacement
+transactionata:
+- testing
+- rails-fixture-replacement
+sham:
+- testing
+- rails-fixture-replacement
+spawn:
+- testing
+- rails-fixture-replacement
+seedomatic:
+- testing
+- rails-fixture-replacement
+fixture_replacement:
+- testing
+- rails-fixture-replacement
+best_in_place:
+- javascript
+- rails-in-place-editing
+on_the_spot:
+- javascript
+- rails-in-place-editing
+jintastic:
+- javascript
+- rails-in-place-editing
+jeditable-rails:
+- javascript
+- rails-in-place-editing
+best_in_place_mongoid:
+- javascript
+- rails-in-place-editing
+best_in_placeish:
+- javascript
+- rails-in-place-editing
+simple-navigation:
+- html-markup
+- rails-menu-builders
+active_link_to:
+- html-markup
+- rails-menu-builders
+tabs_on_rails:
+- html-markup
+- rails-menu-builders
+navigasmic:
+- html-markup
+- rails-menu-builders
+tabulous:
+- html-markup
+- rails-menu-builders
+simple-navigation-bootstrap:
+- html-markup
+- rails-menu-builders
+simple_navigation_renderers:
+- html-markup
+- rails-menu-builders
+simple_navigation:
+- html-markup
+- rails-menu-builders
+menu_helper:
+- html-markup
+- rails-menu-builders
+xebec:
+- html-markup
+- rails-menu-builders
+navi:
+- html-markup
+- rails-menu-builders
+semantic_navigation:
+- html-markup
+- rails-menu-builders
+ramenu:
+- html-markup
+- rails-menu-builders
+friendly_id:
+- rails-plugins
+- rails-permalinks-slugs
+stringex:
+- rails-plugins
+- rails-permalinks-slugs
+babosa:
+- rails-plugins
+- rails-permalinks-slugs
+permalink_fu:
+- rails-plugins
+- rails-permalinks-slugs
+obfuscate_id:
+- rails-plugins
+- rails-permalinks-slugs
+canonical-rails:
+- rails-plugins
+- rails-permalinks-slugs
+slugged:
+- rails-plugins
+- rails-permalinks-slugs
+has_permalink:
+- rails-plugins
+- rails-permalinks-slugs
+slug:
+- rails-plugins
+- rails-permalinks-slugs
+find_by_param:
+- rails-plugins
+- rails-permalinks-slugs
+has_slug:
+- rails-plugins
+- rails-permalinks-slugs
+acts_as_param:
+- rails-plugins
+- rails-permalinks-slugs
+draper:
+- rails-plugins
+- rails-presenters
+cells:
+- rails-plugins
+- rails-presenters
+active_decorator:
+- rails-plugins
+- rails-presenters
+apotomo:
+- rails-plugins
+- rails-presenters
+active_presenter:
+- rails-plugins
+- rails-presenters
+display_case:
+- rails-plugins
+- rails-presenters
+viewtastic:
+- rails-plugins
+- rails-presenters
+resubject:
+- rails-plugins
+- rails-presenters
+view_models:
+- rails-plugins
+- rails-presenters
+action_presenter:
+- rails-plugins
+- rails-presenters
+delegate_presenter:
+- rails-plugins
+- rails-presenters
+garnish:
+- rails-plugins
+- rails-presenters
+classic_presenter:
+- rails-plugins
+- rails-presenters
+rails_presenter:
+- rails-plugins
+- rails-presenters
+cubisme:
+- rails-plugins
+- rails-presenters
+ajaxful_rating:
+- active-record-plugins
+- rails-ratings
+letsrate:
+- active-record-plugins
+- rails-ratings
+acts_as_rateable:
+- active-record-plugins
+- rails-ratings
+mongoid_rateable:
+- active-record-plugins
+- rails-ratings
+acts-as-rated:
+- active-record-plugins
+- rails-ratings
+has_ratings:
+- active-record-plugins
+- rails-ratings
+mongoid-rating:
+- active-record-plugins
+- rails-ratings
+sunspot:
+- active-record-plugins
+- rails-search
+sunspot_rails:
+- active-record-plugins
+- rails-search
+thinking-sphinx:
+- active-record-plugins
+- rails-search
+tire:
+- active-record-plugins
+- rails-search
+searchkick:
+- active-record-plugins
+- rails-search
+elasticsearch:
+- active-record-plugins
+- rails-search
+pg_search:
+- active-record-plugins
+- rails-search
+rsolr:
+- active-record-plugins
+- rails-search
+elasticsearch-rails:
+- active-record-plugins
+- rails-search
+sunspot_solr:
+- active-record-plugins
+- rails-search
+redis-search:
+- active-record-plugins
+- rails-search
+acts_as_indexed:
+- active-record-plugins
+- rails-search
+scoped_search:
+- active-record-plugins
+- rails-search
+ferret:
+- active-record-plugins
+- rails-search
+searchlight:
+- active-record-plugins
+- rails-search
+acts_as_ferret:
+- active-record-plugins
+- rails-search
+acts_as_solr:
+- active-record-plugins
+- rails-search
+texticle:
+- active-record-plugins
+- rails-search
+acts_as_solr_reloaded:
+- active-record-plugins
+- rails-search
+xapit:
+- active-record-plugins
+- rails-search
+elastictastic:
+- active-record-plugins
+- rails-search
+xapian_db:
+- active-record-plugins
+- rails-search
+delsolr:
+- active-record-plugins
+- rails-search
+acts_as_fulltextable:
+- active-record-plugins
+- rails-search
+solr_query:
+- active-record-plugins
+- rails-search
+ruby_simple_search:
+- active-record-plugins
+- rails-search
+slingshot-rb:
+- active-record-plugins
+- rails-search
+subdomain-fu:
+- rails-plugins
+- rails-subdomains
+subdomain_routes:
+- rails-plugins
+- rails-subdomains
+sso_what:
+- rails-plugins
+- rails-subdomains
+acts-as-taggable-on:
+- active-record-plugins
+- rails-tagging
+is_taggable:
+- active-record-plugins
+- rails-tagging
+rocket_tag:
+- active-record-plugins
+- rails-tagging
+markable:
+- active-record-plugins
+- rails-tagging
+acts_as_taggable_on_steroids:
+- active-record-plugins
+- rails-tagging
+clortho:
+- active-record-plugins
+- rails-tagging
+taggregator:
+- active-record-plugins
+- rails-tagging
+wicked:
+- html-markup
+- rails-wizards
+wizardly:
+- html-markup
+- rails-wizards
+multi-step:
+- html-markup
+- rails-wizards
+faker:
+- testing
+- random-data-generation
+ffaker:
+- testing
+- random-data-generation
+forgery:
+- testing
+- random-data-generation
+randexp:
+- testing
+- random-data-generation
+random_data:
+- testing
+- random-data-generation
+data-anonymization:
+- testing
+- random-data-generation
+cheap_random:
+- testing
+- random-data-generation
+recommendify:
+- rails-plugins
+- recommendation-engines
+recommendable:
+- rails-plugins
+- recommendation-engines
+coletivo:
+- rails-plugins
+- recommendation-engines
+slope_one:
+- rails-plugins
+- recommendation-engines
+similus:
+- rails-plugins
+- recommendation-engines
+ice_cube:
+- time-space
+- recurring-events
+recurrence:
+- time-space
+- recurring-events
+runt:
+- time-space
+- recurring-events
+recurring:
+- time-space
+- recurring-events
+jruby-rfc2445:
+- time-space
+- recurring-events
+redis:
+- data-persistence
+- redis-clients
+redis-store:
+- data-persistence
+- redis-clients
+redis-objects:
+- data-persistence
+- redis-clients
+ohm:
+- data-persistence
+- redis-clients
+redis_orm:
+- data-persistence
+- redis-clients
+acts_as_hashish:
+- data-persistence
+- redis-clients
+redis-aid:
+- data-persistence
+- redis-clients
+redis-attrs:
+- data-persistence
+- redis-clients
+axlsx:
+- documents-reports
+- reports-spreadsheets
+spreadsheet:
+- documents-reports
+- reports-spreadsheets
+roo:
+- documents-reports
+- reports-spreadsheets
+ruport:
+- documents-reports
+- reports-spreadsheets
+rubyXL:
+- documents-reports
+- reports-spreadsheets
+axlsx_rails:
+- documents-reports
+- reports-spreadsheets
+google-spreadsheet-ruby:
+- documents-reports
+- reports-spreadsheets
+odf-report:
+- documents-reports
+- reports-spreadsheets
+statistics:
+- documents-reports
+- reports-spreadsheets
+activeadmin-axlsx:
+- documents-reports
+- reports-spreadsheets
+dossier:
+- documents-reports
+- reports-spreadsheets
+simple_xlsx_writer:
+- documents-reports
+- reports-spreadsheets
+acts_as_xlsx:
+- documents-reports
+- reports-spreadsheets
+remote_table:
+- documents-reports
+- reports-spreadsheets
+mondrian-olap:
+- documents-reports
+- reports-spreadsheets
+dynamic_reports:
+- documents-reports
+- reports-spreadsheets
+thinreports:
+- documents-reports
+- reports-spreadsheets
+reportable:
+- documents-reports
+- reports-spreadsheets
+to_spreadsheet:
+- documents-reports
+- reports-spreadsheets
+write_xlsx:
+- documents-reports
+- reports-spreadsheets
+excel_rails:
+- documents-reports
+- reports-spreadsheets
+soroban:
+- documents-reports
+- reports-spreadsheets
+compendium:
+- documents-reports
+- reports-spreadsheets
+workbook:
+- documents-reports
+- reports-spreadsheets
+oxcelix:
+- documents-reports
+- reports-spreadsheets
+sheets:
+- documents-reports
+- reports-spreadsheets
+wrap_excel:
+- documents-reports
+- reports-spreadsheets
+spreadsheet_report:
+- documents-reports
+- reports-spreadsheets
+write_xlsx_rails:
+- documents-reports
+- reports-spreadsheets
+activerecord-reputation-system:
+- rails-plugins
+- reputation-engines
+merit:
+- rails-plugins
+- reputation-engines
+honor:
+- rails-plugins
+- reputation-engines
+recognition:
+- rails-plugins
+- reputation-engines
+badginator:
+- rails-plugins
+- reputation-engines
+reputation:
+- rails-plugins
+- reputation-engines
+activesupport:
+- developer-tools
+- ruby-core-extensions
+hashie:
+- developer-tools
+- ruby-core-extensions
+docile:
+- developer-tools
+- ruby-core-extensions
+powerpack:
+- developer-tools
+- ruby-core-extensions
+extlib:
+- developer-tools
+- ruby-core-extensions
+facets:
+- developer-tools
+- ruby-core-extensions
+hamster:
+- developer-tools
+- ruby-core-extensions
+rubytree:
+- developer-tools
+- ruby-core-extensions
+zucker:
+- developer-tools
+- ruby-core-extensions
+rumonade:
+- developer-tools
+- ruby-core-extensions
+pluginfactory:
+- developer-tools
+- ruby-core-extensions
+named-parameters:
+- developer-tools
+- ruby-core-extensions
+deep_tree:
+- developer-tools
+- ruby-core-extensions
+tagen:
+- developer-tools
+- ruby-core-extensions
+optionalargument:
+- developer-tools
+- ruby-core-extensions
+hashy:
+- developer-tools
+- ruby-core-extensions
+rucursive:
+- developer-tools
+- ruby-core-extensions
+rvm:
+- developer-tools
+- ruby-version-management
+pik:
+- developer-tools
+- ruby-version-management
+which_ruby:
+- developer-tools
+- ruby-version-management
+whenever:
+- background-processing
+- scheduling
+rufus-scheduler:
+- background-processing
+- scheduling
+resque-scheduler:
+- background-processing
+- scheduling
+clockwork:
+- background-processing
+- scheduling
+recurrent:
+- background-processing
+- scheduling
+rake:
+- developer-tools
+- scripting-frameworks
+thor:
+- developer-tools
+- scripting-frameworks
+main:
+- developer-tools
+- scripting-frameworks
+boson:
+- developer-tools
+- scripting-frameworks
+sake:
+- developer-tools
+- scripting-frameworks
+lucie:
+- developer-tools
+- scripting-frameworks
+loofah:
+- security
+- security-tools
+brakeman:
+- security
+- security-tools
+active_model_otp:
+- security
+- security-tools
+tarantula:
+- security
+- security-tools
+json-jwt:
+- security
+- security-tools
+rails_xss:
+- security
+- security-tools
+param_protected:
+- security
+- security-tools
+codesake-dawn:
+- security
+- security-tools
+sudo_attributes:
+- security
+- security-tools
+alpaca:
+- security
+- security-tools
+shellex:
+- security
+- security-tools
+god:
+- maintenance-monitoring
+- server-monitoring
+sensu:
+- maintenance-monitoring
+- server-monitoring
+bluepill:
+- maintenance-monitoring
+- server-monitoring
+eye:
+- maintenance-monitoring
+- server-monitoring
+outpost:
+- maintenance-monitoring
+- server-monitoring
+amnesia:
+- maintenance-monitoring
+- server-monitoring
+nagios_check:
+- maintenance-monitoring
+- server-monitoring
+health_monitor:
+- maintenance-monitoring
+- server-monitoring
+webstats:
+- maintenance-monitoring
+- server-monitoring
+visage-app:
+- maintenance-monitoring
+- server-monitoring
+new_relic_ping:
+- maintenance-monitoring
+- server-monitoring
+health_checker:
+- maintenance-monitoring
+- server-monitoring
+health_rails:
+- maintenance-monitoring
+- server-monitoring
+savon:
+- web-apps-services-interaction
+- soap-clients
+handsoap:
+- web-apps-services-interaction
+- soap-clients
+lolsoap:
+- web-apps-services-interaction
+- soap-clients
+serviceproxy:
+- web-apps-services-interaction
+- soap-clients
+social_stream:
+- web-apps-services-interaction
+- social-network-builders
+omnicontacts:
+- web-apps-services-interaction
+- social-network-builders
+acts_as_follower:
+- web-apps-services-interaction
+- social-network-builders
+socialization:
+- web-apps-services-interaction
+- social-network-builders
+leaderboard:
+- web-apps-services-interaction
+- social-network-builders
+inkwell:
+- web-apps-services-interaction
+- social-network-builders
+likeable:
+- web-apps-services-interaction
+- social-network-builders
+amico:
+- web-apps-services-interaction
+- social-network-builders
+has_many_friends:
+- web-apps-services-interaction
+- social-network-builders
+acts_as_friendable:
+- web-apps-services-interaction
+- social-network-builders
+rakismet:
+- security
+- spam-detection
+akismetor:
+- security
+- spam-detection
+defender:
+- security
+- spam-detection
+viking:
+- security
+- spam-detection
+pg:
+- data-persistence
+- sql-database-adapters
+mysql2:
+- data-persistence
+- sql-database-adapters
+sqlite3:
+- data-persistence
+- sql-database-adapters
+mysql:
+- data-persistence
+- sql-database-adapters
+sqlite3-ruby:
+- data-persistence
+- sql-database-adapters
+jdbc-mysql:
+- data-persistence
+- sql-database-adapters
+jdbc-postgres:
+- data-persistence
+- sql-database-adapters
+ruby-oci8:
+- data-persistence
+- sql-database-adapters
+ruby-mysql:
+- data-persistence
+- sql-database-adapters
+mysqlplus:
+- data-persistence
+- sql-database-adapters
+postgres-pr:
+- data-persistence
+- sql-database-adapters
+postgresql_cursor:
+- data-persistence
+- sql-database-adapters
+ibm_db:
+- data-persistence
+- sql-database-adapters
+kbam:
+- data-persistence
+- sql-database-adapters
+state_machine:
+- rails-plugins
+- state-machines
+aasm:
+- rails-plugins
+- state-machines
+workflow:
+- rails-plugins
+- state-machines
+statesman:
+- rails-plugins
+- state-machines
+transitions:
+- rails-plugins
+- state-machines
+ruote:
+- rails-plugins
+- state-machines
+micromachine:
+- rails-plugins
+- state-machines
+stateflow:
+- rails-plugins
+- state-machines
+simple_states:
+- rails-plugins
+- state-machines
+alter-ego:
+- rails-plugins
+- state-machines
+simple_state_machine:
+- rails-plugins
+- state-machines
+state-fu:
+- rails-plugins
+- state-machines
+status-manager:
+- rails-plugins
+- state-machines
+golem_statemachine:
+- rails-plugins
+- state-machines
+state_objects:
+- rails-plugins
+- state-machines
+stamina:
+- rails-plugins
+- state-machines
+jekyll:
+- content-management-blogging
+- static-website-generation
+middleman:
+- content-management-blogging
+- static-website-generation
+high_voltage:
+- content-management-blogging
+- static-website-generation
+nanoc:
+- content-management-blogging
+- static-website-generation
+stasis:
+- content-management-blogging
+- static-website-generation
+ruhoh:
+- content-management-blogging
+- static-website-generation
+awestruct:
+- content-management-blogging
+- static-website-generation
+frank:
+- content-management-blogging
+- static-website-generation
+webby:
+- content-management-blogging
+- static-website-generation
+staticmatic:
+- content-management-blogging
+- static-website-generation
+bonsai:
+- content-management-blogging
+- static-website-generation
+brochure:
+- content-management-blogging
+- static-website-generation
+webgen:
+- content-management-blogging
+- static-website-generation
+ace:
+- content-management-blogging
+- static-website-generation
+korma:
+- content-management-blogging
+- static-website-generation
+machined:
+- content-management-blogging
+- static-website-generation
+dynamicmatic:
+- content-management-blogging
+- static-website-generation
+deplot:
+- content-management-blogging
+- static-website-generation
+jackpot:
+- e-commerce-and-payments
+- subscription-management
+fastspring-saasy:
+- e-commerce-and-payments
+- subscription-management
+subscription_fu:
+- e-commerce-and-payments
+- subscription-management
+subly:
+- e-commerce-and-payments
+- subscription-management
+coderay:
+- html-markup
+- syntax-highlighting
+rouge:
+- html-markup
+- syntax-highlighting
+albino:
+- html-markup
+- syntax-highlighting
+highlight:
+- html-markup
+- syntax-highlighting
+ultraviolet:
+- html-markup
+- syntax-highlighting
+tm_syntax_highlighting:
+- html-markup
+- syntax-highlighting
+code_rippa:
+- html-markup
+- syntax-highlighting
+rack-pygmentize:
+- html-markup
+- syntax-highlighting
+rack-coderay:
+- html-markup
+- syntax-highlighting
+albeano:
+- html-markup
+- syntax-highlighting
+ink:
+- html-markup
+- syntax-highlighting
+vagrant:
+- provision-deploy-host
+- system-provisioning
+puppet:
+- provision-deploy-host
+- system-provisioning
+chef:
+- provision-deploy-host
+- system-provisioning
+sprinkle:
+- provision-deploy-host
+- system-provisioning
+supply_drop:
+- provision-deploy-host
+- system-provisioning
+rudy:
+- provision-deploy-host
+- system-provisioning
+teleport:
+- provision-deploy-host
+- system-provisioning
+automateit:
+- provision-deploy-host
+- system-provisioning
+knife-esx:
+- provision-deploy-host
+- system-provisioning
+boris:
+- provision-deploy-host
+- system-provisioning
+datagrid:
+- html-markup
+- table-builders
+wice_grid:
+- html-markup
+- table-builders
+table_cloth:
+- html-markup
+- table-builders
+tabletastic:
+- html-markup
+- table-builders
+table_for_collection:
+- html-markup
+- table-builders
+table-for:
+- html-markup
+- table-builders
+fancygrid:
+- html-markup
+- table-builders
+active-list:
+- html-markup
+- table-builders
+magic_grid:
+- html-markup
+- table-builders
+tableasy:
+- html-markup
+- table-builders
+easy_table:
+- html-markup
+- table-builders
+table_go:
+- html-markup
+- table-builders
+sorting_table_for:
+- html-markup
+- table-builders
+tableficate:
+- html-markup
+- table-builders
+gridder:
+- html-markup
+- table-builders
+erubis:
+- html-markup
+- template-engines
+tilt:
+- html-markup
+- template-engines
+haml:
+- html-markup
+- template-engines
+slim:
+- html-markup
+- template-engines
+liquid:
+- html-markup
+- template-engines
+temple:
+- html-markup
+- template-engines
+mustache:
+- html-markup
+- template-engines
+handlebars_assets:
+- html-markup
+- template-engines
+deface:
+- html-markup
+- template-engines
+curly-templates:
+- html-markup
+- template-engines
+erector:
+- html-markup
+- template-engines
+markaby:
+- html-markup
+- template-engines
+markerb:
+- html-markup
+- template-engines
+tagz:
+- html-markup
+- template-engines
+wlang:
+- html-markup
+- template-engines
+inversion:
+- html-markup
+- template-engines
+PageTemplate:
+- html-markup
+- template-engines
+cadenza:
+- html-markup
+- template-engines
+ember:
+- html-markup
+- template-engines
+sweet-lang:
+- html-markup
+- template-engines
+hammer_builder:
+- html-markup
+- template-engines
+ruty:
+- html-markup
+- template-engines
+rainbow:
+- developer-tools
+- terminal-coloring
+term-ansicolor:
+- developer-tools
+- terminal-coloring
+colorize:
+- developer-tools
+- terminal-coloring
+colored:
+- developer-tools
+- terminal-coloring
+ansi:
+- developer-tools
+- terminal-coloring
+lolcat:
+- developer-tools
+- terminal-coloring
+paint:
+- developer-tools
+- terminal-coloring
+combustion:
+- testing
+- testing-rails-engines
+test_engine:
+- testing
+- testing-rails-engines
+multiengine:
+- testing
+- testing-rails-engines
+shoulda:
+- testing
+- test-unit-extensions
+contest:
+- testing
+- test-unit-extensions
+pending:
+- testing
+- test-unit-extensions
+redcar:
+- developer-tools
+- text-editors-in-ruby
+ruco:
+- developer-tools
+- text-editors-in-ruby
+arcadia:
+- developer-tools
+- text-editors-in-ruby
+diakonos:
+- developer-tools
+- text-editors-in-ruby
+ruber:
+- developer-tools
+- text-editors-in-ruby
+timecop:
+- testing
+- time-warping
+delorean:
+- testing
+- time-warping
+time-warp:
+- testing
+- time-warping
+time_travel:
+- testing
+- time-warping
+quantum_leap:
+- testing
+- time-warping
+time-zone-warp:
+- testing
+- time-warping
+minitest:
+- testing
+- unit-test-frameworks
+rspec:
+- testing
+- unit-test-frameworks
+test-unit:
+- testing
+- unit-test-frameworks
+bacon:
+- testing
+- unit-test-frameworks
+wrong:
+- testing
+- unit-test-frameworks
+riot:
+- testing
+- unit-test-frameworks
+shindo:
+- testing
+- unit-test-frameworks
+testrocket:
+- testing
+- unit-test-frameworks
+rubydoctest:
+- testing
+- unit-test-frameworks
+testy:
+- testing
+- unit-test-frameworks
+micronaut:
+- testing
+- unit-test-frameworks
+assert:
+- testing
+- unit-test-frameworks
+kintama:
+- testing
+- unit-test-frameworks
+dtf:
+- testing
+- unit-test-frameworks
+test_inline:
+- testing
+- unit-test-frameworks
+lemon:
+- testing
+- unit-test-frameworks
+detest:
+- testing
+- unit-test-frameworks
+rack-rewrite:
+- web-apps-services-interaction
+- url-rewriting
+refraction:
+- web-apps-services-interaction
+- url-rewriting
+redirect:
+- web-apps-services-interaction
+- url-rewriting
+desviar:
+- web-apps-services-interaction
+- url-rewriting
+browser:
+- web-apps-services-interaction
+- user-agent-detection
+useragent:
+- web-apps-services-interaction
+- user-agent-detection
+mobylette:
+- web-apps-services-interaction
+- user-agent-detection
+user_agent_parser:
+- web-apps-services-interaction
+- user-agent-detection
+agent_orange:
+- web-apps-services-interaction
+- user-agent-detection
+browsernizer:
+- web-apps-services-interaction
+- user-agent-detection
+user-agent:
+- web-apps-services-interaction
+- user-agent-detection
+mobvious:
+- web-apps-services-interaction
+- user-agent-detection
+active_device:
+- web-apps-services-interaction
+- user-agent-detection
+divining_rod:
+- web-apps-services-interaction
+- user-agent-detection
+rack-useragent-filter:
+- web-apps-services-interaction
+- user-agent-detection
+is_it_mobile:
+- web-apps-services-interaction
+- user-agent-detection
+mailboxer:
+- rails-plugins
+- user-messaging-systems
+acts-as-messageable:
+- rails-plugins
+- user-messaging-systems
+maktoub:
+- rails-plugins
+- user-messaging-systems
+inboxes:
+- rails-plugins
+- user-messaging-systems
+cacheable_flash:
+- rails-plugins
+- user-messaging-systems
+discuss:
+- rails-plugins
+- user-messaging-systems
+growlyflash:
+- rails-plugins
+- user-messaging-systems
+ruby-graphviz:
+- graphics
+- visualizing-data
+ruby-processing:
+- graphics
+- visualizing-data
+gabba:
+- web-apps-services-interaction
+- web-analytics
+legato:
+- web-apps-services-interaction
+- web-analytics
+gattica:
+- web-apps-services-interaction
+- web-analytics
+google-analytics-rails:
+- web-apps-services-interaction
+- web-analytics
+PageRankr:
+- web-apps-services-interaction
+- web-analytics
+rack-google-analytics:
+- web-apps-services-interaction
+- web-analytics
+garb:
+- web-apps-services-interaction
+- web-analytics
+redis_analytics:
+- web-apps-services-interaction
+- web-analytics
+rugalytics:
+- web-apps-services-interaction
+- web-analytics
+ga_events:
+- web-apps-services-interaction
+- web-analytics
+rack_clicky:
+- web-apps-services-interaction
+- web-analytics
+googlepagerank:
+- web-apps-services-interaction
+- web-analytics
+mixpanel_rails:
+- web-apps-services-interaction
+- web-analytics
+gabbara:
+- web-apps-services-interaction
+- web-analytics
+wwwtf:
+- web-apps-services-interaction
+- web-analytics
+yaga:
+- web-apps-services-interaction
+- web-analytics
+rails:
+- web-apps-services-interaction
+- web-app-frameworks
+rack:
+- web-apps-services-interaction
+- web-app-frameworks
+sinatra:
+- web-apps-services-interaction
+- web-app-frameworks
+padrino:
+- web-apps-services-interaction
+- web-app-frameworks
+cramp:
+- web-apps-services-interaction
+- web-app-frameworks
+cuba:
+- web-apps-services-interaction
+- web-app-frameworks
+merb-core:
+- web-apps-services-interaction
+- web-app-frameworks
+camping:
+- web-apps-services-interaction
+- web-app-frameworks
+hobo:
+- web-apps-services-interaction
+- web-app-frameworks
+ramaze:
+- web-apps-services-interaction
+- web-app-frameworks
+raptor:
+- web-apps-services-interaction
+- web-app-frameworks
+pakyow:
+- web-apps-services-interaction
+- web-app-frameworks
+renee:
+- web-apps-services-interaction
+- web-app-frameworks
+rango:
+- web-apps-services-interaction
+- web-app-frameworks
+scorched:
+- web-apps-services-interaction
+- web-app-frameworks
+lattice:
+- web-apps-services-interaction
+- web-app-frameworks
+harbor:
+- web-apps-services-interaction
+- web-app-frameworks
+vanilla:
+- web-apps-services-interaction
+- web-app-frameworks
+marley:
+- web-apps-services-interaction
+- web-app-frameworks
+e:
+- web-apps-services-interaction
+- web-app-frameworks
+strelka:
+- web-apps-services-interaction
+- web-app-frameworks
+salad:
+- web-apps-services-interaction
+- web-app-frameworks
+gin:
+- web-apps-services-interaction
+- web-app-frameworks
+anemone:
+- web-apps-services-interaction
+- web-content-scrapers
+pismo:
+- web-apps-services-interaction
+- web-content-scrapers
+metainspector:
+- web-apps-services-interaction
+- web-content-scrapers
+link_thumbnailer:
+- web-apps-services-interaction
+- web-content-scrapers
+data_miner:
+- web-apps-services-interaction
+- web-content-scrapers
+cobweb:
+- web-apps-services-interaction
+- web-content-scrapers
+sinew:
+- web-apps-services-interaction
+- web-content-scrapers
+fletcher:
+- web-apps-services-interaction
+- web-content-scrapers
+docparser:
+- web-apps-services-interaction
+- web-content-scrapers
+url_scraper:
+- web-apps-services-interaction
+- web-content-scrapers
+wiki-api:
+- web-apps-services-interaction
+- web-content-scrapers
+thin:
+- provision-deploy-host
+- web-servers
+unicorn:
+- provision-deploy-host
+- web-servers
+puma:
+- provision-deploy-host
+- web-servers
+passenger:
+- provision-deploy-host
+- web-servers
+pow:
+- provision-deploy-host
+- web-servers
+mongrel:
+- provision-deploy-host
+- web-servers
+skinny:
+- provision-deploy-host
+- web-servers
+trinidad:
+- provision-deploy-host
+- web-servers
+hoof:
+- provision-deploy-host
+- web-servers
+ebb:
+- provision-deploy-host
+- web-servers
+mongrel2:
+- provision-deploy-host
+- web-servers
+yarn:
+- provision-deploy-host
+- web-servers
+gollum:
+- content-management-blogging
+- wiki-apps
+instiki:
+- content-management-blogging
+- wiki-apps
+irwi:
+- content-management-blogging
+- wiki-apps
+olelo:
+- content-management-blogging
+- wiki-apps
+soywiki:
+- content-management-blogging
+- wiki-apps
+gollum_rails:
+- content-management-blogging
+- wiki-apps
+gitki:
+- content-management-blogging
+- wiki-apps
+cargo_wiki:
+- content-management-blogging
+- wiki-apps
+gyoku:
+- web-apps-services-interaction
+- xml-mapping
+nori:
+- web-apps-services-interaction
+- xml-mapping
+sax-machine:
+- web-apps-services-interaction
+- xml-mapping
+happymapper:
+- web-apps-services-interaction
+- xml-mapping
+roxml:
+- web-apps-services-interaction
+- xml-mapping
+nokogiri-happymapper:
+- web-apps-services-interaction
+- xml-mapping
+xml-mapping:
+- web-apps-services-interaction
+- xml-mapping
+saxerator:
+- web-apps-services-interaction
+- xml-mapping
+representative:
+- web-apps-services-interaction
+- xml-mapping
+xml-fu:
+- web-apps-services-interaction
+- xml-mapping
+sax_stream:
+- web-apps-services-interaction
+- xml-mapping
+xml_active:
+- web-apps-services-interaction
+- xml-mapping
+saxy:
+- web-apps-services-interaction
+- xml-mapping
+data_active:
+- web-apps-services-interaction
+- xml-mapping
+sxrb:
+- web-apps-services-interaction
+- xml-mapping
