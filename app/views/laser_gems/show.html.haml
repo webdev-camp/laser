@@ -6,6 +6,12 @@
       %span=  @laser_gem.gem_spec.current_version
     .gem_description
       %p= @laser_gem.gem_spec.info
+
+    .gem_suggestions
+      %h3 Related gems
+      -4.times do
+        .suggestion gem
+
     .gem_tags
       %h3 Related Tags
       .list
@@ -17,6 +23,13 @@
           //= submit_tag 'Save'
           %button.icon{id: "save_tag", type: "submit"}
             %i.plus.icon
+
+    .gem_dependents
+      %h3 Depending gems
+      .ui.celled.horizontal.list
+        -@laser_gem.dependents.each do |dependent|
+          .item= link_to(dependent.name, laser_gem_path(dependent.name))
+
     .gem_owners
       %h3 Owners
       %a.ui.olive.empty.circular.label;
@@ -25,22 +38,9 @@
 
     .gem_dependecies
       %h3 Depends on the following gems
-      .list
+      .ui.celled.horizontal.list
         -@laser_gem.dependencies.each do |dependency|
-          =dependency.name
-
-    .gem_dependents
-      %h3 Depending gems
-      .list
-        -@laser_gem.dependents.each do |dependent|
-          =dependent.name
-
-    .gem_suggestions
-      %h3 Suggestions
-      %ul
-        %li gem
-        %li gem
-        %li gem
+          .item= link_to(dependency.name, laser_gem_path(dependency.name))
 
   .gem_stats
     .gem_rank
@@ -53,11 +53,11 @@
     .gem_downloads
       .gem_downloads_total
         .value
-          = @laser_gem.gem_spec.total_downloads
+          =k_numbers @laser_gem.gem_spec.total_downloads
         .label Total Downloads
-      .gem_downloads_current_version
+      .gem_downloads_current_version.tiny
         .value
-          = @laser_gem.gem_spec.current_version_downloads
+          =k_numbers @laser_gem.gem_spec.current_version_downloads
         .label Current Version Downloads
 
     .gem_activity
