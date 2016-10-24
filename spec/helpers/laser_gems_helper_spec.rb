@@ -1,14 +1,10 @@
-
-# Specs in this file have access to a helper object that includes
-# the LaserGemsHelper. For example:
-#
-# describe LaserGemsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe LaserGemsHelper, type: :helper do
-#  pending "add some examples to (or delete) #{__FILE__}"
+  describe "number with k" do
+    it "adds k for number larger than 1000" do
+      expect(helper.k_numbers(847200)).to eq("847k")
+    end
+    it "shows number smaller than 1000" do
+      expect(helper.k_numbers(847)).to eq("847")
+    end
+  end
 end
