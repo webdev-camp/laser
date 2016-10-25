@@ -14,6 +14,7 @@ class LaserGem < ApplicationRecord
   has_one :gem_git
 
   has_many :ownerships
+  has_many :owners, :through => :ownerships, :foreign_key => "laser_gem_id", :source => "owner"
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
