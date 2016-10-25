@@ -1,4 +1,3 @@
-@import 'susy';
 
 .gem_element {
   @include span(12);
@@ -21,7 +20,7 @@
     h1, span { display: inline; }
 
     span {
-      @include span(last);
+      @include span( 12 );
       padding-top: 0.7em;
     }
   }
@@ -133,7 +132,7 @@
     resize: vertical; }
 
   .ui.labeled.submit.icon.button {
-    @include span(last);
+    @include span(12);
     margin-top: 0.5em;
   }
 }

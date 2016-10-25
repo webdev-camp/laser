@@ -29,4 +29,9 @@ namespace :laser do
     loader = GitLoader.new
     loader.fetch_and_create_gem_git(rails_laser_gem)
   end
+  desc "Load tags for Gems"
+  task :load_tags => :environment do
+    loader = TagLoader.new
+    loader.load_tags
+  end
 end
