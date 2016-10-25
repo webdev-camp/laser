@@ -68,42 +68,12 @@
   //The following comments section is a direct extract code of the semantic-ui example, converted and adapted in haml.
   .comments_section
     %h3 Comments
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/matt.jpg"}/
-      .content
-        %a.author Matt
-        .metadata
-          %span.date Today at 5:42PM
-        .text
-          How artistic!
-        .actions
-          %a.reply Reply
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/elliot.jpg"}/
-      .content
-        %a.author Elliot Fu
-        .metadata
-          %span.date Yesterday at 12:30AM
-        .text
-          %p This has been very useful for my research. Thanks as well!
-        .actions
-          %a.reply Reply
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/joe.jpg"}/
-      .content
-        %a.author Joe Henderson
-        .metadata
-          %span.date 5 days ago
-        .text
-          Dude, this is awesome. Thanks so much
-        .actions
-          %a.reply Reply
-    %form.ui.reply.form
-      .field
-        %textarea
-      .ui.labeled.submit.icon.button
+    -@laser_gem.comments.each do |comment|
+      %p= comment.user.name
+      %p= comment.created_at
+      %p= comment.body
+    = form_tag(add_comment_path(@laser_gem.name)) do
+      = text_area_tag(:comment_body)
+      %button.icon{id: "add_comment", type: "submit", method: :post}
         %i.icon.edit
         Add Reply
