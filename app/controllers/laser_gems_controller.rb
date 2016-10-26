@@ -18,7 +18,19 @@ class LaserGemsController < ApplicationController
       redirect_to laser_gem_path(@laser_gem.name)
     else
       flash[:notice] = "Please insert a valid tag."
-      render :show  
+      render :show
+    end
+  end
+
+  def add_comment
+    @laser_gem = LaserGem.find_by_name(params[:name])
+    @user = User.find_or_create_by name: "Bob"   #TODO user is manually generated
+    @comment = Comment.new(body: params[:comment_body], user: @user, laser_gem: @laser_gem)
+    if @comment.save
+      redirect_to laser_gem_path(@laser_gem.name)
+    else
+      flash[:notice] = "Comment error"
+      render :show
     end
   end
 

@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022122602) do
+ActiveRecord::Schema.define(version: 20161025113156) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_announcements_on_user_id"
+  end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "laser_gem_id"
     t.integer  "user_id"
+    t.text     "body"
   end
 
   create_table "gem_dependencies", force: :cascade do |t|
@@ -69,8 +78,8 @@ ActiveRecord::Schema.define(version: 20161022122602) do
   create_table "ownerships", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "laser_gem_id"
     t.string   "email"
+    t.integer  "laser_gem_id"
     t.boolean  "rubygem_owner"
     t.boolean  "github_owner"
     t.string   "github_profile"

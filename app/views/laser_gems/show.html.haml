@@ -6,6 +6,12 @@
       %span=  @laser_gem.gem_spec.current_version
     .gem_description
       %p= @laser_gem.gem_spec.info
+
+    .gem_suggestions
+      %h3 Related gems
+      -4.times do
+        .suggestion gem
+
     .gem_tags
       %h3 Related Tags
       .list
@@ -17,29 +23,24 @@
           //= submit_tag 'Save'
           %button.icon{id: "save_tag", type: "submit"}
             %i.plus.icon
+
+    .gem_dependents
+      %h3 Depending gems
+      .ui.celled.horizontal.list
+        -@laser_gem.dependents.each do |dependent|
+          .item= link_to(dependent.name, laser_gem_path(dependent.name))
+
     .gem_owners
       %h3 Owners
       %a.ui.olive.empty.circular.label;
       %a.ui.olive.empty.circular.label;
       %a.ui.olive.empty.circular.label;
+
     .gem_dependecies
-      %h3 Gem Dependecies
-      %ul
-        %li gem
-        %li gem
-        %li gem
-    .gem_dependents
-      %h3 Gem Dependents
-      %ul
-        %li gem
-        %li gem
-        %li gem
-    .gem_suggestions
-      %h3 Suggestions
-      %ul
-        %li gem
-        %li gem
-        %li gem
+      %h3 Depends on the following gems
+      .ui.celled.horizontal.list
+        -@laser_gem.dependencies.each do |dependency|
+          .item= link_to(dependency.name, laser_gem_path(dependency.name))
 
   .gem_stats
     .gem_rank
@@ -52,11 +53,11 @@
     .gem_downloads
       .gem_downloads_total
         .value
-          = @laser_gem.gem_spec.total_downloads
+          =k_numbers @laser_gem.gem_spec.total_downloads
         .label Total Downloads
-      .gem_downloads_current_version
+      .gem_downloads_current_version.tiny
         .value
-          = @laser_gem.gem_spec.current_version_downloads
+          =k_numbers @laser_gem.gem_spec.current_version_downloads
         .label Current Version Downloads
 
     .gem_activity
@@ -64,45 +65,24 @@
     .gem_github
       = link_to("GitHub Page", @laser_gem.gem_spec.source_code_uri)
 
-  //The following comments section is a direct extract code of the semantic-ui example, converted and adapted in haml.
   .comments_section
     %h3 Comments
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/matt.jpg"}/
-      .content
-        %a.author Matt
-        .metadata
-          %span.date Today at 5:42PM
-        .text
-          How artistic!
-        .actions
-          %a.reply Reply
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/elliot.jpg"}/
-      .content
-        %a.author Elliot Fu
-        .metadata
-          %span.date Yesterday at 12:30AM
-        .text
-          %p This has been very useful for my research. Thanks as well!
-        .actions
-          %a.reply Reply
-    .comment
-      %a.avatar
-        %img{:src => "/images/avatar/small/joe.jpg"}/
-      .content
-        %a.author Joe Henderson
-        .metadata
-          %span.date 5 days ago
-        .text
-          Dude, this is awesome. Thanks so much
-        .actions
-          %a.reply Reply
-    %form.ui.reply.form
+    -@laser_gem.comments.each do |comment|
+      .comment
+        %a.avatar
+          =image_tag("bob.jpg")
+        .content
+          %a.author= comment.user.name
+          .metadata
+            %span.date
+              =time_ago_in_words comment.created_at
+              ago
+          .text
+            %p= comment.body
+
+    = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
       .field
-        %textarea
-      .ui.labeled.submit.icon.button
+        = text_area_tag(:comment_body)
+      .ui.green.labeled.submit.icon.button{id: "add_comment", type: "submit", method: :post}
         %i.icon.edit
         Add Reply

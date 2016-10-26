@@ -18,10 +18,14 @@
 @import 'susy';
 @import 'breakpoint';
 @import 'semantic-ui/globals/variables';
+@import 'semantic-ui/globals/reset';
+@import 'semantic-ui/globals/site ';
+@import 'semantic-ui/elements/button';
 @import 'semantic-ui/elements/icon';
 @import 'semantic-ui/elements/divider';
 @import 'semantic-ui/elements/input';
 @import 'semantic-ui/elements/label';
+@import 'semantic-ui/elements/list';
 @import 'semantic-ui/views/comment';
 @import 'semantic-ui/views/feed';
 @import 'semantic-ui/views/statistic';
@@ -45,17 +49,22 @@ $susy: (
 @import 'laser_gems';
 @import 'index';
 @import 'show';
+@import 'main';
 
-html, body {
+html body {
   margin: 0;
-  padding: 0;
   height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-color: #3e8979;
+  // #3e8979 0%, #8b2817 41%, #df412b 59%, #eca45c 77%, #ffffff 100%
+  background: linear-gradient(#3e8979, #8b2817, #8b2817, #eca45c); /* Standard syntax */
 }
 
 .header {
   @include container(100%);
-  background-color: #ff0066;
-  height: 150px;
+  height: 20vh;
+  border-bottom: 1px solid gray;
 }
 
 .content {
@@ -64,15 +73,10 @@ html, body {
 
 .footer {
   @include container(100%);
-  background-color: #f1f1f2;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 150px;
-
+  border-top: 1px solid gray;
+  height: 20vh;
   .sponsor {
     @include span(2 of 12);
-
     p {
       color: #000000;
       font-family: sans-serif;
@@ -80,18 +84,9 @@ html, body {
       margin-bottom: 1px;
       padding-top: 20px;
     }
-
     img {
       margin-left: 40px;
       width: 50%;
-    }
-
-    p {
-      color: #000000;
-      font-family: sans-serif;
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 1px;
     }
   }
 }
@@ -99,12 +94,10 @@ html, body {
 a {
   text-decoration: none;
   color: #ff0066;
-
   &:hover {
     color: #ff0066;
     font-weight: bold;
   }
-
   &:visited {
     color: #ff89b8;
     font-weight: lighter;

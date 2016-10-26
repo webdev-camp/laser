@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :owners, :class_name => User
   has_many :ownerships
   has_many :laser_gems, :through => :ownerships
+  has_many :announcements
+  has_many :comments
 end

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :comment do
-    name "MyString"
+    body "Lorem Ipsum has been the industry's standard dummy text ever since"
     laser_gem
-    user
+    user 
   end
 end
