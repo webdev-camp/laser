@@ -9,6 +9,7 @@ FactoryGirl.define do
     total_downloads 23
     rubygem_uri "SomeURI"
     documentation_uri "SomeDocURI"
+    authors "mr tickle"
     laser_gem { create :laser_gem , name: name }
   end
 

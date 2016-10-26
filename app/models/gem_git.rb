@@ -9,4 +9,7 @@ class GemGit < ApplicationRecord
 
   belongs_to :laser_gem , required: false
   validates_uniqueness_of :laser_gem_id
+
+  # has_many :ownerships
+  # has_many :owners, :through => :ownerships, :foreign_key => "gem_git_id", :source => "owner"
 end

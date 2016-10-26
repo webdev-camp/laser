@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20161025113156) do
     t.integer  "laser_gem_id"
     t.string   "source_code_uri"
     t.string   "homepage_uri"
+    t.string   "authors"
   end
 
   create_table "laser_gems", force: :cascade do |t|
@@ -75,12 +76,19 @@ ActiveRecord::Schema.define(version: 20161025113156) do
   end
 
   create_table "ownerships", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "email"
     t.integer  "laser_gem_id"
+    t.boolean  "rubygem_owner"
+    t.boolean  "github_owner"
+    t.string   "github_profile"
+    t.string   "git_handle"
+    t.string   "gem_handle"
+    t.integer  "owner_id"
     t.index ["laser_gem_id"], name: "index_ownerships_on_laser_gem_id"
+    t.index ["owner_id", "laser_gem_id"], name: "index_ownerships_on_owner_id_and_laser_gem_id", unique: true
+    t.index ["owner_id"], name: "index_ownerships_on_owner_id"
   end
 
   create_table "taggings", force: :cascade do |t|
