@@ -22,6 +22,8 @@ class AnnouncementsController < ApplicationController
   # POST /announcements
   def create
     @announcement = Announcement.new(announcement_params)
+    bob = User.find_or_create_by name: "Bob"   #TODO user is manually generated
+    @announcement.user = bob
 
     if @announcement.save
       redirect_to @announcement, notice: 'Announcement was successfully created.'
