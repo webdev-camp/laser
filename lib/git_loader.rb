@@ -1,7 +1,7 @@
 class GitLoader
 
-  def initialize(client = Octokit::Client.new)
-    @client = client
+  def initialize()
+    @client = Octokit::Client.new :login => ENV["GIT_USER"], :password => ENV["GIT_PASS"]
   end
 
   def get_git_from_api(repo_name)

@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
     expect(user.save).to be true
   end
 
-  xit "checks name attribute" do
+  it "checks name attribute" do
     user = build :user, name: ""
     expect(user.save).to be false
   end

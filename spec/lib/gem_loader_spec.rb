@@ -142,8 +142,7 @@ RSpec.describe GemLoader do
       it "does not save a GemDependency if it already exists", :ci => true do
         loader = GemLoader.new
         laser_gem = LaserGem.create!(name: "tzinfo")
-        dep_gem = LaserGem.create!(name: "thread-safe")
-        laser_gem.register_dependency(dep_gem, "1.1.1")
+        loader.fetch_and_create_gem_spec(laser_gem)
         expect{ loader.fetch_and_create_gem_spec(laser_gem) }.not_to raise_error
       end
 
@@ -163,7 +162,7 @@ RSpec.describe GemLoader do
         expect(dep_spec.name).to eq "tzinfo"
         expect(dep_spec.rubygem_uri).to eq "https://rubygems.org/gems/tzinfo"
         expect(dep.dependencies.map(&:name)).to eq ["thread_safe"]
-        expect(ts.ownerships.count).not_to be 0
+        expect(dep.ownerships.count).not_to be 0
       end
     end
   end
