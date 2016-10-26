@@ -4,6 +4,14 @@ class GemLoader
     @client = client
   end
 
+  def get_spec_from_api(gem_name)
+    @client.info(gem_name)
+  end
+
+  def get_owners_from_api(gem_name)
+    @client.owners(gem_name)
+  end
+
   def fetch_and_create_gem_spec(laser_gem)
     gem_data = get_spec_from_api(laser_gem.name)
     attribs = {}
@@ -15,42 +23,19 @@ class GemLoader
     fetch_owners(laser_gem)
   end
 
-  def get_spec_from_api(gem_name)
-    @client.info(gem_name)
-  end
-
-  def get_owners_from_api(gem_name)
-    @client.owners(gem_name)
-  end
-
   # Not yet creating a user/owner
   def fetch_owners(laser_gem)
-    # this should be a where. Because it could have git ownerships
-    return unless laser_gem.ownerships.count == 0
+    return unless laser_gem.ownerships.where(["rubygem_owner = ?", true]).count == 0
     owner_array = get_owners_from_api(laser_gem.name)
     owner_array.each do |owner|
       gem_handle = owner["handle"]
       email = owner["email"]
       ownership = Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, email: email)
-      # take out role
-      ownership.update(role: "rubygems owner", rubygem_owner: true, gem_handle: gem_handle)
-      # take out gem_spec and gem_git
-      # if laser_gem.gem_spec
-      #   ownership.update({ gem_spec_id: ownership.laser_gem.gem_spec.id })
-      # end
-      # if laser_gem.gem_git
-      #   ownership.update({gem_git_id: ownership.laser_gem.gem_git.id })
-      # end
+      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
     end
     # fetch_owners_for_deps(laser_gem)
     laser_gem.dependencies.each { |dep| fetch_owners(dep) }
   end
-
-  # def fetch_owners_for_deps(laser_gem)
-  #   laser_gem.dependencies.each do |dep|
-  #       fetch_owners(dep) if dep.ownerships.count == 0
-  #   end
-  # end
 
   def fetch_and_spec_deps(laser_gem, runtime_deps)
     runtime_deps.each do |gem_dep|

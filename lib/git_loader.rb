@@ -10,12 +10,13 @@ class GitLoader
 
   def get_owners_from_github(repo_name)
     assignees = @client.repo(repo_name).rels[:assignees].get(:query => {:per_page => 100 }).data
-    @assignee_names = assignees.collect do |user| 
-      _un = user[:login], _up = user[:html_url] 
+    assignees.collect do |user| 
+      [user[:login], user[:html_url]]
     end
   end
 
   def fetch_assignees(laser_gem)
+    return unless laser_gem.ownerships.where(["github_owner = ?", true]).count == 0
     repo_name = parse_git_uri(laser_gem)
     return unless repo_name
     assignee_array = get_owners_from_github(repo_name)
@@ -23,38 +24,25 @@ class GitLoader
       git_handle = assig[0]
       github_profile = assig[1]
       # Joint ownership
-      _joint_ownership =  Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update_all(git_handle: git_handle, github_profile: github_profile, role: "rubygem and github owner", github_owner: true)
+      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update_all(git_handle: git_handle, github_profile: github_profile, github_owner: true)
       # only github ownership
-      ownership = Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
-      ownership.update({ role: "github owner", github_owner: true })
-      if laser_gem.gem_spec
-        ownership.update({ gem_spec_id: ownership.laser_gem.gem_spec.id })
-      end
-      if laser_gem.gem_git
-        ownership.update({gem_git_id: ownership.laser_gem.gem_git.id })
-      end
+      Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
     end
     fetch_git_owners_for_deps(laser_gem)
   end
 
   def fetch_git_owners_for_deps(laser_gem)
-    laser_gem.dependencies.map(&:name).each do |dep|
-      lg_dep = LaserGem.find_by(name: dep)
-      if lg_dep
-        fetch_assignees(lg_dep) if lg_dep.ownerships.where(github_owner: true).count == 0
-      end
+    laser_gem.dependencies.each do |dep|
+      fetch_assignees(dep) if dep.ownerships.where(github_owner: true).count == 0
     end
   end
 
   def parse_git_uri(laser_gem)
     return unless laser_gem.gem_spec
-    rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
     if laser_gem.gem_spec.source_code_uri != nil
       uri = laser_gem.gem_spec.source_code_uri
-      matches = rex.match(uri)
-      if !!(rex.match uri)
-        return matches[1]
-      end
+      matches = matcher(uri)
+      return matches[1] if matches = matcher(uri)
     else
       parse_homepage_uri(laser_gem)
     end
@@ -64,11 +52,14 @@ class GitLoader
     # Extract and add homepage uri
     if laser_gem.gem_spec[:homepage_uri] != nil
       uri = laser_gem.gem_spec[:homepage_uri]
-      matches = rex.match(uri)
-      if !!(rex.match uri)
-        return matches[1]
-      end
+      matches = matcher(uri)
+      return matches[1] if matches = matcher(uri)
     end
+  end
+
+  def matcher(uri)
+    rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
+    return rex.match(uri)
   end
 
   def fetch_and_create_gem_git(laser_gem)
@@ -86,11 +77,8 @@ class GitLoader
   end
 
   def fetch_git_for_deps(laser_gem)
-    laser_gem.dependencies.map(&:name).each do |dep|
-      lg_dep = LaserGem.find_by(name: dep)
-      if lg_dep
-        fetch_and_create_gem_git(lg_dep)  if lg_dep.gem_git.nil?
-      end
+    laser_gem.dependencies.each do |dep|
+      fetch_and_create_gem_git(dep)  if dep.gem_git.nil?
     end
   end
 

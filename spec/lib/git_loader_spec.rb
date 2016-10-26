@@ -3,6 +3,62 @@ RSpec.describe GitLoader do
     expect(GitLoader.new).not_to be nil
   end
 
+  describe "#fetch_assignees" do
+      before :example do
+        @loader = GitLoader.new
+      end
+      it "saves an instance of ownership for each assignee in the array", :ci => true do
+        tz = LaserGem.create(name: "tzinfo")
+        loader2 = GemLoader.new
+        loader2.fetch_and_create_gem_spec(tz)
+        @loader.fetch_assignees(tz)
+        expect(Ownership.count).not_to be 0
+        expect(Ownership.count).not_to be nil
+      end
+
+      it "updates an existing ownership if the handles match", :ci => true do
+
+        tz = LaserGem.create(name: "tzinfo")
+        loader2 = GemLoader.new
+        loader2.fetch_and_create_gem_spec(tz)
+        expect(Ownership.where(["github_owner = ?", true]).count).to be 0
+        @loader.fetch_assignees(tz)
+
+        expect(Ownership.where(["github_owner = ? and rubygem_owner = ?", true, true]).count).not_to be 0
+      end
+
+      it "correctly populates ownerships for each laser_gem" , :ci => true do
+        tz = LaserGem.create(name: "tzinfo")
+        loader2 = GemLoader.new
+        loader2.fetch_and_create_gem_spec(tz)
+        repo_name = @loader.parse_git_uri(tz)
+        array = @loader.get_owners_from_github(repo_name)
+        @loader.fetch_assignees(tz)
+        array.each { |a| expect(Ownership.where(["git_handle = ?", a[0]])[0].git_handle).to eq array[0][0] }
+      end
+
+      it "saves instances of ownership for the dependents with the given laser_gem", :ci => true do
+        tz = LaserGem.create(name: "tzinfo")
+        loader2 = GemLoader.new
+        loader2.fetch_and_create_gem_spec(tz)
+        ts = LaserGem.find_by(name: "thread_safe")
+        @loader.fetch_assignees(tz)
+        expect(ts.ownerships.count).not_to be 0
+      end
+
+      it "does not save a ownership if it already exists", :ci => true do
+        tz = LaserGem.create(name: "tzinfo")
+        loader2 = GemLoader.new
+        loader2.fetch_and_create_gem_spec(tz)
+        ts = LaserGem.find_by(name: "thread_safe")
+        @loader.fetch_assignees(tz)
+        num = ts.ownerships.count
+        @loader.fetch_assignees(ts)
+        expect(ts.ownerships.count).to eq num
+
+      end
+  end
+
   describe "#parse_git_uri" do
     before :example do
       @loader = GitLoader.new
@@ -40,14 +96,26 @@ RSpec.describe GitLoader do
   describe "#fetch_and_create_gem_git", :ci => true  do
     it "saves an instance of GemGit for each laser_gem" do
       loader = GitLoader.new
-      laser_gem = create :laser_gem_with_source_code_uri, name: "rails"
+      laser_gem = LaserGem.create!(name: "tzinfo")
+      loader2 = GemLoader.new
+      loader2.fetch_and_create_gem_spec(laser_gem)
       loader.fetch_and_create_gem_git(laser_gem)
-      expect(GemGit.exists?(name: "rails/rails")).to be true
+      expect(GemGit.exists?(name: "tzinfo/tzinfo")).to be true
     end
   end
 
+      it "fetches owners of the LaserGem and creates ownerships", :ci => true do
+        tz = LaserGem.create(name: "tzinfo")
+        loader = GemLoader.new
+        loader.fetch_and_create_gem_spec(tz)
+        loader2 = GitLoader.new
+        loader2.fetch_assignees(tz)
+        expect(Ownership.count).not_to be 0
+        expect(Ownership.count).not_to be nil
+      end
+
   describe "#fetch_and_create_gem_git", :ci => true do
-    it "calls fetch_and_create_gem_git recursively for the dependents of the given laser_gem, creating their GemGits", :ci => true  do
+    it "calls fetch_and_create_gem_git recursively for the dependents of the given laser_gem, creating their GemGits and ownerships", :ci => true  do
       loader = GemLoader.new
       laser_gem = LaserGem.create(name: "tzinfo")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -56,6 +124,8 @@ RSpec.describe GitLoader do
       expect(GemGit.exists?(name: "tzinfo/tzinfo")).to be true
       expect(GemGit.exists?(name: "ruby-concurrency/thread_safe")).to be true
       expect(laser_gem.dependencies.map(&:name)).to eq ["thread_safe"]
+      ts = LaserGem.find_by(name: "thread_safe")
+      expect(ts.ownerships.count).not_to be 0
     end
   end
 end

@@ -68,31 +68,12 @@ RSpec.describe GemLoader do
           expect(Ownership.all.pluck(:gem_handle)).to eq owner_handles
       end
 
-      it "updates and saves gem_spec_id for ownership if laser_gem has a gem_spec", :ci => true  do
-        laser_gem = LaserGem.create(name: "tzinfo")
-        @loader.fetch_and_create_gem_spec(laser_gem)
-        @loader.fetch_owners(laser_gem)
-        ownership = laser_gem.ownerships.first
-        expect(ownership.gem_spec.id).not_to be nil
-      end
-
-      it "updates and saves gem_git_id for ownership if laser_gem has a gem_git", :ci => true do
-
-        laser_gem = LaserGem.create(name: "tzinfo")
-        loader2 = GitLoader.new
-        loader2 = fetch_and_create_gem_git(laser_gem)
-        @loader.fetch_and_create_gem_spec(laser_gem)
-        @loader.fetch_owners(laser_gem)
-        ownership = laser_gem.ownerships.first
-        expect(ownership.gem_git.id).not_to be nil
-      end
-
       it "saves instances of ownership for the dependents with the given laser_gem", :ci => true do
         laser_gem = LaserGem.create!(name: "tzinfo")
         @loader.fetch_and_create_gem_spec(laser_gem)
         @loader.fetch_owners(laser_gem)
-        tz = LaserGem.find_by(name: "thread_safe")
-        expect(tz.ownerships.count).not_to be nil
+        ts = LaserGem.find_by(name: "thread_safe")
+        expect(ts.ownerships.count).not_to be nil
       end
 
       it "does not save a ownership if it already exists", :ci => true do
@@ -105,8 +86,6 @@ RSpec.describe GemLoader do
         @loader.fetch_owners(ts)
         expect(ts.ownerships.count).to eq num
       end
-
-      it "calls fetch_and_create_gem_spec recursively for the dependents of the given laser_gem, creating their ownerships", :ci => true
     end
 
     describe "#fetch_and_create_gem_spec" do
@@ -175,7 +154,7 @@ RSpec.describe GemLoader do
         expect(laser_gem.ownerships.count).to be > 0
       end
 
-      it "calls fetch_and_create_gem_spec recursively for the dependents of the given laser_gem, creating their GemSpecs and GemDependencies with their depenendents", :ci => true  do
+      it "calls fetch_and_create_gem_spec recursively for the dependents of the given laser_gem, creating their GemSpecs, Ownerships and GemDependencies with their depenendents", :ci => true  do
         loader = GemLoader.new
         laser_gem = LaserGem.create!(name: "activesupport")
         loader.fetch_and_create_gem_spec(laser_gem)
@@ -184,6 +163,7 @@ RSpec.describe GemLoader do
         expect(dep_spec.name).to eq "tzinfo"
         expect(dep_spec.rubygem_uri).to eq "https://rubygems.org/gems/tzinfo"
         expect(dep.dependencies.map(&:name)).to eq ["thread_safe"]
+        expect(ts.ownerships.count).not_to be 0
       end
     end
   end
