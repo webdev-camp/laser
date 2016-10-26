@@ -65,15 +65,24 @@
     .gem_github
       = link_to("GitHub Page", @laser_gem.gem_spec.source_code_uri)
 
-  //The following comments section is a direct extract code of the semantic-ui example, converted and adapted in haml.
   .comments_section
     %h3 Comments
     -@laser_gem.comments.each do |comment|
-      %p= comment.user.name
-      %p= comment.created_at
-      %p= comment.body
-    = form_tag(add_comment_path(@laser_gem.name)) do
-      = text_area_tag(:comment_body)
-      %button.icon{id: "add_comment", type: "submit", method: :post}
+      .comment
+        %a.avatar
+          =image_tag("bob.jpg")
+        .content
+          %a.author= comment.user.name
+          .metadata
+            %span.date
+              =time_ago_in_words comment.created_at
+              ago
+          .text
+            %p= comment.body
+
+    = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
+      .field
+        = text_area_tag(:comment_body)
+      .ui.green.labeled.submit.icon.button{id: "add_comment", type: "submit", method: :post}
         %i.icon.edit
         Add Reply
