@@ -83,6 +83,6 @@
     = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
       .field
         = text_area_tag(:comment_body)
-      .ui.green.labeled.submit.icon.button{id: "add_comment", type: "submit", method: :post}
+      %button.ui.green.labeled.submit.icon.button{id: "add_comment", type: "submit", method: :post}
         %i.icon.edit
         Add Reply
