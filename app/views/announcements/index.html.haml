@@ -1,0 +1,23 @@
+%h1 Listing announcements
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @announcements.each do |announcement|
+      %tr
+        %td= announcement.title
+        %td= announcement.body
+        %td= link_to 'Show', announcement
+        %td= link_to 'Edit', edit_announcement_path(announcement)
+        %td= link_to 'Destroy', announcement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Announcement', new_announcement_path

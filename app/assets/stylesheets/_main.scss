@@ -1,0 +1,28 @@
+$black: #212121;
+
+.home{
+  @include span(12);
+  text-align: center;
+  padding-top: 20vh ;
+  padding-bottom: 20vh;
+  color: $black;
+  .title{
+    @include span(12);
+    h1 {
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      font-family: 'Pattaya', sans-serif;
+      font-style: black 900 italic;
+      font-weight: 400;
+      font-size: 72px;
+    }
+    h2 {
+      font-size: 34px;
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+    }
+  }
+  .search{
+    @include span(12);
+  }
+}
