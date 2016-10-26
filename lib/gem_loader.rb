@@ -12,13 +12,18 @@ class GemLoader
     @client.owners(gem_name)
   end
 
+  def get_build_start_from_api(gem_name)
+    @client.versions(gem_name)
+  end
+
   def fetch_and_create_gem_spec(laser_gem)
     gem_data = get_spec_from_api(laser_gem.name)
+    first_version = get_build_start_from_api(laser_gem.name)
     attribs = {}
     spec_attributes.each  do |k,v| 
       attribs[k] = gem_data[v] 
     end
-    GemSpec.find_or_create_by!(attribs.merge laser_gem_id: laser_gem.id)
+    GemSpec.find_or_create_by!(attribs.merge laser_gem_id: laser_gem.id, build_date: first_version[-1]["built_at"])
     fetch_and_spec_deps(laser_gem, gem_data["dependencies"]["runtime"])
     fetch_owners(laser_gem)
   end

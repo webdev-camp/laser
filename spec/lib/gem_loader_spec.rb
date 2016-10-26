@@ -36,6 +36,15 @@ RSpec.describe GemLoader do
       expect(loader.get_owners_from_api("rails")).to be api_response
     end
 
+    describe "#get_build_start_from_api" do
+      it "fetches build date of first version from api", :ci => true do
+        api_response = [{"stuff" => "stuffing"}, {"muppets" => "fraggles"}, {"build_date" => "2005-08-30T04:00:00.000Z"}]
+        client = instance_double("Gems::Client", versions: api_response)
+        loader = GemLoader.new(client: client)
+        expect(loader.get_build_start_from_api("tzinfo")[-1]["build_date"]).to eq "2005-08-30T04:00:00.000Z"
+      end
+    end
+
     describe "#fetch_owners" do
       before :example do
         @loader = GemLoader.new
@@ -89,25 +98,6 @@ RSpec.describe GemLoader do
     end
 
     describe "#fetch_and_create_gem_spec" do
-      it "returns a validation error when API response is invalid" do
-        api_response = { 
-          "name" => "rails",
-          "info" => "some information",
-          "version" => "",
-          # Version is empty string
-          "version_downloads" => "12345",
-          "downloads" => "123456",
-          "project_uri" => "www.rubygems.org/rails",
-          "documentation_uri" => "www.blah",
-          "source_code_uri" => "www.github.blah",
-          "homepage_uri" => "www.rails.org",
-        }
-        client = instance_double("Gems::Client", info: api_response)
-        loader = GemLoader.new(client: client)
-        laser_gem = LaserGem.create!(name: "rails")
-        expect { loader.fetch_and_create_gem_spec(laser_gem) }.to raise_error(ActiveRecord::RecordInvalid)
-      end
-
       it "saves an instance of GemSpec for each laser_gem", :ci => true do
         loader = GemLoader.new
         laser_gem = LaserGem.create!(name: "activesupport")
@@ -144,6 +134,13 @@ RSpec.describe GemLoader do
         laser_gem = LaserGem.create!(name: "tzinfo")
         loader.fetch_and_create_gem_spec(laser_gem)
         expect{ loader.fetch_and_create_gem_spec(laser_gem) }.not_to raise_error
+      end
+
+      it "fetches the build_date of the first version for each LaserGem", :ci => true do
+        loader = GemLoader.new
+        laser_gem = LaserGem.create!(name: "tzinfo")
+        loader.fetch_and_create_gem_spec(laser_gem)
+        expect(laser_gem.gem_spec.build_date).to eq "2005-08-30T04:00:00.000Z"
       end
 
       it "fetches owners of the LaserGem and creates ownerships", :ci => true do
