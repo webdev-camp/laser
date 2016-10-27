@@ -3,6 +3,14 @@ RSpec.describe GitLoader do
     expect(GitLoader.new).not_to be nil
   end
 
+  describe "#get_git_from_api" do
+    it "returns nil if api response is an error", :ci => true do
+      repo_name = "xspond/paranoid"
+      loader = GitLoader.new
+      expect(loader.get_git_from_api(repo_name)).to be nil
+    end
+  end
+
   describe "#fetch_assignees" do
       before :example do
         @loader = GitLoader.new
@@ -96,8 +104,8 @@ RSpec.describe GitLoader do
   describe "#fetch_and_create_gem_git", :ci => true  do
     it "saves an instance of GemGit for each laser_gem" do
       loader = GitLoader.new
-      laser_gem = LaserGem.create!(name: "tzinfo")
       loader2 = GemLoader.new
+      laser_gem = LaserGem.create!(name: "tzinfo")
       loader2.fetch_and_create_gem_spec(laser_gem)
       loader.fetch_and_create_gem_git(laser_gem)
       expect(GemGit.exists?(name: "tzinfo/tzinfo")).to be true

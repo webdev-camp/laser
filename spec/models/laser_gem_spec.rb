@@ -15,7 +15,7 @@ RSpec.describe LaserGem, type: :model do
   end
 
   it "validates high values for length" do
-    laser_gem = build :laser_gem, name: "hstglsnfmndvbdkjsdkfjdvjdfjdvkdjkkdjfkj"
+    laser_gem = build :laser_gem, name: "hstglsnfmndvbdkjsdkfjdvjdfjdvkdjkkdjfkj"*3
     expect(laser_gem.save).to be false
   end
 

@@ -5,6 +5,8 @@ class GitLoader
   end
 
   def get_git_from_api(repo_name)
+  rescue Octokit::NotFound => not_found
+  rescue Faraday::ConnectionFailed => offline
     @client.repo(repo_name)
   end
 
@@ -16,10 +18,12 @@ class GitLoader
   end
 
   def fetch_assignees(laser_gem)
+    # For future use, check dependencies if returns.
     return unless laser_gem.ownerships.where(["github_owner = ?", true]).count == 0
     repo_name = parse_git_uri(laser_gem)
-    return unless repo_name
+    # return unless repo_name
     assignee_array = get_owners_from_github(repo_name)
+    # return unless assignee_array
     assignee_array.each do |assig|
       git_handle = assig[0]
       github_profile = assig[1]
@@ -64,16 +68,24 @@ class GitLoader
 
   def fetch_and_create_gem_git(laser_gem)
     repo_name = parse_git_uri(laser_gem)
-    return unless repo_name
-    git_data = get_git_from_api(repo_name)
-    attribs = {}
-    git_attributes.each do |k,v|
-      attribs[k] = git_data[v]
+    if repo_name
+      git_data = get_git_from_api(repo_name)
+      if git_data
+      binding.pry
+        attribs = {}
+        git_attributes.each do |k,v|
+          attribs[k] = git_data[v]
+        end
+        GemGit.find_or_create_by(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
+        fetch_git_for_deps(laser_gem)
+        # Need an else here to return an error to user/uploader
+        fetch_assignees(laser_gem)
+      else
+        fetch_git_for_deps(laser_gem)
+      end
+    else
+      fetch_git_for_deps(laser_gem)
     end
-    GemGit.find_or_create_by(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
-    fetch_git_for_deps(laser_gem)
-    # Need an else here to return an error to user/uploader
-    fetch_assignees(laser_gem)
   end
 
   def fetch_git_for_deps(laser_gem)

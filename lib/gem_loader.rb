@@ -5,6 +5,7 @@ class GemLoader
   end
 
   def get_spec_from_api(gem_name)
+  # rescue SocketError
     @client.info(gem_name)
   end
 
@@ -18,6 +19,7 @@ class GemLoader
 
   def fetch_and_create_gem_spec(laser_gem)
     gem_data = get_spec_from_api(laser_gem.name)
+    return unless gem_data
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {}
     spec_attributes.each  do |k,v| 
