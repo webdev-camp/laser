@@ -41,12 +41,6 @@ class AnnouncementsController < ApplicationController
     end
   end
 
-  # DELETE /announcements/1
-  def destroy
-    @announcement.destroy
-    redirect_to announcements_url, notice: 'Announcement was successfully destroyed.'
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_announcement
