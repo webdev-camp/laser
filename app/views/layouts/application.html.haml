@@ -12,10 +12,31 @@
 
   %body
     .header
-    .message
-      -flash.each do |name, message|
-        =name
-        =message
+      .logo{:preserveaspectratio => "xMinYMid meet", :style => "width: 10%; height: 1px; overflow: visible"}
+        %svg{:viewbox => "-25 -45 155 155", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+          / top far left
+          %polygon.tri.tri-tll{:points => "0,17.321  10,0  20,17.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / top mid left
+          %polygon.tri.tri-tl{:points => "25,17.321 15,0 35,0", :style => "stroke:#660000; fill:#cc3333;"}
+          / top centre
+          %polygon.tri.tri-tc{:points => "30,17.321 40,0 50,17.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / top mid right
+          %polygon.tri.tri-tr{:points => "45,0 55,17.321 65,0", :style => "stroke:#660000; fill:#cc3333;"}
+          / top far right
+          %polygon.tri.tri-trr{:points => "60,17.321 70,0 80,17.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / bottom left
+          %polygon.tri.tri-bl{:points => "0,22.321  35,69  25,22.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / bottom centre
+          %polygon.tri.tri-bc{:points => "30,21.321 40,70 50,21.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / bottom right
+          %polygon.tri.tri-br{:points => "55,22.321  45,69  80,22.321", :style => "stroke:#660000; fill:#cc3333;"}
+          / lightening bolt
+          %polygon.bolt{:points => "40,-10 25,25 40,25 40,55 55,20 40,20", :style => "stroke:#660000; fill:#a8fde5"}
+
+      .message
+        -flash.each do |name, message|
+          =name
+          =message
     .content
       =yield
     .footer
