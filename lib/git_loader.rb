@@ -5,14 +5,19 @@ class GitLoader
   end
 
   def get_git_from_api(repo_name)
-  rescue Octokit::NotFound => not_found
-  rescue Faraday::ConnectionFailed => offline
-    @client.repo(repo_name)
+    begin
+      return @client.repo(repo_name)
+    rescue Octokit::NotFound # => not_found
+      puts "Not found #{repo_name}"
+    rescue Faraday::ConnectionFailed #=> offline
+      puts "Not found #{repo_name}"
+    end
+    return nil
   end
 
   def get_owners_from_github(repo_name)
     assignees = @client.repo(repo_name).rels[:assignees].get(:query => {:per_page => 100 }).data
-    assignees.collect do |user| 
+    assignees.collect do |user|
       [user[:login], user[:html_url]]
     end
   end
@@ -43,49 +48,36 @@ class GitLoader
 
   def parse_git_uri(laser_gem)
     return unless laser_gem.gem_spec
+    # try source_code_uri first, then homepage (must have the github.com in it)
     if laser_gem.gem_spec.source_code_uri != nil
       uri = laser_gem.gem_spec.source_code_uri
       matches = matcher(uri)
       return matches[1] if matches = matcher(uri)
-    else
-      parse_homepage_uri(laser_gem)
+      # look at homepage anyway if source_code_uri was not a github
     end
+    parse_homepage_uri(laser_gem)
   end
 
   def parse_homepage_uri(laser_gem)
-    # Extract and add homepage uri
-    if laser_gem.gem_spec[:homepage_uri] != nil
-      uri = laser_gem.gem_spec[:homepage_uri]
-      matches = matcher(uri)
-      return matches[1] if matches = matcher(uri)
-    end
-  end
-
-  def matcher(uri)
-    rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
-    return rex.match(uri)
+    # Extract the github repo name ot of the homepage_uri
+    return nil unless laser_gem.gem_spec[:homepage_uri]
+    uri = laser_gem.gem_spec[:homepage_uri]
+    matches = matcher(uri)
+    return matches[1] if matches = matcher(uri)
   end
 
   def fetch_and_create_gem_git(laser_gem)
     repo_name = parse_git_uri(laser_gem)
     if repo_name
       git_data = get_git_from_api(repo_name)
-      if git_data
-      binding.pry
+      if git_data and not laser_gem.gem_git
         attribs = {}
-        git_attributes.each do |k,v|
-          attribs[k] = git_data[v]
-        end
-        GemGit.find_or_create_by(attribs.merge laser_gem_id: laser_gem.id) unless laser_gem.gem_git
-        fetch_git_for_deps(laser_gem)
-        # Need an else here to return an error to user/uploader
+        git_attributes.each {|k,v| attribs[k] = git_data[v] }
+        GemGit.create!(attribs.merge laser_gem_id: laser_gem.id)
         fetch_assignees(laser_gem)
-      else
-        fetch_git_for_deps(laser_gem)
       end
-    else
-      fetch_git_for_deps(laser_gem)
     end
+    fetch_git_for_deps(laser_gem)
   end
 
   def fetch_git_for_deps(laser_gem)
@@ -94,6 +86,16 @@ class GitLoader
     end
   end
 
+  private
+
+  # match the uri to see if it contains github.com and return the match_data
+  def matcher(uri)
+    rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
+    return rex.match(uri)
+  end
+
+  # attributes that we get from the github api.
+  # Hash that maps our attribute names to github attribute names
   def git_attributes
     {
       name: "full_name",

@@ -77,7 +77,7 @@ RSpec.describe GitLoader do
     end
 
     it "does not parse if source_code_uri is nil" do
-      laser_gem_w_spec = create :gem_spec, source_code_uri: "nil" 
+      laser_gem_w_spec = create :gem_spec, source_code_uri: "nil"
       laser_gem = laser_gem_w_spec.laser_gem
       expect(@loader.parse_git_uri(laser_gem)).to be nil
     end
