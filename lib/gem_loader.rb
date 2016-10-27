@@ -5,7 +5,6 @@ class GemLoader
   end
 
   def get_spec_from_api(gem_name)
-  # rescue SocketError
     @client.info(gem_name)
   end
 
@@ -22,15 +21,15 @@ class GemLoader
     return unless gem_data
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {}
-    spec_attributes.each  do |k,v| 
-      attribs[k] = gem_data[v] 
+    spec_attributes.each  do |k,v|
+      attribs[k] = gem_data[v]
     end
     GemSpec.find_or_create_by!(attribs.merge laser_gem_id: laser_gem.id, build_date: first_version[-1]["built_at"])
     fetch_and_spec_deps(laser_gem, gem_data["dependencies"]["runtime"])
     fetch_owners(laser_gem)
   end
 
-  # Not yet creating a user/owner
+  # create ownerships for each rubygems owner
   def fetch_owners(laser_gem)
     return unless laser_gem.ownerships.where(["rubygem_owner = ?", true]).count == 0
     owner_array = get_owners_from_api(laser_gem.name)
