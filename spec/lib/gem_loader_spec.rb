@@ -12,7 +12,7 @@ RSpec.describe GemLoader do
     end
 
     xit "returns nil when the API doesn't respond" do
-      api_response =  
+      api_response =
         "SocketError: Failed to open TCP connection to rubygems.org:443 (getaddrinfo: Name or service not known)"
       client = instance_double("Gems::Client", info: api_response)
       loader = GemLoader.new(client: client)
@@ -29,7 +29,7 @@ RSpec.describe GemLoader do
     end
 
     it "returns an error when the API doesn't respond" do
-      api_response =  
+      api_response =
         "SocketError: Failed to open TCP connection to rubygems.org:443 (getaddrinfo: Name or service not known)"
       client = instance_double("Gems::Client", owners: api_response)
       loader = GemLoader.new(client: client)
@@ -60,7 +60,7 @@ RSpec.describe GemLoader do
       it "correctly populates ownerships for each laser_gem" , :ci => true do
         laser_gem = LaserGem.create(name: "rails")
         @loader.fetch_owners(laser_gem)
-        owner_handles = 
+        owner_handles =
           [ "kaspth",
             "matthewd",
             "senny",
