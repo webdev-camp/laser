@@ -19,7 +19,19 @@
     .content
       =yield
     .footer
-      .sponsor
+      .col.menu
+        .ui.list
+          %a.item
+            = link_to 'About us', about_path
+          %a.item
+            = link_to 'Frequently Asked Questions', faq_path
+          %a.item
+            = link_to 'Ruby for Newbies', ruby_for_newbies_path
+      .col.sponsor
         %p Sponsored by:
         = image_tag "webdevcamp.png"
         %p Web Dev Camp
+      .col.etc1
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .col.etc2
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

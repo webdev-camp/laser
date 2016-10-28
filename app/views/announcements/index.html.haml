@@ -1,22 +1,15 @@
-%h1 Listing announcements
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Body
-      %th
-      %th
-      %th
-
-  %tbody
-    - @announcements.each do |announcement|
-      %tr
-        %td= announcement.title
-        %td= announcement.body
-        %td= link_to 'Show', announcement
-        %td= link_to 'Edit', edit_announcement_path(announcement)
-
+%h1 Announcements
 %br
-
 = link_to 'New Announcement', new_announcement_path
+
+- @announcements.each do |announcement|
+  .ui.segments
+    .ui.segment
+      %b= announcement.title
+      //TODO if is admin
+      .floating.ui.teal.label
+        = link_to edit_announcement_path(announcement) do
+          %i.edit.icon
+    .ui.secondary.segment
+      = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
+        = link_to 'more', announcement
