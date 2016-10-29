@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sqlite3'
 
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 gem 'haml-rails'
 
 gem 'gems', '~> 0.8.3'

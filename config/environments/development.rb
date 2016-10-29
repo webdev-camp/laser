@@ -44,6 +44,9 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.assets.paths << Gem.loaded_specs['susy'].full_gem_path+'/sass'
+  config.assets.paths << Gem.loaded_specs['breakpoint'].full_gem_path+'/stylesheets'
+  config.sass.inline_source_maps = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

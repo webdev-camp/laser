@@ -1,3 +1,12 @@
-// Place all the styles related to the Announcements controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.ann_show {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  .title {
+    @include span(9 of 12);
+    text-align: left;
+  }
+  .date{
+    @include span(3 of 12);
+    text-align: right;
+  }
+}

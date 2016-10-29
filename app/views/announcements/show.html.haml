@@ -1,12 +1,17 @@
 %p#notice= notice
+.ann_show
+  = link_to 'Back', announcements_path
 
-%p
-  %b Title:
-  = @announcement.title
-%p
-  %b Body:
-  = @announcement.body
-
-= link_to 'Edit', edit_announcement_path(@announcement)
-\|
-= link_to 'Back', announcements_path
+  .ui.segments
+    .ui.padded.segment
+      %span.title
+        %h2= @announcement.title
+      %span.date
+        = time_ago_in_words @announcement.created_at
+        ago
+      .floating.ui.teal.label
+        = link_to edit_announcement_path(@announcement) do
+          %i.edit.icon
+      %br
+    .ui.padded.secondary.segment
+      = @announcement.body
