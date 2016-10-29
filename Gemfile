@@ -13,11 +13,13 @@ gem 'susy'
 gem 'breakpoint'
 gem 'semantic-ui-sass', git: "https://github.com/doabit/semantic-ui-sass.git"
 gem 'bootstrap'
+gem 'animate-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
 gem 'acts-as-taggable-on'
+gem 'devise'
 
 
 # Use 'mechanize' to scrape data
