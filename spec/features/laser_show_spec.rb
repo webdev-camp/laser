@@ -14,11 +14,6 @@ RSpec.describe "LaserGemsShow" do
     click_button('add_comment')
   end
 
-  it "adds tag" do
-    add_tag "rails"
-    expect(page.status_code).to be 200
-  end
-
   it "shows the tag on the page" do
     add_tag "thfsf"
     expect(page).to have_text("thfsf")
@@ -48,18 +43,16 @@ RSpec.describe "LaserGemsShow" do
     expect(page).to have_text(laser_gem.dependents.first.name)
   end
 
-  it "adds comment" do
-    add_comment "MyComment body goes here"
-    expect(page.status_code).to be 200
-  end
-
   it "shows the comment on the page" do
+    sign_in_user
     add_comment "I just added this comment"
+    expect(page).not_to have_text("error")
     expect(page).to have_text("I just added this comment")
   end
 
   it "adds an invalid comment" do
+    sign_in_user
     add_comment "Inv"
-    expect(page).not_to have_text("Inv")
+    expect(page).to have_text("error")
   end
 end
