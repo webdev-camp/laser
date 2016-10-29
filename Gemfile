@@ -12,6 +12,7 @@ gem "octokit", "~> 4.0"
 gem 'susy'
 gem 'breakpoint'
 gem 'semantic-ui-sass', git: "https://github.com/doabit/semantic-ui-sass.git"
+gem 'bootstrap'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'

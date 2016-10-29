@@ -17,6 +17,8 @@
 
 @import 'susy';
 @import 'breakpoint';
+$enable-grid-classes: false;
+@import 'bootstrap';
 @import 'semantic-ui/globals/variables';
 @import 'semantic-ui/globals/reset';
 @import 'semantic-ui/globals/site';
@@ -30,8 +32,9 @@
 @import 'semantic-ui/views/feed';
 @import 'semantic-ui/views/statistic';
 
-//announcements
+//TODO TAKE OUT announcements
 @import 'semantic-ui/elements/segment';
+
 $susy: (
   columns: 12,
   gutters: 1/2,

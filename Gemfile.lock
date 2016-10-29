@@ -49,6 +49,11 @@ GEM
       activerecord (>= 4.0)
     addressable (2.4.0)
     arel (7.1.4)
+    autoprefixer-rails (6.5.1.1)
+      execjs
+    bootstrap (4.0.0.alpha5)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     breakpoint (2.7.0)
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
@@ -291,6 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  bootstrap
   breakpoint
   byebug
   capybara
