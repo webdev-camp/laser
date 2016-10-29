@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
-  before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :set_announcement, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :update]
 
   # GET /announcements
   def index
@@ -22,8 +23,7 @@ class AnnouncementsController < ApplicationController
   # POST /announcements
   def create
     @announcement = Announcement.new(announcement_params)
-    bob = User.find_or_create_by name: "Bob"   #TODO user is manually generated
-    @announcement.user = bob
+    @announcement.user = current_user
 
     if @announcement.save
       redirect_to @announcement, notice: 'Announcement was successfully created.'
