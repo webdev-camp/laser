@@ -1,7 +1,7 @@
 class Announcement < ApplicationRecord
 
-  validates :title, length: { in: 2..30}
-  validates :body, length: {minimum: 3, maximum: 3000}
+  validates :title, length: { in: 5..30}
+  validates :body, length: {minimum: 10, maximum: 3000}
 
   belongs_to :user
 
