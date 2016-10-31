@@ -41,7 +41,7 @@ RSpec.describe GemLoader do
         api_response = [{"stuff" => "stuffing"}, {"muppets" => "fraggles"}, {"build_date" => "2005-08-30T04:00:00.000Z"}]
         client = instance_double("Gems::Client", versions: api_response)
         loader = GemLoader.new(client: client)
-        expect(loader.get_build_start_from_api("tzinfo")[-1]["build_date"]).to eq "2005-08-30T04:00:00.000Z"
+        expect(loader.get_build_start_from_api("tzinfo")["build_date"]).to eq "2005-08-30T04:00:00.000Z"
       end
     end
 
