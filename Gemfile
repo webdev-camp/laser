@@ -13,6 +13,7 @@ gem 'susy'
 gem 'breakpoint'
 gem 'semantic-ui-sass', git: "https://github.com/doabit/semantic-ui-sass.git"
 gem 'bootstrap'
+gem 'simple_form'
 gem 'animate-rails'
 
 gem 'uglifier', '>= 1.3.0'
