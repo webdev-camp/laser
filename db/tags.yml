@@ -692,9 +692,6 @@ tickspot-rb:
 eztz:
 - web-apps-services-interaction
 - api-clients
-runkeeper-activites:
-- web-apps-services-interaction
-- api-clients
 newrelic_rpm:
 - maintenance-monitoring
 - app-instrumentation
