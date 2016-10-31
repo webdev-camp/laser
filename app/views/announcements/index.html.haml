@@ -2,14 +2,18 @@
 %br
 = link_to 'New Announcement', new_announcement_path
 
-- @announcements.each do |announcement|
-  .ui.segments
-    .ui.segment
-      %b= announcement.title
-      //TODO if is admin
-      .floating.ui.teal.label
-        = link_to edit_announcement_path(announcement) do
-          %i.edit.icon
-    .ui.secondary.segment
-      = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
-        = link_to 'more', announcement
+.announcements_index
+  - @announcements.each do |announcement|
+    .card
+      .card-header
+        %h3= announcement.title
+        %p
+          = time_ago_in_words announcement.created_at
+          ago
+        .floating.ui.teal.label
+          = link_to edit_announcement_path(announcement) do
+            %i.edit.icon
+      .card-block
+        %p
+          = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
+            = link_to 'more', announcement

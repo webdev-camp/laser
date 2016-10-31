@@ -46,17 +46,14 @@
     padding: 1em;
 
     .list {
-      @extend .ui.labels;
       margin-bottom: 1em;
 
       p {
-        @extend .ui.label;
         display: inline;
       }
     }
 
     .input {
-      @extend .ui.icon.input;
     }
   }
 
@@ -90,7 +87,6 @@
   .gem_rank {
     margin-bottom: 1em;
     padding: 1em;
-    @extend .ui.statistic;
   }
 
   .gem_downloads {
@@ -100,9 +96,8 @@
     margin-bottom: 1em;
     padding: 1em;
 
-      .gem_downloads_total { @extend .ui.statistic; }
+      .gem_downloads_total { }
       .gem_downloads_current_version {
-        @extend .ui.statistic;
         margin-left: 0 !important; }
   }
 
@@ -122,9 +117,8 @@
   margin-bottom: 1em;
   padding: 1em;
   max-width: none;
-  @extend .ui.comments;
 
-  h3 { @extend .ui.horizontal.divider; }
+  h3 { }
 
   textarea {
     @include span(12);

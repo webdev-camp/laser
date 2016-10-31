@@ -66,14 +66,11 @@
           @include span(8);
 
           .gem_tags {
-            @extend .ui.labels;
 
             h4 {
-              @extend .ui.horizontal.divider;
             }
 
             a {
-              @extend .ui.label;
               background-color: #ff0066;
 
               &:hover {
@@ -87,18 +84,15 @@
           @include span(last 4);
 
           .gem_statistic {
-            @extend .ui.small.statistic;
             text-align: center;
           }
 
           .gem_favorites {
-            @extend .ui.feed;
             clear: both;
             display: inline;
             text-align: center;
 
             a {
-              @extend .like;
             }
           }
         }
@@ -194,9 +188,7 @@
   .tag_popular {
     clear: both;
     .tag_popular_container {
-      @extend .ui.labels;
       a {
-        @extend .ui.label;
         background-color: #ff0066;
 
         &:hover {

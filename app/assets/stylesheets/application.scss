@@ -19,21 +19,6 @@
 @import 'breakpoint';
 $enable-grid-classes: false;
 @import 'bootstrap';
-@import 'semantic-ui/globals/variables';
-@import 'semantic-ui/globals/reset';
-@import 'semantic-ui/globals/site';
-@import 'semantic-ui/elements/button';
-@import 'semantic-ui/elements/icon';
-@import 'semantic-ui/elements/divider';
-@import 'semantic-ui/elements/input';
-@import 'semantic-ui/elements/label';
-@import 'semantic-ui/elements/list';
-@import 'semantic-ui/views/comment';
-@import 'semantic-ui/views/feed';
-@import 'semantic-ui/views/statistic';
-
-//TODO TAKE OUT announcements
-@import 'semantic-ui/elements/segment';
 
 $susy: (
   columns: 12,
@@ -64,14 +49,14 @@ html body {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
-  background-color: #8b2817;
+  background-color: #6C7A89;
   // #3e8979 0%, #8b2817 41%, #df412b 59%, #eca45c 77%, #ffffff 100%
   //background: linear-gradient(#3e8979, #8b2817, #8b2817, #eca45c); /* Standard syntax */
 }
 
 body { padding-top: 40px; }
 @media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+  body { padding-top: 0px; }
 }
 
 .content {
