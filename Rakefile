@@ -34,4 +34,32 @@ namespace :laser do
     loader = DataLoader.new
     loader.load_tags
   end
+
+  namespace :fixtures do
+    desc 'Dumps all models into fixtures.'
+    task :dump => :environment do
+      models = [User , LaserGem , GemDependency , GemGit , LaserGem ,  Announcement ,
+                Comment , Ownership , ActsAsTaggableOn::Tag , ActsAsTaggableOn::Tagging]
+      # specify FIXTURES_PATH to test/fixtures if you do test:unit
+      dump_dir = "test/fixtures"
+      puts "Found models: " + models.join(', ')
+      puts "Dumping to: " + dump_dir
+      models.each do |model|
+        entries = model.unscoped.all.order('id ASC')
+        m = model.name.split("::").last.underscore.pluralize
+        puts "Dumping model: #{model} (#{entries.length} entries)"
+        model_file = Rails.root.join(dump_dir , m + '.yml')
+        output = {}
+        entries.each do |a|
+          attrs = a.attributes
+          attrs.delete_if{|k,v| v.nil?}
+          output["#{m}_#{a.id}"] = attrs
+        end
+        file = File.open(model_file, 'w')
+        file << output.to_yaml
+        file.close #better than relying on gc
+      end
+    end
+  end
+
 end
