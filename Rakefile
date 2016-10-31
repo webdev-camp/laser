@@ -31,7 +31,7 @@ namespace :laser do
   end
   desc "Load tags for Gems"
   task :load_tags => :environment do
-    loader = TagLoader.new
+    loader = DataLoader.new
     loader.load_tags
   end
 end
