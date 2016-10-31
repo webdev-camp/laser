@@ -1,0 +1,7 @@
+$('.display').append('<%= j render @laser_gems %>');
+<% if @laser_gems.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @laser_gems %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>
