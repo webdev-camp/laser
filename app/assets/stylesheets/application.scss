@@ -41,7 +41,8 @@ $susy: (
 @import 'show';
 @import 'main';
 @import 'announcements';
-@import 'logo'
+@import 'header';
+@import 'logo';
 
 html body {
   margin: 0;
@@ -53,17 +54,9 @@ html body {
   //background: linear-gradient(#3e8979, #8b2817, #8b2817, #eca45c); /* Standard syntax */
 }
 
-
-.header {
-  @include container(100%);
-  background-color: #EEEEEE;
-  background-image: url("https://fanart.tv/fanart/movies/2667/moviebanner/the-blair-witch-project-51aece3a6d8cc.jpg");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  z-index: -1;
-  //TODO change absolute to relative height
-  height: 20vh;
-  border-bottom: 1px solid gray;
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+  body { padding-top: 0px; }
 }
 
 .content {
