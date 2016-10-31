@@ -1,0 +1,41 @@
+@import "bootstrap";
+
+a {
+  text-decoration: none   !important;
+  color: black            !important;
+}
+
+.responsive-navbar {
+  @extend .nav;
+  @extend .navbar;
+  @extend .navbar-full;
+  @extend .navbar-fixed-top;
+  @extend .navbar-dark;
+  background-color: #34A88F;
+}
+
+.menu-button {
+  @extend .navbar-toggler;
+  @extend .hidden-lg-up;
+}
+
+.laser-logo {
+  @extend .navbar-brand;
+}
+
+.collapse-toggle {
+  @extend .collapse;
+  @extend .navbar-toggleable-md;
+}
+
+.navbar-ul {
+  @extend .nav;
+  @extend .navbar-nav;
+}
+
+
+.sponsor {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}

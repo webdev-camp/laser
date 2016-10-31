@@ -56,6 +56,8 @@ $susy: (
 @import 'show';
 @import 'main';
 @import 'announcements';
+@import 'header';
+@import 'logo';
 
 html body {
   margin: 0;
@@ -67,94 +69,10 @@ html body {
   //background: linear-gradient(#3e8979, #8b2817, #8b2817, #eca45c); /* Standard syntax */
 }
 
-
-.header {
-  @include container(100%);
-  background-color: #EEEEEE;
-  //TODO change absolute to relative height
-  height: 20vh;
-  border-bottom: 1px solid gray;
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
 }
-
-.logo {
-  margin-top: 20px;
-}
-
-.thunderbolt {
-  color: red;
-  animation-name: strike;
-  animation-duration: 2s;
-}
-@keyframes strike {
-  0%{transform: translate(0px, -100px);}
-  50%{transform: translate(0px, 0px);}
-  60%{transform: translate(0px, 0px) scale(1.3,1.3);}
-  70%{transform: translate(0px, 0px) scale(1,1);}
-  80%{transform: translate(0px, 0px) scale(1.3,1.3);}
-  90%{transform: translate(0px, 0px) scale(1,1);}
-  100%{transform: translate(0px, 0px) scale(1.3,1.3);}
-}
-
-.tri1 {
-  animation-name: fall;
-  animation-duration: 2s;
-}
-.tri2 {
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 0.1s;
-}
-.tri3 {
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 0.2s;
-}
-.tri4 {
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 0.3s;
-}
-.tri5 {
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 0.4s;
-}
-
-@keyframes fall {
-  0%{transform: translate(0px, 0px);}
-  50%{transform: translate(0px, -100px);}
-  100%{transform: translate(0px, 0px);}
-}
-
-.bigtri1.left {
-  animation-name: fall-left;
-  animation-duration: 2s;
-}
-
-.bigtri2 {
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 0.1s;
-}
-
-.bigtri3.right {
-  animation-name: fall-right;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-}
-
-@keyframes fall-right {
-  0%{transform: translate(0px, 0px);}
-  50%{transform: translate(0px, 100px) rotate(90deg);}
-  100%{transform: translate(0px, 0px);}
-}
-
-@keyframes fall-left {
-  0%{transform: translate(0px, 0px);}
-  50%{transform: translate(0px, 100px) rotate(-90deg);}
-  100%{transform: translate(0px, 0px);}
-}
-
 
 .content {
   @include container(85%);
