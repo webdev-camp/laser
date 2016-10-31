@@ -19,21 +19,6 @@
 @import 'breakpoint';
 $enable-grid-classes: false;
 @import 'bootstrap';
-@import 'semantic-ui/globals/variables';
-@import 'semantic-ui/globals/reset';
-@import 'semantic-ui/globals/site';
-@import 'semantic-ui/elements/button';
-@import 'semantic-ui/elements/icon';
-@import 'semantic-ui/elements/divider';
-@import 'semantic-ui/elements/input';
-@import 'semantic-ui/elements/label';
-@import 'semantic-ui/elements/list';
-@import 'semantic-ui/views/comment';
-@import 'semantic-ui/views/feed';
-@import 'semantic-ui/views/statistic';
-
-//TODO TAKE OUT announcements
-@import 'semantic-ui/elements/segment';
 
 $susy: (
   columns: 12,
@@ -62,7 +47,7 @@ html body {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
-  background-color: #8b2817;
+  background-color: #6C7A89;
   // #3e8979 0%, #8b2817 41%, #df412b 59%, #eca45c 77%, #ffffff 100%
   //background: linear-gradient(#3e8979, #8b2817, #8b2817, #eca45c); /* Standard syntax */
 }
@@ -71,6 +56,10 @@ html body {
 .header {
   @include container(100%);
   background-color: #EEEEEE;
+  background-image: url("https://fanart.tv/fanart/movies/2667/moviebanner/the-blair-witch-project-51aece3a6d8cc.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  z-index: -1;
   //TODO change absolute to relative height
   height: 20vh;
   border-bottom: 1px solid gray;
