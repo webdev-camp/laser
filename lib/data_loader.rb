@@ -1,6 +1,6 @@
 require 'yaml'
 
-class TagLoader
+class DataLoader
 
   def initialize
     @tags = YAML.load_file('db/tags.yml')
@@ -10,7 +10,7 @@ class TagLoader
 
   def load_tags
     @tags.each do |key, values|
-      sleep(5) 
+      sleep(5)
       puts key.to_s
       laser_gem = LaserGem.find_or_create_by!(name: key)
       add_tags_to_gem(laser_gem, values)
