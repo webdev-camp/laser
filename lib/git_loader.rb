@@ -11,24 +11,29 @@ class GitLoader
       puts "Not found #{repo_name}"
     rescue Faraday::ConnectionFailed #=> offline
       puts "Not found #{repo_name}"
+    rescue Exception => e
+      puts e.message
+      puts "Exception #{repo_name}"
     end
     return nil
   end
 
   def get_owners_from_github(repo_name)
-    assignees = @client.repo(repo_name).rels[:assignees].get(:query => {:per_page => 100 }).data
+    repo = get_git_from_api(repo_name)
+    return nil unless repo
+    assignees = repo.rels[:assignees].get(:query => {:per_page => 100 }).data
     assignees.collect do |user|
       [user[:login], user[:html_url]]
     end
   end
 
-  def fetch_assignees(laser_gem)
+  def fetch_assignees(laser_gem )
     # For future use, check dependencies if returns.
-    return unless laser_gem.ownerships.where(["github_owner = ?", true]).count == 0
+    return unless laser_gem.ownerships.where(github_owner: true).empty?
     repo_name = parse_git_uri(laser_gem)
-    # return unless repo_name
+    return unless repo_name
     assignee_array = get_owners_from_github(repo_name)
-    # return unless assignee_array
+    return unless assignee_array
     assignee_array.each do |assig|
       git_handle = assig[0]
       github_profile = assig[1]
@@ -42,7 +47,7 @@ class GitLoader
 
   def fetch_git_owners_for_deps(laser_gem)
     laser_gem.dependencies.each do |dep|
-      fetch_assignees(dep) if dep.ownerships.where(github_owner: true).count == 0
+      fetch_assignees(dep) if dep.ownerships.where(github_owner: true).empty?
     end
   end
 
@@ -82,7 +87,7 @@ class GitLoader
 
   def fetch_git_for_deps(laser_gem)
     laser_gem.dependencies.each do |dep|
-      fetch_and_create_gem_git(dep)  if dep.gem_git.nil?
+      fetch_and_create_gem_git(dep) if dep.gem_git.nil?
     end
   end
 
