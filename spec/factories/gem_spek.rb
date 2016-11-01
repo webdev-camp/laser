@@ -10,7 +10,6 @@ FactoryGirl.define do
     rubygem_uri "SomeURI"
     documentation_uri "SomeDocURI"
     authors "mr tickle"
-    laser_gem { create :laser_gem , name: name }
   end
 
 end

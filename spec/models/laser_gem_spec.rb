@@ -20,7 +20,7 @@ RSpec.describe LaserGem, type: :model do
   end
 
   it "checks laser-gem has a gem spec" do
-    laser_gem_with_spec = create :laser_gem_with_spec
+    laser_gem_with_spec = create :laser_gem
     expect(laser_gem_with_spec.gem_spec).not_to eq nil
   end
 

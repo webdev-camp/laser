@@ -1,7 +1,7 @@
 
 RSpec.describe GemSpec, type: :model do
   it "has working factory" do
-    gem_spec = build :gem_spec
+    gem_spec = build(:laser_gem , gem_spec: build(:gem_spec)).gem_spec
     expect(gem_spec.save).to be true
   end
 
@@ -37,7 +37,7 @@ RSpec.describe GemSpec, type: :model do
   end
 
   it "checks gem spec has laser gem using gem_spec_with_laser_gem factory" do
-    gem_spec_with_laser_gem = create :gem_spec
+    gem_spec_with_laser_gem = create(:laser_gem).gem_spec
     expect(gem_spec_with_laser_gem.laser_gem).not_to be nil
   end
 end
