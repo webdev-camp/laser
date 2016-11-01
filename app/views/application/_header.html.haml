@@ -13,9 +13,9 @@
           .nav-link= link_to "Log Out", destroy_user_session_path
       -else
         %li.nav-item
-          .nav-link= link_to "Log In", new_user_session_path      
+          .nav-link= link_to "Log In", new_user_session_path
         %li.nav-item
-          .nav-link= link_to "Sign Up", new_user_registration_path      
+          .nav-link= link_to "Sign Up", new_user_registration_path
       %li.nav-item.dropdown
         %a#navbarDropdown1.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "#"} About
         %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown1"}
@@ -32,4 +32,3 @@
         .nav-link= link_to 'Powered by WebDev.camp', 'www.webdev.camp'
       %li.nav-item.pull-right
         = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'www.webdev.camp')
-
