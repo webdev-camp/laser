@@ -1,8 +1,9 @@
-=simple_form_for @announcement do |f|
-  - if @announcement.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@announcement.errors.count, "error")} prohibited this announcement from being saved:"
+.announcement_form
+  =simple_form_for @announcement do |f|
+    - if @announcement.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@announcement.errors.count, "error")} prohibited this announcement from being saved:"
 
-  = f.input :title
-  = f.input :body
-  = f.button :submit
+    = f.input :title
+    = f.input :body
+    = f.button :submit

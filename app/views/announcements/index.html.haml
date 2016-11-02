@@ -1,19 +1,17 @@
-%h1 Announcements
-%br
-= link_to 'New Announcement', new_announcement_path
-
 .announcements_index
+  %h1 Announcements
+  = link_to 'New Announcement', new_announcement_path, class: 'btn btn-primary'
   - @announcements.each do |announcement|
     .card
       .card-header
-        %h3= announcement.title
-        %p
-          = time_ago_in_words announcement.created_at
-          ago
-        .floating.ui.teal.label
-          = link_to edit_announcement_path(announcement) do
-            %i.edit.icon
+        %span.tag.tag-pill.tag-default.align-top
+          = link_to 'Edit', edit_announcement_path(announcement)
+        %span.h3
+          = announcement.title
+          %small.text-muted.pl-1
+            = time_ago_in_words announcement.created_at
+            ago
       .card-block
-        %p
+        %p.card-text
           = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
             = link_to 'more', announcement
