@@ -1,15 +1,12 @@
 %p#notice= notice
 .announcement_show
+  = link_to 'Edit', edit_announcement_path(@announcement), class: 'btn btn-primary'
   .card
-    .card-header
-      %h3= @announcement.title
-      %p
+    %h3.card-header
+      = @announcement.title
+      %small.text-muted.date
         = time_ago_in_words @announcement.created_at
         ago
     .card-block
-      %p.card-text
-        = @announcement.body
-      = link_to 'Go back', announcements_path, class: 'btn laser-back'
-
-
-      //btn btn-primary'
+      %p.card-text= @announcement.body
+  = link_to 'Go back', announcements_path, class: 'btn btn-primary'
