@@ -19,5 +19,4 @@ RSpec.describe "LaserGems" do
     click_link gem.name
     expect(page.status_code).to be 200
   end
-
 end

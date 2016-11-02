@@ -3,7 +3,12 @@ class LaserGemsController < ApplicationController
 
   # GET /laser_gems
   def index
-    @laser_gems = LaserGem.all.includes(:gem_spec)
+    @laser_gems = LaserGem.paginate(page: params[:page], per_page: 20).
+                           includes(:gem_spec).order(:name)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /laser_gems/gem_name
