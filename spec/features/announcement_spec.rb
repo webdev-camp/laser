@@ -6,7 +6,7 @@ RSpec.describe "Announcements" do
     visit new_announcement_path
     fill_in(:'announcement_title' , with: title)
     fill_in(:'announcement_body' , with: announcement)
-    click_button('Save')
+    click_button('Create Announcement')
   end
 
   def edit_announcement body, title
@@ -14,7 +14,7 @@ RSpec.describe "Announcements" do
     visit edit_announcement_path(new_announcement)
     fill_in(:'announcement_title' , with: title) if title
     fill_in(:'announcement_body' , with: body) if body
-    click_button('Save')
+    click_button('Update Announcement')
     new_announcement
   end
 
