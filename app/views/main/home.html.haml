@@ -1,8 +1,10 @@
-.home
-  .title
-    %h1 LASER
-    %h2 Laser. Another Search Engine for Ruby.
-  .search
-    = form_tag(laser_gems_path) do
-      = text_field_tag "Search"
-  
+.container
+  .jumbotron.home
+    %p.lasertitle.highlight LASER
+    %p.subtitle
+      %span <span class="highlight">L</span>aser. <span class="highlight">A</span>nother <span class="highlight">S</span>earch <span class="highlight">E</span>ngine for <span class="highlight">R</span>uby
+    %p.searchgems
+      = form_tag(laser_gems_path, method: "get") do
+        = label_tag(:q, "Search for gems:")
+        = text_field_tag("Search")
+        = submit_tag("Search")

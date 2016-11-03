@@ -1,17 +1,24 @@
-.announcements_index
+.announcement_index
   %h1 Announcements
-  = link_to 'New Announcement', new_announcement_path, class: 'btn btn-primary'
-  - @announcements.each do |announcement|
+  - if !@empty
+    = link_to 'New Announcement', new_announcement_path, class: 'btn btn-primary'
+    - @announcements.each do |announcement|
+      .card
+        .card-header
+          %span.tag.tag-pill.tag-default.align-top
+            = link_to 'Edit', edit_announcement_path(announcement)
+          %span.h3
+            = announcement.title
+            %small.text-muted.pl-1
+              = time_ago_in_words announcement.created_at
+              ago
+        .card-block
+          %p.card-text
+            = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
+              = link_to 'more', announcement
+  - else
     .card
       .card-header
-        %span.tag.tag-pill.tag-default.align-top
-          = link_to 'Edit', edit_announcement_path(announcement)
-        %span.h3
-          = announcement.title
-          %small.text-muted.pl-1
-            = time_ago_in_words announcement.created_at
-            ago
+        = link_to 'New Announcement', new_announcement_path, class: 'btn btn-primary'
       .card-block
-        %p.card-text
-          = truncate(announcement.body, length: 500, separator: ' ', omission: '... ') do
-            = link_to 'more', announcement
+        %p.card-text No announcements to show
