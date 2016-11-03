@@ -1,88 +1,88 @@
-.gem_element
+//TODO Check if ANY OF THESE VARIABLES ARE not empty
+.left
+  .card
+    .card-block
+      %h4.card-title
+        = @laser_gem.name
+        %small.text-muted.pl-1.version
+          Version:
+          = @laser_gem.gem_spec.current_version
+      %p.card-text
+        = @laser_gem.gem_spec.info
+      %p.card-text
+        %span.tag.tag-default tag
+      %p.card-text
+        %a.card-link{:href => "#"} Homepage
+        - @laser_gem.gem_spec.homepage_uri
+        %a.card-link{:href => "#"} GitHub
+        - @laser_gem.gem_spec.source_code_uri
 
-  .gem_main
-    .gem_name
-      %h1= @laser_gem.name
-      %span=  @laser_gem.gem_spec.current_version
-    .gem_description
-      %p= @laser_gem.gem_spec.info
+  .card
+    .card-block
+      %p.card-text
+        Dependencies:
+        - @laser_gem.dependencies.each do |dependency|
+          = link_to(dependency.name, laser_gem_path(dependency.name))
 
-    .gem_suggestions
-      %h3 Related gems
-      -4.times do
-        .suggestion gem
+  .card-deck-wrapper
+    .card-deck
+      .card
+        .card-block
+          %p.card-text Related gems: LaserGem
+      .card
+        .card-block
+          %p.card-text
+            Dependents:
+            - @laser_gem.dependents.each do |dependent|
+              = link_to(dependent.name, laser_gem_path(dependent.name))
 
-    .gem_tags
-      %h3 Related Tags
-      .list
-        -@laser_gem.tag_list.each do |tag|
-          %p= tag
-      .input
-        = form_tag(add_tag_path(@laser_gem.name)) do
-          = text_field_tag(:tag)
-          //= submit_tag 'Save'
-          %button.icon{id: "save_tag", type: "submit"}
-            %i.plus.icon
+  .card
+    .card-block
+      %p.card-text
+        Authors:
+        = @laser_gem.gem_spec.authors
 
-    .gem_dependents
-      %h3 Depending gems
-      .ui.celled.horizontal.list
-        -@laser_gem.dependents.each do |dependent|
-          .item= link_to(dependent.name, laser_gem_path(dependent.name))
+.right
+  .card
+    .card-block
+      %p.card-text.total_downloads
+        Total downloads:
+        = k_numbers @laser_gem.gem_spec.total_downloads
+      %p.card-text.version_downloads
+        Version downloads:
+        = k_numbers @laser_gem.gem_spec.current_version_downloads
 
-    .gem_owners
-      %h3 Owners
-      %a.ui.olive.empty.circular.label;
-      %a.ui.olive.empty.circular.label;
-      %a.ui.olive.empty.circular.label;
+  .card
+    .card-block
+      %p.card-text.build_date
+        Build date:
+        = @laser_gem.gem_spec.build_date
 
-    .gem_dependecies
-      %h3 Depends on the following gems
-      .ui.celled.horizontal.list
-        -@laser_gem.dependencies.each do |dependency|
-          .item= link_to(dependency.name, laser_gem_path(dependency.name))
+  .card
+    .card-block
+      %p.card-text.last_commit
+        Last commit:
+        = @laser_gem.gem_git.last_commit
+      %p.card-text.forks_count
+        Forks:
+        = @laser_gem.gem_git.forks_count
+      %p.card-text.stargazers_count
+        Stargazers:
+        = @laser_gem.gem_git.stargazers_count
+      %p.card-text.watchers_count
+        Watchers:
+        = @laser_gem.gem_git.watchers_count
+      %p.card-text.open_issues_count
+        Open issues:
+        = @laser_gem.gem_git.open_issues_count
 
-  .gem_stats
-    .gem_rank
-      .value
-        33
-      .label #
-      .value
-        544
-      .label Favorites
-    .gem_downloads
-      .gem_downloads_total
-        .value
-          =k_numbers @laser_gem.gem_spec.total_downloads
-        .label Total Downloads
-      .gem_downloads_current_version.tiny
-        .value
-          =k_numbers @laser_gem.gem_spec.current_version_downloads
-        .label Current Version Downloads
-
-    .gem_activity
-      Active
-    .gem_github
-      = link_to("GitHub Page", @laser_gem.gem_spec.source_code_uri)
-
-  .comments_section
-    %h3 Comments
-    -@laser_gem.comments.each do |comment|
-      .comment
-        %a.avatar
-          =image_tag("bob.jpg")
-        .content
-          %a.author= comment.user.name
-          .metadata
-            %span.date
-              =time_ago_in_words comment.created_at
-              ago
-          .text
-            %p= comment.body
-
-    = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
-      .field
-        = text_area_tag(:comment_body)
-      %button.ui.green.labeled.submit.icon.button{id: "add_comment", type: "submit", method: :post}
-        %i.icon.edit
-        Add Reply
+.comments
+  - @laser_gem.comments.each do |comment|
+    = comment.user.name
+    =time_ago_in_words comment.created_at
+    ago
+    = comment.body
+  = form_tag(add_comment_path(@laser_gem.name)) do
+    = text_area_tag :comment_body
+  %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
+    Add Reply
