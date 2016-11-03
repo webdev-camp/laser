@@ -17,7 +17,7 @@
 
 @import 'susy';
 @import 'breakpoint';
-$enable-grid-classes: false;
+@import 'custom';
 @import 'bootstrap';
 
 $susy: (
