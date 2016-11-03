@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/webdev-camp/laser/badges/gpa.svg)](https://codeclimate.com/github/webdev-camp/laser)
 [![Test Coverage](https://codeclimate.com/github/webdev-camp/laser/badges/coverage.svg)](https://codeclimate.com/github/webdev-camp/laser/coverage)
 
-With the increas numbers of Ruby Gems, it becomes progressively important to be able to distinguish them apart.
+With the increase numbers of Ruby Gems, it becomes progressively important to be able to distinguish them apart.
 L.A.S.E.R. is here to do just that.
 
 With searchable abilities and tag searches, you will find the Gem you need in no time.

@@ -1,8 +1,6 @@
-@import "bootstrap";
-
 a {
   text-decoration: none   !important;
-  color: black            !important;
+  color: $laser-black !important;
 }
 
 .responsive-navbar {
@@ -11,7 +9,7 @@ a {
   @extend .navbar-full;
   @extend .navbar-fixed-top;
   @extend .navbar-dark;
-  background-color: #34A88F;
+  background-color: $laser-maroon;
 }
 
 .menu-button {
@@ -32,7 +30,6 @@ a {
   @extend .nav;
   @extend .navbar-nav;
 }
-
 
 .sponsor {
   width: 40px;

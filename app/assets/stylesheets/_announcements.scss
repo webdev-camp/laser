@@ -1,14 +1,18 @@
-@mixin announcement-card {
+@mixin announcement {
   .card-block{
    text-align: justify;
+   word-break: break-all;
   }
 }
 
 .announcement_show {
-   @include announcement-card;
+  @include announcement;
 }
 
-
 .announcement_index {
-   @include announcement-card;
+  @include announcement;
+}
+
+.announcement_new_or_edit {
+  @include span(8 of 12);
 }

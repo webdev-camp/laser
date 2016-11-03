@@ -3,7 +3,7 @@
   = f.error_notification
   .form-inputs
     = f.input :name, required: true, autofocus: true
-    = f.input :email, required: true
+    = f.input :email, required: true, hint: 'We will never share your email with anyone else.'
     = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
     = f.input :password_confirmation, required: true
   .form-actions
