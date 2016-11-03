@@ -17,4 +17,9 @@ RSpec.describe "Announcements" do
     expect(page).to have_current_path(new_user_session_path)
   end
 
+  it "tells if there are no announcements to show" do
+    visit announcements_path
+    expect(page).to have_text("No announcements to show")
+  end
+
 end

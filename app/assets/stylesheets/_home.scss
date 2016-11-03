@@ -1,0 +1,17 @@
+.home{
+  text-align: center;
+  color: $laser-black;
+  background-color: $gray-lightest;
+  .lasertitle{
+    font-family: 'Pattaya', sans-serif;
+    font-style: black 900 italic;
+    font-weight: 400;
+    font-size: 120px;
+    color: $laser-maroon;
+  }
+  .subtitle{
+    font-family: 'Courgette';
+    font-size: 50px;
+    @include highlight;
+  }
+}
