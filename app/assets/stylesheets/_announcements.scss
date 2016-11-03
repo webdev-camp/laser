@@ -5,10 +5,13 @@
 }
 
 .announcement_show {
-   @include announcement-card;
+  @include announcement-card;
 }
 
-
 .announcement_index {
-   @include announcement-card;
+  @include announcement-card;
+}
+
+.announcement_new_or_edit {
+  @include span(8 of 12);
 }
