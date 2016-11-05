@@ -25,7 +25,7 @@ class GemLoader
       first_version = get_build_start_from_api(laser_gem.name)
       attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
       spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
-      GemSpec.create!(attribs)
+      laser_gem.create_gem_spec!(attribs)
     end
     fetch_owners(laser_gem)
     fetch_and_spec_deps(laser_gem, gem_data["dependencies"]["runtime"] )
