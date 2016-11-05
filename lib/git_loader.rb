@@ -91,6 +91,41 @@ class GitLoader
     end
   end
 
+  def get_commits_from_api(repo_name)
+    begin
+      return @client.commits(repo_name)
+    rescue Octokit::NotFound # => not_found
+      puts "Not found #{repo_name}"
+    rescue Faraday::ConnectionFailed #=> offline
+      puts "Oops, something is offline #{repo_name}"
+    rescue Exception => e
+      puts e.message
+      puts "Exception #{repo_name}"
+    end
+    return nil
+  end
+
+  def fetch_commits_for_git(laser_gem)
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    array = get_commits_from_api(repo_name)
+    return nil unless array
+    array_commit_dates = array.collect do |date|
+      date[:commit][:author][:date]
+    end
+    sorted_commit_dates = array_commit_dates.sort
+    if GemGit.where(laser_gem_id: laser_gem.id)
+      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates: sorted_commit_dates)
+      sorted_commit_dates
+    end
+  end
+
+  def fetch_commits_for_all
+    LaserGem.all.each do |laser_gem|
+      fetch_commits_for_git(laser_gem)
+    end
+  end
+
   private
 
   # match the uri to see if it contains github.com and return the match_data
@@ -113,3 +148,4 @@ class GitLoader
     }
   end
 end
+

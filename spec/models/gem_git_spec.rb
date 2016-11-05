@@ -39,4 +39,11 @@ RSpec.describe GemGit, type: :model do
     gem_git = build :gem_git_with_laser_gem
     expect(gem_git.laser_gem).not_to be nil
   end
+
+  it "can store an array of commit_dates" do
+    gem_git = build :gem_git
+    gem_git.commit_dates = [1, 2, 3]
+    gem_git.save!
+    expect(gem_git.commit_dates).to eq [1, 2, 3]
+  end
 end

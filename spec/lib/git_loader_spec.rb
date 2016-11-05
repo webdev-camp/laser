@@ -136,4 +136,52 @@ RSpec.describe GitLoader do
       expect(ts.ownerships.count).not_to be 0
     end
   end
+
+  describe "#get_commits_from_api", ci: true do
+      before :example do
+        @loader = GitLoader.new
+      end
+    it "returns an array of 30 commits for the given repo_name"
+    it "does not throw exception if repo name is invalid it returns nil"
+  end
+
+  describe "fetch_commits_for_git", ci: true do
+      before :example do
+        @loader2 = GitLoader.new
+      end
+    it "returns nil if repo name empty or invalid" do
+      laser_gem = create :laser_gem_with_everything
+      laser_gem.gem_spec.source_code_uri =  "http://gi.com/tzinfo/tzfo/"
+      expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
+    end
+
+    it "returns an array if repo name is valid", ci: true do
+      loader = GemLoader.new
+      laser_gem = LaserGem.create!(name: "tzinfo")
+      # expect(laser_gem.id).to be 1
+      loader.fetch_and_create_gem_spec(laser_gem)
+      # expect(laser_gem.gem_spec).not_to be nil
+      @loader2.fetch_and_create_gem_git(laser_gem)
+      # expect(laser_gem.gem_git).not_to be nil
+      # expect(GemGit.exists?(name: "tzinfo/tzinfo")).to be true
+      expect(@loader2.fetch_commits_for_git(laser_gem)).not_to be nil
+      end
+
+    it "retuns nil if repo is valid but doesnt exist", ci: true do
+      loader = GemLoader.new
+      laser_gem = LaserGem.create(name: "paranoid")
+      loader.fetch_and_create_gem_spec(laser_gem)
+      @loader2.fetch_and_create_gem_git(laser_gem)
+      expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
+
+    end
+    # xit "ranks activity score 1 if 30th commit was over a year ago", ci: true  do
+    #   loader = GemLoader.new
+    #   laser_gem = LaserGem.create(name: "letmein")
+    #   loader.fetch_and_create_gem_spec(laser_gem)
+    #   loader2 = GitLoader.new
+    #   loader2.fetch_and_create_gem_git(laser_gem)
+    #   expect(@loader.fetch_commits_for_git(laser_gem)).to be 1
+    # end
+  end
 end

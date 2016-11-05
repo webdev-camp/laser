@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :gem_spec do
+  factory :gem_with_everything do
     sequence :name do |n|
        "ruby_spec#{n}"
      end
@@ -14,5 +14,5 @@ FactoryGirl.define do
     authors "mr tickle"
     laser_gem { create :laser_gem , name: name }
   end
-
 end
+
