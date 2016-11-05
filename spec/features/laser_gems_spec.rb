@@ -18,9 +18,9 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
-  it "searches for gem stuff " do
-    laser_gem = create :laser_gem_with_spec
-    create :laser_gem_with_spec
+  it "searches for gem stuff" do
+    laser_gem = create :laser_gem
+    create :laser_gem
     visit laser_gems_path
     # find and set the search input
     page.fill_in 'q_name_cont', :with => laser_gem.name
@@ -31,4 +31,9 @@ RSpec.describe "LaserGems" do
     gem_elements = page.find_all('.gem_element')
     expect(gem_elements.length).to be 1
   end
+
+  it "searches a part of a gem name" do
+
+  end
+
 end
