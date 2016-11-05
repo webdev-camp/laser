@@ -1,65 +1,67 @@
 //TODO Check if ANY OF THESE VARIABLES ARE not empty
 .left
   .card
+    %h4.card-header.card-title
+      = @laser_gem.name
+      %small.text-muted.pl-1.version
+        Version:
+        = @laser_gem.gem_spec.current_version
     .card-block
-      %h4.card-title
-        = @laser_gem.name
-        %small.text-muted.pl-1.version
-          Version:
-          = @laser_gem.gem_spec.current_version
       %p.card-text
         = @laser_gem.gem_spec.info
       %p.card-text
         %span.tag.tag-default tag
-      %p.card-text
+      %p.card-text.text-xs-center
         %a.card-link{:href => "#"} Homepage
         - @laser_gem.gem_spec.homepage_uri
         %a.card-link{:href => "#"} GitHub
         - @laser_gem.gem_spec.source_code_uri
 
   .card
+    .card-header Dependencies
     .card-block
       %p.card-text
-        Dependencies:
         - @laser_gem.dependencies.each do |dependency|
           = link_to(dependency.name, laser_gem_path(dependency.name))
 
-  .card-deck-wrapper
-    .card-deck
-      .card
-        .card-block
-          %p.card-text Related gems: LaserGem
-      .card
-        .card-block
-          %p.card-text
-            Dependents:
-            - @laser_gem.dependents.each do |dependent|
-              = link_to(dependent.name, laser_gem_path(dependent.name))
 
   .card
+    .card-header Related gems
+    .card-block
+      %p.card-text LaserGem
+  .card
+    .card-header Dependents
     .card-block
       %p.card-text
-        Authors:
+        - @laser_gem.dependents.each do |dependent|
+          = link_to(dependent.name, laser_gem_path(dependent.name))
+
+  .card
+    .card-header Authors
+    .card-block
+      %p.card-text
         = @laser_gem.gem_spec.authors
 
 .right
   .card
+    .card-header Downloads
     .card-block
       %p.card-text.total_downloads
-        Total downloads:
+        Total:
         = k_numbers @laser_gem.gem_spec.total_downloads
       %p.card-text.version_downloads
-        Version downloads:
+        This version:
         = k_numbers @laser_gem.gem_spec.current_version_downloads
 
   .card
+    .card-header Build date
     .card-block
       %p.card-text.build_date
-        Build date:
         = @laser_gem.gem_spec.build_date
 
   - if @laser_gem.gem_git
     .card
+      .card-header GitHub stats
       .card-block
         %p.card-text.last_commit
           Last commit:
