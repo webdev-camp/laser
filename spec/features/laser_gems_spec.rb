@@ -1,4 +1,3 @@
-
 RSpec.describe "LaserGems" do
   it "gets index" do
     visit laser_gems_path

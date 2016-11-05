@@ -58,23 +58,24 @@
         Build date:
         = @laser_gem.gem_spec.build_date
 
-  .card
-    .card-block
-      %p.card-text.last_commit
-        Last commit:
-        = @laser_gem.gem_git.last_commit
-      %p.card-text.forks_count
-        Forks:
-        = @laser_gem.gem_git.forks_count
-      %p.card-text.stargazers_count
-        Stargazers:
-        = @laser_gem.gem_git.stargazers_count
-      %p.card-text.watchers_count
-        Watchers:
-        = @laser_gem.gem_git.watchers_count
-      %p.card-text.open_issues_count
-        Open issues:
-        = @laser_gem.gem_git.open_issues_count
+  - if @laser_gem.gem_git
+    .card
+      .card-block
+        %p.card-text.last_commit
+          Last commit:
+          = @laser_gem.gem_git.last_commit
+        %p.card-text.forks_count
+          Forks:
+          = @laser_gem.gem_git.forks_count
+        %p.card-text.stargazers_count
+          Stargazers:
+          = @laser_gem.gem_git.stargazers_count
+        %p.card-text.watchers_count
+          Watchers:
+          = @laser_gem.gem_git.watchers_count
+        %p.card-text.open_issues_count
+          Open issues:
+          = @laser_gem.gem_git.open_issues_count
 
 .comments
   - @laser_gem.comments.each do |comment|
