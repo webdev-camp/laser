@@ -38,8 +38,8 @@ namespace :laser do
   namespace :fixtures do
     desc 'Dumps all models into fixtures.'
     task :dump => :environment do
-      models = [User , LaserGem , GemDependency , GemGit , LaserGem ,  Announcement ,
-                Comment , Ownership , ActsAsTaggableOn::Tag , ActsAsTaggableOn::Tagging]
+      models = [Announcement , Comment , GemDependency , GemGit ,GemSpec, LaserGem ,
+                Ownership , ActsAsTaggableOn::Tagging , ActsAsTaggableOn::Tag ,User  ]
       # specify FIXTURES_PATH to test/fixtures if you do test:unit
       dump_dir = "test/fixtures"
       puts "Found models: " + models.join(', ')
