@@ -1,4 +1,3 @@
-
 RSpec.describe "LaserGems" do
   it "gets index" do
     visit laser_gems_path
@@ -36,4 +35,9 @@ RSpec.describe "LaserGems" do
 
   end
 
+  it "shows the related tags for laser gem" do
+    laser_gem = create :laser_gem
+    visit laser_gems_path
+    expect(page).to have_text(laser_gem.tag_list)
+  end
 end
