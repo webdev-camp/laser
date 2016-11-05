@@ -3,20 +3,16 @@
   .card
     %h4.card-header.card-title
       = @laser_gem.name
-      %small.text-muted.pl-1.version
-        Version:
-        = @laser_gem.gem_spec.current_version
+      %small.text-muted.pl-1= @laser_gem.gem_spec.current_version
     .card-block
       %p.card-text
         = @laser_gem.gem_spec.info
       %p.card-text
-        %span.tag.tag-default tag
-      %p.card-text.text-xs-center
-        %a.card-link{:href => "#"} Homepage
-        - @laser_gem.gem_spec.homepage_uri
-        %a.card-link{:href => "#"} GitHub
-        - @laser_gem.gem_spec.source_code_uri
-
+        %span.tag.tag-default= @laser_gem.tag_list
+        = form_tag(add_tag_path(@laser_gem.name)) do
+          = text_field_tag(:tag)
+          %button.icon{id: "save_tag", type: "submit"}
+            +
   .card
     .card-header Dependencies
     .card-block
@@ -24,11 +20,11 @@
         - @laser_gem.dependencies.each do |dependency|
           = link_to(dependency.name, laser_gem_path(dependency.name))
 
-
   .card
     .card-header Related gems
     .card-block
       %p.card-text LaserGem
+
   .card
     .card-header Dependents
     .card-block

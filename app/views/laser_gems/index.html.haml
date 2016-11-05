@@ -39,20 +39,11 @@
   .gem_popular
     %h4 Gems
     .gem_popular_container
-      %ul.cloud
-        %li rails
-        %li susy
-        %li breakpoint
-        %li rake
-        %li bundler
-        %li sass
-        %li rspec
-        %li haml
-        %li nokogiri
-        %li json
+      -laser_gems_cloud.each do |laser_gem|
+        =laser_gem.name
+
   .tag_popular
     %h4 Tags
     .tag_popular_container
-      %a style
-      %a develop
-      %a test
+      -tags_cloud.each do |tag|
+        =tag
