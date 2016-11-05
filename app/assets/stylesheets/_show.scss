@@ -1,9 +1,9 @@
 .left {
-  @include span(8);
+  @include left;
 }
 
 .right {
-  @include span(4);
+  @include right;
 }
 
 .comments{
