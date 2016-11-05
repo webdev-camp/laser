@@ -78,7 +78,7 @@ class GitLoader
       if git_data and not laser_gem.gem_git
         attribs = {}
         git_attributes.each {|k,v| attribs[k] = git_data[v] }
-        GemGit.create!(attribs.merge laser_gem_id: laser_gem.id)
+        laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
         fetch_assignees(laser_gem)
       end
     end

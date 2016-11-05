@@ -17,7 +17,7 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
-  it "searches for gem stuff" do
+  it "searches for gems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
@@ -31,8 +31,26 @@ RSpec.describe "LaserGems" do
     expect(gem_elements.length).to be 1
   end
 
-  it "searches a part of a gem name" do
+  it "searches for non-existent gems" do
+    laser_gem = create :laser_gem
+    create :laser_gem
+    visit laser_gems_path
+    page.fill_in 'q_name_cont', :with => laser_gem.name+'akjsdhgkjasd'
+    page.find('input[name="commit"]').click
+    expect(page.status_code).to be 200
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to be 0
+  end
 
+  it "searches a part of a gem name" do
+    laser_gem = create :laser_gem
+    create :laser_gem
+    visit laser_gems_path
+      page.fill_in 'q_name_cont', :with => laser_gem.name[0,2]
+    page.find('input[name="commit"]').click
+    expect(page.status_code).to be 200
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to be >= 1
   end
 
   it "shows the related tags for laser gem" do

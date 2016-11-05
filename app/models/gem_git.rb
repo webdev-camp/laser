@@ -7,7 +7,7 @@ class GemGit < ApplicationRecord
   validates :watchers_count, presence: true
   validates :open_issues_count, presence: true
 
-  belongs_to :laser_gem , required: false
+  belongs_to :laser_gem , required: false , inverse_of: :gem_git
   validates_uniqueness_of :laser_gem_id
 
   # has_many :ownerships
