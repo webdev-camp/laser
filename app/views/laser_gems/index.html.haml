@@ -1,12 +1,8 @@
 .search
   .searchbox
-    /%form{method: "", action: ""}
-    %input.search_results{ name: "searchbox", type: "text", placeholder: "Search..."}
-    %button.icon{type: "submit"}
-      %i.fa.fa-search
-    / search_object = gets.chomp
-    %h3 You have searched for "search_object"
-
+    = search_form_for @q do |f|
+      = f.search_field :name_cont
+      = f.submit
   .options
     .filter
       %label{for: "filter"}Filter by:
@@ -27,6 +23,7 @@
       =render @laser_gems
     .display#infinite-scrolling
       = will_paginate @laser_gems
+
 
 .featured
   %h3 Featured Gem of the Month
