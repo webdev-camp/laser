@@ -1,12 +1,19 @@
 .card
   %h4.card-header
-    = link_to(laser_gem.name, laser_gem_path(laser_gem.name))
+    = link_to laser_gem.name, laser_gem_path(laser_gem.name)
     %small.text-muted
       = laser_gem.gem_spec.current_version
   .card-block
     .card-left
       %p.card-text= laser_gem.gem_spec.info
-      %p.card-text= laser_gem.tag_list
+      %p.card-text
+        - laser_gem.tag_list.each do |tag|
+          %span.tag.tag-default=tag
+        = form_tag(add_tag_path(laser_gem.name)) do |f|
+          = text_field_tag(:tag)
+          //= f.text_field :tag_list, value: f.object.tag_list.to_s
+          %button.icon{id: "save_tag", type: "submit"}
+            +
     .card-right
       .downloads
         =k_numbers laser_gem.gem_spec.total_downloads
