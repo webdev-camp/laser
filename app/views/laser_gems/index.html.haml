@@ -24,4 +24,6 @@
         =link_to laser_gem.name, laser_gem_path(laser_gem.name)
   .card
     %h4.card-header Popular tags
-    .card-block.tag_popular_container tag cloud
+    .card-block.tag_popular_container
+      -tags_cloud.each do |tag|
+        =tag
