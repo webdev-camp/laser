@@ -1,23 +1,13 @@
 .search
   .searchbox
-    = search_form_for @q do |f|
-      = f.search_field :name_cont
+    = search_form_for @q , method: :get  do |f|
+      = f.search_field :name_or_gem_spec_info_cont , placeholder: "Search Text"
+      = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
       = f.submit
   .options
-    .filter
-      %label{for: "filter"}Filter by:
-      %select{name: "filter_choice"}
-        %option{value: ""}
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
     .order
-      %label{for: "order"}Order by:
-      %select{name: "order_choice"}
-        %option{value: ""}
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
+      = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
+      = sort_link(@q, :gem_git_last_commit , "Commits" )
   .results
     .gem_pages#gem_pages
       =render @laser_gems
@@ -46,4 +36,4 @@
     %h4 Tags
     .tag_popular_container
       -tags_cloud.each do |tag|
-        =tag
+        =link_to(tag, search_tag_url(tag))
