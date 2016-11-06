@@ -6,5 +6,6 @@
     %p.searchgems
       = form_tag(laser_gems_path, method: "get") do
         = label_tag(:q, "Search for gems:")
-        = text_field_tag("Search")
+        = text_field_tag("q[name_or_gem_spec_info_cont]", nil , 
+                          placeholder: "Search gems")
         = submit_tag("Search")
