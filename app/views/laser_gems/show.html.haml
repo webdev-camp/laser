@@ -83,16 +83,9 @@
     =time_ago_in_words comment.created_at
     ago
     = comment.body
-<<<<<<< Updated upstream
   = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
     .field
       = text_area_tag(:comment_body)
     %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
       %i.icon.edit
       Add Reply
-=======
-
-    = text_area_tag :comment_body
-  %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
-    Add Reply
->>>>>>> Stashed changes
