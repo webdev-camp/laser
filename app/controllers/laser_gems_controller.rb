@@ -35,7 +35,8 @@ class LaserGemsController < ApplicationController
     if @comment.save
       redirect_to laser_gem_path(@laser_gem.name)
     else
-      flash[:notice] = "Comment error"
+      #TODO to make a modification to error message, update corresponding rspec
+      flash[:notice] = "CommentError: Please insert a valid comment."
       render :show
     end
   end

@@ -8,11 +8,13 @@
       %p.card-text
         = @laser_gem.gem_spec.info
       %p.card-text
-        %span.tag.tag-default= @laser_gem.tag_list
+        - @laser_gem.tag_list.each do |tag|
+          %span.tag.tag-default= tag
         = form_tag(add_tag_path(@laser_gem.name)) do
           = text_field_tag(:tag)
           %button.icon{id: "save_tag", type: "submit"}
             +
+
   .card
     .card-header Dependencies
     .card-block
@@ -81,7 +83,16 @@
     =time_ago_in_words comment.created_at
     ago
     = comment.body
-  = form_tag(add_comment_path(@laser_gem.name)) do
+<<<<<<< Updated upstream
+  = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
+    .field
+      = text_area_tag(:comment_body)
+    %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
+      %i.icon.edit
+      Add Reply
+=======
+
     = text_area_tag :comment_body
   %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
     Add Reply
+>>>>>>> Stashed changes

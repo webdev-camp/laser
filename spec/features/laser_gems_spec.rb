@@ -13,7 +13,9 @@ RSpec.describe "LaserGems" do
   it "show for item works" do
     gem = create :laser_gem
     visit laser_gems_path
-    click_link gem.name
+    within('.results') do
+      click_link gem.name
+    end
     expect(page.status_code).to be 200
   end
 
@@ -22,7 +24,7 @@ RSpec.describe "LaserGems" do
     create :laser_gem
     visit laser_gems_path
     # find and set the search input
-    page.fill_in 'q_name_cont', :with => laser_gem.name
+    page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name
     # click the search button
     page.find('input[name="commit"]').click
     expect(page.status_code).to be 200
@@ -35,7 +37,7 @@ RSpec.describe "LaserGems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
-    page.fill_in 'q_name_cont', :with => laser_gem.name+'akjsdhgkjasd'
+    page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name+'akjsdhgkjasd'
     page.find('input[name="commit"]').click
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
@@ -46,7 +48,7 @@ RSpec.describe "LaserGems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
-      page.fill_in 'q_name_cont', :with => laser_gem.name[0,2]
+      page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name[0,2]
     page.find('input[name="commit"]').click
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
