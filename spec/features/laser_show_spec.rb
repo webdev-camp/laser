@@ -1,5 +1,3 @@
-# branch TODO
-
 RSpec.describe "LaserGemsShow" do
 
   def add_tag tag
