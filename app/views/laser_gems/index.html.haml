@@ -1,39 +1,29 @@
-.search
-  .searchbox
-    = search_form_for @q , method: :get  do |f|
-      = f.search_field :name_or_gem_spec_info_cont , placeholder: "Search Text"
-      = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
-      = f.submit
-  .options
-    .order
-      = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
-      = sort_link(@q, :gem_git_last_commit , "Commits" )
-  .results
-    .gem_pages#gem_pages
-      =render @laser_gems
-    .display#infinite-scrolling
-      = will_paginate @laser_gems
+.left
+  .card
+    .card-header
+      .search
+        .searchbox
+          = search_form_for @q , method: :get  do |f|
+            = f.search_field :name_or_gem_spec_info_cont , placeholder: "Search Text"
+            = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
+            = f.submit
+        .options
+          .order
+            = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
+            = sort_link(@q, :gem_git_last_commit , "Commits" )
+      .results
+        =render @laser_gems
+        .display#infinite-scrolling
+          = will_paginate @laser_gems
 
-
-.featured
-  %h3 Featured Gem of the Month
-  .gem_featured
-    %h4 Example
-    %p Example is a nice thing that helps you to get an idea of a concept.
-    %a{href: ""} Learn More
-  %br
-  =link_to('How do we choose the featured gem of the month?', '/faq')
-
-.popular
-  %h3 Most popular
-  .gem_popular
-    %h4 Gems
-    .gem_popular_container
+.right
+  .card
+    %h4.card-header Popular gems
+    .card-block.gem_popular_container
       -laser_gems_cloud.each do |laser_gem|
-        =laser_gem.name
-
-  .tag_popular
-    %h4 Tags
-    .tag_popular_container
+        =link_to laser_gem.name, laser_gem_path(laser_gem.name)
+  .card
+    %h4.card-header Popular tags
+    .card-block.tag_popular_container
       -tags_cloud.each do |tag|
         =link_to(tag, search_tag_url(tag.name))

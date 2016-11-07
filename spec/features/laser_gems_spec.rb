@@ -13,7 +13,9 @@ RSpec.describe "LaserGems" do
   it "show for item works" do
     gem = create :laser_gem
     visit laser_gems_path
-    click_link gem.name
+    within('.results') do
+      click_link gem.name
+    end
     expect(page.status_code).to be 200
   end
 

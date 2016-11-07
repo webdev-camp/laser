@@ -49,7 +49,6 @@ html body {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
-  background-color: $gray-lightest;
   color: $laser-black;
 }
 
@@ -62,18 +61,25 @@ body { padding-top: 40px; }
   @include container(85%);
   padding-top: 5em;
   padding-bottom: 5em;
-  background-color: $gray-lightest;
-}
 
-a {
-  text-decoration: none;
-  color: $laser-black;
-  &:hover {
-    color: #ff0066;
+  a {
+    text-decoration: none;
+    color: $laser-black;
     font-weight: bold;
-  }
-  &:visited {
-    color: #ff89b8;
-    font-weight: lighter;
+    &:hover {
+      color: $raisa-teal;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    &:visited {
+      color: $laser-black;
+      font-weight: bold;
+      text-decoration: none;
+      &:hover {
+        color: $raisa-teal;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
   }
 }
