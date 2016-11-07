@@ -12,7 +12,8 @@
     .gem_tags
       %h4 Related tags
       .list
-        %p=laser_gem.tag_list
+        -laser_gem.tag_list.each do |tag_name|
+          =link_to(tag_name, search_tag_url(tag_name))
 
   .gem_numbers
     .gem_statistic

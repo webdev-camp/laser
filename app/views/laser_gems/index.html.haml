@@ -36,4 +36,4 @@
     %h4 Tags
     .tag_popular_container
       -tags_cloud.each do |tag|
-        =link_to(tag, search_tag_url(tag))
+        =link_to(tag, search_tag_url(tag.name))
