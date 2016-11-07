@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'acts-as-taggable-on'
 gem 'devise'
 
+gem "therubyracer"
 
 # Use 'mechanize' to scrape data
 gem 'mechanize'
