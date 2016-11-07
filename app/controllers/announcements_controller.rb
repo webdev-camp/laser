@@ -1,6 +1,7 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :edit, :update]
+  before_action :require_admin_rights, only: [:new, :edit, :update]
 
   # GET /announcements
   def index
@@ -50,6 +51,12 @@ class AnnouncementsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_announcement
       @announcement = Announcement.find(params[:id])
+    end
+
+    def require_admin_rights
+      unless current_user.admin?
+        flash[:error] = "You must be admin to perform this task"
+      end
     end
 
     # Only allow a trusted parameter "white list" through.

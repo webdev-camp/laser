@@ -1,5 +1,6 @@
 class LaserGemsController < ApplicationController
   before_action :authenticate_user!, only: [:add_comment]
+  before_action :require_admin_rights, only: [:add_tag]
 
   # GET /laser_gems
   def index
@@ -48,6 +49,12 @@ class LaserGemsController < ApplicationController
       false
     else
       true
+    end
+  end
+
+  def require_admin_rights
+    unless current_user.admin?
+      flash[:error] = "You must be admin to perform this task"
     end
   end
 end
