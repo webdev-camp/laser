@@ -107,7 +107,7 @@ class Ranking
 
   def commit_activity_score
     return 0 unless @gem_git
-    score_calculation(@gem_git.commit_dates.first, COMMIT_ACTIVITY_BANDS)
+    score_calculation(@gem_git.commit_dates_month.first, COMMIT_ACTIVITY_BANDS)
   end
 
   def recent_activity_score

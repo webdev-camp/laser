@@ -7,7 +7,7 @@ RSpec.describe Ranking do
     it "ranks activity score 1 if latest commit was over a year ago" do
       laser_gem = LaserGem.create(name: "letmein")
       create :gem_git, 
-        commit_dates: [2.years.ago, 3.years.ago], 
+        commit_dates_month: [2.years.ago, 3.years.ago], 
         laser_gem: laser_gem
       expect(Ranking.new(laser_gem).commit_activity_score).to be 1.0
     end
