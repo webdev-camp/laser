@@ -20,6 +20,9 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'acts-as-taggable-on'
 gem 'devise'
+gem 'chartkick'
+gem 'jbuilder', '~> 2.5'
+# gem 'groupdate'
 
 
 # Use 'mechanize' to scrape data
