@@ -159,6 +159,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     multipart-post (2.0.0)
+    mysql2 (0.4.5)
     nenv (0.3.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
@@ -334,6 +335,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mechanize
+  mysql2
   octokit (~> 4.0)
   pry-rails
   puma
@@ -352,4 +354,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.13.2
+   1.13.5

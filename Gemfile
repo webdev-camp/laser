@@ -55,3 +55,7 @@ end
 group :test do
   gem "codeclimate-test-reporter", require: nil
 end
+
+group :production do
+  gem "mysql2"
+end
