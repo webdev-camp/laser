@@ -1,5 +1,7 @@
 class GemGit < ApplicationRecord
-  serialize :commit_dates, Array
+  serialize :commit_dates_month, Array
+  serialize :commit_dates_year, Array
+
   validates :name, length: {in: 2..180}
   # validates :homepage, presence: true
   validates :last_commit, presence: true
