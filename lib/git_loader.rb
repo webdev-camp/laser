@@ -27,6 +27,7 @@ class GitLoader
     end
   end
 
+
   def fetch_assignees(laser_gem )
     # For future use, check dependencies if returns.
     return unless laser_gem.ownerships.where(github_owner: true).empty?
@@ -105,6 +106,20 @@ class GitLoader
     return nil
   end
 
+  def get_commit_activity_year(repo_name)
+    begin
+      return @client.commit_activity_stats(repo_name)
+    rescue Octokit::NotFound # => not_found
+      puts "Not found #{repo_name}"
+    rescue Faraday::ConnectionFailed #=> offline
+      puts "Oops something is offline #{repo_name}"
+    rescue Exception => e
+      puts e.message
+      puts "Exception #{repo_name}"
+    end
+    return nil
+  end
+
   def fetch_commits_for_git(laser_gem)
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
@@ -124,6 +139,14 @@ class GitLoader
     LaserGem.all.each do |laser_gem|
       fetch_commits_for_git(laser_gem)
     end
+  end
+
+  def fetch_commit_activity_year(laser_gem)
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    array = get_commit_activity_year(repo_name)
+    return nil unless array
+    ### TODO 
   end
 
   private
