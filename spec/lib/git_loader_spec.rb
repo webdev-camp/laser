@@ -179,7 +179,7 @@ RSpec.describe GitLoader do
       expect((laser_gem.gem_git.commit_dates_year).any?).to be true
     end
 
-    it "reduces week commits array and converts datetime stamp" do
+    xit "reduces week commits array and converts datetime stamp" do
 
     end
   end
