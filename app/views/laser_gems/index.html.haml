@@ -12,10 +12,10 @@
             = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
             = sort_link(@q, :gem_git_last_commit , "Commits" )
       .results
-        =render @laser_gems
+        .gem_pages#gem_pages
+          =render @laser_gems
         .display#infinite-scrolling
           = will_paginate @laser_gems
-
 .right
   .card
     %h4.card-header Popular gems
