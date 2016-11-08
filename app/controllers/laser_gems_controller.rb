@@ -1,6 +1,7 @@
 class LaserGemsController < ApplicationController
-  before_action :authenticate_user!, only: [:add_comment]
-  before_action :require_admin_rights, only: [:add_tag]
+  before_action :authenticate_user!,   only: [:add_comment]
+  before_action :load_gem ,            only: [:show ,   :add_tag , :add_comment]
+  before_action :require_owner_rights, only: [:add_tag , :add_comment]
 
   # GET /laser_gems
   def index
@@ -15,11 +16,9 @@ class LaserGemsController < ApplicationController
  end
   # GET /laser_gems/gem_name
   def show
-    @laser_gem = LaserGem.find_by_name(params[:name])
   end
 
   def add_tag
-    @laser_gem = LaserGem.find_by_name(params[:name])
     if tag_is_valid
       @laser_gem.tag_list.add(params[:tag])
       @laser_gem.save
@@ -31,7 +30,6 @@ class LaserGemsController < ApplicationController
   end
 
   def add_comment
-    @laser_gem = LaserGem.find_by_name(params[:name])
     @comment = Comment.new(body: params[:comment_body], user: current_user, laser_gem: @laser_gem)
     if @comment.save
       redirect_to laser_gem_path(@laser_gem.name)
@@ -42,7 +40,16 @@ class LaserGemsController < ApplicationController
     end
   end
 
+  def has_owner_rights?
+    return false unless current_user
+    return false unless @laser_gem.is_gem_owner?(current_user)
+  end
+
   private
+
+  def load_gem
+    @laser_gem = LaserGem.find_by_name(params[:name])
+  end
 
   def tag_is_valid
     if params[:tag].include?(" ")
@@ -52,9 +59,7 @@ class LaserGemsController < ApplicationController
     end
   end
 
-  def require_admin_rights
-    unless current_user.admin?
-      flash[:error] = "You must be admin to perform this task"
-    end
+  def require_owner_rights
+    redirect_to laser_gem_path(@laser_gem) unless has_owner_rights?
   end
 end

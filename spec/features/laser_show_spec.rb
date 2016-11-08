@@ -14,12 +14,12 @@ RSpec.describe "LaserGemsShow" do
     click_button('add_comment')
   end
 
-  it "shows the tag on the page" do
+  xit "shows the tag on the page" do
     add_tag "thfsf"
     expect(page).to have_text("thfsf")
   end
 
-  it "don't add an invalid tag" do
+  xit "don't add an invalid tag" do
     add_tag "thfsf gem"
     expect(page).to have_text("Please insert a valid tag")
     expect(page).not_to have_content("thfsf gem")
