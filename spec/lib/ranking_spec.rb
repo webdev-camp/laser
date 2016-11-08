@@ -4,6 +4,7 @@ RSpec.describe Ranking do
       laser_gem = LaserGem.create(name: "letmein")
       expect(Ranking.new(laser_gem).commit_activity_score).to be 0
     end
+
     it "ranks activity score 1 if latest commit was over a year ago" do
       laser_gem = LaserGem.create(name: "letmein")
       create :gem_git, 
@@ -12,11 +13,13 @@ RSpec.describe Ranking do
       expect(Ranking.new(laser_gem).commit_activity_score).to be 1.0
     end
   end
+
   describe "#recent_activity_score" do
     it "returns zero if there is no gem_git" do
       laser_gem = LaserGem.create(name: "letmein")
       expect(Ranking.new(laser_gem).recent_activity_score).to be 0
     end
+
     it "ranks recent activity score 5 if latest commit was less than a week ago" do
       laser_gem = LaserGem.create(name: "rails")
       create :gem_git, 
@@ -25,11 +28,13 @@ RSpec.describe Ranking do
       expect(Ranking.new(laser_gem).recent_activity_score).to be 5.0
     end
   end
+
   describe "#forks_score" do
     it "returns zero if there is no gem_git" do
       laser_gem = LaserGem.create(name: "letmein")
       expect(Ranking.new(laser_gem).forks_score).to be 0
     end
+
     it "ranks forks score 3 if fork count is more than 50 but less than 500" do
       laser_gem = LaserGem.create(name: "rails")
       create :gem_git, 
@@ -38,11 +43,13 @@ RSpec.describe Ranking do
       expect(Ranking.new(laser_gem).forks_score).to be 3.0
     end
   end
+
   describe "#stargazers_score" do
     it "returns zero if there is no gem_git" do
       laser_gem = LaserGem.create(name: "letmein")
       expect(Ranking.new(laser_gem).stargazers_score).to be 0
     end
+
     it "ranks stargazer score 3 if stargazer_count is more than 50 but less than 500" do
       laser_gem = LaserGem.create(name: "rails")
       create :gem_git, 
@@ -56,6 +63,7 @@ RSpec.describe Ranking do
       laser_gem = LaserGem.create(name: "letmein")
       expect(Ranking.new(laser_gem).watchers_score).to be 0
     end
+
     it "ranks watchers score 1 if watchers_count is less than 1" do
       laser_gem = LaserGem.create(name: "rails")
       create :gem_git, 

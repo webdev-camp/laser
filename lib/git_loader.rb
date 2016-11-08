@@ -148,6 +148,8 @@ class GitLoader
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
     array = get_commit_activity_year(repo_name)
+    laser_gem.reload
+    return nil unless array
     # Extracts [commits in week] and [week start date], oldest -> newest
     commit_dates_year = array.collect do |week|
       [week[:days].reduce(0, :+), Time.at(week[:week]).to_datetime]

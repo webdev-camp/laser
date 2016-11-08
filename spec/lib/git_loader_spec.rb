@@ -143,9 +143,13 @@ RSpec.describe GitLoader do
     before :example do
       @loader2 = GitLoader.new
     end
+
+    ##### TODO
     it "returns nil if repo name empty or invalid" do
-      laser_gem = create :laser_gem_with_everything
-      laser_gem.gem_spec.source_code_uri =  "http://gi.com/tzinfo/tzfo/"
+      laser_gem = LaserGem.create(name: "letmein")
+      create :gem_spec, 
+        laser_gem: laser_gem,
+        source_code_uri: "www.github.com/tzinfo/tzn"
       expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
     end
 
@@ -171,16 +175,13 @@ RSpec.describe GitLoader do
       @loader = GitLoader.new
     end
     it "returns an array", ci: true do
-      loader = GemLoader.new
+      loader2 = GemLoader.new
       laser_gem = LaserGem.create(name: "rails")
-      loader.fetch_and_create_gem_spec(laser_gem)
+      loader2.fetch_and_create_gem_spec(laser_gem)
+      @loader.fetch_and_create_gem_git(laser_gem)
       @loader.fetch_commit_activity_year(laser_gem)
       laser_gem.reload
       expect((laser_gem.gem_git.commit_dates_year).any?).to be true
-    end
-
-    xit "reduces week commits array and converts datetime stamp" do
-
     end
   end
 end

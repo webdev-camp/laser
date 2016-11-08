@@ -34,16 +34,16 @@ FactoryGirl.define do
         create :ownership, laser_gem: laser_gem
       end
     end
+  end
 
-    factory :laser_gem_with_everything do
-      after(:create) do |laser_gem, evaluator|
-        create :ownership, laser_gem: laser_gem
-        create :gem_spec, laser_gem: laser_gem, 
-          source_code_uri: "http://github.com/rails/rails"
-        create_list :gem_dependency, 5, dependency: laser_gem
-        create_list :gem_dependency, 5, laser_gem: laser_gem
-        create :gem_git, laser_gem: laser_gem
-      end
+  factory :laser_gem_with_everything do
+    after(:create) do |laser_gem, evaluator|
+      create :ownership, laser_gem: laser_gem
+      create :gem_spec, laser_gem: laser_gem, 
+        source_code_uri: "http://github.com/rails/rails"
+      create_list :gem_dependency, 5, dependency: laser_gem
+      create_list :gem_dependency, 5, laser_gem: laser_gem
+      create :gem_git, laser_gem: laser_gem
     end
   end
 end
