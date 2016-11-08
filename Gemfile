@@ -11,7 +11,6 @@ gem "octokit", "~> 4.0"
 
 gem 'susy'
 gem 'breakpoint'
-gem 'semantic-ui-sass', git: "https://github.com/doabit/semantic-ui-sass.git"
 gem 'bootstrap'
 gem 'simple_form'
 gem 'animate-rails'
@@ -22,12 +21,17 @@ gem 'coffee-rails', '~> 4.2'
 gem 'acts-as-taggable-on'
 gem 'devise'
 
+gem "therubyracer"
 
 # Use 'mechanize' to scrape data
 gem 'mechanize'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,4 +55,8 @@ end
 
 group :test do
   gem "codeclimate-test-reporter", require: nil
+end
+
+group :production do
+  gem "mysql2"
 end

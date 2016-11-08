@@ -3,9 +3,15 @@ class LaserGemsController < ApplicationController
 
   # GET /laser_gems
   def index
-    @laser_gems = LaserGem.all.includes(:gem_spec)
-  end
+  @q = LaserGem.includes(:gem_spec).ransack(params[:q])
+  @laser_gems = @q.result(distinct: true).
+    paginate(page: params[:page], per_page: 20).includes(:gem_spec).order(:name)
 
+   respond_to do |format|
+     format.html
+     format.js
+   end
+ end
   # GET /laser_gems/gem_name
   def show
     @laser_gem = LaserGem.find_by_name(params[:name])
@@ -29,7 +35,8 @@ class LaserGemsController < ApplicationController
     if @comment.save
       redirect_to laser_gem_path(@laser_gem.name)
     else
-      flash[:notice] = "Comment error"
+      #TODO to make a modification to error message, update corresponding rspec
+      flash[:notice] = "CommentError: Please insert a valid comment."
       render :show
     end
   end

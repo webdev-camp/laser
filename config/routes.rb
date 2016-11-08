@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :announcements, except: :destroy
-  match "laser_gems"        , to: "laser_gems#index" , via: [:get, :post]
+  match "laser_gems", to: "laser_gems#index" , via: [:get, :post]
   post 'laser_gem/:name/add_tag', to: 'laser_gems#add_tag', as: :add_tag
   post 'laser_gem/:name/add_comment', to: 'laser_gems#add_comment', as: :add_comment
   get   "laser_gem/:name"  , to: "laser_gems#show" , as: :laser_gem

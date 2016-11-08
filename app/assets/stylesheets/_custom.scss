@@ -1,0 +1,30 @@
+$laser-black: #131418;
+$pomegranate: #C0392B;
+$flat-white: #fefefe;
+
+$laser-maroon: #903940;
+$laser-gold: #ECA35C;
+$laser-teal: #41877B;
+$laser-black: #272020;
+$laser-muted-red: #CF5B5B;
+$laser-red: #E2513E;
+
+$raisa-red: #8E1313;
+$raisa-teal: #3B5F7C;
+
+$enable-grid-classes: false;
+
+@mixin highlight {
+  .highlight{
+      color: $laser-maroon;
+    }
+}
+
+@mixin left {
+  @include span(8);
+}
+
+
+@mixin right {
+  @include span(4);
+}

@@ -5,6 +5,11 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   def index
     @announcements = Announcement.all
+    if Announcement.first == nil
+      @empty = true
+    else
+      @empty = false
+    end
   end
 
   # GET /announcements/1

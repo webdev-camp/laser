@@ -1,16 +1,9 @@
-= form_for @announcement do |f|
-  - if @announcement.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@announcement.errors.count, "error")} prohibited this announcement from being saved:"
-      %ul
-        - @announcement.errors.full_messages.each do |msg|
-          %li= msg
+.announcement_form
+  = simple_form_for(@announcement, html: { class: 'form-horizontal' }) do |f|
+    - if @announcement.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@announcement.errors.count, "error")} prohibited this announcement from being saved:"
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
-  .actions
-    = f.submit 'Save'
+    = f.input :title
+    = f.input :body, input_html: { rows: "10" }
+    = f.button :submit

@@ -1,80 +1,29 @@
-.search
-  .searchbox
-    /%form{method: "", action: ""}
-    %input.search_results{ name: "searchbox", type: "text", placeholder: "Search..."}
-    %button.icon{type: "submit"}
-      %i.fa.fa-search
-    / search_object = gets.chomp
-    %h3 You have searched for "search_object"
+.left
+  .card
+    .card-header
+      .search
+        .searchbox
+          = search_form_for @q , method: :get  do |f|
+            = f.search_field :name_or_gem_spec_info_cont , placeholder: "Search Text"
+            = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
+            = f.submit
+        .options
+          .order
+            = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
+            = sort_link(@q, :gem_git_last_commit , "Commits" )
+      .results
+        =render @laser_gems
+        .display#infinite-scrolling
+          = will_paginate @laser_gems
 
-  .options
-    .filter
-      %label{for: "filter"}Filter by:
-      %select{name: "filter_choice"}
-        %option{value: ""}
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-    .order
-      %label{for: "order"}Order by:
-      %select{name: "order_choice"}
-        %option{value: ""}
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-        %option{value: "fhgdfkgu"} fhgdfkgu
-  .results
-    .display
-      - @laser_gems.each do |laser_gem|
-        .gem_element
-          .gem_name
-            %h2= link_to(laser_gem.name, laser_gem_path(laser_gem.name))
-            %span
-              \-
-              = laser_gem.gem_spec.current_version
-          .gem_main
-            .gem_description
-              %p
-              \-
-              = laser_gem.gem_spec.info
-            .gem_tags
-              %h4 Related tags
-          .gem_numbers
-            .gem_statistic
-              .value
-                =k_numbers laser_gem.gem_spec.total_downloads
-              .label Downloads
-            .gem_favorites
-              .meta
-                %a 100 favorites
-
-.featured
-  %h3 Featured Gem of the Month
-  .gem_featured
-    %h4 Example
-    %p Example is a nice thing that helps you to get an idea of a concept.
-    %a{href: ""} Learn More
-  %br
-  =link_to('How do we choose the featured gem of the month?', '/faq')
-
-.popular
-  %h3 Most popular
-  .gem_popular
-    %h4 Gems
-    .gem_popular_container
-      %ul.cloud
-        %li rails
-        %li susy
-        %li breakpoint
-        %li rake
-        %li bundler
-        %li sass
-        %li rspec
-        %li haml
-        %li nokogiri
-        %li json
-  .tag_popular
-    %h4 Tags
-    .tag_popular_container
-      %a style
-      %a develop
-      %a test
+.right
+  .card
+    %h4.card-header Popular gems
+    .card-block.gem_popular_container
+      -laser_gems_cloud.each do |laser_gem|
+        =link_to laser_gem.name, laser_gem_path(laser_gem.name)
+  .card
+    %h4.card-header Popular tags
+    .card-block.tag_popular_container
+      -tags_cloud.each do |tag|
+        =link_to(tag, search_tag_url(tag.name))

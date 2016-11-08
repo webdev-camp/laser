@@ -1,37 +1,18 @@
-.announcements_index {
-  .card-header {
-    padding-top: 2em;
-    padding-left: 2em;
-    padding-right: 2em;
-    h3 {
-      @include span(9 of 12);
-      text-align: left;
-    }
-    p {
-      text-align: right;
-    }
-  }
+@mixin announcement {
   .card-block{
-    padding: 3em;
-    text-align: justify;
+   text-align: justify;
+   word-break: break-all;
   }
 }
 
 .announcement_show {
-  .card-header{
-    padding-top: 2em;
-    padding-left: 2em;
-    padding-right: 3em;
-    h3 {
-      @include span(9 of 12);
-      text-align: left;
-    }
-    p {
-      text-align: right;
-    }
-  }
-  .card-block{
-    padding: 3em;
-    text-align: justify;
-  }
+  @include announcement;
+}
+
+.announcement_index {
+  @include announcement;
+}
+
+.announcement_new_or_edit {
+  @include span(8 of 12);
 }

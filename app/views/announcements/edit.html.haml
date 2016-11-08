@@ -1,7 +1,8 @@
-%h1 Editing announcement
+.announcement_new_or_edit
+  %h1 Editing announcement
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @announcement
-\|
-= link_to 'Back', announcements_path
+  %ul.pager
+    %li= link_to 'Show', @announcement
+    %li= link_to 'Back', announcements_path
