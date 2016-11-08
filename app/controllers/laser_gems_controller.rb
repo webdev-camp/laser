@@ -60,6 +60,6 @@ class LaserGemsController < ApplicationController
   end
 
   def require_owner_rights
-    redirect_to laser_gem_path(@laser_gem) unless has_owner_rights?
+    redirect_to laser_gem_path(@laser_gem.name) unless has_owner_rights?
   end
 end
