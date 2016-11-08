@@ -32,5 +32,12 @@ FactoryGirl.define do
         create :ownership, laser_gem: laser_gem
       end
     end
+
+    factory :laser_gem_with_tags do
+      after(:create) do |laser_gem, evaluator|
+        laser_gem.tag_list.add("tag")
+        laser_gem.save
+      end
+    end
   end
 end

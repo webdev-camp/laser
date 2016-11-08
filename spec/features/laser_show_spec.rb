@@ -61,10 +61,4 @@ RSpec.describe "LaserGemsShow" do
     visit laser_gem_path(laser_gem.name)
     expect(page).to have_text(laser_gem.tag_list)
   end
-
-  it "shows the related tags for laser gem" do
-    laser_gem = create :laser_gem
-    visit laser_gem_path(laser_gem.name)
-    expect(page).to have_text(laser_gem.tag_list)
-  end
 end
