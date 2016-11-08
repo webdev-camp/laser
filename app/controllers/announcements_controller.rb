@@ -54,9 +54,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def require_admin_rights
-      unless current_user.admin?
-        flash[:error] = "You must be admin to perform this task"
-      end
+      redirect_to laser_gems_path unless current_user.admin?
     end
 
     # Only allow a trusted parameter "white list" through.
