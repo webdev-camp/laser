@@ -61,7 +61,8 @@
         .label Current Version Downloads
 
     .gem_activity
-      Active
+      -# Active
+      =yield :charts_js
     .gem_github
       = link_to("GitHub Page", @laser_gem.gem_spec.source_code_uri)
 
