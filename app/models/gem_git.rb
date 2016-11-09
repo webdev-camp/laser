@@ -1,4 +1,7 @@
 class GemGit < ApplicationRecord
+  serialize :commit_dates_month, Array
+  serialize :commit_dates_year, Array
+
   validates :name, length: {in: 2..180}
   # validates :homepage, presence: true
   validates :last_commit, presence: true
@@ -7,7 +10,7 @@ class GemGit < ApplicationRecord
   validates :watchers_count, presence: true
   validates :open_issues_count, presence: true
 
-  belongs_to :laser_gem , required: false
+  belongs_to :laser_gem , required: false , inverse_of: :gem_git
   validates_uniqueness_of :laser_gem_id
 
   # has_many :ownerships

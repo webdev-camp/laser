@@ -1,21 +1,16 @@
 .gem_element
-  .gem_name
-    %h2= link_to(laser_gem.name, laser_gem_path(laser_gem.name))
-    %span
-      \-
-      = laser_gem.gem_spec.current_version
-  .gem_main
-    .gem_description
-      %p
-      \-
-      = laser_gem.gem_spec.info
-    .gem_tags
-      %h4 Related tags
-  .gem_numbers
-    .gem_statistic
-      .value
-        =k_numbers laser_gem.gem_spec.total_downloads
-      .label Downloads
-    .gem_favorites
-      .meta
-        %a 100 favorites
+  .card
+    %h4.card-header
+      = link_to laser_gem.name, laser_gem_path(laser_gem.name)
+      %small.text-muted
+        = laser_gem.gem_spec.current_version
+    .card-block
+      .card-left
+        %p.card-text= laser_gem.gem_spec.info
+        %p.card-text
+          -laser_gem.tag_list.each do |tag_name|
+            %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
+      .card-right
+        .downloads
+          =k_numbers laser_gem.gem_spec.total_downloads
+          downloads

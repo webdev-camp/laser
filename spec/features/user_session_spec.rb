@@ -53,7 +53,16 @@ RSpec.describe "UserSessions" do
     expect(page).to have_text("Emailis invalid")
   end
 
-  xit "sends an email to a user for confirmation"
+  it "sends an email to a user for confirmation" do
+    user = attributes_for :user , confirmed_at: nil
+    visit new_user_registration_path
+    fill_in "Name" , with: user[:name]
+    fill_in "Email" , with: user[:email]
+    fill_in "user[password]" , with: user[:password]
+    fill_in "user[password_confirmation]" , with: user[:password]
+    expect { click_button "Sign up" }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect(ActionMailer::Base.deliveries.last.to.first).to eq user[:email]
+  end
 
   it "allows a confirmed user to log in" do
     sign_in_user

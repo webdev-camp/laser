@@ -24,6 +24,7 @@ gem 'chartkick'
 gem 'jbuilder', '~> 2.5'
 # gem 'groupdate'
 
+gem "therubyracer"
 
 # Use 'mechanize' to scrape data
 gem 'mechanize'
@@ -32,6 +33,8 @@ gem 'mechanize'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,4 +58,8 @@ end
 
 group :test do
   gem "codeclimate-test-reporter", require: nil
+end
+
+group :production do
+  gem "mysql2"
 end

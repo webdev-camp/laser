@@ -11,7 +11,7 @@ class LaserGem < ApplicationRecord
   has_many :comments
 
   has_one :gem_spec
-  has_one :gem_git
+  has_one :gem_git , inverse_of: :laser_gem
 
   has_many :ownerships
   has_many :owners, :through => :ownerships, :foreign_key => "laser_gem_id", :source => "owner"
