@@ -151,9 +151,7 @@ class GitLoader
     laser_gem.reload
     return nil unless array
     # Extracts [commits in week] and [week start date], oldest -> newest
-    commit_dates_year = array.collect do |week|
-      [week[:days].reduce(0, :+), Time.at(week[:week]).to_datetime]
-    end
+    commit_dates_year = array.collect { |week| week[:total] }
     if GemGit.where(laser_gem_id: laser_gem.id)
       GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_year: commit_dates_year)
     end
