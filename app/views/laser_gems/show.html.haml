@@ -92,8 +92,7 @@
         Activity
       .card-block
         %p.card-text
-          - commit_act = @laser_gem.gem_git.commit_dates_year
-          = line_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
+          = activity_chart
 
   - if @laser_gem.gem_spec.build_date != nil
     .card

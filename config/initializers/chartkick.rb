@@ -1,5 +1,5 @@
 Chartkick.options = {
-  height: "300px",
+  height: "200px",
   ytitle: "Commits per Week",
   # xtitle: "Date",
   label: "Commits per Week",
