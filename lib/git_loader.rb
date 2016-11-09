@@ -72,7 +72,7 @@ class GitLoader
     if laser_gem.gem_spec.source_code_uri != nil
       uri = laser_gem.gem_spec.source_code_uri
       matches = matcher(uri)
-      return matches[1] if matches = matcher(uri)
+      return matches[1] if matches
       # look at homepage anyway if source_code_uri was not a github
     end
     parse_homepage_uri(laser_gem)
@@ -83,7 +83,7 @@ class GitLoader
     return nil unless laser_gem.gem_spec[:homepage_uri]
     uri = laser_gem.gem_spec[:homepage_uri]
     matches = matcher(uri)
-    return matches[1] if matches = matcher(uri)
+    return matches[1] if matches
   end
 
   def fetch_and_create_gem_git(laser_gem)
