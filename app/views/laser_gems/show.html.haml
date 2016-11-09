@@ -16,10 +16,9 @@
           %button.icon{id: "save_tag", type: "submit"}
             +
       %p.card-text.text-xs-right
-        - if @laser_gem.gem_spec.source_code_uri != nil
-          %span.card-link
-            %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
-            = link_to "Source code", @laser_gem.gem_spec.source_code_uri
+        %span.card-link
+          %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
+          = link_to "Source code", @laser_gem.home_page
         %span.card-link
           %i.fa.fa-book.fa-fw{"aria-hidden" => "true"}
           = link_to "Documentation", @laser_gem.gem_spec.documentation_uri
@@ -95,7 +94,7 @@
         Activity
       .card-block
         %p.card-text
-          = activity_chart
+          = activity_chart(@laser_gem)
 
   - if @laser_gem.gem_spec.build_date != nil
     .card

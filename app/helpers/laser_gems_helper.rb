@@ -26,7 +26,7 @@ module LaserGemsHelper
     laser_gems_path(q: q)
   end
 
-  def chart_options
+  def chart_options_long
     { height: "200px",
       ytitle: "Commits per Week",
       label: "Commits per Week",
@@ -35,9 +35,21 @@ module LaserGemsHelper
       }
     }
   end
-  def activity_chart
-    weeks =  52.times.collect{|i| (Time.now - i.weeks).to_date }.reverse
-    commit_act = @laser_gem.gem_git.commit_dates_year
-    line_chart(weeks.zip(commit_act) , chart_options )
+  def chart_options_short
+    { height: "150px",
+      ytitle: "Commits",
+      label: "Commits",
+      library: { plotOptions: { series: { lineColor: '#3b5f7c' } },
+        xAxis: { title: { enabled: false } , labels: {enabled: false}}
+      }
+    }
   end
+  def activity_chart(laser_gem , type = :long)
+    return "" unless laser_gem and laser_gem.gem_git
+    options = send "chart_options_#{type}".to_sym
+    weeks =  52.times.collect{|i| (Time.now - i.weeks).to_date }.reverse
+    commit_act = laser_gem.gem_git.commit_dates_year
+    line_chart(weeks.zip(commit_act) , options )
+  end
+
 end

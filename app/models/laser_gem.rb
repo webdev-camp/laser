@@ -19,6 +19,10 @@ class LaserGem < ApplicationRecord
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
 
+  def home_page
+    gem_spec.home_page
+  end
+
   def is_gem_owner?( user )
     return false unless user
     self.ownerships.any? {|o| o.owner ==  user }

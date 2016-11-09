@@ -7,7 +7,7 @@ class LaserGemsController < ApplicationController
   def index
     @q = LaserGem.includes(:gem_spec).ransack(params[:q])
     @laser_gems = @q.result(distinct: true).
-      paginate(page: params[:page], per_page: 20).includes(:gem_spec).order(:name)
+      paginate(page: params[:page], per_page: 20).order(:name)
 
     respond_to do |format|
       format.html
