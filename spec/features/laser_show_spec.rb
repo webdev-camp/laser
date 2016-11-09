@@ -14,20 +14,22 @@ RSpec.describe "LaserGemsShow" do
     laser_gem
   end
 
-  it "shows the tag on the page" do
+  def sign_owner_in
     user = sign_in_user
     laser_gem = create(:laser_gem)
     create :ownership , owner: user , laser_gem: laser_gem
     user.reload
+    laser_gem
+  end
+
+  it "shows the tag on the page" do
+    laser_gem = sign_owner_in
     add_tag "thfsf" , laser_gem
     expect(page).to have_text("thfsf")
   end
 
   it "don't add an invalid tag" do
-    user = sign_in_user
-    laser_gem = create(:laser_gem)
-    create :ownership , owner: user , laser_gem: laser_gem
-    user.reload
+    laser_gem = sign_owner_in
     add_tag( "thfsf gem" , laser_gem )
     expect(page).to have_text("Please insert a valid tag")
     expect(page).not_to have_content("thfsf gem")
@@ -52,20 +54,14 @@ RSpec.describe "LaserGemsShow" do
   end
 
   it "shows the comment on the page" do
-    user = sign_in_user
-    laser_gem = create(:laser_gem)
-    create :ownership , owner: user , laser_gem: laser_gem
-    user.reload
+    laser_gem = sign_owner_in
     add_comment "I just added this comment" , laser_gem
     expect(page).not_to have_text("Please insert a valid comment.")
     expect(page).to have_text("I just added this comment")
   end
 
   it "doesn't add an invalid comment" do
-    user = sign_in_user
-    laser_gem = create(:laser_gem)
-    create :ownership , owner: user , laser_gem: laser_gem
-    user.reload
+    laser_gem = sign_owner_in
     add_comment "Inv" , laser_gem
     expect(page).to have_content("Please insert a valid comment.")
   end
