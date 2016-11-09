@@ -4,7 +4,7 @@ class GitLoader
     @client = Octokit::Client.new :login => ENV["GIT_USER"], :password => ENV["GIT_PASS"]
   end
 
-  def get_from_git
+  def get_from_git repo_name
     result = nil
     begin
       return yield
@@ -20,15 +20,15 @@ class GitLoader
   end
 
   def get_git_from_api(repo_name)
-    get_from_git { @client.repo(repo_name) }
+    get_from_git(repo_name) { @client.repo(repo_name) }
   end
 
   def get_commits_from_api(repo_name)
-    get_from_git { @client.commits(repo_name) }
+    get_from_git(repo_name) { @client.commits(repo_name) }
   end
 
   def get_commit_activity_year(repo_name)
-    get_from_git { @client.commit_activity_stats(repo_name) }
+    get_from_git(repo_name) { @client.commit_activity_stats(repo_name) }
   end
 
   def get_owners_from_github(repo_name)
