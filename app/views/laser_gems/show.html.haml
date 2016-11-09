@@ -11,10 +11,11 @@
         - @laser_gem.tag_list.each do |tag_name|
           %span.tag.tag-default
             = link_to tag_name, laser_gems_path
-        = form_tag(add_tag_path(@laser_gem.name)) do
-          = text_field_tag(:tag)
-          %button.icon{id: "save_tag", type: "submit"}
-            +
+        - if has_owner_rights?
+          = form_tag(add_tag_path(@laser_gem.name)) do
+            = text_field_tag(:tag)
+            %button.icon{id: "save_tag", type: "submit"}
+              +
       %p.card-text.text-xs-right
         %span.card-link
           %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
@@ -58,14 +59,13 @@
     - flash.each do |name, message|
       .comment_error
         =message
-    = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
-      .field
-        = text_area_tag(:comment_body)
-      %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
-        %i.icon.edit
-        Add Comment
-
-
+    - if has_owner_rights?
+      = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
+        .field
+          = text_area_tag(:comment_body)
+        %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
+          %i.icon.edit
+          Add Comment
 
 .right
   .card

@@ -43,6 +43,7 @@ class LaserGemsController < ApplicationController
     return false unless current_user
     @laser_gem.is_gem_owner?(current_user)
   end
+  helper_method :has_owner_rights?
 
   private
 
