@@ -27,6 +27,7 @@ class GitLoader
     end
   end
 
+
   def fetch_assignees(laser_gem )
     # For future use, check dependencies if returns.
     return unless laser_gem.ownerships.where(github_owner: true).empty?
@@ -52,8 +53,9 @@ class GitLoader
   end
 
   def parse_git_uri(laser_gem)
-    return unless laser_gem.gem_spec
+    return unless GemSpec.where(laser_gem_id: laser_gem.id).any?
     # try source_code_uri first, then homepage (must have the github.com in it)
+    # if GemSpec.where(laser_gem_id: laser_gem.id).source_code_uri != nil
     if laser_gem.gem_spec.source_code_uri != nil
       uri = laser_gem.gem_spec.source_code_uri
       matches = matcher(uri)
@@ -91,6 +93,70 @@ class GitLoader
     end
   end
 
+  def get_commits_from_api(repo_name)
+    begin
+      return @client.commits(repo_name)
+    rescue Octokit::NotFound # => not_found
+      puts "Not found #{repo_name}"
+    rescue Faraday::ConnectionFailed #=> offline
+      puts "Oops, something is offline #{repo_name}"
+    rescue Exception => e
+      puts e.message
+      puts "Exception #{repo_name}"
+    end
+    return nil
+  end
+
+  def get_commit_activity_year(repo_name)
+    begin
+      return @client.commit_activity_stats(repo_name)
+    rescue Octokit::NotFound # => not_found
+      puts "Not found #{repo_name}"
+    rescue Faraday::ConnectionFailed #=> offline
+      puts "Oops something is offline #{repo_name}"
+    rescue Exception => e
+      puts e.message
+      puts "Exception #{repo_name}"
+    end
+    return nil
+  end
+
+  def fetch_commits_for_git(laser_gem)
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    array = get_commits_from_api(repo_name)
+    return nil unless array
+    array_commit_dates = array.collect do |date|
+      date[:commit][:author][:date]
+    end
+    sorted_commit_dates = array_commit_dates.sort
+    if GemGit.where(laser_gem_id: laser_gem.id)
+      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_month: sorted_commit_dates)
+      sorted_commit_dates
+    end
+  end
+
+  # helper to add latest 30 commits to db for each gem.
+  def fetch_commits_for_all
+    LaserGem.all.each do |laser_gem|
+      fetch_commits_for_git(laser_gem)
+    end
+  end
+
+  # Can serialize and save in db?
+  def fetch_commit_activity_year(laser_gem)
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    array = get_commit_activity_year(repo_name)
+    laser_gem.reload
+    return nil unless array
+    # Extracts [commits in week] and [week start date], oldest -> newest
+    commit_dates_year = array.collect { |week| week[:total] }
+    if GemGit.where(laser_gem_id: laser_gem.id)
+      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_year: commit_dates_year)
+    end
+  end
+
   private
 
   # match the uri to see if it contains github.com and return the match_data
@@ -113,3 +179,4 @@ class GitLoader
     }
   end
 end
+

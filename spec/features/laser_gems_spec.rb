@@ -60,4 +60,37 @@ RSpec.describe "LaserGems" do
     visit laser_gems_path
     expect(page).to have_text(laser_gem.tag_list)
   end
+
+  it "searches for tags" do
+    create :laser_gem_with_tags
+    visit laser_gems_path
+    # find and set the search input
+    page.fill_in 'q_taggings_tag_name_eq', :with => 'tag'
+    # click the search button
+    page.find('input[name="commit"]').click
+    expect(page.status_code).to be 200
+    # check if there are some results
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to be 1
+  end
+
+  it "searches for non-existent tags" do
+    laser_gem = create :laser_gem_with_tags
+    visit laser_gems_path
+    page.fill_in 'q_taggings_tag_name_eq', :with => 'tag' + 'akjsdhgkjasd'
+    page.find('input[name="commit"]').click
+    expect(page.status_code).to be 200
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to be 0
+  end
+
+  it "not searches for a part of a tag" do
+    laser_gem = create :laser_gem_with_tags
+    visit laser_gems_path
+    page.fill_in 'q_taggings_tag_name_eq', :with => 'tag'[0,2]
+    page.find('input[name="commit"]').click
+    expect(page.status_code).to be 200
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to be 0
+  end
 end

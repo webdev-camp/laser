@@ -8,76 +8,128 @@
       %p.card-text
         = @laser_gem.gem_spec.info
       %p.card-text
-        - @laser_gem.tag_list.each do |tag|
-          %span.tag.tag-default= tag
-
+        - @laser_gem.tag_list.each do |tag_name|
+          %span.tag.tag-default
+            = link_to tag_name, laser_gems_path
         = form_tag(add_tag_path(@laser_gem.name)) do
           = text_field_tag(:tag)
           %button.icon{id: "save_tag", type: "submit"}
             +
+      %p.card-text.text-xs-right
+        - if @laser_gem.gem_spec.source_code_uri != nil
+          %span.card-link
+            %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
+            = link_to "Source code", @laser_gem.gem_spec.source_code_uri
+        %span.card-link
+          %i.fa.fa-book.fa-fw{"aria-hidden" => "true"}
+          = link_to "Documentation", @laser_gem.gem_spec.documentation_uri
+
+  .card
+    .card-header Related gems
+    .card-block
+      %p.card-text Sorry, we are not able to find any related gems.
+
+  - if @laser_gem.dependents != nil
+    .card
+      .card-header Dependents
+      .card-block
+        %p.card-text
+          - @laser_gem.dependents.each do |dependent|
+            = link_to(dependent.name, laser_gem_path(dependent.name))
 
   .card
     .card-header Dependencies
     .card-block
       %p.card-text
-        - @laser_gem.dependencies.each do |dependency|
-          = link_to(dependency.name, laser_gem_path(dependency.name))
+        - if @laser_gem.dependencies.first != nil
+          - @laser_gem.dependencies.each do |dependency|
+            = link_to(dependency.name, laser_gem_path(dependency.name))
+        - else
+          This gem has no dependencies.
 
-  .card
-    .card-header Related gems
-    .card-block
-      %p.card-text LaserGem
+  .comments
+    %h3
+    Comments
+    %i.fa.fa-comments-o.fa-lg.fa-fw{"aria-hidden": "true"}
+    - @laser_gem.comments.each do |comment|
+      = comment.user.name
+      =time_ago_in_words comment.created_at
+      ago
+      = comment.body
+    = form_tag(add_comment_path(@laser_gem.name), class: "ui reply form") do
+      .field
+        = text_area_tag(:comment_body)
+      %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
+        %i.icon.edit
+        Add Reply
 
-  .card
-    .card-header Dependents
-    .card-block
-      %p.card-text
-        - @laser_gem.dependents.each do |dependent|
-          = link_to(dependent.name, laser_gem_path(dependent.name))
 
-  .card
-    .card-header Authors
-    .card-block
-      %p.card-text
-        = @laser_gem.gem_spec.authors
 
 .right
   .card
-    .card-header Downloads
+    .card-header
+      %i.fa.fa-trophy.fa-fw{"aria-hidden" => "true"}
+      Ranking
     .card-block
-      %p.card-text.total_downloads
+      %p.card-text #1
+
+  .card
+    .card-header
+      %i.fa.fa-arrow-circle-down.fa-fw{"aria-hidden": "true"}
+      Downloads
+    .card-block
+      %p.card-text
         Total:
         = k_numbers @laser_gem.gem_spec.total_downloads
-      %p.card-text.version_downloads
+      %p.card-text
         This version:
         = k_numbers @laser_gem.gem_spec.current_version_downloads
 
-  .card
-    .card-header Build date
-    .card-block
-      %p.card-text.build_date
-        = @laser_gem.gem_spec.build_date
-
-  - if @laser_gem.gem_git
+  - if @laser_gem.gem_git != nil
     .card
-      .card-header GitHub stats
+      .card-header
+        %i.fa.fa-heartbeat.fa-fw{"aria-hidden" => "true"}
+        Activity
       .card-block
-        %p.card-text.last_commit
+        %p.card-text
+          = activity_chart
+
+  - if @laser_gem.gem_spec.build_date != nil
+    .card
+      .card-header
+        %i.fa.fa-calendar-plus-o.fa-fw{"aria-hidden": "true"}
+        Created
+        = time_ago_in_words @laser_gem.gem_spec.build_date
+        ago
+
+  - if @laser_gem.gem_git != nil
+    .card
+      .card-header
+        %i.fa.fa-github.fa-fw{"aria-hidden" => "true"}
+        GitHub stats
+      .card-block
+        %p.card-text
+          %i.fa.fa-clock-o.fa-fw{"aria-hidden" => "true"}
           Last commit:
           = @laser_gem.gem_git.last_commit
-        %p.card-text.forks_count
+        %p.card-text
+          %i.fa.fa-code-fork.fa-fw{"aria-hidden" => "true"}
           Forks:
           = @laser_gem.gem_git.forks_count
-        %p.card-text.stargazers_count
+        %p.card-text
+          %i.fa.fa-star.fa-fw{"aria-hidden" => "true"}
           Stargazers:
           = @laser_gem.gem_git.stargazers_count
-        %p.card-text.watchers_count
+        %p.card-text
+          %i.fa.fa-eye.fa-fw{"aria-hidden" => "true"}
           Watchers:
           = @laser_gem.gem_git.watchers_count
-        %p.card-text.open_issues_count
+        %p.card-text
+          %i.fa.fa-flag.fa-fw{"aria-hidden" => "true"}
           Open issues:
           = @laser_gem.gem_git.open_issues_count
 
+<<<<<<< HEAD
 .comments
   - @laser_gem.comments.each do |comment|
     = comment.user.name
@@ -93,3 +145,10 @@
     %button.btn.btn-default{id: "add_comment", type: "submit", method: :post}
       %i.icon.edit
       Add Comment
+=======
+  .card
+    .card-header Authors
+    .card-block
+      %p.card-text
+        = @laser_gem.gem_spec.authors
+>>>>>>> master
