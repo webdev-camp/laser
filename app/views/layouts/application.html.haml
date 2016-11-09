@@ -4,10 +4,5 @@
     = render 'html_head'
   %body
     = render 'header'
-    .message
-      -flash.each do |name, message|
-        =name
-        =message
     .content
       =yield
-    

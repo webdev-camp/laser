@@ -21,7 +21,7 @@ class LaserGem < ApplicationRecord
 
   def is_gem_owner?( user )
     return false unless user
-    self.owners.includes( user )
+    self.ownerships.any? {|o| o.owner ==  user }
   end
   #
   # Add a gem as a dependency of this one.

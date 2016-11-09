@@ -13,6 +13,10 @@ module LoginHelper
     sign_in_user( true )
   end
 
+  def sign_in_owner
+    sign_in_user( true )
+  end
+
   def log_out_user
     visit destroy_user_session_path
     click_button "Log out"

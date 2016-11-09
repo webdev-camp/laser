@@ -1,26 +1,34 @@
 RSpec.describe "LaserGemsShow" do
 
-  def add_tag tag
-    laser_gem = create :laser_gem
+  def add_tag( tag, laser_gem = create(:laser_gem) )
     visit laser_gem_path(laser_gem.name)
     fill_in(:tag , with: tag)
     click_button('save_tag')
+    laser_gem
   end
 
-  def add_comment comment
-    laser_gem = create :laser_gem
+  def add_comment( comment , laser_gem = create(:laser_gem) )
     visit laser_gem_path(laser_gem.name)
     fill_in(:comment_body , with: comment)
     click_button('add_comment')
+    laser_gem
   end
 
-  xit "shows the tag on the page" do
-    add_tag "thfsf"
+  it "shows the tag on the page" do
+    user = sign_in_user
+    laser_gem = create(:laser_gem)
+    create :ownership , owner: user , laser_gem: laser_gem
+    user.reload
+    add_tag "thfsf" , laser_gem
     expect(page).to have_text("thfsf")
   end
 
-  xit "don't add an invalid tag" do
-    add_tag "thfsf gem"
+  it "don't add an invalid tag" do
+    user = sign_in_user
+    laser_gem = create(:laser_gem)
+    create :ownership , owner: user , laser_gem: laser_gem
+    user.reload
+    add_tag( "thfsf gem" , laser_gem )
     expect(page).to have_text("Please insert a valid tag")
     expect(page).not_to have_content("thfsf gem")
   end
@@ -44,16 +52,22 @@ RSpec.describe "LaserGemsShow" do
   end
 
   it "shows the comment on the page" do
-    sign_in_user
-    add_comment "I just added this comment"
-    expect(page).not_to have_text("CommentError: Please insert a valid comment.")
+    user = sign_in_user
+    laser_gem = create(:laser_gem)
+    create :ownership , owner: user , laser_gem: laser_gem
+    user.reload
+    add_comment "I just added this comment" , laser_gem
+    expect(page).not_to have_text("Please insert a valid comment.")
     expect(page).to have_text("I just added this comment")
   end
 
-  it "adds an invalid comment" do
-    sign_in_user
-    add_comment "Inv"
-    expect(page).to have_text("CommentError: Please insert a valid comment.")
+  it "doesn't add an invalid comment" do
+    user = sign_in_user
+    laser_gem = create(:laser_gem)
+    create :ownership , owner: user , laser_gem: laser_gem
+    user.reload
+    add_comment "Inv" , laser_gem
+    expect(page).to have_content("Please insert a valid comment.")
   end
 
   it "shows the related tags for laser gem" do

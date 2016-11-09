@@ -34,15 +34,14 @@ class LaserGemsController < ApplicationController
     if @comment.save
       redirect_to laser_gem_path(@laser_gem.name)
     else
-      #TODO to make a modification to error message, update corresponding rspec
-      flash[:notice] = "CommentError: Please insert a valid comment."
+      flash[:notice] = "Please insert a valid comment."
       render :show
     end
   end
 
   def has_owner_rights?
     return false unless current_user
-    return false unless @laser_gem.is_gem_owner?(current_user)
+    @laser_gem.is_gem_owner?(current_user)
   end
 
   private
