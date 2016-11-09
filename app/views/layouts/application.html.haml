@@ -4,13 +4,8 @@
     = render 'html_head'
   %body
     = render 'header'
-    .message
-      -flash.each do |name, message|
-        =name
-        =message
     .content
       =yield
-      =yield :charts_js
     .footer
       .col.menu
         .ui.list
