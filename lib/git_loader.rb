@@ -4,18 +4,31 @@ class GitLoader
     @client = Octokit::Client.new :login => ENV["GIT_USER"], :password => ENV["GIT_PASS"]
   end
 
-  def get_git_from_api(repo_name)
+  def get_from_git
+    result = nil
     begin
-      return @client.repo(repo_name)
+      return yield
     rescue Octokit::NotFound # => not_found
       puts "Not found #{repo_name}"
     rescue Faraday::ConnectionFailed #=> offline
       puts "Not found #{repo_name}"
-    rescue Exception => e
+    rescue StandardError => e
       puts e.message
       puts "Exception #{repo_name}"
     end
-    return nil
+    result
+  end
+
+  def get_git_from_api(repo_name)
+    get_from_git { @client.repo(repo_name) }
+  end
+
+  def get_commits_from_api(repo_name)
+    get_from_git { @client.commits(repo_name) }
+  end
+
+  def get_commit_activity_year(repo_name)
+    get_from_git { @client.commit_activity_stats(repo_name) }
   end
 
   def get_owners_from_github(repo_name)
@@ -93,34 +106,6 @@ class GitLoader
     end
   end
 
-  def get_commits_from_api(repo_name)
-    begin
-      return @client.commits(repo_name)
-    rescue Octokit::NotFound # => not_found
-      puts "Not found #{repo_name}"
-    rescue Faraday::ConnectionFailed #=> offline
-      puts "Oops, something is offline #{repo_name}"
-    rescue Exception => e
-      puts e.message
-      puts "Exception #{repo_name}"
-    end
-    return nil
-  end
-
-  def get_commit_activity_year(repo_name)
-    begin
-      return @client.commit_activity_stats(repo_name)
-    rescue Octokit::NotFound # => not_found
-      puts "Not found #{repo_name}"
-    rescue Faraday::ConnectionFailed #=> offline
-      puts "Oops something is offline #{repo_name}"
-    rescue Exception => e
-      puts e.message
-      puts "Exception #{repo_name}"
-    end
-    return nil
-  end
-
   def fetch_commits_for_git(laser_gem)
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
@@ -179,4 +164,3 @@ class GitLoader
     }
   end
 end
-
