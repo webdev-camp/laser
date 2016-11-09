@@ -1,11 +1,26 @@
 .left {
   @include left;
+
+  .comments{
+    @include span(12);
+    i {
+      vertical-align: middle;
+      font-size: 1.9em;
+      line-height: 1.9em;
+    }
+  }
+
 }
 
 .right {
   @include right;
-}
-
-.comments{
-  @include span(12);
+  .card-header i {
+    vertical-align: middle;
+    font-size: 1.9em;
+  }
+  .card-text i {
+    vertical-align: middle;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
 }

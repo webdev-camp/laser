@@ -25,4 +25,10 @@ module LaserGemsHelper
     end
     laser_gems_path(q: q)
   end
+
+  def activity_chart
+    weeks =  52.times.collect{|i| Time.now - i.weeks }
+    commit_act = @laser_gem.gem_git.commit_dates_year
+    line_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
+  end
 end
