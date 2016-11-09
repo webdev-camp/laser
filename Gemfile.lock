@@ -101,6 +101,8 @@ GEM
     gems (0.8.3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (3.1.1)
+      activesupport (>= 3)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -340,6 +342,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   gems (~> 0.8.3)
+  groupdate
   guard
   guard-rspec
   haml-rails

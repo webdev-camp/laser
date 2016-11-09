@@ -7,14 +7,15 @@ Rails.application.routes.draw do
   get   "laser_gem/:name"  , to: "laser_gems#show" , as: :laser_gem
   get 'tags/:tag', to: 'laser_gems#index', as: :tag
 
-  # root to: "main#home"
+  root to: "main#home"
   get '/about', to: 'main#about', as: 'about'
   get '/faq', to: 'main#faq', as: 'faq'
   get '/ruby_for_newbies', to: 'main#ruby_for_newbies', as: 'ruby_for_newbies'
-  root "statistics#index"
+  # root "statistics#index"
   resources :charts, only: [] do
     collection do
       get 'downloads_by_name'
+      get 'commit_activity'
     end
   end
 end

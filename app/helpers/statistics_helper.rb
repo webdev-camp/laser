@@ -1,5 +1,5 @@
 module StatisticsHelper
-  def sporters_by_age
+  def downloads_by_name
     bar_chart downloads_by_name_charts_path, height: '100px', library: {
       title: {text: 'Gem', x: -20},
       yAxis: {

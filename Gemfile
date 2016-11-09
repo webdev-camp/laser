@@ -22,7 +22,7 @@ gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'chartkick'
 gem 'jbuilder', '~> 2.5'
-# gem 'groupdate'
+gem 'groupdate'
 
 gem "therubyracer"
 
