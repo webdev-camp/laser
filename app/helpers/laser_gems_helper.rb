@@ -26,9 +26,18 @@ module LaserGemsHelper
     laser_gems_path(q: q)
   end
 
+  def chart_options
+    { height: "200px",
+      ytitle: "Commits per Week",
+      label: "Commits per Week",
+      library: { plotOptions: { series: { lineColor: '#3b5f7c' } },
+        xAxis: { tickInterval: 8153600000, title: { text: "Date" } }
+      }
+    }
+  end
   def activity_chart
-    weeks =  52.times.collect{|i| Time.now - i.weeks }
+    weeks =  52.times.collect{|i| (Time.now - i.weeks).to_date }.reverse
     commit_act = @laser_gem.gem_git.commit_dates_year
-    line_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
+    line_chart(weeks.zip(commit_act) , chart_options )
   end
 end
