@@ -25,12 +25,4 @@ module LaserGemsHelper
     end
     laser_gems_path(q: q)
   end
-
-  def commit_activity_chart
-    # @laser_gem = LaserGem.find_by_name(params[:name])
-    commit_act = @laser_gem.gem_git.commit_dates_year
-    commit_act.each.collect do |ca|
-      {[ca[1].to_s] => ca[0]}
-    end
-  end
 end

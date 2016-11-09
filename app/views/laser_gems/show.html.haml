@@ -69,9 +69,8 @@
       .card-block
         %p.card-text.last_commit
           Activity:
-          -# = @laser_gem.gem_git.commit_dates_year
           - commit_act = @laser_gem.gem_git.commit_dates_year
-          = bar_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
+          = line_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
         %p.card-text.last_commit
           Last commit:
           = @laser_gem.gem_git.last_commit

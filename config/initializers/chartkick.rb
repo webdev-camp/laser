@@ -1,6 +1,6 @@
 Chartkick.options = {
-  height: "400px",
+  height: "200px",
+  ytitle: "Commits per Week",
+  xtitle: "Date",
+  label: "Commits per Week in the Last Year",
 }
-Chartkick.options[:html] = '<div id="%{id}" style="height: %{height};">Loading...</div>'
-Chartkick.options[:content_for] = :charts_js
-
