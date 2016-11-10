@@ -95,6 +95,7 @@
       .card-block
         %p.card-text
           = activity_chart(@laser_gem)
+          =# render "index_graph" , laser_gem: @laser_gem
 
   - if @laser_gem.gem_spec.build_date != nil
     .card

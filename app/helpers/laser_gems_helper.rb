@@ -26,6 +26,21 @@ module LaserGemsHelper
     laser_gems_path(q: q)
   end
 
+  def max_y
+    100
+  end
+
+  def graph_lines(laser_gem)
+    return "" unless laser_gem.gem_git
+    return "" if laser_gem.gem_git.commit_dates_year.empty?
+    coeff =  100.0 / laser_gem.gem_git.commit_dates_year.max
+    result = "0,#{max_y}\n"
+    laser_gem.gem_git.commit_dates_year.each_with_index do |val , index|
+      result << "#{4*index},#{max_y - val*coeff}\n"
+    end
+    result
+  end
+
   def chart_options_long
     { height: "200px",
       ytitle: "Commits per Week",
