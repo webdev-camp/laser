@@ -67,8 +67,3 @@ Calculation
 
 Points for Criterion = (Criterion score * Criterion Weight)/MaxScore * Max Weight
 Overall Rank of Option(gem) = Sum of Points for each Criterion/Number of Criterion
-
-  gem a
-commit activity score = 5 * weight 5 = 25/25 = 1
-recent score = 3* weight 4 = 12/(5*5) = 0.48
-forks = 4 * weight 3

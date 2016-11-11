@@ -27,7 +27,6 @@ class GitLoader
     end
   end
 
-
   def fetch_assignees(laser_gem )
     # For future use, check dependencies if returns.
     return unless laser_gem.ownerships.where(github_owner: true).empty?
@@ -121,29 +120,29 @@ class GitLoader
     return nil
   end
 
-  def fetch_commits_for_git(laser_gem)
-    repo_name = parse_git_uri(laser_gem)
-    return nil unless repo_name
-    array = get_commits_from_api(repo_name)
-    return nil unless array
-    array_commit_dates = array.collect do |date|
-      date[:commit][:author][:date]
-    end
-    sorted_commit_dates = array_commit_dates.sort
-    if GemGit.where(laser_gem_id: laser_gem.id)
-      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_month: sorted_commit_dates)
-      sorted_commit_dates
-    end
-  end
+  # def fetch_commits_for_git(laser_gem)
+  #   repo_name = parse_git_uri(laser_gem)
+  #   return nil unless repo_name
+  #   array = get_commits_from_api(repo_name)
+  #   return nil unless array
+  #   array_commit_dates = array.collect do |date|
+  #     date[:commit][:author][:date]
+  #   end
+  #   sorted_commit_dates = array_commit_dates.sort
+  #   if GemGit.where(laser_gem_id: laser_gem.id)
+  #     GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_month: sorted_commit_dates)
+  #     sorted_commit_dates
+  #   end
+  # end
 
-  # helper to add latest 30 commits to db for each gem.
+  # helper to add last year of weekly commits to db for each gem.
   def fetch_commits_for_all
     LaserGem.all.each do |laser_gem|
-      fetch_commits_for_git(laser_gem)
+      fetch_commit_activity_year(laser_gem)
+      # fetch_commits_for_git(laser_gem)
     end
   end
 
-  # Can serialize and save in db?
   def fetch_commit_activity_year(laser_gem)
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name

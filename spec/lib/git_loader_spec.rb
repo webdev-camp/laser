@@ -139,49 +139,67 @@ RSpec.describe GitLoader do
     end
   end
 
-  describe "fetch_commits_for_git", ci: true do
-    before :example do
-      @loader2 = GitLoader.new
-    end
+  # describe "fetch_commits_for_git", ci: true do
+  #   before :example do
+  #     @loader2 = GitLoader.new
+  #   end
 
-    ##### TODO
-    it "returns nil if repo name empty or invalid" do
-      laser_gem = LaserGem.create(name: "letmein")
-      create :gem_spec, 
-        laser_gem: laser_gem,
-        source_code_uri: "www.github.com/tzinfo/tzn"
-      expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
-    end
+  #   ##### TODO
+  #   it "returns nil if repo name empty or invalid" do
+  #     laser_gem = LaserGem.create(name: "letmein")
+  #     create :gem_spec, 
+  #       laser_gem: laser_gem,
+  #       source_code_uri: "www.github.com/tzinfo/tzn"
+  #     expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
+  #   end
 
-    it "returns an array if repo name is valid", ci: true do
-      loader = GemLoader.new
-      laser_gem = LaserGem.create!(name: "tzinfo")
-      loader.fetch_and_create_gem_spec(laser_gem)
-      @loader2.fetch_and_create_gem_git(laser_gem)
-      expect(@loader2.fetch_commits_for_git(laser_gem)).not_to be nil
-    end
+  #   it "returns an array if repo name is valid", ci: true do
+  #     loader = GemLoader.new
+  #     laser_gem = LaserGem.create!(name: "tzinfo")
+  #     loader.fetch_and_create_gem_spec(laser_gem)
+  #     @loader2.fetch_and_create_gem_git(laser_gem)
+  #     expect(@loader2.fetch_commits_for_git(laser_gem)).not_to be nil
+  #   end
 
-    it "retuns nil if repo is valid but doesnt exist", ci: true do
-      loader = GemLoader.new
-      laser_gem = LaserGem.create(name: "paranoid")
-      loader.fetch_and_create_gem_spec(laser_gem)
-      @loader2.fetch_and_create_gem_git(laser_gem)
-      expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
-    end
-  end
+  #   it "retuns nil if repo is valid but doesnt exist", ci: true do
+  #     loader = GemLoader.new
+  #     laser_gem = LaserGem.create(name: "paranoid")
+  #     loader.fetch_and_create_gem_spec(laser_gem)
+  #     @loader2.fetch_and_create_gem_git(laser_gem)
+  #     expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
+  #   end
+  # end
 
   describe "#fetch_commit_activity_year" do
     before :example do
       @loader = GitLoader.new
     end
-    it "returns an array", ci: true do
+
+    it "returns nil if repo name empty or invalid" do
+      laser_gem = LaserGem.create(name: "letmein")
+      create :gem_spec, 
+        laser_gem: laser_gem,
+        source_code_uri: "www.gi.com/tzinfo/tzn"
+      expect(@loader.fetch_commit_activity_year(laser_gem)).to be nil
+    end
+
+    it "retuns nil if repo is valid but doesnt exist", ci: true do
       loader2 = GemLoader.new
-      laser_gem = LaserGem.create(name: "rails")
+      laser_gem = LaserGem.create(name: "paranoid")
+      loader2.fetch_and_create_gem_spec(laser_gem)
+      @loader.fetch_and_create_gem_git(laser_gem)
+      expect(@loader.fetch_commit_activity_year(laser_gem)).to be nil
+    end
+
+    it "returns non-empty array", ci: true do
+      laser_gem = LaserGem.create!(name: "tzinfo")
+      loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(laser_gem)
       @loader.fetch_and_create_gem_git(laser_gem)
       @loader.fetch_commit_activity_year(laser_gem)
       laser_gem.reload
       expect((laser_gem.gem_git.commit_dates_year).any?).to be true
+      puts laser_gem.gem_git.commit_dates_year
     end
   end
 end
