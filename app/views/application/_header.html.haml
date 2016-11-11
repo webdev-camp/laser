@@ -1,34 +1,23 @@
-%nav.responsive-navbar.header
-  %button.menu-button{"data-target" => "#mainNavbarCollapse", "data-toggle" => "collapse", :type => "button"}
-    ☰
-  %a.laser-logo{:href => "/"}
-    = render 'layouts/logo'
-  #mainNavbarCollapse.collapse-toggle
-    %ul.navbar-ul
-      %li.nav-item
-        .nav-link= link_to "Laser", root_path
-        %span.sr-only (current)
-      -if user_signed_in?
+.header
+  %nav.responsive-navbar
+    %button.menu-button{"data-target" => "#mainNavbarCollapse", "data-toggle" => "collapse", :type => "button"}
+      ☰
+    %a.laser-logo{:href => "/"}
+      = render 'layouts/logo'
+    #mainNavbarCollapse.collapse-toggle
+      %ul.navbar-ul
         %li.nav-item
-          .nav-link= link_to "Log Out", destroy_user_session_path, :method => 'delete'
-      -else
+          .nav-link= link_to "LASER", root_path
+          %span.sr-only (current)
         %li.nav-item
-          .nav-link= link_to "Log In", new_user_session_path
-        %li.nav-item
-          .nav-link= link_to "Sign Up", new_user_registration_path
-      %li.nav-item.dropdown
-        %a#navbarDropdown1.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "#"} About
-        %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown1"}
-          %li
-            .dropdown-item= link_to "About Us", about_path
-          %li
-            .dropdown-item= link_to "FAQs", faq_path
-          %li
-            .dropdown-item= link_to "Ruby for Newbies", ruby_for_newbies_path
-      %li.nav-item
-        .nav-link= link_to "Browse All Gems", laser_gems_path
-    %ul.navbar-ul.pull-right
-      %li.nav-item.pull-right
-        .nav-link= link_to('Powered by WebDev.camp', 'http://webdev.camp/', :target => "_blank")
-      %li.nav-item.pull-right
-        = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'http://webdev.camp/', :target => "_blank")
+          .nav-link= link_to "Browse All Gems", laser_gems_path
+      %ul.navbar-ul.pull-right
+        %li.nav-item.pull-right
+          -if user_signed_in?
+            %li.nav-item
+              .nav-link= link_to "Log Out", destroy_user_session_path, :method => 'delete'
+          -else
+            %li.nav-item
+              .nav-link= link_to "Log In", new_user_session_path
+            %li.nav-item
+              .nav-link= link_to "Sign Up", new_user_registration_path
