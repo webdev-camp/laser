@@ -10,10 +10,10 @@
           %i.fa.fa-trophy{"aria-hidden": "true"}
           First
     .card-block
-      %p.card-text
-        %small
-          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ') do
-            = link_to 'more', laser_gem_path(laser_gem.name)
+      %p.card-text.more
+        %small.small_info
+          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ')
+        .whole_info= laser_gem.gem_spec.info
       %p.card-text
         -laser_gem.tag_list.each do |tag_name|
           %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
