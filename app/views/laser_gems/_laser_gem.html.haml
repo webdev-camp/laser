@@ -1,19 +1,22 @@
 .gem_element
   .card
     .card-block
-      %h4.card-title
-        = link_to laser_gem.name, laser_gem_path(laser_gem.name)
-        %small.text-muted
-          = laser_gem.gem_spec.current_version
+      %h5.card-title
+        .left
+          = link_to laser_gem.name, laser_gem_path(laser_gem.name)
+          %small.text-muted
+            = laser_gem.gem_spec.current_version
+        .right
+          %small.text-muted
+            %i.fa.fa-arrow-circle-down.fa-fw{"aria-hidden": "true"}
+            =k_numbers laser_gem.gem_spec.total_downloads
       %p.card-text
-        = laser_gem.gem_spec.info
+        %small
+          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ') do
+            = link_to 'more', laser_gem_path(laser_gem.name)
       %p.card-text
         -laser_gem.tag_list.each do |tag_name|
           %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
-      %p.card-text
-        %small.text-muted
-          =k_numbers laser_gem.gem_spec.total_downloads
-          downloads
       %p.card-text
         - if laser_gem.gem_git != nil
           = render "index_graph" , laser_gem: laser_gem

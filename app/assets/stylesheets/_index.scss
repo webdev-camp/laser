@@ -1,4 +1,13 @@
 .index{
+  .card-title {
+    .left {
+      @include span(7);
+    }
+    .right {
+      @include span(5);
+      text-align: right;
+    }
+  }
   .search {
     @include span(12);
     padding-bottom: 2em;
