@@ -1,3 +1,7 @@
+//Grids
+$enable-grid-classes: false;
+
+//Colors
 $laser-black: #131418;
 $pomegranate: #C0392B;
 $flat-white: #fefefe;
@@ -12,7 +16,11 @@ $laser-red: #E2513E;
 $raisa-red: #8E1313;
 $raisa-teal: #3B5F7C;
 
-$enable-grid-classes: false;
+//Cards
+//$card-cap-bg: $laser-gold;
+
+//Tags
+$tag-default-bg: $laser-gold;
 
 @mixin highlight {
   .highlight{
@@ -24,7 +32,48 @@ $enable-grid-classes: false;
   @include span(8);
 }
 
-
 @mixin right {
   @include span(4);
+}
+
+@mixin a-link ($tag) {
+  text-decoration: none;
+  font-weight: bold;
+  @if $tag {
+    color: $flat-white;
+  } @else {
+    color: $laser-black;
+  }
+}
+
+@mixin a-hover ($tag) {
+  font-weight: bold;
+  text-decoration: none;
+  @if $tag {
+    color: $laser-black;
+  } @else {
+    color: $gray-light;
+  }
+}
+
+@mixin link ($tag) {
+  a {
+    @include a-link($tag);
+    &:hover {
+      @include a-hover($tag);
+    }
+    &:visited {
+      @include a-link($tag);
+      &:hover {
+        @include a-hover($tag);
+      }
+    }
+  }
+}
+
+@mixin tag-link {
+  .tag {
+    $tag: true;
+    @include link ($tag);
+  }
 }

@@ -1,10 +1,12 @@
-.left {
-  @include left;
-  .search, .filter, .order{
-    display: inline;
+.index{
+  .left {
+    @include span(9);
+    .search, .filter, .order{
+      display: inline;
+    }
   }
-}
 
-.right {
-  @include right;
+  .right {
+    @include span(3);
+  }
 }
