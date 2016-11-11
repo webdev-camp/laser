@@ -19,3 +19,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# ignore production artifacts
+vendor/bundle
+public/assets/*
