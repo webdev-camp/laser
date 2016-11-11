@@ -1,0 +1,22 @@
+.footer
+  .menu
+    %ul.list-unstyled
+      %li
+        = link_to 'About LASER', about_path
+      %li
+        = link_to 'F.A.Q.', faq_path
+      %li
+        = link_to 'Ruby for Newbies', ruby_for_newbies_path
+  .sponsor
+    Sponsored by Web Dev Camp
+    %br
+    = link_to(image_tag("webdevcamp.png", class: "img-fluid"), 'http://webdev.camp/', :target => "_blank")
+  .links
+    %p
+      =link_to "https://github.com/webdev-camp/laser" do
+        %i.fa.fa-github-alt.fa-2x{"aria-hidden" => "true"}
+        GitHub
+    %p
+      =link_to "https://www.facebook.com/webdev.camp" do
+        %i.fa.fa-facebook-square.fa-2x{"aria-hidden" => "true"}
+        Facebook
