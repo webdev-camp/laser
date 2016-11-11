@@ -116,7 +116,8 @@
         %p.card-text
           %i.fa.fa-clock-o.fa-fw{"aria-hidden" => "true"}
           Last commit:
-          = @laser_gem.gem_git.last_commit
+          = time_ago_in_words @laser_gem.gem_git.last_commit
+          ago
         %p.card-text
           %i.fa.fa-code-fork.fa-fw{"aria-hidden" => "true"}
           Forks:
@@ -138,4 +139,4 @@
     .card-header Authors
     .card-block
       %p.card-text
-        = @laser_gem.gem_spec.authors
+        = truncate(@laser_gem.gem_spec.authors, length: 200, separator: ' ', omission: '... ') 
