@@ -50,15 +50,18 @@
     %h3
       Comments
       %i.fa.fa-comments-o.fa-lg.fa-fw{"aria-hidden": "true"}
-    - @laser_gem.comments.each do |comment|
-      %h5
-        %i.fa.fa-user-circle-o.fa-lg.fa-fw{"aria-hidden": "true"}
-        = comment.user.name
-        %small.text-muted
-          =time_ago_in_words comment.created_at
-          ago
-      .comment_body
-        = comment.body
+    - if @laser_gem.comments.any?
+      - @laser_gem.comments.each do |comment|
+        %h5
+          %i.fa.fa-user-circle-o.fa-lg.fa-fw{"aria-hidden": "true"}
+          = comment.user.name
+          %small.text-muted
+            =time_ago_in_words comment.created_at
+            ago
+        .comment_body
+          = comment.body
+    - else
+      No comments to show.
     - flash.each do |name, message|
       .comment_error
         =message
