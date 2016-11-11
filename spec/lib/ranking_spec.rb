@@ -90,7 +90,6 @@ RSpec.describe Ranking do
       create :gem_spec, 
         total_downloads: 1000000001,
         laser_gem: laser_gem
-      # create_list :gem_dependency, 9, laser_gem: laser_gem
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
@@ -144,7 +143,7 @@ RSpec.describe Ranking do
     end
   end
 
-  describe "#download_rank" do
+  describe "#download_rank_string_calc" do
     it "returns number of downloads out total downloads" do
       laser_gem1 = LaserGem.create(name: "gem1")
       create :gem_spec, 
@@ -162,11 +161,78 @@ RSpec.describe Ranking do
       create :gem_spec, 
         total_downloads: 400,
         laser_gem: laser_gem
-      expect(Ranking.new(laser_gem).download_rank).to eq "2nd most downloaded gem of 4 gems"
+      expect(Ranking.new(laser_gem).download_rank_string_calc).to eq "2nd most downloaded gem of 4 gems"
+    end
+
+    it "saves download_rank_string to database" do
+      laser_gem1 = LaserGem.create(name: "gem1")
+      create :gem_spec, 
+        total_downloads: 10,
+        laser_gem: laser_gem1
+      laser_gem2 = LaserGem.create(name: "gem2")
+      create :gem_spec, 
+        total_downloads: 30,
+        laser_gem: laser_gem2
+      laser_gem3 = LaserGem.create(name: "gem4")
+      create :gem_spec, 
+        total_downloads: 3000,
+        laser_gem: laser_gem3
+      laser_gem = LaserGem.create(name: "rails")
+      create :gem_spec, 
+        total_downloads: 400,
+        laser_gem: laser_gem
+      Ranking.new(laser_gem).download_rank_string_calc
+      laser_gem.reload
+      expect(laser_gem.download_rank_string).to eq "2nd most downloaded gem of 4 gems"
     end
   end
 
-  describe "#total_rank" do
+  describe "#download_rank_percent_calc" do
+    it "returns number of downloads out total downloads" do
+      laser_gem1 = LaserGem.create(name: "gem1")
+      create :gem_spec, 
+        total_downloads: 10,
+        laser_gem: laser_gem1
+      laser_gem2 = LaserGem.create(name: "gem2")
+      create :gem_spec, 
+        total_downloads: 30,
+        laser_gem: laser_gem2
+      laser_gem3 = LaserGem.create(name: "gem4")
+      create :gem_spec, 
+        total_downloads: 3000,
+        laser_gem: laser_gem3
+      laser_gem = LaserGem.create(name: "rails")
+      create :gem_spec, 
+        total_downloads: 400,
+        laser_gem: laser_gem
+      expect(Ranking.new(laser_gem).download_rank_percent_calc).to eq 0.5
+    end
+
+    it "saves download_rank_percent to database" do
+      laser_gem1 = LaserGem.create(name: "gem1")
+      create :gem_spec, 
+        total_downloads: 10,
+        laser_gem: laser_gem1
+      laser_gem2 = LaserGem.create(name: "gem2")
+      create :gem_spec, 
+        total_downloads: 30,
+        laser_gem: laser_gem2
+      laser_gem3 = LaserGem.create(name: "gem4")
+      create :gem_spec, 
+        total_downloads: 3000,
+        laser_gem: laser_gem3
+      laser_gem = LaserGem.create(name: "rails")
+      create :gem_spec, 
+        total_downloads: 400,
+        laser_gem: laser_gem
+      Ranking.new(laser_gem).download_rank_percent_calc
+      laser_gem.reload
+      expect(laser_gem.download_rank_percent).to eq 0.5
+    end
+
+  end
+
+  describe "#total_rank_calc" do
     it "returns a float ranking for laser_gem" do
       laser_gem = LaserGem.create(name: "letmein")
       create :gem_spec, 
@@ -189,7 +255,7 @@ RSpec.describe Ranking do
         forks_count: 5001,
         stargazers_count: 5001,
         watchers_count: 1001
-      rank = Ranking.new(laser_gem).total_rank(laser_gem)
+      rank = Ranking.new(laser_gem).total_rank_calc(laser_gem)
       expect(rank).to eq 0.7586206896551724
     end
 
@@ -209,8 +275,30 @@ RSpec.describe Ranking do
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
-      rank = Ranking.new(laser_gem).total_rank(laser_gem)
+      rank = Ranking.new(laser_gem).total_rank_calc(laser_gem)
       expect(rank).to eq 0.8
     end
+
+    it "saves total_rank to the database" do
+      laser_gem = LaserGem.create(name: "letmein")
+      create :gem_spec, 
+        total_downloads: 1000000001,
+        current_version_downloads: 200000000,
+        laser_gem: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      create :gem_dependency, dependency: laser_gem
+      Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      laser_gem.reload
+      expect(laser_gem.total_rank).to eq 0.8
+    end
+
   end
 end
