@@ -33,7 +33,7 @@ gem 'mechanize'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap4'
 
 gem 'ransack'
 

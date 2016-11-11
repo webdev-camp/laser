@@ -15,7 +15,7 @@
         .gem_pages#gem_pages
           =render @laser_gems
         .display#infinite-scrolling
-          = will_paginate @laser_gems
+          = will_paginate @laser_gems, :renderer => WillPaginate::ActionView::BootstrapLinkRenderer
 .right
   .card
     %h4.card-header Popular gems

@@ -52,6 +52,7 @@ html body {
   color: $laser-black;
 }
 
+
 body { padding-top: 40px; }
 @media screen and (max-width: 768px) {
   body { padding-top: 0px; }
@@ -81,5 +82,13 @@ body { padding-top: 40px; }
         text-decoration: none;
       }
     }
+  }
+}
+
+#infinite-scrolling {
+  top: 30px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
   }
 }
