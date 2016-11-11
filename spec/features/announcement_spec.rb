@@ -19,7 +19,7 @@ RSpec.describe "Announcements" do
   end
 
   before(:each) do
-    sign_in_user
+    sign_in_admin
   end
 
   after(:each) do

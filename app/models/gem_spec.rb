@@ -10,4 +10,9 @@ class GemSpec < ApplicationRecord
   belongs_to :laser_gem
   validates_uniqueness_of :laser_gem_id
 
+
+  def home_page
+    return self.source_code_uri unless self.source_code_uri.blank?
+    homepage_uri
+  end
 end

@@ -21,8 +21,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'chartkick'
+gem "highcharts-rails"
+
 gem 'jbuilder', '~> 2.5'
-gem 'groupdate'
 
 gem "therubyracer"
 
@@ -32,7 +33,7 @@ gem 'mechanize'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap4'
 
 gem 'ransack'
 

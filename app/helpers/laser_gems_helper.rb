@@ -26,9 +26,45 @@ module LaserGemsHelper
     laser_gems_path(q: q)
   end
 
-  def activity_chart
-    weeks =  52.times.collect{|i| Time.now - i.weeks }
-    commit_act = @laser_gem.gem_git.commit_dates_year
-    line_chart(commit_act.each.collect { |ca| [ca[1].to_s, ca[0]] })
+  def max_y
+    100
   end
+
+  def graph_lines(laser_gem)
+    return "" unless laser_gem.gem_git
+    return "" if laser_gem.gem_git.commit_dates_year.empty?
+    coeff =  100.0 / laser_gem.gem_git.commit_dates_year.max
+    result = "0,#{max_y}\n"
+    laser_gem.gem_git.commit_dates_year.each_with_index do |val , index|
+      result << "#{4*index},#{max_y - val*coeff}\n"
+    end
+    result
+  end
+
+  def chart_options_long
+    { height: "200px",
+      ytitle: "Commits per Week",
+      label: "Commits per Week",
+      library: { plotOptions: { series: { lineColor: '#3b5f7c' } },
+        xAxis: { tickInterval: 8153600000, title: { text: "Date" } }
+      }
+    }
+  end
+  def chart_options_short
+    { height: "150px",
+      ytitle: "Commits",
+      label: "Commits",
+      library: { plotOptions: { series: { lineColor: '#3b5f7c' } },
+        xAxis: { title: { enabled: false } , labels: {enabled: false}}
+      }
+    }
+  end
+  def activity_chart(laser_gem , type = :long)
+    return "" unless laser_gem and laser_gem.gem_git
+    options = send "chart_options_#{type}".to_sym
+    weeks =  52.times.collect{|i| (Time.now - i.weeks).to_date }.reverse
+    commit_act = laser_gem.gem_git.commit_dates_year
+    line_chart(weeks.zip(commit_act) , options )
+  end
+
 end

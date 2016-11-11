@@ -4,13 +4,8 @@
     = render 'html_head'
   %body
     = render 'header'
-    .message
-      -flash.each do |name, message|
-        =name
-        =message
     .content
       =yield
-      =yield :charts_js
     .footer
       .col.menu
         .ui.list
@@ -22,9 +17,10 @@
             = link_to 'Ruby for Newbies', ruby_for_newbies_path
       .col.sponsor
         %p Sponsored by:
-        = image_tag "webdevcamp.png"
+        = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'http://webdev.camp/', :target => "_blank")
+        //= image_tag "webdevcamp.png"
+        //  %a.item
+        //    = link_to('http://webdev.camp/', :target => "_blank")
         %p Web Dev Camp
       .col.etc1
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       .col.etc2
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -1,20 +1,4 @@
-# max score isnt right should be score x weight / max score x weighting?
-##### commit activity score uses last 30 month thing!!!
 ##### TO DO change watchers_count to subscribers_count because the API returns stargazers as watchers.
-# should it return an array of the scores and various as an array?
-# can i order all gems by no downloads or etc without loading them all or doing loads of requests? 
-# how many ranking fields should I add to the lasergem model?
-# total rank
-# spec rank - as number or percent?
-# git rank
-# ADD One YEAR activity data
-# add fields to model
-# add method to add all of above to existin gems
-  # find out reasonable no for dependents
-  # make a dependent count loader for db
-  # add dependent gems to the method
-  # find a way of adding the most popular (highest ranking or whatever) dependent gems and list those up to say 20 only (and store?)
-#
 class Ranking
   # Scoring bands from 5(max) to 1 for each criterion
   # [a, b, c, d] where criterion > a scores 5, >b scores 4,
@@ -67,11 +51,6 @@ class Ranking
     sum = score_weight_array.reduce(0) do |acc, score_weight_pair|
       acc + rank(*score_weight_pair)
     end
-    puts "this is dep gems score #{dependent_gems_score}"
-    puts "this is total dl score #{total_downloads_score}"
-    puts "this is current dl score #{current_downloads_score}"
-    puts "this is spec rank sum #{sum}"
-    puts "this is max_spec_rank_total #{max_spec_rank_total}"
     sum
   end
 
@@ -86,13 +65,6 @@ class Ranking
     sum = score_weight_array.reduce(0) do |acc, score_weight_pair|
       acc + rank(*score_weight_pair)
     end
-    puts "this is commit_activity_score #{commit_activity_score}"
-    puts "this is recent_activity_score #{recent_activity_score}"
-    puts "this is forks_score #{forks_score}"
-    puts "this is stargazers_score #{stargazers_score}"
-    puts "this is watchers_score#{watchers_score}"
-    puts "this is git rank sum #{sum}"
-    puts "this is max_git_rank_total #{max_git_rank_total}"
     sum
   end
 
@@ -132,9 +104,6 @@ class Ranking
   end
 
   # This is the number of commits per week averaged over a year
-  # note that the new method will just be an array of commits/wk
-  # change this method as abv
-  # put in factory commit dates
   def commit_activity_score
     return 0 unless @gem_git
     commits_sum = @gem_git.commit_dates_year.reduce(0.0) do |acc, week| 

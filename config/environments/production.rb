@@ -40,7 +40,11 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
+
+  config.to_prepare { Devise::SessionsController.force_ssl }
+  config.to_prepare { Devise::RegistrationsController.force_ssl }
+  config.to_prepare { Devise::PasswordsController.force_ssl }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -68,7 +72,8 @@ Rails.application.configure do
         :authentication       => :login,
         :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
+  config.action_mailer.default_url_options = {  protocol: 'https',
+                                                host:     Rails.application.secrets.domain_name }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {  from: Rails.application.secrets.admin_email ,
