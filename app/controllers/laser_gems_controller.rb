@@ -16,6 +16,7 @@ class LaserGemsController < ApplicationController
   end
   # GET /laser_gems/gem_name
   def show
+    redirect_to(root_path) unless @laser_gem
   end
 
   def add_tag

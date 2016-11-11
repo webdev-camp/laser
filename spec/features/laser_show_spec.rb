@@ -71,4 +71,11 @@ RSpec.describe "LaserGemsShow" do
     visit laser_gem_path(laser_gem.name)
     expect(page).to have_text(laser_gem.tag_list)
   end
+
+  it "redirects for non-existant gem name" do
+    visit laser_gem_path("nothing_here")
+    expect(page.status_code).to be 200
+    expect(page).to have_current_path(root_path)
+  end
+
 end
