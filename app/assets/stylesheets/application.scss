@@ -54,35 +54,17 @@ html body {
 
 
 body { padding-top: 40px; }
+
 @media screen and (max-width: 768px) {
   body { padding-top: 0px; }
 }
 
 .content {
   @include container(85%);
-  padding-top: 5em;
+  padding-top: 10em;
   padding-bottom: 5em;
-
-  a {
-    text-decoration: none;
-    color: $laser-black;
-    font-weight: bold;
-    &:hover {
-      color: $raisa-teal;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    &:visited {
-      color: $laser-black;
-      font-weight: bold;
-      text-decoration: none;
-      &:hover {
-        color: $raisa-teal;
-        font-weight: bold;
-        text-decoration: none;
-      }
-    }
-  }
+  @include link(false);
+  @include tag-link;
 }
 
 #infinite-scrolling {

@@ -15,6 +15,7 @@
           %small.text-muted
             =k_numbers laser_gem.gem_spec.total_downloads
             downloads
-        %p.card-text
+      .card-right
+        .activity
           - if laser_gem.gem_git != nil
             = render "index_graph" , laser_gem: laser_gem
