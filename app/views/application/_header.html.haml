@@ -29,6 +29,6 @@
         .nav-link= link_to "Browse All Gems", laser_gems_path
     %ul.navbar-ul.pull-right
       %li.nav-item.pull-right
-        .nav-link= link_to 'Powered by WebDev.camp', 'www.webdev.camp'
+        .nav-link= link_to('Powered by WebDev.camp', 'http://webdev.camp/', :target => "_blank")
       %li.nav-item.pull-right
-        = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'www.webdev.camp')
+        = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'http://webdev.camp/', :target => "_blank")
