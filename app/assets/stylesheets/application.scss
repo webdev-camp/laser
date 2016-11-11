@@ -60,17 +60,8 @@ body { padding-top: 40px; }
 }
 
 .content {
-  @include container(85%);
-  padding-top: 10em;
-  padding-bottom: 5em;
+  @include container(90%);
+  padding-top: 6em;
   @include link(false);
   @include tag-link;
-}
-
-#infinite-scrolling {
-  top: 30px;
-  opacity: 0.7;
-  &:hover {
-    opacity: 1;
-  }
 }

@@ -6,8 +6,8 @@ class LaserGemsController < ApplicationController
   # GET /laser_gems
   def index
     @q = LaserGem.includes(:gem_spec).ransack(params[:q])
-    @laser_gems = @q.result(distinct: true).
-      paginate(page: params[:page], per_page: 20).order(:name)
+    @laser_count = @q.result(distinct: true).order(:name)
+    @laser_gems = @laser_count.paginate(page: params[:page], per_page: 20)
 
     respond_to do |format|
       format.html
@@ -16,6 +16,7 @@ class LaserGemsController < ApplicationController
   end
   # GET /laser_gems/gem_name
   def show
+    redirect_to(root_path) unless @laser_gem
   end
 
   def add_tag
