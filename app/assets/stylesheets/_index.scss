@@ -1,4 +1,14 @@
 .index{
+  .search {
+    @include span(12);
+    padding-bottom: 2em;
+    .searchbox{
+      @include span(7);
+    }
+    .order{
+      text-align: right;
+    }
+  }
   .gem_element{
     @include gallery(4);
   }
@@ -11,9 +21,4 @@
       opacity: 1;
     }
   }
-
-  .search, .filter, .order{
-    display: inline;
-  }
-
 }
