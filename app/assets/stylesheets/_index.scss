@@ -1,12 +1,19 @@
 .index{
-  .left {
-    @include span(9);
-    .search, .filter, .order{
-      display: inline;
+  .gem_element{
+    @include gallery(4);
+  }
+  .infinite-scrolling{
+    @include span(12);
+    text-align: center;
+    opacity: 0.7;
+    clear: both;
+    &:hover {
+      opacity: 1;
     }
   }
 
-  .right {
-    @include span(3);
+  .search, .filter, .order{
+    display: inline;
   }
+
 }

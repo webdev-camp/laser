@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  if $('#infinite-scrolling').size() > 0
+  if $('.infinite-scrolling').size() > 0
     $(window).on 'scroll', ->
       more_laser_gems_url = $('.pagination .next a').attr('href')
       if more_laser_gems_url && $(window).scrollTop() > $(document).height() - $(window).height() - 400

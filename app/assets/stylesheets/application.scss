@@ -66,11 +66,3 @@ body { padding-top: 40px; }
   @include link(false);
   @include tag-link;
 }
-
-#infinite-scrolling {
-  top: 30px;
-  opacity: 0.7;
-  &:hover {
-    opacity: 1;
-  }
-}
