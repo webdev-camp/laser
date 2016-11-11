@@ -39,9 +39,18 @@ namespace :laser do
   end
 
   desc "Load commits per week in last year"
-  task :load_commits do
+  task :load_commits  => :environment do
     loader = GitLoader.new
     loader.fetch_commits_for_all
+  end
+
+  desc "Load rankings"
+  task :load_rank  => :environment do
+    LaserGem.all.each do |laser_gem|
+      Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      Ranking.new(laser_gem).download_rank_string_calc
+      Ranking.new(laser_gem).download_rank_percent_calc
+    end
   end
 
   namespace :fixtures do
