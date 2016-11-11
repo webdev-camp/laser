@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107082835) do
+ActiveRecord::Schema.define(version: 20161111155824) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -74,8 +74,12 @@ ActiveRecord::Schema.define(version: 20161107082835) do
 
   create_table "laser_gems", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.float    "total_rank"
+    t.float    "download_rank_percent"
+    t.string   "download_rank_string"
+    t.index ["total_rank"], name: "index_laser_gems_on_total_rank"
   end
 
   create_table "ownerships", force: :cascade do |t|
