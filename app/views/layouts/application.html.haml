@@ -6,20 +6,4 @@
     = render 'layouts/header'
     .content
       =yield
-    .footer
-      .col.menu
-        .ui.list
-          %a.item
-            = link_to 'About us', about_path
-          %a.item
-            = link_to 'Frequently Asked Questions', faq_path
-          %a.item
-            = link_to 'Ruby for Newbies', ruby_for_newbies_path
-      .col.sponsor
-        %p Sponsored by:
-        = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'http://webdev.camp/', :target => "_blank")
-        %p Web Dev Camp
-      .col.etc1
-      .col.etc2
-
     = render 'layouts/footer'
