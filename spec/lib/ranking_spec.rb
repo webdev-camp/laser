@@ -299,6 +299,16 @@ RSpec.describe Ranking do
       laser_gem.reload
       expect(laser_gem.total_rank).to eq 0.8
     end
-
+  end
+  describe "#total_rank_position" do
+    it "calcultates the position of the rank compared to rank of all gems" do
+      _laser_gem2 = create :laser_gem,
+        name: "laser_gem2",
+        total_rank: 800
+      laser_gem = create :laser_gem,
+        name: "laser_gem",
+        total_rank: 87
+      expect(Ranking.new(laser_gem).total_rank_position).to eq 2
+    end
   end
 end

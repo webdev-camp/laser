@@ -32,6 +32,13 @@ class Ranking
 
   end
 
+  def total_rank_position
+    _t = LaserGem.all.count
+    n = @laser_gem.total_rank
+    rank_array = LaserGem.all.pluck(:total_rank).sort.reverse
+    (rank_array.index(n) + 1)
+  end
+
   def total_rank_calc(laser_gem)
     if GemGit.where(laser_gem_id: laser_gem.id).any?
       rank_total = spec_rank(laser_gem) + git_rank(laser_gem)
