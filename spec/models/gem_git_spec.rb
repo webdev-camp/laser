@@ -42,8 +42,8 @@ RSpec.describe GemGit, type: :model do
 
   it "can store an array of commit_dates" do
     gem_git = build :gem_git
-    gem_git.commit_dates_month = [1, 2, 3]
+    gem_git.commit_dates_year = [1, 2, 3]
     gem_git.save!
-    expect(gem_git.commit_dates_month).to eq [1, 2, 3]
+    expect(gem_git.commit_dates_year).to eq [1, 2, 3]
   end
 end

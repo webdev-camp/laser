@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111155824) do
+ActiveRecord::Schema.define(version: 20161112170820) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -48,10 +48,9 @@ ActiveRecord::Schema.define(version: 20161111155824) do
     t.integer  "stargazers_count"
     t.integer  "watchers_count"
     t.integer  "open_issues_count"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "laser_gem_id"
-    t.text     "commit_dates_month"
     t.text     "commit_dates_year"
   end
 

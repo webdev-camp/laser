@@ -121,6 +121,7 @@ class GitLoader
 
   def get_commit_activity_year(repo_name)
     begin
+      sleep(1)
       return @client.commit_activity_stats(repo_name)
     rescue Octokit::NotFound # => not_found
       puts "Not found #{repo_name}"
@@ -133,20 +134,6 @@ class GitLoader
     return nil
   end
 
-  def fetch_commits_for_git(laser_gem)
-    repo_name = parse_git_uri(laser_gem)
-    return nil unless repo_name
-    array = get_commits_from_api(repo_name)
-    return nil unless array
-    array_commit_dates = array.collect do |date|
-      date[:commit][:author][:date]
-    end
-    sorted_commit_dates = array_commit_dates.sort
-    if GemGit.where(laser_gem_id: laser_gem.id)
-      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_month: sorted_commit_dates)
-      sorted_commit_dates
-    end
-  end
 
   # helper to add year of commits per week to db for each gem.
   def fetch_commits_for_all
