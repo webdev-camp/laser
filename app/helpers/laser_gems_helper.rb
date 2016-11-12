@@ -1,10 +1,8 @@
 module LaserGemsHelper
   def k_numbers(number)
-    if number > 1000
-       "#{number / 1000}k"
-     else
-       number.to_s
-    end
+    return "#{number / 1000000}M" if number > 1000000
+    return "#{number / 1000}M" if number > 1000
+    number.to_s
   end
 
   def tags_cloud
