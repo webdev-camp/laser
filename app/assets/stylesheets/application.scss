@@ -63,6 +63,7 @@ body { padding-top: 40px; }
 .content {
   @include container(90%);
   padding-top: 6em;
+  padding-bottom: 6em;
   @include link(false);
   @include tag-link;
 }
