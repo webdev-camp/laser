@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require laser_gems
+//= require show_graph
