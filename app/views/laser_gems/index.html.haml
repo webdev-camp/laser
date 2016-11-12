@@ -10,10 +10,9 @@
         .order
           = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
           = sort_link(@q, :gem_git_last_commit , "Commits" )
-          (
-          = pluralize(@laser_count.count, "gem", "gems")
-          found. 
-          )
+          %p.text-muted
+            = pluralize(@laser_count.count, "gem", plural: "gems")
+            found.
 
 
   .results

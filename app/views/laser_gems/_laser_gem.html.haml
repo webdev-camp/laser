@@ -1,37 +1,42 @@
 .gem_element
   .card
+    %h5.card-header
+      .index-card-left
+        = link_to laser_gem.name, laser_gem_path(laser_gem.name)
+        %small.text-muted
+          = laser_gem.gem_spec.current_version
+      .index-card-right
+        %small.text-muted
+          %i.fa.fa-trophy{"aria-hidden": "true"}
+          First
     .card-block
-      %h5.card-title
-        .left
-          = link_to laser_gem.name, laser_gem_path(laser_gem.name)
-          %small.text-muted
-            = laser_gem.gem_spec.current_version
-        .right
-          %small.text-muted
-            %i.fa.fa-arrow-circle-down.fa-fw{"aria-hidden": "true"}
-            =k_numbers laser_gem.gem_spec.total_downloads
+      %p.card-text.more
+        %small.small_info
+          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ')
+        .whole_info= laser_gem.gem_spec.info
       %p.card-text
-        %small
-          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ') do
-            = link_to 'more', laser_gem_path(laser_gem.name)
-      %p.card-text
-        -laser_gem.tag_list.each do |tag_name|
+        -laser_gem.taggings do |tagging|
+          - tag_name = tagging.tag.name
           %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
+    .card-block
       - if laser_gem.gem_git != nil
         %p.card-text.text-xs-center
           = render "index_graph" , laser_gem: laser_gem
-          = pluralize(total_commits(laser_gem), "commit", "commits")
+          = pluralize(total_commits(laser_gem), "commit", plural: "commits")
           this year.
         %p.card-text.text-xs-center
           %span.card-link
             %i.fa.fa-code-fork{"aria-hidden" => "true"}
-            = laser_gem.gem_git.forks_count
+            = k_numbers laser_gem.gem_git.forks_count
           %span.card-link
             %i.fa.fa-star{"aria-hidden" => "true"}
-            = laser_gem.gem_git.stargazers_count
+            = k_numbers laser_gem.gem_git.stargazers_count
           %span.card-link
             %i.fa.fa-eye{"aria-hidden" => "true"}
-            = laser_gem.gem_git.watchers_count
+            = k_numbers laser_gem.gem_git.watchers_count
           %span.card-link
             %i.fa.fa-flag{"aria-hidden" => "true"}
-            = laser_gem.gem_git.open_issues_count
+            = k_numbers laser_gem.gem_git.open_issues_count
+          %span.card-link
+            %i.fa.fa-arrow-circle-down{"aria-hidden": "true"}
+            =k_numbers laser_gem.gem_spec.total_downloads

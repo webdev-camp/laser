@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    = render 'html_head'
+    = render 'layouts/html_head'
   %body
-    = render 'header'
+    = render 'layouts/header'
     .content
       =yield
     .footer
@@ -18,7 +18,8 @@
       .col.sponsor
         %p Sponsored by:
         = link_to(image_tag("webdevcamp.png", class: "sponsor"), 'http://webdev.camp/', :target => "_blank")
-        
         %p Web Dev Camp
       .col.etc1
       .col.etc2
+
+    = render 'layouts/footer'

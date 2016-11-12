@@ -1,38 +1,41 @@
-.header a {
-  text-decoration: none !important;
-  color: #fff !important;
-}
+.header{
 
-.responsive-navbar {
-  @extend .nav;
-  @extend .navbar;
-  @extend .navbar-full;
-  @extend .navbar-fixed-top;
-  @extend .navbar-dark;
-  background-color: $brand-warning;
-}
+  a {
+    text-decoration: none !important;
+    color: #fff !important;
+  }
 
-.menu-button {
-  @extend .navbar-toggler;
-  @extend .hidden-lg-up;
-}
+  .responsive-navbar {
+    @extend .nav;
+    @extend .navbar;
+    @extend .navbar-full;
+    @extend .navbar-fixed-top;
+    @extend .navbar-dark;
+    background-color: $brand-warning;
+  }
 
-.laser-logo {
-  @extend .navbar-brand;
-}
+  .menu-button {
+    @extend .navbar-toggler;
+    @extend .hidden-lg-up;
+  }
 
-.collapse-toggle {
-  @extend .collapse;
-  @extend .navbar-toggleable-md;
-}
+  .laser-logo {
+    @extend .navbar-brand;
+  }
 
-.navbar-ul {
-  @extend .nav;
-  @extend .navbar-nav;
-}
+  .collapse-toggle {
+    @extend .collapse;
+    @extend .navbar-toggleable-md;
+  }
 
-.sponsor {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
+  .navbar-ul {
+    @extend .nav;
+    @extend .navbar-nav;
+  }
+
+  .sponsor {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
 }

@@ -12,6 +12,7 @@
  *
  *
  *= require_self
+ *= require tether
  *
  */
 
@@ -42,6 +43,7 @@ $susy: (
 @import 'home';
 @import 'announcements';
 @import 'header';
+@import 'footer';
 @import 'logo';
 
 html body {
@@ -62,6 +64,7 @@ body { padding-top: 40px; }
 .content {
   @include container(90%);
   padding-top: 6em;
+  padding-bottom: 6em;
   @include link(false);
   @include tag-link;
 }

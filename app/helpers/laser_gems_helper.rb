@@ -44,7 +44,7 @@ module LaserGemsHelper
   def total_commits laser_gem
     return 0 unless laser_gem.gem_git
     return 0 if laser_gem.gem_git.commit_dates_year.empty?
-    laser_gem.gem_git.commit_dates.sum
+    laser_gem.gem_git.commit_dates_year.sum
   end
 
   def chart_options_long
