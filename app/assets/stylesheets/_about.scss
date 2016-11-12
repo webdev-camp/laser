@@ -52,7 +52,7 @@
       text-align: justify;
       margin-top: 20px;
       margin-bottom: 20px;
-      @include span(12 0f 8.5);
+      @include span(12 of 8.5);
     }
     .name{
       @include span(8.5);
