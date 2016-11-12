@@ -1,10 +1,10 @@
 .index{
-  .card-title {
-    .left {
-      @include span(7);
+  .card-header {
+    .index-card-left {
+      @include span(9);
     }
-    .right {
-      @include span(5);
+    .index-card-right {
+      @include span(3);
       text-align: right;
     }
   }

@@ -1,0 +1,23 @@
+.header
+  %nav.responsive-navbar
+    %button.menu-button{"data-target" => "#mainNavbarCollapse", "data-toggle" => "collapse", :type => "button"}
+      ☰
+    %a.laser-logo{:href => "/"}
+      = render 'layouts/logo'
+    #mainNavbarCollapse.collapse-toggle
+      %ul.navbar-ul
+        %li.nav-item
+          .nav-link= link_to "LASER", root_path
+          %span.sr-only (current)
+        %li.nav-item
+          .nav-link= link_to "Browse All Gems", laser_gems_path
+      %ul.navbar-ul.pull-right
+        %li.nav-item.pull-right
+          -if user_signed_in?
+            %li.nav-item
+              .nav-link= link_to "Log Out", destroy_user_session_path, :method => 'delete'
+          -else
+            %li.nav-item
+              .nav-link= link_to "Log In", new_user_session_path
+            %li.nav-item
+              .nav-link= link_to "Sign Up", new_user_registration_path

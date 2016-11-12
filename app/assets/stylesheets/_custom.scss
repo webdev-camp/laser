@@ -28,14 +28,6 @@ $tag-default-bg: $laser-gold;
     }
 }
 
-@mixin left {
-  @include span(8);
-}
-
-@mixin right {
-  @include span(4);
-}
-
 @mixin a-link ($tag) {
   text-decoration: none;
   font-weight: bold;

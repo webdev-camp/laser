@@ -139,37 +139,6 @@ RSpec.describe GitLoader do
     end
   end
 
-  # describe "fetch_commits_for_git", ci: true do
-  #   before :example do
-  #     @loader2 = GitLoader.new
-  #   end
-
-  #   ##### TODO
-  #   it "returns nil if repo name empty or invalid" do
-  #     laser_gem = LaserGem.create(name: "letmein")
-  #     create :gem_spec, 
-  #       laser_gem: laser_gem,
-  #       source_code_uri: "www.github.com/tzinfo/tzn"
-  #     expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
-  #   end
-
-  #   it "returns an array if repo name is valid", ci: true do
-  #     loader = GemLoader.new
-  #     laser_gem = LaserGem.create!(name: "tzinfo")
-  #     loader.fetch_and_create_gem_spec(laser_gem)
-  #     @loader2.fetch_and_create_gem_git(laser_gem)
-  #     expect(@loader2.fetch_commits_for_git(laser_gem)).not_to be nil
-  #   end
-
-  #   it "retuns nil if repo is valid but doesnt exist", ci: true do
-  #     loader = GemLoader.new
-  #     laser_gem = LaserGem.create(name: "paranoid")
-  #     loader.fetch_and_create_gem_spec(laser_gem)
-  #     @loader2.fetch_and_create_gem_git(laser_gem)
-  #     expect(@loader2.fetch_commits_for_git(laser_gem)).to be nil
-  #   end
-  # end
-
   describe "#fetch_commit_activity_year" do
     before :example do
       @loader = GitLoader.new

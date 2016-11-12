@@ -1,5 +1,5 @@
-.left {
-  @include left;
+.gem_show_left {
+  @include span(8);
 
   .comments{
     @include span(12);
@@ -12,8 +12,8 @@
 
 }
 
-.right {
-  @include right;
+.gem_show_right {
+  @include span(4);
   .card-header i {
     vertical-align: middle;
     font-size: 1.9em;
@@ -23,13 +23,13 @@
     font-size: 1.5em;
     line-height: 1.5em;
   }
-}
 
-.graph_box{
-  width: 200px;
+  .graph_box{
+    width: 200px;
 
-}
-.index_graph{
-  max-height: 200px;
-  width: 100%;
+  }
+  .index_graph{
+    max-height: 200px;
+    width: 100%;
+  }
 }

@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tether
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require highcharts
-//= require chartkick
-//= require_tree .
+//= require laser_gems
+//= require show_graph
