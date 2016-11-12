@@ -6,9 +6,10 @@ class Ownership < ApplicationRecord
   # Note that email presence validation will not work as not all gems have emails for owners
   #
   #
-  
+
   belongs_to :laser_gem
   belongs_to :owner, class_name: User, required: false
   belongs_to :gem_spec, required: false
   belongs_to :gem_git, required: false
+
 end
