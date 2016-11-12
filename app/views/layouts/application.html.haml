@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    = render 'html_head'
+    = render 'layouts/html_head'
   %body
-    = render 'header'
+    = render 'layouts/header'
     .content
       =yield
-    = render 'footer'
+    = render 'layouts/footer'
