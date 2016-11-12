@@ -11,6 +11,9 @@ module LaserGemsHelper
     ActsAsTaggableOn::Tag.most_used(5)
   end
 
+  def rank_to_i laser_gem
+    (laser_gem.total_rank * 100).to_i
+  end
   #TODO replace from alphabetical order to rank order
   def laser_gems_cloud
     LaserGem.all.includes(:gem_spec).order(:name).limit(10)
