@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  validates :name, length: { in: 3..30}, format: { without: /\s/, message: "must contain no spaces" }
+  validates :name, length: { in: 2..30}
   validates :admin, inclusion: { in: [ true, false ] }
 
   has_many :ownerships , :foreign_key => "owner_id"
