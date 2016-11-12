@@ -29,9 +29,15 @@ FactoryGirl.define do
       end
     end
 
-    factory :laser_gem_with_ownership do
+    factory :laser_gem_with_owners do
       after(:create) do |laser_gem, evaluator|
         create :ownership, laser_gem: laser_gem
+      end
+    end
+
+    factory :laser_gem_with_ownership do
+      after(:create) do |laser_gem, evaluator|
+        create :ownership, laser_gem: laser_gem, owner: nil
       end
     end
 
@@ -46,7 +52,7 @@ FactoryGirl.define do
   factory :laser_gem_with_everything do
     after(:create) do |laser_gem, evaluator|
       create :ownership, laser_gem: laser_gem
-      create :gem_spec, laser_gem: laser_gem, 
+      create :gem_spec, laser_gem: laser_gem,
         source_code_uri: "http://github.com/rails/rails"
       create_list :gem_dependency, 5, dependency: laser_gem
       create_list :gem_dependency, 5, laser_gem: laser_gem
