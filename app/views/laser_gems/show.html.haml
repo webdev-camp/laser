@@ -1,4 +1,3 @@
-//TODO Check if ANY OF THESE VARIABLES ARE not empty
 .gem_show_left
   .card
     %h4.card-header.card-title
@@ -18,10 +17,10 @@
       %p.card-text.text-xs-right
         %span.card-link
           %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
-          = link_to "Source code", @laser_gem.home_page
+          = link_to("Source code", @laser_gem.home_page, :target => "_blank")
         %span.card-link
           %i.fa.fa-book.fa-fw{"aria-hidden" => "true"}
-          = link_to "Documentation", @laser_gem.gem_spec.documentation_uri
+          = link_to("Documentation", @laser_gem.gem_spec.documentation_uri, :target => "_blank")
 
   .card
     .card-header Related gems

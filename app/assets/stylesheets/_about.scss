@@ -3,38 +3,63 @@
   margin-right: span(2);
   @include span(8 of 12);
 
-h1 {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 50px;
-  text-align: center;
-}
-
-}
-.title {
-  @include span(8 of 12);
-}
-
-.t {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 20px;
-  background-color: #f1f1f2;;
-}
-
-.about_body {
-  @include span(12);
-  background-color: white;
-}
-
-.nested_images {
-  margin-left: span(3);
-  margin-right: span(3);
-  @include span(4 of 8);
+  h1 {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 60px;
+    text-align: right;
   }
 
-.n {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 30px;
-  margin-bottom: 15px;
-  display: inline;
-  @include span(4);
+  h2 {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .title {
+    @include span(8 of 12);
+  }
+
+  .t {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+    //background-color: #f1f1f2;
+  }
+
+  .about_body {
+    @include span(12);
+  }
+
+  .person {
+    @include span(12);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+    .pic{
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      @include span(3.5);
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .text {
+      font-family: sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      @include span(12 of 8.5);
+    }
+    .name{
+      @include span(8.5);
+      font-family: sans-serif;
+      font-size: 30px;
+      background-color: white;
+      margin-top: 20px;
+    }
+
 }

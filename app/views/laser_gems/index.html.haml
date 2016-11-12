@@ -8,6 +8,8 @@
             = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
             = f.submit
         .order
+          = sort_link(@q, :rank_total ) do
+            Ranking
           = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
           = sort_link(@q, :gem_git_last_commit , "Commits" )
           %p.text-muted

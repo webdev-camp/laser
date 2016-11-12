@@ -1,12 +1,32 @@
 // Place all the styles related to the laser_gems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.card-left{
+.gem_element{
+  .whole_info {
+    display: none;
+  }
+
+  &:hover{
+    .whole_info {
+      display: inline;
+    }
+    .small_info{
+      display: none;
+    }
+  }
+  .card-left{
     @include span(8);
     text-align: justify;
-}
+  }
 
-.card-right{
-  @include span(last 4);
-  text-align: right;
+  .card-right{
+    @include span(last 4);
+    text-align: right;
+  }
+  .stats{
+    padding-top: 0px;
+    .card-link {
+      margin-left: 10px;
+    }
+  }
 }

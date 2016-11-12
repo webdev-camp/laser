@@ -1,1 +1,9 @@
-Hello!!!
+%h1
+  Hello,
+  =succeed '!' do
+    =current_user.name
+%h5 You are the owner of the following gems:
+-current_user.laser_gems.each do |laser_gem|
+  .card
+    .card-block
+      %h5.card-text=link_to laser_gem.name, laser_gem_path(laser_gem.name)
