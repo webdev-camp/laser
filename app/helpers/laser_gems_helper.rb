@@ -15,7 +15,7 @@ module LaserGemsHelper
     return 0 unless laser_gem.total_rank
     (laser_gem.total_rank * 100).to_i
   end
-  
+
   #TODO replace from alphabetical order to rank order
   def laser_gems_cloud
     LaserGem.all.includes(:gem_spec).order(:name).limit(10)
@@ -32,16 +32,16 @@ module LaserGemsHelper
   end
 
   def max_y
-    100
+    100.0
   end
 
   def graph_lines(laser_gem)
     return "" unless laser_gem.gem_git
     return "" if laser_gem.gem_git.commit_dates_year.empty?
-    coeff =  100.0 / laser_gem.gem_git.commit_dates_year.max
+    coeff =  max_y / laser_gem.gem_git.commit_dates_year.max
     result = "0,#{max_y}\n"
     laser_gem.gem_git.commit_dates_year.each_with_index do |val , index|
-      result << "#{4*index},#{max_y - val*coeff}\n"
+      result << "#{6*index},#{max_y - val*coeff - 2 }\n"
     end
     result
   end
