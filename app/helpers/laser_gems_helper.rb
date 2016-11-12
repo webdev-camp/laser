@@ -1,7 +1,7 @@
 module LaserGemsHelper
   def k_numbers(number)
     return "#{number / 1000000}M" if number > 1000000
-    return "#{number / 1000}M" if number > 1000
+    return "#{number / 1000}k" if number > 1000
     number.to_s
   end
 
