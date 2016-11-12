@@ -18,6 +18,7 @@ class LaserGem < ApplicationRecord
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
+  default_scope { order(total_rank: :desc) }
 
   def home_page
     gem_spec.home_page

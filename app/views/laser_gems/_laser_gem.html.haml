@@ -10,20 +10,21 @@
           %i.fa.fa-trophy{"aria-hidden": "true"}
           First
     .card-block
-      %p.card-text.more
-        %small.small_info
-          = truncate(laser_gem.gem_spec.info, length: 100, separator: ' ', omission: '... ')
-        .whole_info= laser_gem.gem_spec.info
       %p.card-text
-        -laser_gem.taggings do |tagging|
+        %small.small_info
+          = truncate(laser_gem.gem_spec.info, length: 90, separator: ' ', omission: '... ')
+        .whole_info= laser_gem.gem_spec.info
+        - if laser_gem.gem_git
+          %p.card-text.text-xs-center
+            = render "index_graph" , laser_gem: laser_gem
+            = pluralize(total_commits(laser_gem), "commit", plural: "commits")
+            this year.
+      %p.card-text
+        -laser_gem.taggings.each do |tagging|
           - tag_name = tagging.tag.name
           %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
-    .card-block
-      - if laser_gem.gem_git != nil
-        %p.card-text.text-xs-center
-          = render "index_graph" , laser_gem: laser_gem
-          = pluralize(total_commits(laser_gem), "commit", plural: "commits")
-          this year.
+    - if laser_gem.gem_git
+      .card-block.stats
         %p.card-text.text-xs-center
           %span.card-link
             %i.fa.fa-code-fork{"aria-hidden" => "true"}
