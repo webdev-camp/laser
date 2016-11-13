@@ -39,19 +39,19 @@ class Ranking
     (rank_array.index(n) + 1)
   end
 
-  def total_rank_calc(laser_gem)
-    if GemGit.where(laser_gem_id: laser_gem.id).any?
-      rank_total = spec_rank(laser_gem) + git_rank(laser_gem)
+  def total_rank_calc
+    if @laser_gem.gem_git
+      rank_total = spec_rank + git_rank
       max_rank_total = max_git_rank_total + max_spec_rank_total
       total_rank = rank_total/max_rank_total
     else
-      total_rank = spec_rank(laser_gem)/max_spec_rank_total
+      total_rank = spec_rank/max_spec_rank_total
     end
-    LaserGem.find_by(name: @laser_gem.name).update(total_rank: total_rank)
+    @laser_gem.update(total_rank: total_rank)
     total_rank
   end
 
-  def spec_rank(laser_gem)
+  def spec_rank
     score_weight_array = [ 
       [dependent_gems_score, DEPENDENT_GEMS_WEIGHT],
       [total_downloads_score, TOTAL_DOWNLOADS_WEIGHT],
@@ -63,7 +63,7 @@ class Ranking
     sum
   end
 
-  def git_rank(laser_gem)
+  def git_rank
     score_weight_array = [ 
       [commit_activity_score, COMMIT_ACTIVITY_WEIGHT],
       [recent_activity_score, RECENT_ACTIVITY_WEIGHT],
@@ -95,7 +95,7 @@ class Ranking
     download_array = GemSpec.all.pluck(:total_downloads).sort.reverse
     i = (download_array.index(n) + 1).ordinalize
     download_rank_string = "#{i} most downloaded gem of #{t} gems"
-    LaserGem.find_by(name: @laser_gem.name).update(download_rank_string: download_rank_string)
+    @laser_gem.update(download_rank_string: download_rank_string)
     @laser_gem.save
     download_rank_string
   end
@@ -106,7 +106,7 @@ class Ranking
     download_array = GemSpec.all.pluck(:total_downloads).sort.reverse
     i = (download_array.index(n) + 1)
     download_rank_percent = i/(t*1.0)
-    LaserGem.find_by(name: @laser_gem.name).update(download_rank_percent: download_rank_percent)
+    @laser_gem.update(download_rank_percent: download_rank_percent)
     @laser_gem.save
     download_rank_percent
   end
