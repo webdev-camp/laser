@@ -255,7 +255,7 @@ RSpec.describe Ranking do
         forks_count: 5001,
         stargazers_count: 5001,
         watchers_count: 1001
-      rank = Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      rank = Ranking.new(laser_gem).total_rank_calc
       expect(rank).to eq 0.7586206896551724
     end
 
@@ -275,7 +275,7 @@ RSpec.describe Ranking do
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
-      rank = Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      rank = Ranking.new(laser_gem).total_rank_calc
       expect(rank).to eq 0.8
     end
 
@@ -295,7 +295,7 @@ RSpec.describe Ranking do
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
       create :gem_dependency, dependency: laser_gem
-      Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      Ranking.new(laser_gem).total_rank_calc
       laser_gem.reload
       expect(laser_gem.total_rank).to eq 0.8
     end
