@@ -110,12 +110,12 @@
       .card-block
         %p.card-text
           = activity_chart(@laser_gem)
-          =# render "index_graph" , laser_gem: @laser_gem
     .card-footer
       %i.fa.fa-calendar-plus-o.fa-fw{"aria-hidden": "true"}
-      Created
-      = time_ago_in_words @laser_gem.gem_spec.build_date
-      ago
+      -if @laser_gem.gem_spec.build_date
+        Created
+        = time_ago_in_words(@laser_gem.gem_spec.build_date)
+        ago
 
   - if @laser_gem.gem_git != nil
     .card

@@ -8,11 +8,12 @@
             = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
             = f.submit
         .order
-          = sort_link(@q, :rank_total ) do
+          = sort_link(@q, "total_rank" , default_order: :desc) do
             Ranking
-          = sort_link(@q, :gem_spec_total_downloads, "Downloads" )
-          = sort_link(@q, :gem_git_last_commit , "Commits" )
-          %p.text-muted
+          = sort_link(@q, "gem_spec_total_downloads", "Downloads" , default_order: :desc)
+          = sort_link(@q, "gem_git_last_commit" , "Commits" , default_order: :desc)
+          = sort_link(@q, "gem_git_forks_count" , "Forks" , default_order: :desc)
+          .text-muted
             = pluralize(@laser_count.count, "gem", plural: "gems")
             found.
 
