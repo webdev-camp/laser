@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
   root to: "main#home"
+  get '/logo', to: 'main#logo', as: 'logo'
   get '/about', to: 'main#about', as: 'about'
   get '/faq', to: 'main#faq', as: 'faq'
   get '/ruby_for_newbies', to: 'main#ruby_for_newbies', as: 'ruby_for_newbies'

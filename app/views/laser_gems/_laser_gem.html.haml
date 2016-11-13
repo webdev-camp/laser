@@ -23,8 +23,7 @@
             this year.
       %p.card-text
         -laser_gem.taggings.each do |tagging|
-          - tag_name = tagging.tag.name
-          %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
+          %span.tag.tag-default= taging_link(tagging)
     .card-block.stats
       %span.card-link
         %i.fa.fa-arrow-circle-down{"aria-hidden": "true"}

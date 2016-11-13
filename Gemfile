@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'jquery-rails'
 gem 'sqlite3'
 
 gem 'sassc-rails'
@@ -28,11 +29,6 @@ gem "highcharts-rails"
 gem 'jbuilder', '~> 2.5'
 
 gem "therubyracer"
-
-# Use 'mechanize' to scrape data
-gem 'mechanize'
-
-gem 'jquery-rails'
 
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'

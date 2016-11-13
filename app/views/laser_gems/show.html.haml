@@ -1,20 +1,28 @@
 .gem_show_left
   .card
-    %h4.card-header.card-title
-      = @laser_gem.name
-      %small.text-muted.pl-1= @laser_gem.gem_spec.current_version
+    %h4.card-header
+      .header-left
+        = @laser_gem.name
+        %small.text-muted.pl-1= @laser_gem.gem_spec.current_version
+      .header-right.small
+        %i.fa.fa-trophy.fa-fw{"aria-hidden" => "true"}
+        = rank_to_i @laser_gem
     .card-block
       %p.card-text
         = @laser_gem.gem_spec.info
       %p.card-text
-        - @laser_gem.tag_list.each do |tag_name|
-          %span.tag.tag-default=link_to(tag_name, search_tag_url(tag_name))
+        - @laser_gem.taggings.each do |tagging|
+          %span.tag.tag-default= taging_link(tagging)
         - if has_owner_rights?
           = form_tag(add_tag_path(@laser_gem.name)) do
             = text_field_tag(:tag)
             %button.icon{id: "save_tag", type: "submit"}
               +
       %p.card-text.text-xs-right
+        %span.card-link
+          = link_to( @laser_gem.gem_spec.rubygem_uri, :target => "_blank") do
+            =image_tag "rubygems_logo.png" , width: "20px" , height: "20px"
+            RubyGems
         %span.card-link
           %i.fa.fa-file-text-o.fa-fw{"aria-hidden" => "true"}
           = link_to("Source code", @laser_gem.home_page, :target => "_blank")
@@ -25,23 +33,32 @@
   .card
     .card-header Related gems
     .card-block
-      %p.card-text Sorry, we are not able to find any related gems.
+      %p.card-text
+        -if @laser_gem.find_related_tags.limit(15).first
+          -related_gems(@laser_gem).each do |laser|
+            =link_to_laser laser
+        -else
+          Sorry, we are not able to find any related gems.
 
   - if @laser_gem.dependents != nil
     .card
       .card-header Dependents
       .card-block
         %p.card-text
-          - @laser_gem.dependents.each do |dependent|
-            = link_to(dependent.name, laser_gem_path(dependent.name))
+        - if @laser_gem.dependents.first
+          - @laser_gem.dependents.limit(15).each do |dependent|
+            = link_to_laser dependent
+        - else
+          This gem has no dependents.
+
 
   .card
     .card-header Dependencies
     .card-block
       %p.card-text
-        - if @laser_gem.dependencies.first != nil
-          - @laser_gem.dependencies.each do |dependency|
-            = link_to(dependency.name, laser_gem_path(dependency.name))
+        - if @laser_gem.dependencies.first
+          - @laser_gem.dependencies.limit(15).each do |dependency|
+            = link_to_laser dependency
         - else
           This gem has no dependencies.
 
@@ -73,12 +90,6 @@
 .gem_show_right
   .card
     .card-header
-      %i.fa.fa-trophy.fa-fw{"aria-hidden" => "true"}
-      Ranking
-    .card-block
-      %p.card-text #1
-  .card
-    .card-header
       %i.fa.fa-arrow-circle-down.fa-fw{"aria-hidden": "true"}
       Downloads
     .card-block
@@ -88,24 +99,23 @@
       %p.card-text
         This version:
         = k_numbers @laser_gem.gem_spec.current_version_downloads
+      %p.card-text
+        = @laser_gem.download_rank_string
 
-  - if @laser_gem.gem_git != nil
-    .card
-      .card-header
-        %i.fa.fa-heartbeat.fa-fw{"aria-hidden" => "true"}
-        Activity
+  .card
+    .card-header
+      %i.fa.fa-heartbeat.fa-fw{"aria-hidden" => "true"}
+      Activity
+    - if @laser_gem.gem_git != nil
       .card-block
         %p.card-text
           = activity_chart(@laser_gem)
           =# render "index_graph" , laser_gem: @laser_gem
-
-  - if @laser_gem.gem_spec.build_date != nil
-    .card
-      .card-header
-        %i.fa.fa-calendar-plus-o.fa-fw{"aria-hidden": "true"}
-        Created
-        = time_ago_in_words @laser_gem.gem_spec.build_date
-        ago
+    .card-footer
+      %i.fa.fa-calendar-plus-o.fa-fw{"aria-hidden": "true"}
+      Created
+      = time_ago_in_words @laser_gem.gem_spec.build_date
+      ago
 
   - if @laser_gem.gem_git != nil
     .card

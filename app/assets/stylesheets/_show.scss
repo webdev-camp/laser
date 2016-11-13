@@ -1,5 +1,14 @@
 .gem_show_left {
   @include span(8);
+  .card-header{
+    .header-left {
+      @include span(9);
+    }
+    .header-right {
+      @include span(3);
+      text-align: right;
+    }
+  }
 
   .comments{
     @include span(12);
@@ -14,10 +23,6 @@
 
 .gem_show_right {
   @include span(4);
-  .card-header i {
-    vertical-align: middle;
-    font-size: 1.9em;
-  }
   .card-text i {
     vertical-align: middle;
     font-size: 1.5em;
