@@ -7,7 +7,7 @@
       = form_tag(laser_gems_path, method: "get" , class: "form-inline") do
         .form_group
           = label_tag(:q, "Search for gems:")
-          = text_field_tag("q[name_or_gem_spec_info_cont]", nil ,
+          = text_field_tag("q[gem_spec_name_or_gem_spec_info_cont]", nil ,
                             placeholder: "Search gems" , class: "form-control" )
           = button_tag("Search" , class: "btn")
   .card
