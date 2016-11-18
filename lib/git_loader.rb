@@ -51,7 +51,7 @@ class GitLoader
       git_handle = assig[0]
       github_profile = assig[1]
       # Joint ownership
-      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update_all(git_handle: git_handle, github_profile: github_profile, github_owner: true)
+      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update(git_handle: git_handle, github_profile: github_profile, github_owner: true)
       # only github ownership
       Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
     end
@@ -78,9 +78,22 @@ class GitLoader
   end
 
   def parse_additional_uris(laser_gem)
-    # Extract the github repo name ot of the homepage_uri
     if laser_gem.gem_spec[:homepage_uri]
       uri = laser_gem.gem_spec[:homepage_uri]
+      matches = matcher(uri)
+      if matches 
+        return matches[1] unless get_git_from_api(matches[1]) == nil
+      end
+    end
+    if laser_gem.gem_spec[:documentation_uri]
+      uri = laser_gem.gem_spec[:documentation_uri]
+      matches = matcher(uri)
+      if matches 
+        return matches[1] unless get_git_from_api(matches[1]) == nil
+      end
+    end
+    if laser_gem.gem_spec[:bug_tracker_uri]
+      uri = laser_gem.gem_spec[:bug_tracker_uri]
       matches = matcher(uri)
       return matches[1] if matches
     else return nil
@@ -148,12 +161,13 @@ class GitLoader
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
     array = get_commit_activity_year(repo_name)
+    laser_gem.save
     laser_gem.reload
     return nil unless array
     # Extracts [commits in week], oldest -> newest
     commit_dates_year = array.collect { |week| week[:total] }
     if GemGit.where(laser_gem_id: laser_gem.id)
-      GemGit.where(laser_gem_id: laser_gem.id).update_all(commit_dates_year: commit_dates_year)
+      GemGit.where(laser_gem_id: laser_gem.id).update(commit_dates_year: commit_dates_year)
     end
   end
 
@@ -164,14 +178,13 @@ class GitLoader
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
     fetch_commit_activity_year(laser_gem)
-    # binding.pry
     assignee_array = get_owners_from_github(repo_name)
     return unless assignee_array
     assignee_array.each do |assig|
       git_handle = assig[0]
       github_profile = assig[1]
       # Joint ownership
-      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update_all(git_handle: git_handle, github_profile: github_profile, github_owner: true)
+      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update(git_handle: git_handle, github_profile: github_profile, github_owner: true)
       # only github ownership
       Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
     end

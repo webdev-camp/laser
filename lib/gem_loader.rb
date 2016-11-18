@@ -111,6 +111,7 @@ class GemLoader
       documentation_uri: "documentation_uri",
       source_code_uri: "source_code_uri",
       homepage_uri: "homepage_uri",
+      bug_tracker_uri: "bug_tracker_uri",
       authors: "authors",
     }
   end
