@@ -164,7 +164,7 @@ RSpec.describe GemLoader do
     end
   end
 
-  describe "#create_or_update_spec" do
+  describe "#create_or_update_spec", ci: true do
     before :example do
       @loader = GemLoader.new
     end
