@@ -1,0 +1,9 @@
+.updates
+  - flash.each do |name, message|
+    .comment_error
+      =message
+  .box
+    = form_tag(updates_path) do
+      .field
+        = text_field_tag(:gem_name)
+      %button.btn.btn-secondary{id: "add_gem", type: "submit", method: :post} Add or Update Gem

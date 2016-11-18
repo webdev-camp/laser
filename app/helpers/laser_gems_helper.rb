@@ -59,6 +59,7 @@ module LaserGemsHelper
       }
     }
   end
+
   def chart_options_short
     { height: "150px",
       ytitle: "Commits",
@@ -68,6 +69,7 @@ module LaserGemsHelper
       }
     }
   end
+
   def activity_chart(laser_gem , type = :long)
     return "" unless laser_gem and laser_gem.gem_git
     options = send "chart_options_#{type}".to_sym
@@ -75,5 +77,4 @@ module LaserGemsHelper
     commit_act = laser_gem.gem_git.commit_dates_year
     line_chart(weeks.zip(commit_act) , options )
   end
-
 end
