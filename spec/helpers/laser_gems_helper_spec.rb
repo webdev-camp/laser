@@ -19,7 +19,7 @@ RSpec.describe LaserGemsHelper, type: :helper do
 
   describe "laser_gems_cloud" do
     it "adds the most popular ten laser gems" do
-      expect(helper.laser_gems_cloud).to eq(LaserGem.all.includes(:gem_spec).order(:name).limit(10))
+      expect(helper.laser_gems_cloud).to eq(LaserGem.all.includes(:gem_spec).limit(10))
     end
   end
 end

@@ -1,21 +1,22 @@
-.container
-  .jumbotron.home
+.home
+  .jumbotron
     %p.lasertitle.highlight LASER
     %p.subtitle
       %span <span class="highlight">L</span>aser. <span class="highlight">A</span>nother <span class="highlight">S</span>earch <span class="highlight">E</span>ngine for <span class="highlight">R</span>uby
-    %p.searchgems
-      = form_tag(laser_gems_path, method: "get") do
-        = label_tag(:q, "Search for gems:")
-        = text_field_tag("q[name_or_gem_spec_info_cont]", nil ,
-                          placeholder: "Search gems")
-        = submit_tag("Search")
-      .card
-        %h4.card-header Popular gems
-        .card-block.gem_popular_container
-          -laser_gems_cloud.each do |laser_gem|
-            =link_to laser_gem.name, laser_gem_path(laser_gem.name)
-      .card
-        %h4.card-header Popular tags
-        .card-block.tag_popular_container
-          -tags_cloud.each do |tag|
-            =link_to(tag, search_tag_url(tag.name))
+    .searchgems
+      = form_tag(laser_gems_path, method: "get" , class: "form-inline") do
+        .form_group
+          = label_tag(:q, "Search for gems:")
+          = text_field_tag("q[gem_spec_name_or_gem_spec_info_cont]", nil ,
+                            placeholder: "Search gems" , class: "form-control" )
+          = button_tag("Search" , class: "btn")
+  .card
+    %h4.card-header Popular gems
+    .card-block.gem_popular_container
+      -laser_gems_cloud.each do |laser_gem|
+        =link_to_laser laser_gem
+  .card
+    %h4.card-header Popular tags
+    .card-block.tag_popular_container
+      -tags_cloud.each do |tag|
+        =link_to("#{tag}(#{tag.taggings_count})", search_tag_url(tag.name))

@@ -1,12 +1,11 @@
 .aboutus_content {
-  margin-left: span(2);
-  margin-right: span(2);
-  @include span(8 of 12);
+  @include span(12);
+  margin-left: span(1);
 
   h1 {
     font-family: 'Pattaya', sans-serif;
     font-size: 60px;
-    text-align: right;
+    text-align: center;
   }
 
   h2 {
@@ -19,43 +18,44 @@
   }
 
   .title {
-    @include span(8 of 12);
+    @include span(10);
   }
 
   .t {
     font-family: 'Kaushan Script', cursive;
     font-size: 20px;
-    //background-color: #f1f1f2;
   }
 
   .about_body {
-    @include span(12);
+    @include span(10 of 12);
   }
 
   .person {
-    @include span(12);
+    @include span(10 of 12);
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-    .pic{
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      @include span(3.5);
-      margin-top: 10px;
-      margin-bottom: 10px;
+  .pic{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    @include span(3);
+    margin-top: 10px;
+    .img {
+      @include span(10 of 12);
+      margin-top: 20px;
     }
+  }
     .text {
       font-family: sans-serif;
       font-size: 16px;
       text-align: justify;
       margin-top: 20px;
       margin-bottom: 20px;
-      @include span(12 of 8.5);
     }
     .name{
-      @include span(8.5);
+      @include span(9);
       font-family: sans-serif;
       font-size: 30px;
       background-color: white;

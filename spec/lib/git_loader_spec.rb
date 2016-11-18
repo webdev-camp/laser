@@ -146,7 +146,7 @@ RSpec.describe GitLoader do
 
     it "returns nil if repo name empty or invalid" do
       laser_gem = LaserGem.create(name: "letmein")
-      create :gem_spec, 
+      create :gem_spec,
         laser_gem: laser_gem,
         source_code_uri: "www.gi.com/tzinfo/tzn"
       expect(@loader.fetch_commit_activity_year(laser_gem)).to be nil
@@ -168,7 +168,6 @@ RSpec.describe GitLoader do
       @loader.fetch_commit_activity_year(laser_gem)
       laser_gem.reload
       expect((laser_gem.gem_git.commit_dates_year).any?).to be true
-      puts laser_gem.gem_git.commit_dates_year
     end
   end
   describe "#update_or_create_git", ci: true do

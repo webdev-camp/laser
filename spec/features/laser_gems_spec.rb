@@ -19,26 +19,35 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
-  it "searches for gems" do
+  it "searches for gems from index page" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
-    # find and set the search input
-    page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name
-    # click the search button
-    page.find('input[name="commit"]').click
+    page.fill_in 'q_gem_spec_name_or_gem_spec_info_cont', :with => laser_gem.gem_spec.name
+    click_button "Search"
     expect(page.status_code).to be 200
-    # check that there are some results
     gem_elements = page.find_all('.gem_element')
-    expect(gem_elements.length).to be 1
+    expect(gem_elements.length).to eq 1
+  end
+
+  it "searches for gems from home page" do
+    laser_gem = create :laser_gem
+    create :laser_gem
+    visit root_path
+    puts laser_gem.name
+    page.fill_in 'q_gem_spec_name_or_gem_spec_info_cont', :with => laser_gem.gem_spec.name
+    click_button "Search"
+    expect(page.status_code).to be 200
+    gem_elements = page.find_all('.gem_element')
+    expect(gem_elements.length).to eq 1
   end
 
   it "searches for non-existent gems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
-    page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name+'akjsdhgkjasd'
-    page.find('input[name="commit"]').click
+    page.fill_in 'q_gem_spec_name_or_gem_spec_info_cont', :with => laser_gem.name+'akjsdhgkjasd'
+    click_button "Search"
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
     expect(gem_elements.length).to be 0
@@ -48,11 +57,11 @@ RSpec.describe "LaserGems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit laser_gems_path
-      page.fill_in 'q_name_or_gem_spec_info_cont', :with => laser_gem.name[0,2]
-    page.find('input[name="commit"]').click
+    page.fill_in 'q_gem_spec_name_or_gem_spec_info_cont', :with => laser_gem.name[0,2]
+    click_button "Search"
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
-    expect(gem_elements.length).to be >= 1
+    expect(gem_elements.length).to be > 1
   end
 
   it "shows the related tags for laser gem" do
@@ -64,18 +73,15 @@ RSpec.describe "LaserGems" do
   it "searches for tags" do
     create :laser_gem_with_tags
     visit laser_gems_path
-    # find and set the search input
     page.fill_in 'q_taggings_tag_name_eq', :with => 'tag'
-    # click the search button
-    page.find('input[name="commit"]').click
+    click_button "Search"
     expect(page.status_code).to be 200
-    # check if there are some results
     gem_elements = page.find_all('.gem_element')
     expect(gem_elements.length).to be 1
   end
 
   it "searches for non-existent tags" do
-    laser_gem = create :laser_gem_with_tags
+    create :laser_gem_with_tags
     visit laser_gems_path
     page.fill_in 'q_taggings_tag_name_eq', :with => 'tag' + 'akjsdhgkjasd'
     page.find('input[name="commit"]').click
@@ -85,7 +91,7 @@ RSpec.describe "LaserGems" do
   end
 
   it "not searches for a part of a tag" do
-    laser_gem = create :laser_gem_with_tags
+    create :laser_gem_with_tags
     visit laser_gems_path
     page.fill_in 'q_taggings_tag_name_eq', :with => 'tag'[0,2]
     page.find('input[name="commit"]').click

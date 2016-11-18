@@ -9,14 +9,25 @@ module LaserGemsHelper
     ActsAsTaggableOn::Tag.most_used(5)
   end
 
-  def rank_to_i laser_gem
-    return 0 unless laser_gem.total_rank
-    (laser_gem.total_rank * 100).to_i
+  def link_to_laser laser
+    link_to "#{laser.name}(#{rank_to_i laser})", laser_gem_path(laser.name)
+  end
+
+  def related_gems laser_gem
+    tag = laser_gem.taggings.collect{|t| t.tag}.sort{|t| t.taggings_count}.first
+    return [] unless tag
+    puts "TAG #{tag.name}"
+    LaserGem.tagged_with(tag.name).limit(15)
+  end
+
+  def taging_link tagging
+    tag = tagging.tag
+    link_to("#{tag}(#{tag.taggings_count})", search_tag_url(tag.name))
   end
 
   #TODO replace from alphabetical order to rank order
   def laser_gems_cloud
-    LaserGem.all.includes(:gem_spec).order(:name).limit(10)
+    LaserGem.all.includes(:gem_spec).limit(10)
   end
 
   def search_tag_url tag_name

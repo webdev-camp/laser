@@ -8,10 +8,23 @@
     font-weight: 400;
     font-size: 120px;
     color: $laser-maroon;
+    margin-bottom: 0;
   }
   .subtitle{
     font-family: 'Courgette';
     font-size: 50px;
+    margin-bottom: 0.75em;
     @include highlight;
+  }
+  .jumbotron{
+    margin-top: -2em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+  }
+  .searchgems{
+    width: 80%;
+    padding-left: 10%;
+    text-align: center;
+    margin-bottom: 1em;
   }
 }
