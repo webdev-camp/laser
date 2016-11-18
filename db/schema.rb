@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112170820) do
+ActiveRecord::Schema.define(version: 20161118183810) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20161112170820) do
     t.string   "homepage_uri"
     t.string   "authors"
     t.string   "build_date"
+    t.string   "bug_tracker_uri"
   end
 
   create_table "laser_gems", force: :cascade do |t|
