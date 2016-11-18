@@ -204,7 +204,7 @@ class GitLoader
       last_commit: "pushed_at",
       forks_count: "forks_count",
       stargazers_count: "stargazers_count",
-      watchers_count: "watchers_count",
+      watchers_count: "subscribers_count",
       open_issues_count: "open_issues_count",
     }
   end
