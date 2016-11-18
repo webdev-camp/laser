@@ -58,6 +58,47 @@ class GemLoader
     end
   end
 
+  def create_or_update_spec(gem_name)
+    laser_gem = LaserGem.find_or_create_by!(name: gem_name)
+    gem_data = get_spec_from_api(laser_gem.name)
+    return unless gem_data
+    first_version = get_build_start_from_api(laser_gem.name)
+    attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
+    spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
+    owner_array = get_owners_from_api(laser_gem.name)
+    owner_array.each do |owner|
+      gem_handle = owner["handle"]
+      email = owner["email"]
+      ownership = Ownership.find_or_create_by(laser_gem_id: laser_gem.id, email: email)
+      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
+    end
+    if laser_gem.gem_spec
+      laser_gem.gem_spec.update(attribs)
+    else
+      laser_gem.create_gem_spec!(attribs)
+    end
+    create_or_update_deps(laser_gem, gem_data["dependencies"]["runtime"] )
+  end
+
+  def create_or_update_deps(laser_gem, runtime_deps)
+    runtime_deps.each do |gem_dep|
+      dep_name = gem_dep["name"]
+      ver = gem_dep["requirements"]
+      lg_dep = LaserGem.find_or_create_by!(name: dep_name)
+      begin
+        laser_gem.register_dependency(lg_dep, ver) unless GemDependency.where("laser_gem_id = ? and dependency_id = ?", laser_gem.id, lg_dep.id).exists?
+      rescue ActiveRecord::RecordInvalid => e
+        puts dep_name + " invalid " + e.message
+      end
+      if lg_dep.gem_spec
+        create_or_update_spec(lg_dep.name) unless lg_dep.gem_spec.updated_at > 1.day.ago
+      else
+        create_or_update_spec(lg_dep.name)
+      end
+    end
+  end
+
+
   private
   def spec_attributes
     {

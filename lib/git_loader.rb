@@ -74,15 +74,17 @@ class GitLoader
       return matches[1] if matches
       # look at homepage anyway if source_code_uri was not a github
     end
-    parse_homepage_uri(laser_gem)
+    parse_additional_uris(laser_gem)
   end
 
-  def parse_homepage_uri(laser_gem)
+  def parse_additional_uris(laser_gem)
     # Extract the github repo name ot of the homepage_uri
-    return nil unless laser_gem.gem_spec[:homepage_uri]
-    uri = laser_gem.gem_spec[:homepage_uri]
-    matches = matcher(uri)
-    return matches[1] if matches
+    if laser_gem.gem_spec[:homepage_uri]
+      uri = laser_gem.gem_spec[:homepage_uri]
+      matches = matcher(uri)
+      return matches[1] if matches
+    else return nil
+    end
   end
 
   def fetch_and_create_gem_git(laser_gem)
@@ -155,11 +157,41 @@ class GitLoader
     end
   end
 
+  def update_or_create_git(gem_name)
+    laser_gem = LaserGem.find_by(name: gem_name)
+    return nil if laser_gem == nil
+    return unless laser_gem.gem_spec
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    fetch_commit_activity_year(laser_gem)
+    # binding.pry
+    assignee_array = get_owners_from_github(repo_name)
+    return unless assignee_array
+    assignee_array.each do |assig|
+      git_handle = assig[0]
+      github_profile = assig[1]
+      # Joint ownership
+      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update_all(git_handle: git_handle, github_profile: github_profile, github_owner: true)
+      # only github ownership
+      Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
+    end
+    git_data = get_git_from_api(repo_name)
+    if git_data
+      attribs = {}
+      git_attributes.each {|k,v| attribs[k] = git_data[v] }
+      if laser_gem.gem_git
+        laser_gem.gem_git.update(attribs.merge laser_gem_id: laser_gem.id)
+      else
+        laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
+      end
+    end
+  end
+
   private
 
   # match the uri to see if it contains github.com and return the match_data
   def matcher(uri)
-    rex = /.+\/github.com\/([\w-]+\/[\w-]+)/
+    rex = /github.com\/([\w-]+\/[\w-]+)/
     return rex.match(uri)
   end
 
