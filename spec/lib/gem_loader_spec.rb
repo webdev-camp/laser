@@ -1,3 +1,6 @@
+require "gem_loader"
+require "git_loader"
+
 RSpec.describe GemLoader do
   it "instantiates a loader" do
     expect(GemLoader.new).not_to be nil
