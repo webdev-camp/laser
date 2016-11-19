@@ -193,8 +193,10 @@ class GitLoader
       git_attributes.each {|k,v| attribs[k] = git_data[v] }
       if laser_gem.gem_git
         laser_gem.gem_git.update(attribs.merge laser_gem_id: laser_gem.id)
+        laser_gem.gem_git.reload
       else
         laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
+        laser_gem.gem_git.reload
       end
         fetch_commit_activity_year(laser_gem)
     end
