@@ -1,2 +1,3 @@
-class ApplicationJob < ActiveJob::Base
+class ApplicationJob
+  include SuckerPunch::Job
 end

@@ -1,5 +1,4 @@
 class UpdateLaserGemJob < ApplicationJob
-  queue_as :default
 
   def perform(gem_name)
     gem_data_fetch(gem_name)
