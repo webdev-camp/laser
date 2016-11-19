@@ -90,11 +90,11 @@ class GemLoader
       rescue ActiveRecord::RecordInvalid => e
         puts dep_name + " invalid " + e.message
       end
-      if lg_dep.gem_spec
-        create_or_update_spec(lg_dep.name) unless lg_dep.gem_spec.updated_at > 1.day.ago
-      else
-        create_or_update_spec(lg_dep.name)
-      end
+      # if lg_dep.gem_spec
+      #   create_or_update_spec(lg_dep.name) unless lg_dep.gem_spec.updated_at > 1.day.ago
+      # else
+      #   create_or_update_spec(lg_dep.name)
+      # end
     end
   end
 

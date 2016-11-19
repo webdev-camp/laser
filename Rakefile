@@ -47,7 +47,7 @@ namespace :laser do
   desc "Load rankings"
   task :load_rank  => :environment do
     LaserGem.all.each do |laser_gem|
-      Ranking.new(laser_gem).total_rank_calc(laser_gem)
+      Ranking.new(laser_gem).total_rank_calc
       Ranking.new(laser_gem).download_rank_string_calc
       Ranking.new(laser_gem).download_rank_percent_calc
     end
