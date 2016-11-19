@@ -72,7 +72,6 @@ class GitLoader
       uri = laser_gem.gem_spec.source_code_uri
       matches = matcher(uri)
       return matches[1] if matches
-      # look at homepage anyway if source_code_uri was not a github
     end
     parse_additional_uris(laser_gem)
   end
@@ -136,7 +135,7 @@ class GitLoader
 
   def get_commit_activity_year(repo_name)
     begin
-      sleep(1)
+      # sleep(1)
       return @client.commit_activity_stats(repo_name)
     rescue Octokit::NotFound # => not_found
       puts "Not found #{repo_name}"
@@ -161,13 +160,12 @@ class GitLoader
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
     array = get_commit_activity_year(repo_name)
-    laser_gem.save
-    laser_gem.reload
     return nil unless array
     # Extracts [commits in week], oldest -> newest
     commit_dates_year = array.collect { |week| week[:total] }
-    if GemGit.where(laser_gem_id: laser_gem.id)
-      GemGit.where(laser_gem_id: laser_gem.id).update(commit_dates_year: commit_dates_year)
+    if laser_gem.gem_git
+      laser_gem.gem_git.reload
+      laser_gem.gem_git.update(commit_dates_year: commit_dates_year)
     end
   end
 
@@ -177,7 +175,6 @@ class GitLoader
     return unless laser_gem.gem_spec
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
-    fetch_commit_activity_year(laser_gem)
     assignee_array = get_owners_from_github(repo_name)
     return unless assignee_array
     assignee_array.each do |assig|
@@ -197,6 +194,7 @@ class GitLoader
       else
         laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
       end
+        fetch_commit_activity_year(laser_gem)
     end
   end
 

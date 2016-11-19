@@ -175,7 +175,8 @@ RSpec.describe GemLoader do
       @loader.create_or_update_spec("sass")
       expect(LaserGem.where(name: "sass").exists?).to be true
     end
-    it "creates laser gem and gem spec for dependencies if they dont exist", :ci => true  do
+
+    xit "creates laser gem and gem spec for dependencies if they dont exist", :ci => true  do
 
       @loader.create_or_update_spec("bootstrap-sass")
       laser_gem = LaserGem.find_by(name: "sass")
@@ -183,6 +184,7 @@ RSpec.describe GemLoader do
       expect(Ownership.where(laser_gem_id: laser_gem.id).exists?).to be true
       expect(laser_gem.gem_spec).not_to be nil
     end
+
     it "updates attributes, build date and ownerships for a vaild gem if it already exists" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
@@ -196,7 +198,8 @@ RSpec.describe GemLoader do
       expect(laser_gem.gem_spec.build_date).not_to eq "2010-09-22T04:00:00.000Z"
 
     end
-    it "updates the attributes for all of the gem dependencies that do exist" do
+
+    xit "updates the attributes for all of the gem dependencies that do exist" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
