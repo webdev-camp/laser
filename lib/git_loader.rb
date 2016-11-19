@@ -1,3 +1,5 @@
+require "ranking"
+
 class GitLoader
 
   def initialize()
@@ -80,14 +82,14 @@ class GitLoader
     if laser_gem.gem_spec[:homepage_uri]
       uri = laser_gem.gem_spec[:homepage_uri]
       matches = matcher(uri)
-      if matches 
+      if matches
         return matches[1] unless get_git_from_api(matches[1]) == nil
       end
     end
     if laser_gem.gem_spec[:documentation_uri]
       uri = laser_gem.gem_spec[:documentation_uri]
       matches = matcher(uri)
-      if matches 
+      if matches
         return matches[1] unless get_git_from_api(matches[1]) == nil
       end
     end

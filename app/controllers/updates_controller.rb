@@ -1,3 +1,6 @@
+require "git_loader"
+require "gem_loader"
+
 class UpdatesController < ApplicationController
   before_action :authenticate_user!
 

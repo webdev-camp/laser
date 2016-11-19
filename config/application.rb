@@ -22,7 +22,6 @@ module Laser
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.autoload_paths << Rails.root.join('lib')
     config.assets.paths << Gem.loaded_specs['susy'].full_gem_path+'/sass'
     config.assets.paths << Gem.loaded_specs['breakpoint'].full_gem_path+'/stylesheets'
   config.active_job.queue_adapter = :sucker_punch

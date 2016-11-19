@@ -3,6 +3,8 @@
 
 require_relative 'config/application'
 require 'yaml'
+require "gem_loader"
+require "git_loader"
 
 Rails.application.load_tasks
 

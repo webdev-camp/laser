@@ -1,3 +1,5 @@
+require "git_loader"
+
 RSpec.describe GitLoader do
   it "instantiates a loader" do
     expect(GitLoader.new).not_to be nil
