@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :async
+    :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates :name, length: { in: 2..30}
   validates :admin, inclusion: { in: [ true, false ] }
@@ -15,5 +15,9 @@ class User < ApplicationRecord
 
   def connect_ownerships
     Ownership.where(:email => self.email).update_all(owner_id: self.id)
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 end
