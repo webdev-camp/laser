@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'laser_gems#index', as: :tag
   get 'owners/index', to: 'owners#index', as: :owners_index
 
-
-
   root to: "main#home"
   get '/logo', to: 'main#logo', as: 'logo'
   get '/about', to: 'main#about', as: 'about'
@@ -17,4 +15,9 @@ Rails.application.routes.draw do
   get '/ruby_for_newbies', to: 'main#ruby_for_newbies', as: 'ruby_for_newbies'
   get '/updates/show', to: 'updates#show', as:'updates_show'
   post '/updates/update', to: 'updates#update', as: 'updates'
+
+  #legacy
+  get '/laser_gems',to: redirect("/gems")
+  get '/laser_gem/:id',   to: redirect( "/gem/%{:id}" )
+
 end
