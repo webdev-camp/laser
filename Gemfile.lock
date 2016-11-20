@@ -211,6 +211,8 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rollbar (2.13.3)
+      multi_json
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -261,6 +263,8 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    skylight (1.0.1)
+      activesupport (>= 3.0.0)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -338,9 +342,11 @@ DEPENDENCIES
   puma
   rails (~> 5.0.0, >= 5.0.0.1)
   ransack
+  rollbar
   rspec-rails
   sassc-rails
   simple_form
+  skylight
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)

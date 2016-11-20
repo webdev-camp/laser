@@ -61,6 +61,8 @@ group :test do
   gem "codeclimate-test-reporter", require: nil
 end
 
+gem 'rollbar'
 group :production do
+  gem "skylight"
   gem "mysql2"
 end
