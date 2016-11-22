@@ -25,6 +25,7 @@ gem 'devise'
 
 gem 'chartkick'
 gem "highcharts-rails"
+gem "font-awesome-rails"
 
 gem 'jbuilder', '~> 2.5'
 
@@ -36,7 +37,7 @@ gem 'will_paginate-bootstrap4'
 gem 'ransack'
 
 gem 'sucker_punch', '~> 2.0'
-  
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
