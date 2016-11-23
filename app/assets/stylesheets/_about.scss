@@ -21,11 +21,6 @@
     @include span(10);
   }
 
-  .t {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 20px;
-  }
-
   .about_body {
     @include span(10 of 12);
   }
