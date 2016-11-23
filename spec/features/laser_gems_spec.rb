@@ -10,6 +10,12 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
+  it "redirects for legacy url" do
+    visit "/laser_gems"
+    expect(page.status_code).to be 200
+    expect(page).to have_current_path(laser_gems_path)
+  end
+
   it "show for item works" do
     gem = create :laser_gem
     visit laser_gems_path

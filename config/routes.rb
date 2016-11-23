@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   #legacy
   get '/laser_gems',to: redirect("/gems")
-  get '/laser_gem/:id',   to: redirect( "/gem/%{:id}" )
+  get '/laser_gem/:id',   to: redirect { |params, req| "/gem/#{params[:id]}" }
 
 end
