@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require highcharts
+//= require chartkick
 //= require jquery_ujs
 //= require tether
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require laser_gems
-//= require show_graph
