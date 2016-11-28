@@ -12,14 +12,39 @@
     @include span(12);
     padding-bottom: 2em;
     .searchbox{
-      @include span(7);
+      @include span(8);
+      span.text-muted{
+        white-space: nowrap;
+      }
     }
     .order{
+      @include span(4);
       text-align: right;
+      .tipit{
+        margin-left: 10px
+      }
+    }
+    @media(max-width: 950px){
+      .searchbox{
+        @include span(12);
+      }
+      .order{
+        @include span(12);
+      }
     }
   }
   .gem_element{
-    @include gallery(4);
+    @include span(4);
+  }
+  @media(max-width: 800px){
+    .gem_element{
+      @include span(6);
+    }
+  }
+  @media(max-width: 500px){
+    .gem_element{
+      @include span(12);
+    }
   }
   .infinite-scrolling{
     @include span(12);

@@ -8,6 +8,15 @@
       @include span(3);
       text-align: right;
     }
+    @media(max-width: 800px){
+      .header-left {
+        @include span(12);
+      }
+      .header-right {
+        @include span(6);
+        text-align: right;
+      }
+    }
   }
 
   .comments{
@@ -35,5 +44,13 @@
   .index_graph{
     max-height: 200px;
     width: 100%;
+  }
+}
+@media(max-width: 800px){
+  .gem_show_left {
+    @include span(12);
+  }
+  .gem_show_right {
+    @include span(12);
   }
 }

@@ -23,4 +23,9 @@
     padding-left: span(1);
     text-align: left;
   }
+  @media(max-width: 800px){
+    .menu , .sponsor , .links {
+      @include span(6);
+    }
+  }
 }
