@@ -4,7 +4,7 @@
       .card-block
         .searchbox
           = search_form_for @q, method: :get  do |f|
-            = f.search_field :gem_spec_name_or_gem_spec_info_cont , placeholder: "Search Text"
+            = f.search_field :gem_spec_name_or_gem_spec_info_cont , placeholder: "Search Text" , autofocus: true
             = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
             = f.submit
             %span.text-muted

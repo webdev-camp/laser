@@ -3,7 +3,16 @@
     .comment_error
       =message
   .box
-    = form_tag(updates_path) do
+    %h1 Add or update a gem
+    %p
+      Add a gem in case your favourite is missing. Any name you enter must be a valid gem,
+      meaning rubygems.org must know about it.
+    %p
+      Information on rubylaser.org is updated regularly, both from rubygems.org and
+      github.com, but if you have just released a new version, or otherwise feel the
+      data displayed is out of date, just enter the relevant gem name below.
+
+    = form_tag(updates_path , class: "form-horizontal") do
       .field
-        = text_field_tag(:gem_name)
-      %button.btn.btn-secondary{id: "add_gem", type: "submit", method: :post} Add or Update Gem
+        = text_field_tag(:gem_name , nil , autofocus: true)
+        %button.btn.btn-secondary{id: "add_gem", type: "submit", method: :post} Add or Update Gem
