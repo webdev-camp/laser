@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/logo', to: 'main#logo', as: 'logo'
   get '/about', to: 'main#about', as: 'about'
   get '/faq', to: 'main#faq', as: 'faq'
-  get '/ruby_for_newbies', to: 'main#ruby_for_newbies', as: 'ruby_for_newbies'
+  get '/contribute', to: 'main#contribute', as: 'contribute'
   get '/updates/show', to: 'updates#show', as:'updates_show'
   post '/updates/update', to: 'updates#update', as: 'updates'
 

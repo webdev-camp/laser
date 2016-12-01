@@ -5,6 +5,6 @@ class MainController < ApplicationController
   end
   def faq
   end
-  def ruby_for_newbies
+  def contribute
   end
 end
