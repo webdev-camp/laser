@@ -1,31 +1,41 @@
 .faq_content
   %h1 FAQ
-  %h2
-    Table of Contents
-  %p
-    %a{:href =>"#faq1"} What is a gem?
-  %p
-    %a{:href =>"#faq2"} No, really, what is a gem?
-  %p
-    %a{:href =>"#faq3"} Who made this?
+  %p= link_to "Who made this?" , "#who"
+  %p= link_to "Can i add a tag to gem?" , "#tag"
+  %p= link_to "Who are the owners of a gem?" , "#owners"
+  %p= link_to "How do you calculate the ranking?" , "#ranking"
+
 
   %h2 Answers
 
-  .q
-    %a{:name => "faq1"} What is a gem?
-  %p
-    A
-    %b gem
-    is a precious or semi-precious stone - especially when cut and polished or engraved.
-  .q
-    %a{:name => "faq2"}
-    No, really, what is a gem?
-  %p
-    A gem is a standard format for distributing Ruby programs and libraries.
-  .q
-    %a{:name => "faq3"}
+  .q#who
     Who made this?
   %p
-    You can read more about the developers on our
+    Laser was started by the first cohort (temple of code), at
+    = ext_link "Web Dev Camp," , "http://webdev.camp"
+    and is mainained as an open source project by Web Dev Camp.
+    Read more on the
     =link_to 'about us', about_path
     page.
+
+  .q#comment
+    Can i add a tag to gem?
+  %p
+    Currently only gem owners may add tags.
+
+  .q#owners
+    Who are the owners of a gem?
+  %p
+    RubyGems.org determines the primary owners of a gem. If a user log's in with the same
+    email (and verifies it), he will automatically be assigned as owner of his gems. Please
+    mail us if this is not so.
+    %br
+    Additionally, if the gem is hosted on github, persons with commit right to the repository
+    will also be considered owner.
+
+  .q#ranking
+    How do you calculate the ranking
+  %p
+    Ranking is calculated by weighing the different attributes and scaling to 100.
+    The exact algorithm is
+    = ext_link "here." , "https://github.com/webdev-camp/laser/blob/master/lib/ranking.rb#L42"

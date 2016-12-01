@@ -1,9 +1,9 @@
 .faq_content {
-  margin-left: span(2);
-  margin-right: span(2);
-  @include span(8 of 12);
+  @include container(90%);
   .q {
-    background-color: #ffcf96;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f0ad4e;
   }
 
 }
