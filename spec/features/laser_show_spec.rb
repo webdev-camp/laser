@@ -53,6 +53,13 @@ RSpec.describe "LaserGemsShow" do
     expect(page).to have_text(laser_gem.dependents.first.name)
   end
 
+  it "shows the laser git data" do
+    laser_gem = create :laser_gem_with_gem_git
+    visit laser_gem_path(laser_gem.name)
+    expect(page).to have_text("Forks")
+    expect(page).to have_text("Stargazers")
+  end
+
   it "shows the comment on the page" do
     laser_gem = sign_owner_in
     add_comment "I just added this comment" , laser_gem

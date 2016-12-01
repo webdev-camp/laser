@@ -4,7 +4,7 @@ FactoryGirl.define do
        "org/rubygit#{n}"
      end
      homepage "SomeHomepage"
-     last_commit 2001-02-03
+     last_commit (Time.now - Random.rand(50).days).to_date
      forks_count 6
      stargazers_count 6
      watchers_count 6

@@ -10,6 +10,12 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
+  it "index with item and git works" do
+    create :laser_gem_with_gem_git
+    visit laser_gems_path
+    expect(page.status_code).to be 200
+  end
+
   it "redirects for legacy url" do
     visit "/laser_gems"
     expect(page.status_code).to be 200
