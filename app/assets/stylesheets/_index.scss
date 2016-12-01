@@ -34,16 +34,16 @@
     }
   }
   .gem_element{
-    @include span(4);
+    @include gallery(4);
   }
   @media(max-width: 800px){
     .gem_element{
-      @include span(6);
+      @include gallery(6);
     }
   }
   @media(max-width: 500px){
     .gem_element{
-      @include span(12);
+      @include gallery(11.99);
     }
   }
   .infinite-scrolling{

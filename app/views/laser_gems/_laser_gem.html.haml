@@ -7,9 +7,9 @@
           = laser_gem.gem_spec.current_version
       .index-card-right
         %small.text-muted
-          %i.fa.fa-trophy.tipit{ :title => "Total rank for this gem"} 
+          %i.fa.fa-trophy.tipit{ :title => "Total rank for this gem"}
           = rank_to_i laser_gem
-    .card-block
+    .card-block.tipster
       %p.card-text
         %small.small_info
           = truncate(laser_gem.gem_spec.info, length: 90, separator: ' ', omission: '... ')

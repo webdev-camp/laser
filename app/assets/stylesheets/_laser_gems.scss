@@ -5,15 +5,6 @@
   .whole_info {
     display: none;
   }
-
-  &:hover{
-    .whole_info {
-      display: inline;
-    }
-    .small_info{
-      display: none;
-    }
-  }
   .card-left{
     @include span(8);
     text-align: justify;
