@@ -16,6 +16,8 @@ class LaserGem < ApplicationRecord
   has_many :ownerships
   has_many :owners, :through => :ownerships, :foreign_key => "laser_gem_id", :source => "owner"
 
+  belongs_to :category
+
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   default_scope { order(total_rank: :desc) }

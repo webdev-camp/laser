@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   devise_for :users, :controllers => {:confirmations => 'confirmations'}
   resources :announcements, except: :destroy
   match "gems", to: "laser_gems#index" , via: [:get, :post] , as: :laser_gems

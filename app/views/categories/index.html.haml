@@ -1,0 +1,21 @@
+%h1 Listing categories
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Gem No.
+      %th
+      %th
+
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.name
+        %td= category.laser_gems.count
+        %td= link_to 'Show', category
+        %td= link_to 'Edit', edit_category_path(category)
+
+%br
+
+= link_to 'New Category', new_category_path

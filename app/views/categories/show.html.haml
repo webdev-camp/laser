@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @category.name
+  (
+  = @category.laser_gems.count
+  )
+%p
+  - @category.laser_gems.each do |g|
+    =link_to_laser g
+
+= link_to 'Edit', edit_category_path(@category)
+\|
+= link_to 'Index', categories_path

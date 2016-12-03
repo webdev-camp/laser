@@ -1,0 +1,14 @@
+%h1 Editing category
+
+= render 'form'
+
+= link_to 'Cancel', @category
+\|
+= link_to 'Index', categories_path
+
+%br
+%br
+= if @category.laser_gems.count == 0
+  %p DANGER ZONE
+
+  = link_to 'Destroy', @category, :method => :delete, :data => { :confirm => 'Are you sure?' }

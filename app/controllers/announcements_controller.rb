@@ -53,10 +53,6 @@ class AnnouncementsController < ApplicationController
       @announcement = Announcement.find(params[:id])
     end
 
-    def require_admin_rights
-      redirect_to laser_gems_path unless current_user.admin?
-    end
-
     # Only allow a trusted parameter "white list" through.
     def announcement_params
       params.require(:announcement).permit(:title, :body)
