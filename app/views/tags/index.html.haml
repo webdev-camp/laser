@@ -1,0 +1,21 @@
+%h1 Listing tags
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Count
+      %th
+      %th
+
+  %tbody
+    - @tags.each do |tag|
+      %tr
+        %td= tag.name
+        %td= tag.taggings_count
+        %td= link_to 'Show', tag_path(tag)
+        %td= link_to 'Edit', edit_tag_path(tag)
+
+%br
+
+= link_to 'New Tag', new_tag_path

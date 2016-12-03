@@ -16,7 +16,6 @@ module LaserGemsHelper
   def related_gems laser_gem
     tag = laser_gem.taggings.collect{|t| t.tag}.sort{|t| t.taggings_count}.first
     return [] unless tag
-    puts "TAG #{tag.name}"
     LaserGem.tagged_with(tag.name).limit(15)
   end
 

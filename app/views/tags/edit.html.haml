@@ -1,0 +1,10 @@
+%h1 Editing tag
+
+= render 'form'
+
+= link_to 'Show', tag_path(@tag)
+\|
+= link_to 'Back', tags_path
+
+
+= link_to 'Destroy', destroy_tag_path(@tag) , :method => :delete, :data => { :confirm => 'Are you sure?' }
