@@ -212,6 +212,7 @@ RSpec.describe GitLoader do
       loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(laser_gem)
       @loader.fetch_and_create_gem_git(laser_gem)
+      laser_gem.reload
       @loader.fetch_commit_activity_year(laser_gem)
       laser_gem.reload
       expect((laser_gem.gem_git.commit_dates_year).any?).to be true
