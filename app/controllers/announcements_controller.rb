@@ -3,6 +3,8 @@ class AnnouncementsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update]
   before_action :require_admin_rights, only: [:new, :edit, :update]
 
+  impressionist
+
   # GET /announcements
   def index
     @announcements = Announcement.all

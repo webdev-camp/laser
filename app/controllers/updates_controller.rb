@@ -4,6 +4,8 @@ require "gem_loader"
 class UpdatesController < ApplicationController
   before_action :authenticate_user!
 
+  impressionist
+
   def show
   end
 

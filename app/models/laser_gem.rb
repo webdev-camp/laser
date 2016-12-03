@@ -20,6 +20,8 @@ class LaserGem < ApplicationRecord
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
+  is_impressionable
+
   default_scope { order(total_rank: :desc) }
 
   def home_page

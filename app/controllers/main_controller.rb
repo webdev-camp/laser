@@ -1,4 +1,7 @@
 class MainController < ApplicationController
+
+  impressionist
+
   def home
   end
   def about

@@ -3,6 +3,8 @@ class LaserGemsController < ApplicationController
   before_action :load_gem ,            only: [:show ,   :add_tag , :add_comment]
   before_action :require_owner_rights, only: [:add_tag , :add_comment]
 
+  impressionist actions: [ :index , :add_tag , :add_comment ]
+
   # GET /laser_gems
   def index
     @q = LaserGem.includes(:gem_spec , :gem_git, :taggings => :tag).ransack(params[:q])
@@ -17,6 +19,7 @@ class LaserGemsController < ApplicationController
   # GET /laser_gems/gem_name
   def show
     redirect_to(root_path) unless @laser_gem
+    impressionist(@laser_gem) if @laser_gem
   end
 
   def add_tag

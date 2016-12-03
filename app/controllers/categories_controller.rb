@@ -3,6 +3,8 @@ class CategoriesController < ApplicationController
 
   before_action :require_admin_rights, only: [:new, :edit, :update , :destroy]
 
+  impressionist
+
   def index
     @categories = Category.all
   end
