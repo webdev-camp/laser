@@ -13,7 +13,8 @@
       %p.card-text
         %small.small_info
           = truncate(laser_gem.gem_spec.info, length: 90, separator: ' ', omission: '... ')
-        .whole_info= laser_gem.gem_spec.info
+        .whole_info
+          = truncate(laser_gem.gem_spec.info, length: 300, separator: ' ')
         - if laser_gem.gem_git
           %p.card-text.text-xs-center
             .graph_box
