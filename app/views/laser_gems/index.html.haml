@@ -3,12 +3,13 @@
     .card
       .card-block
         .searchbox
-          = search_form_for @q, method: :get  do |f|
-            = f.search_field :gem_spec_name_or_gem_spec_info_cont , placeholder: "Search Text" , autofocus: true
-            = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag"
-            = f.submit
-            %span.text-muted
-              = pluralize(@laser_count.count, "gem", plural: "gems")
+          = search_form_for @q, method: :get  , class: "form-inline" do |f|
+            .form_group
+              = f.search_field :gem_spec_name_or_gem_spec_info_cont , placeholder: "Search Text" , autofocus: true , class: "form-control"
+              = f.search_field :taggings_tag_name_eq , placeholder: "Search by tag", class: "form-control"
+              = f.button "Search" , :value => "Search" ,  class: :btn
+              %span.text-muted
+                = pluralize(@laser_count.count, "gem", plural: "gems")
         .order
           Sort:
           = sort_link(@q, "total_rank" , default_order: :desc) do

@@ -96,7 +96,7 @@ RSpec.describe "LaserGems" do
     create :laser_gem_with_tags
     visit laser_gems_path
     page.fill_in 'q_taggings_tag_name_eq', :with => 'tag' + 'akjsdhgkjasd'
-    page.find('input[name="commit"]').click
+    page.find('button[type="submit"]').click
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
     expect(gem_elements.length).to be 0
@@ -106,7 +106,7 @@ RSpec.describe "LaserGems" do
     create :laser_gem_with_tags
     visit laser_gems_path
     page.fill_in 'q_taggings_tag_name_eq', :with => 'tag'[0,2]
-    page.find('input[name="commit"]').click
+    page.find('button[type="submit"]').click
     expect(page.status_code).to be 200
     gem_elements = page.find_all('.gem_element')
     expect(gem_elements.length).to be 0

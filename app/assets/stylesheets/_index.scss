@@ -12,19 +12,21 @@
     @include span(12);
     padding-bottom: 2em;
     .searchbox{
-      @include span(8);
+      @include span(8.6);
       span.text-muted{
         white-space: nowrap;
       }
     }
     .order{
-      @include span(4);
+      @include span(3.4);
+      padding-top: 4px;
       text-align: right;
       .tipit{
         margin-left: 10px
       }
+
     }
-    @media(max-width: 950px){
+    @media(max-width: 1000px){
       .searchbox{
         @include span(12);
       }
