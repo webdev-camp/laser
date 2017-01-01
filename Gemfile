@@ -58,6 +58,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'puma'
+  gem "rb-readline"
 end
 
 group :test do
