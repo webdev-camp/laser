@@ -24,6 +24,7 @@ module Laser
     # -- all .rb files in that directory are automatically loaded.
     config.assets.paths << Gem.loaded_specs['susy'].full_gem_path+'/sass'
     config.assets.paths << Gem.loaded_specs['breakpoint'].full_gem_path+'/stylesheets'
-  config.active_job.queue_adapter = :sucker_punch
+
+    config.active_job.queue_adapter = Rails.env.production? ? :sidekiq : :async
   end
 end

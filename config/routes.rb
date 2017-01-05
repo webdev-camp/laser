@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   resources :tags
   resources :categories
@@ -21,4 +23,7 @@ Rails.application.routes.draw do
   get '/laser_gems',to: redirect("/gems")
   get '/laser_gem/:id',   to: redirect { |params, req| "/gem/#{params[:id]}" }
 
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/karate'
+  end
 end

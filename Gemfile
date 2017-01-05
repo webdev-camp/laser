@@ -36,7 +36,7 @@ gem 'will_paginate-bootstrap4'
 
 gem 'ransack'
 
-gem 'sucker_punch', '~> 2.0'
+gem "sidekiq"
 
 gem "impressionist"
 
