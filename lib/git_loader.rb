@@ -79,26 +79,21 @@ class GitLoader
   end
 
   def parse_additional_uris(laser_gem)
-    if laser_gem.gem_spec[:homepage_uri]
-      uri = laser_gem.gem_spec[:homepage_uri]
-      matches = matcher(uri)
-      if matches
-        return matches[1] unless get_git_from_api(matches[1]) == nil
-      end
+    candidates = github_repo_name_candidates(laser_gem)
+    candidates.find do |c|
+      get_git_from_api(c)
     end
-    if laser_gem.gem_spec[:documentation_uri]
-      uri = laser_gem.gem_spec[:documentation_uri]
+  end
+
+
+  def github_repo_name_candidates(laser_gem)
+    return [] unless laser_gem.gem_spec
+    candidates = [:homepage_uri, :documentation_uri, :bug_tracker_uri]
+    candidates.map do |cand|
+      uri = laser_gem.gem_spec[cand]
       matches = matcher(uri)
-      if matches
-        return matches[1] unless get_git_from_api(matches[1]) == nil
-      end
-    end
-    if laser_gem.gem_spec[:bug_tracker_uri]
-      uri = laser_gem.gem_spec[:bug_tracker_uri]
-      matches = matcher(uri)
-      return matches[1] if matches
-    else return nil
-    end
+      matches[1] if matches
+    end.select { |c| c != nil }
   end
 
   def fetch_and_create_gem_git(laser_gem)
@@ -120,36 +115,6 @@ class GitLoader
       fetch_and_create_gem_git(dep) if dep.gem_git.nil?
     end
   end
-
-  def get_commits_from_api(repo_name)
-    begin
-      return @client.commits(repo_name)
-    rescue Octokit::NotFound # => not_found
-      puts "Not found #{repo_name}"
-    rescue Faraday::ConnectionFailed #=> offline
-      puts "Oops, something is offline #{repo_name}"
-    rescue Exception => e
-      puts e.message
-      puts "Exception #{repo_name}"
-    end
-    return nil
-  end
-
-  def get_commit_activity_year(repo_name)
-    begin
-      # sleep(1)
-      return @client.commit_activity_stats(repo_name)
-    rescue Octokit::NotFound # => not_found
-      puts "Not found #{repo_name}"
-    rescue Faraday::ConnectionFailed #=> offline
-      puts "Oops something is offline #{repo_name}"
-    rescue Exception => e
-      puts e.message
-      puts "Exception #{repo_name}"
-    end
-    return nil
-  end
-
 
   # helper to add year of commits per week to db for each gem.
   def fetch_commits_for_all
@@ -198,7 +163,7 @@ class GitLoader
         laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
         laser_gem.gem_git.reload
       end
-        fetch_commit_activity_year(laser_gem)
+      fetch_commit_activity_year(laser_gem)
     end
   end
 

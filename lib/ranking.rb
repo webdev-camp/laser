@@ -35,6 +35,7 @@ class Ranking
   def total_rank_position
     _t = LaserGem.all.count
     n = @laser_gem.total_rank
+    #TODO make sure to change htis to remove nil from rank_array because cannot sort otherwise - float cannot be compared to nil
     rank_array = LaserGem.all.pluck(:total_rank).sort.reverse
     (rank_array.index(n) + 1)
   end

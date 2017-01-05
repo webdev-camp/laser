@@ -258,4 +258,39 @@ RSpec.describe GitLoader do
       expect(Ownership.where(["laser_gem_id = ?", laser_gem.id]).any?).to be true
     end
   end
+
+  describe "#github_repo_name_candidates" do
+    before :example do
+      @loader = GitLoader.new
+    end
+    it "returns empty array if no gem_spec" do
+      laser_gem = LaserGem.new(name: "tzinfo")
+      expect(@loader.github_repo_name_candidates(laser_gem)).to eq []
+    end
+    it "returns empty array if gem_spec has no uris" do
+      laser_gem = LaserGem.new(name: "tzinfo")
+      laser_gem.gem_spec = GemSpec.new
+      expect(@loader.github_repo_name_candidates(laser_gem)).to eq []
+    end
+    it "returns empty array if gem_spec has no valid uris" do
+      laser_gem = LaserGem.new(name: "tzinfo")
+      laser_gem.gem_spec = GemSpec.new(
+        homepage_uri: 'twinkle',
+      )
+      expect(@loader.github_repo_name_candidates(laser_gem)).to eq []
+    end
+
+    it "returns array of valid repo names if any field has a valid uri" do
+      laser_gem = LaserGem.new(name: "tzinfo")
+      laser_gem.gem_spec = GemSpec.new(
+        homepage_uri: 'www.github.com/home/uri',
+        documentation_uri: 'www.github.com/docs/uri#README',
+        bug_tracker_uri: 'www.github.com/home/project/issues',
+      )
+      expect(@loader.github_repo_name_candidates(laser_gem)).to eq [
+        "home/uri", "docs/uri", "home/project" 
+      ]
+    end
+  end
+
 end
