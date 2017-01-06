@@ -7,7 +7,7 @@ gem 'sqlite3'
 gem 'sassc-rails'
 gem 'haml-rails'
 
-gem 'gems', '~> 0.8.3'
+gem 'gems', github: "rubygems/gems"
 gem "octokit", "~> 4.0"
 
 gem 'susy'
@@ -47,6 +47,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "capybara"
   gem 'pry-rails'
+  gem 'vcr'
+  gem "webmock"
 end
 
 group :development do
