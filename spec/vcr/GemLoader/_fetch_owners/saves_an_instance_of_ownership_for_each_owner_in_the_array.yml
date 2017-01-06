@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/rails/owners.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - da76ce7c-1b91-43af-a346-529043b50a99
+      X-Runtime:
+      - '0.006402'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 06 Jan 2017 16:26:41 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7021-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483720001.518330,VS0,VE189
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"06fe11cd6097dff898f6ec34b0896d05"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":71398,"handle":"kaspth","email":"kaspth@gmail.com"},{"id":528,"handle":"matthewd","email":"matthew@trebex.net"},{"id":939,"handle":"senny","email":"yves.senn@gmail.com"},{"id":59702,"handle":"chancancode","email":"godfreykfc@gmail.com"},{"id":662,"handle":"pixeltrix","email":"andyw@pixeltrix.co.uk"},{"id":337,"handle":null,"email":"jeremy@bitsweat.net"},{"id":1550,"handle":"webster132","email":"david@loudthinking.com"},{"id":32977,"handle":"fxn","email":"fxn@hashref.com"},{"id":207,"handle":"tenderlove","email":"aaron.patterson@gmail.com"},{"id":840,"handle":"spastorino","email":"santiago@wyeworks.com"},{"id":429,"handle":"cantoniodasilva","email":"carlosantoniodasilva@gmail.com"},{"id":43998,"handle":"guilleiguaran","email":"guilleiguaran@gmail.com"},{"id":47349,"handle":"rafaelfranca","email":"rafaelmfranca@gmail.com"}]'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 16:26:41 GMT
+recorded_with: VCR 3.0.3

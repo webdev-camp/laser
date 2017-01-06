@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/tzinfo/tzinfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 16:28:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4731'
+      X-Ratelimit-Reset:
+      - '1483720686'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"f70934b2e61c061f0debdf790368ba63"
+      Last-Modified:
+      - Wed, 14 Dec 2016 08:13:52 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 46808ddc41c302090177e58148908b23
+      X-Github-Request-Id:
+      - 554C962E:1D3B:4CD3835:586FC595
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":11879463,"name":"tzinfo","full_name":"tzinfo/tzinfo","owner":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/tzinfo/tzinfo","description":"TZInfo
+        - Ruby Timezone Library","fork":false,"url":"https://api.github.com/repos/tzinfo/tzinfo","forks_url":"https://api.github.com/repos/tzinfo/tzinfo/forks","keys_url":"https://api.github.com/repos/tzinfo/tzinfo/keys{/key_id}","collaborators_url":"https://api.github.com/repos/tzinfo/tzinfo/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/tzinfo/tzinfo/teams","hooks_url":"https://api.github.com/repos/tzinfo/tzinfo/hooks","issue_events_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/events{/number}","events_url":"https://api.github.com/repos/tzinfo/tzinfo/events","assignees_url":"https://api.github.com/repos/tzinfo/tzinfo/assignees{/user}","branches_url":"https://api.github.com/repos/tzinfo/tzinfo/branches{/branch}","tags_url":"https://api.github.com/repos/tzinfo/tzinfo/tags","blobs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/tzinfo/tzinfo/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/refs{/sha}","trees_url":"https://api.github.com/repos/tzinfo/tzinfo/git/trees{/sha}","statuses_url":"https://api.github.com/repos/tzinfo/tzinfo/statuses/{sha}","languages_url":"https://api.github.com/repos/tzinfo/tzinfo/languages","stargazers_url":"https://api.github.com/repos/tzinfo/tzinfo/stargazers","contributors_url":"https://api.github.com/repos/tzinfo/tzinfo/contributors","subscribers_url":"https://api.github.com/repos/tzinfo/tzinfo/subscribers","subscription_url":"https://api.github.com/repos/tzinfo/tzinfo/subscription","commits_url":"https://api.github.com/repos/tzinfo/tzinfo/commits{/sha}","git_commits_url":"https://api.github.com/repos/tzinfo/tzinfo/git/commits{/sha}","comments_url":"https://api.github.com/repos/tzinfo/tzinfo/comments{/number}","issue_comment_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/comments{/number}","contents_url":"https://api.github.com/repos/tzinfo/tzinfo/contents/{+path}","compare_url":"https://api.github.com/repos/tzinfo/tzinfo/compare/{base}...{head}","merges_url":"https://api.github.com/repos/tzinfo/tzinfo/merges","archive_url":"https://api.github.com/repos/tzinfo/tzinfo/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/tzinfo/tzinfo/downloads","issues_url":"https://api.github.com/repos/tzinfo/tzinfo/issues{/number}","pulls_url":"https://api.github.com/repos/tzinfo/tzinfo/pulls{/number}","milestones_url":"https://api.github.com/repos/tzinfo/tzinfo/milestones{/number}","notifications_url":"https://api.github.com/repos/tzinfo/tzinfo/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/tzinfo/tzinfo/labels{/name}","releases_url":"https://api.github.com/repos/tzinfo/tzinfo/releases{/id}","deployments_url":"https://api.github.com/repos/tzinfo/tzinfo/deployments","created_at":"2013-08-04T14:08:00Z","updated_at":"2016-12-14T08:13:52Z","pushed_at":"2017-01-04T23:50:59Z","git_url":"git://github.com/tzinfo/tzinfo.git","ssh_url":"git@github.com:tzinfo/tzinfo.git","clone_url":"https://github.com/tzinfo/tzinfo.git","svn_url":"https://github.com/tzinfo/tzinfo","homepage":"","size":7566,"stargazers_count":177,"watchers_count":177,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":38,"mirror_url":null,"open_issues_count":0,"forks":38,"open_issues":0,"watchers":177,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"network_count":38,"subscribers_count":14}'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 16:28:05 GMT
+recorded_with: VCR 3.0.3
