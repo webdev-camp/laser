@@ -48,9 +48,9 @@ http_interactions:
       Cache-Control:
       - private
       X-Request-Id:
-      - 3702e9ca-2f20-4874-82ef-b142b89b9c2a
+      - b5a4661d-1587-497d-8cd6-be35d2bc0822
       X-Runtime:
-      - '0.012630'
+      - '0.016681'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -60,7 +60,7 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:52 GMT
+      - Fri, 06 Jan 2017 17:11:23 GMT
       Via:
       - 1.1 varnish
       Age:
@@ -68,17 +68,17 @@ http_interactions:
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7023-BMA
+      - cache-bma7031-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483722592.746597,VS0,VE204
+      - S1483722683.402779,VS0,VE210
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"f3c57615c00d5a8150b314fd6858df7c"'
+      - '"e0f7507515d28cb79f24fcbd1da959f6"'
       Server:
       - RubyGems.org
     body:
@@ -111,7 +111,7 @@ http_interactions:
           - name: thread_safe
             requirements: "~> 0.1"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:52 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:23 GMT
 - request:
     method: get
     uri: https://rubygems.org/api/v1/versions/tzinfo.yaml
@@ -170,21 +170,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
+      - Fri, 06 Jan 2017 17:11:23 GMT
       Via:
       - 1.1 varnish
       Age:
-      - '41'
+      - '132'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7025-BMA
+      - cache-bma7030-BMA
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '1'
+      - '3'
       X-Timer:
-      - S1483722593.115352,VS0,VE0
+      - S1483722683.789242,VS0,VE0
       Vary:
       - Accept-Encoding,Fastly-SSL
       Server:
@@ -625,7 +625,7 @@ http_interactions:
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
         false\n  licenses: \n  requirements: \n  sha: 859413ad1026e079713dbf097cdd329cea09db6ef3ba10fc012718c849d09f33\n"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:23 GMT
 - request:
     method: get
     uri: https://rubygems.org/api/v1/gems/tzinfo/owners.yaml
@@ -668,9 +668,9 @@ http_interactions:
       Cache-Control:
       - private
       X-Request-Id:
-      - b86d9889-fdf0-46a4-a69a-9383b6b2c250
+      - 82fbaf6a-66cd-4b77-bcdf-41e210c4dacd
       X-Runtime:
-      - '0.006438'
+      - '0.005650'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -680,23 +680,25 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
+      - Fri, 06 Jan 2017 17:11:24 GMT
       Via:
       - 1.1 varnish
+      Age:
+      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7035-BMA
+      - cache-bma7024-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483722593.281447,VS0,VE198
+      - S1483722683.979526,VS0,VE196
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"a169add97eb31e403b646b88f8817832"'
+      - '"841cab13c698a6b7e037cf8ba7e31e87"'
       Server:
       - RubyGems.org
     body:
@@ -706,7 +708,7 @@ http_interactions:
         - id: 2981
           handle: PhilRoss
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:24 GMT
 - request:
     method: get
     uri: https://rubygems.org/api/v1/gems/thread_safe.yaml
@@ -755,9 +757,9 @@ http_interactions:
       Cache-Control:
       - private
       X-Request-Id:
-      - 68352ab6-85d0-4210-be46-4cf0cb30d0b7
+      - 885f3a6f-0869-4f8f-bd02-01c29da6bea1
       X-Runtime:
-      - '0.012599'
+      - '0.016379'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -767,23 +769,25 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
+      - Fri, 06 Jan 2017 17:11:24 GMT
       Via:
       - 1.1 varnish
+      Age:
+      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7029-BMA
+      - cache-bma7022-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483722593.627327,VS0,VE205
+      - S1483722684.353760,VS0,VE208
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"b84f32f8d998249c9d957b3be488c578"'
+      - '"354dbfacf29a9ec91eb04e97c553d95b"'
       Server:
       - RubyGems.org
     body:
@@ -819,7 +823,7 @@ http_interactions:
             requirements: ">= 0"
           runtime: []
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:24 GMT
 - request:
     method: get
     uri: https://rubygems.org/api/v1/versions/thread_safe.yaml
@@ -866,9 +870,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - ba2a5935-2d73-4baf-99dc-4d39c85a9b28
+      - 255cf5ba-7d04-4415-921f-9d4bd6bcd4b4
       X-Runtime:
-      - '0.050812'
+      - '0.036317'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -878,11 +882,11 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
+      - Fri, 06 Jan 2017 17:11:24 GMT
       Via:
       - 1.1 varnish
       Age:
-      - '39'
+      - '63'
       Connection:
       - keep-alive
       X-Served-By:
@@ -890,9 +894,9 @@ http_interactions:
       X-Cache:
       - HIT
       X-Cache-Hits:
-      - '1'
+      - '2'
       X-Timer:
-      - S1483722593.976477,VS0,VE0
+      - S1483722684.711540,VS0,VE0
       Vary:
       - Accept-Encoding,Fastly-SSL
       Server:
@@ -1051,7 +1055,7 @@ http_interactions:
         \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
         \n  prerelease: false\n  licenses: \n  requirements: \n  sha: b1f7dfeb8bc765e421a90836c6a7e7dbe587abe238b2f660a89c6ad6e8e4975d\n"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:24 GMT
 - request:
     method: get
     uri: https://rubygems.org/api/v1/gems/thread_safe/owners.yaml
@@ -1094,9 +1098,9 @@ http_interactions:
       Cache-Control:
       - private
       X-Request-Id:
-      - 5776811b-be01-427f-b300-0e8976754047
+      - 948516aa-278b-4306-8553-622214042a73
       X-Runtime:
-      - '0.004898'
+      - '0.005253'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -1106,23 +1110,25 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:54 GMT
+      - Fri, 06 Jan 2017 17:11:25 GMT
       Via:
       - 1.1 varnish
+      Age:
+      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7020-BMA
+      - cache-bma7031-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483722594.166931,VS0,VE195
+      - S1483722684.919087,VS0,VE197
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"d7967a42c27e9c5021f2d724da2703a1"'
+      - '"0e92dc1143a385c7b00f5c1875516a41"'
       Server:
       - RubyGems.org
     body:
@@ -1138,117 +1144,514 @@ http_interactions:
           handle: thedarkone
           email: thedarkone2@gmail.com
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:54 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:25 GMT
 - request:
     method: get
-    uri: https://rubygems.org/api/v1/gems/tzinfo.yaml
+    uri: https://api.github.com/repos/tzinfo/tzinfo
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:25 GMT
       Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - 999d38a4-5b11-4a3f-8d25-f47419504f67
-      X-Runtime:
-      - '0.014142'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:54 GMT
-      Via:
-      - 1.1 varnish
-      Age:
-      - '0'
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7020-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722594.531509,VS0,VE205
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4661'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
       Vary:
-      - Accept-Encoding,Fastly-SSL
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
       Etag:
-      - '"ea6299c8b85e5f1b6146eae712e165c0"'
-      Server:
-      - RubyGems.org
+      - W/"f70934b2e61c061f0debdf790368ba63"
+      Last-Modified:
+      - Wed, 14 Dec 2016 08:13:52 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - edf23fdc48375d9066b698b8d98062e9
+      X-Github-Request-Id:
+      - 554C962E:1D3B:4D3E7C6:586FCFBD
     body:
       encoding: ASCII-8BIT
-      string: |
-        ---
-        name: tzinfo
-        downloads: 99085899
-        version: 1.2.2
-        version_downloads: 46588325
-        platform: ruby
-        authors: Philip Ross
-        info: TZInfo provides daylight savings aware transformations between times in different
-          time zones.
-        licenses:
-        - MIT
-        metadata: {}
-        sha: fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0
-        project_uri: https://rubygems.org/gems/tzinfo
-        gem_uri: https://rubygems.org/gems/tzinfo-1.2.2.gem
-        homepage_uri: http://tzinfo.github.io
-        wiki_uri: ''
-        documentation_uri: http://www.rubydoc.info/gems/tzinfo/1.2.2
-        mailing_list_uri: http://rubyforge.org/mail/?group_id=894
-        source_code_uri: https://github.com/tzinfo/tzinfo
-        bug_tracker_uri: https://github.com/tzinfo/tzinfo/issues
-        dependencies:
-          development: []
-          runtime:
-          - name: thread_safe
-            requirements: "~> 0.1"
+      string: '{"id":11879463,"name":"tzinfo","full_name":"tzinfo/tzinfo","owner":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/tzinfo/tzinfo","description":"TZInfo
+        - Ruby Timezone Library","fork":false,"url":"https://api.github.com/repos/tzinfo/tzinfo","forks_url":"https://api.github.com/repos/tzinfo/tzinfo/forks","keys_url":"https://api.github.com/repos/tzinfo/tzinfo/keys{/key_id}","collaborators_url":"https://api.github.com/repos/tzinfo/tzinfo/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/tzinfo/tzinfo/teams","hooks_url":"https://api.github.com/repos/tzinfo/tzinfo/hooks","issue_events_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/events{/number}","events_url":"https://api.github.com/repos/tzinfo/tzinfo/events","assignees_url":"https://api.github.com/repos/tzinfo/tzinfo/assignees{/user}","branches_url":"https://api.github.com/repos/tzinfo/tzinfo/branches{/branch}","tags_url":"https://api.github.com/repos/tzinfo/tzinfo/tags","blobs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/tzinfo/tzinfo/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/refs{/sha}","trees_url":"https://api.github.com/repos/tzinfo/tzinfo/git/trees{/sha}","statuses_url":"https://api.github.com/repos/tzinfo/tzinfo/statuses/{sha}","languages_url":"https://api.github.com/repos/tzinfo/tzinfo/languages","stargazers_url":"https://api.github.com/repos/tzinfo/tzinfo/stargazers","contributors_url":"https://api.github.com/repos/tzinfo/tzinfo/contributors","subscribers_url":"https://api.github.com/repos/tzinfo/tzinfo/subscribers","subscription_url":"https://api.github.com/repos/tzinfo/tzinfo/subscription","commits_url":"https://api.github.com/repos/tzinfo/tzinfo/commits{/sha}","git_commits_url":"https://api.github.com/repos/tzinfo/tzinfo/git/commits{/sha}","comments_url":"https://api.github.com/repos/tzinfo/tzinfo/comments{/number}","issue_comment_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/comments{/number}","contents_url":"https://api.github.com/repos/tzinfo/tzinfo/contents/{+path}","compare_url":"https://api.github.com/repos/tzinfo/tzinfo/compare/{base}...{head}","merges_url":"https://api.github.com/repos/tzinfo/tzinfo/merges","archive_url":"https://api.github.com/repos/tzinfo/tzinfo/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/tzinfo/tzinfo/downloads","issues_url":"https://api.github.com/repos/tzinfo/tzinfo/issues{/number}","pulls_url":"https://api.github.com/repos/tzinfo/tzinfo/pulls{/number}","milestones_url":"https://api.github.com/repos/tzinfo/tzinfo/milestones{/number}","notifications_url":"https://api.github.com/repos/tzinfo/tzinfo/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/tzinfo/tzinfo/labels{/name}","releases_url":"https://api.github.com/repos/tzinfo/tzinfo/releases{/id}","deployments_url":"https://api.github.com/repos/tzinfo/tzinfo/deployments","created_at":"2013-08-04T14:08:00Z","updated_at":"2016-12-14T08:13:52Z","pushed_at":"2017-01-04T23:50:59Z","git_url":"git://github.com/tzinfo/tzinfo.git","ssh_url":"git@github.com:tzinfo/tzinfo.git","clone_url":"https://github.com/tzinfo/tzinfo.git","svn_url":"https://github.com/tzinfo/tzinfo","homepage":"","size":7566,"stargazers_count":177,"watchers_count":177,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":38,"mirror_url":null,"open_issues_count":0,"forks":38,"open_issues":0,"watchers":177,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"network_count":38,"subscribers_count":14}'
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:54 GMT
+  recorded_at: Fri, 06 Jan 2017 17:11:25 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/tzinfo/tzinfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4660'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"f70934b2e61c061f0debdf790368ba63"
+      Last-Modified:
+      - Wed, 14 Dec 2016 08:13:52 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e724c57ebb9961c772a91e2dd7421c8d
+      X-Github-Request-Id:
+      - 554C962E:1D39:26EA452:586FCFBE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":11879463,"name":"tzinfo","full_name":"tzinfo/tzinfo","owner":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/tzinfo/tzinfo","description":"TZInfo
+        - Ruby Timezone Library","fork":false,"url":"https://api.github.com/repos/tzinfo/tzinfo","forks_url":"https://api.github.com/repos/tzinfo/tzinfo/forks","keys_url":"https://api.github.com/repos/tzinfo/tzinfo/keys{/key_id}","collaborators_url":"https://api.github.com/repos/tzinfo/tzinfo/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/tzinfo/tzinfo/teams","hooks_url":"https://api.github.com/repos/tzinfo/tzinfo/hooks","issue_events_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/events{/number}","events_url":"https://api.github.com/repos/tzinfo/tzinfo/events","assignees_url":"https://api.github.com/repos/tzinfo/tzinfo/assignees{/user}","branches_url":"https://api.github.com/repos/tzinfo/tzinfo/branches{/branch}","tags_url":"https://api.github.com/repos/tzinfo/tzinfo/tags","blobs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/tzinfo/tzinfo/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/tzinfo/tzinfo/git/refs{/sha}","trees_url":"https://api.github.com/repos/tzinfo/tzinfo/git/trees{/sha}","statuses_url":"https://api.github.com/repos/tzinfo/tzinfo/statuses/{sha}","languages_url":"https://api.github.com/repos/tzinfo/tzinfo/languages","stargazers_url":"https://api.github.com/repos/tzinfo/tzinfo/stargazers","contributors_url":"https://api.github.com/repos/tzinfo/tzinfo/contributors","subscribers_url":"https://api.github.com/repos/tzinfo/tzinfo/subscribers","subscription_url":"https://api.github.com/repos/tzinfo/tzinfo/subscription","commits_url":"https://api.github.com/repos/tzinfo/tzinfo/commits{/sha}","git_commits_url":"https://api.github.com/repos/tzinfo/tzinfo/git/commits{/sha}","comments_url":"https://api.github.com/repos/tzinfo/tzinfo/comments{/number}","issue_comment_url":"https://api.github.com/repos/tzinfo/tzinfo/issues/comments{/number}","contents_url":"https://api.github.com/repos/tzinfo/tzinfo/contents/{+path}","compare_url":"https://api.github.com/repos/tzinfo/tzinfo/compare/{base}...{head}","merges_url":"https://api.github.com/repos/tzinfo/tzinfo/merges","archive_url":"https://api.github.com/repos/tzinfo/tzinfo/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/tzinfo/tzinfo/downloads","issues_url":"https://api.github.com/repos/tzinfo/tzinfo/issues{/number}","pulls_url":"https://api.github.com/repos/tzinfo/tzinfo/pulls{/number}","milestones_url":"https://api.github.com/repos/tzinfo/tzinfo/milestones{/number}","notifications_url":"https://api.github.com/repos/tzinfo/tzinfo/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/tzinfo/tzinfo/labels{/name}","releases_url":"https://api.github.com/repos/tzinfo/tzinfo/releases{/id}","deployments_url":"https://api.github.com/repos/tzinfo/tzinfo/deployments","created_at":"2013-08-04T14:08:00Z","updated_at":"2016-12-14T08:13:52Z","pushed_at":"2017-01-04T23:50:59Z","git_url":"git://github.com/tzinfo/tzinfo.git","ssh_url":"git@github.com:tzinfo/tzinfo.git","clone_url":"https://github.com/tzinfo/tzinfo.git","svn_url":"https://github.com/tzinfo/tzinfo","homepage":"","size":7566,"stargazers_count":177,"watchers_count":177,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":38,"mirror_url":null,"open_issues_count":0,"forks":38,"open_issues":0,"watchers":177,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"tzinfo","id":2209790,"avatar_url":"https://avatars.githubusercontent.com/u/2209790?v=3","gravatar_id":"","url":"https://api.github.com/users/tzinfo","html_url":"https://github.com/tzinfo","followers_url":"https://api.github.com/users/tzinfo/followers","following_url":"https://api.github.com/users/tzinfo/following{/other_user}","gists_url":"https://api.github.com/users/tzinfo/gists{/gist_id}","starred_url":"https://api.github.com/users/tzinfo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tzinfo/subscriptions","organizations_url":"https://api.github.com/users/tzinfo/orgs","repos_url":"https://api.github.com/users/tzinfo/repos","events_url":"https://api.github.com/users/tzinfo/events{/privacy}","received_events_url":"https://api.github.com/users/tzinfo/received_events","type":"Organization","site_admin":false},"network_count":38,"subscribers_count":14}'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:26 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/tzinfo/tzinfo/assignees?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4659'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"d73b69d3fc7315eacb0126146f36cf2b"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - bd82876e9bf04990f289ba22f246ee9b
+      X-Github-Request-Id:
+      - 554C962E:1D3E:4761DF4:586FCFBE
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"philr","id":190067,"avatar_url":"https://avatars.githubusercontent.com/u/190067?v=3","gravatar_id":"","url":"https://api.github.com/users/philr","html_url":"https://github.com/philr","followers_url":"https://api.github.com/users/philr/followers","following_url":"https://api.github.com/users/philr/following{/other_user}","gists_url":"https://api.github.com/users/philr/gists{/gist_id}","starred_url":"https://api.github.com/users/philr/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/philr/subscriptions","organizations_url":"https://api.github.com/users/philr/orgs","repos_url":"https://api.github.com/users/philr/repos","events_url":"https://api.github.com/users/philr/events{/privacy}","received_events_url":"https://api.github.com/users/philr/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:27 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/ruby-concurrency/thread_safe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4658'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"625c9e10258656c9031986511e241a58"
+      Last-Modified:
+      - Thu, 05 Jan 2017 03:24:50 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e183f7c661b1bbc2c987b3c4dc7b04e0
+      X-Github-Request-Id:
+      - 554C962E:1D3E:4761E64:586FCFBF
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":20579727,"name":"thread_safe","full_name":"ruby-concurrency/thread_safe","owner":{"login":"ruby-concurrency","id":5462766,"avatar_url":"https://avatars.githubusercontent.com/u/5462766?v=3","gravatar_id":"","url":"https://api.github.com/users/ruby-concurrency","html_url":"https://github.com/ruby-concurrency","followers_url":"https://api.github.com/users/ruby-concurrency/followers","following_url":"https://api.github.com/users/ruby-concurrency/following{/other_user}","gists_url":"https://api.github.com/users/ruby-concurrency/gists{/gist_id}","starred_url":"https://api.github.com/users/ruby-concurrency/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ruby-concurrency/subscriptions","organizations_url":"https://api.github.com/users/ruby-concurrency/orgs","repos_url":"https://api.github.com/users/ruby-concurrency/repos","events_url":"https://api.github.com/users/ruby-concurrency/events{/privacy}","received_events_url":"https://api.github.com/users/ruby-concurrency/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/ruby-concurrency/thread_safe","description":"[DEPRECATED]
+        Thread-safe collections for Ruby (merged with concurrent-ruby)","fork":false,"url":"https://api.github.com/repos/ruby-concurrency/thread_safe","forks_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/forks","keys_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/keys{/key_id}","collaborators_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/teams","hooks_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/hooks","issue_events_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues/events{/number}","events_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/events","assignees_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/assignees{/user}","branches_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/branches{/branch}","tags_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/tags","blobs_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/refs{/sha}","trees_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/trees{/sha}","statuses_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/statuses/{sha}","languages_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/languages","stargazers_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/stargazers","contributors_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/contributors","subscribers_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/subscribers","subscription_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/subscription","commits_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/commits{/sha}","git_commits_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/commits{/sha}","comments_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/comments{/number}","issue_comment_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues/comments{/number}","contents_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/contents/{+path}","compare_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/compare/{base}...{head}","merges_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/merges","archive_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/downloads","issues_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues{/number}","pulls_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/pulls{/number}","milestones_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/milestones{/number}","notifications_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/labels{/name}","releases_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/releases{/id}","deployments_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/deployments","created_at":"2014-06-06T22:13:43Z","updated_at":"2017-01-05T03:24:50Z","pushed_at":"2017-01-06T13:25:31Z","git_url":"git://github.com/ruby-concurrency/thread_safe.git","ssh_url":"git@github.com:ruby-concurrency/thread_safe.git","clone_url":"https://github.com/ruby-concurrency/thread_safe.git","svn_url":"https://github.com/ruby-concurrency/thread_safe","homepage":"http://concurrent-ruby.com","size":547,"stargazers_count":186,"watchers_count":186,"language":"Java","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":16,"mirror_url":null,"open_issues_count":4,"forks":16,"open_issues":4,"watchers":186,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"ruby-concurrency","id":5462766,"avatar_url":"https://avatars.githubusercontent.com/u/5462766?v=3","gravatar_id":"","url":"https://api.github.com/users/ruby-concurrency","html_url":"https://github.com/ruby-concurrency","followers_url":"https://api.github.com/users/ruby-concurrency/followers","following_url":"https://api.github.com/users/ruby-concurrency/following{/other_user}","gists_url":"https://api.github.com/users/ruby-concurrency/gists{/gist_id}","starred_url":"https://api.github.com/users/ruby-concurrency/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ruby-concurrency/subscriptions","organizations_url":"https://api.github.com/users/ruby-concurrency/orgs","repos_url":"https://api.github.com/users/ruby-concurrency/repos","events_url":"https://api.github.com/users/ruby-concurrency/events{/privacy}","received_events_url":"https://api.github.com/users/ruby-concurrency/received_events","type":"Organization","site_admin":false},"network_count":16,"subscribers_count":15}'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:27 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/ruby-concurrency/thread_safe/assignees?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4657'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"a20e3ecf62adcaa5da40bf0f884d9afd"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a7f8a126c9ed3f1c4715a34c0ddc7290
+      X-Github-Request-Id:
+      - 554C962E:1D33:F980BC:586FCFC0
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"bdurand","id":41791,"avatar_url":"https://avatars.githubusercontent.com/u/41791?v=3","gravatar_id":"","url":"https://api.github.com/users/bdurand","html_url":"https://github.com/bdurand","followers_url":"https://api.github.com/users/bdurand/followers","following_url":"https://api.github.com/users/bdurand/following{/other_user}","gists_url":"https://api.github.com/users/bdurand/gists{/gist_id}","starred_url":"https://api.github.com/users/bdurand/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bdurand/subscriptions","organizations_url":"https://api.github.com/users/bdurand/orgs","repos_url":"https://api.github.com/users/bdurand/repos","events_url":"https://api.github.com/users/bdurand/events{/privacy}","received_events_url":"https://api.github.com/users/bdurand/received_events","type":"User","site_admin":false},{"login":"chrisseaton","id":341094,"avatar_url":"https://avatars.githubusercontent.com/u/341094?v=3","gravatar_id":"","url":"https://api.github.com/users/chrisseaton","html_url":"https://github.com/chrisseaton","followers_url":"https://api.github.com/users/chrisseaton/followers","following_url":"https://api.github.com/users/chrisseaton/following{/other_user}","gists_url":"https://api.github.com/users/chrisseaton/gists{/gist_id}","starred_url":"https://api.github.com/users/chrisseaton/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/chrisseaton/subscriptions","organizations_url":"https://api.github.com/users/chrisseaton/orgs","repos_url":"https://api.github.com/users/chrisseaton/repos","events_url":"https://api.github.com/users/chrisseaton/events{/privacy}","received_events_url":"https://api.github.com/users/chrisseaton/received_events","type":"User","site_admin":false},{"login":"colinsurprenant","id":2010,"avatar_url":"https://avatars.githubusercontent.com/u/2010?v=3","gravatar_id":"","url":"https://api.github.com/users/colinsurprenant","html_url":"https://github.com/colinsurprenant","followers_url":"https://api.github.com/users/colinsurprenant/followers","following_url":"https://api.github.com/users/colinsurprenant/following{/other_user}","gists_url":"https://api.github.com/users/colinsurprenant/gists{/gist_id}","starred_url":"https://api.github.com/users/colinsurprenant/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/colinsurprenant/subscriptions","organizations_url":"https://api.github.com/users/colinsurprenant/orgs","repos_url":"https://api.github.com/users/colinsurprenant/repos","events_url":"https://api.github.com/users/colinsurprenant/events{/privacy}","received_events_url":"https://api.github.com/users/colinsurprenant/received_events","type":"User","site_admin":false},{"login":"headius","id":10135,"avatar_url":"https://avatars.githubusercontent.com/u/10135?v=3","gravatar_id":"","url":"https://api.github.com/users/headius","html_url":"https://github.com/headius","followers_url":"https://api.github.com/users/headius/followers","following_url":"https://api.github.com/users/headius/following{/other_user}","gists_url":"https://api.github.com/users/headius/gists{/gist_id}","starred_url":"https://api.github.com/users/headius/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/headius/subscriptions","organizations_url":"https://api.github.com/users/headius/orgs","repos_url":"https://api.github.com/users/headius/repos","events_url":"https://api.github.com/users/headius/events{/privacy}","received_events_url":"https://api.github.com/users/headius/received_events","type":"User","site_admin":false},{"login":"jdantonio","id":173910,"avatar_url":"https://avatars.githubusercontent.com/u/173910?v=3","gravatar_id":"","url":"https://api.github.com/users/jdantonio","html_url":"https://github.com/jdantonio","followers_url":"https://api.github.com/users/jdantonio/followers","following_url":"https://api.github.com/users/jdantonio/following{/other_user}","gists_url":"https://api.github.com/users/jdantonio/gists{/gist_id}","starred_url":"https://api.github.com/users/jdantonio/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jdantonio/subscriptions","organizations_url":"https://api.github.com/users/jdantonio/orgs","repos_url":"https://api.github.com/users/jdantonio/repos","events_url":"https://api.github.com/users/jdantonio/events{/privacy}","received_events_url":"https://api.github.com/users/jdantonio/received_events","type":"User","site_admin":false},{"login":"lucasallan","id":39306,"avatar_url":"https://avatars.githubusercontent.com/u/39306?v=3","gravatar_id":"","url":"https://api.github.com/users/lucasallan","html_url":"https://github.com/lucasallan","followers_url":"https://api.github.com/users/lucasallan/followers","following_url":"https://api.github.com/users/lucasallan/following{/other_user}","gists_url":"https://api.github.com/users/lucasallan/gists{/gist_id}","starred_url":"https://api.github.com/users/lucasallan/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lucasallan/subscriptions","organizations_url":"https://api.github.com/users/lucasallan/orgs","repos_url":"https://api.github.com/users/lucasallan/repos","events_url":"https://api.github.com/users/lucasallan/events{/privacy}","received_events_url":"https://api.github.com/users/lucasallan/received_events","type":"User","site_admin":false},{"login":"mighe","id":1152697,"avatar_url":"https://avatars.githubusercontent.com/u/1152697?v=3","gravatar_id":"","url":"https://api.github.com/users/mighe","html_url":"https://github.com/mighe","followers_url":"https://api.github.com/users/mighe/followers","following_url":"https://api.github.com/users/mighe/following{/other_user}","gists_url":"https://api.github.com/users/mighe/gists{/gist_id}","starred_url":"https://api.github.com/users/mighe/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mighe/subscriptions","organizations_url":"https://api.github.com/users/mighe/orgs","repos_url":"https://api.github.com/users/mighe/repos","events_url":"https://api.github.com/users/mighe/events{/privacy}","received_events_url":"https://api.github.com/users/mighe/received_events","type":"User","site_admin":false},{"login":"obrok","id":130804,"avatar_url":"https://avatars.githubusercontent.com/u/130804?v=3","gravatar_id":"","url":"https://api.github.com/users/obrok","html_url":"https://github.com/obrok","followers_url":"https://api.github.com/users/obrok/followers","following_url":"https://api.github.com/users/obrok/following{/other_user}","gists_url":"https://api.github.com/users/obrok/gists{/gist_id}","starred_url":"https://api.github.com/users/obrok/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/obrok/subscriptions","organizations_url":"https://api.github.com/users/obrok/orgs","repos_url":"https://api.github.com/users/obrok/repos","events_url":"https://api.github.com/users/obrok/events{/privacy}","received_events_url":"https://api.github.com/users/obrok/received_events","type":"User","site_admin":false},{"login":"pitr-ch","id":204460,"avatar_url":"https://avatars.githubusercontent.com/u/204460?v=3","gravatar_id":"","url":"https://api.github.com/users/pitr-ch","html_url":"https://github.com/pitr-ch","followers_url":"https://api.github.com/users/pitr-ch/followers","following_url":"https://api.github.com/users/pitr-ch/following{/other_user}","gists_url":"https://api.github.com/users/pitr-ch/gists{/gist_id}","starred_url":"https://api.github.com/users/pitr-ch/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pitr-ch/subscriptions","organizations_url":"https://api.github.com/users/pitr-ch/orgs","repos_url":"https://api.github.com/users/pitr-ch/repos","events_url":"https://api.github.com/users/pitr-ch/events{/privacy}","received_events_url":"https://api.github.com/users/pitr-ch/received_events","type":"User","site_admin":false},{"login":"rkday","id":2199416,"avatar_url":"https://avatars.githubusercontent.com/u/2199416?v=3","gravatar_id":"","url":"https://api.github.com/users/rkday","html_url":"https://github.com/rkday","followers_url":"https://api.github.com/users/rkday/followers","following_url":"https://api.github.com/users/rkday/following{/other_user}","gists_url":"https://api.github.com/users/rkday/gists{/gist_id}","starred_url":"https://api.github.com/users/rkday/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/rkday/subscriptions","organizations_url":"https://api.github.com/users/rkday/orgs","repos_url":"https://api.github.com/users/rkday/repos","events_url":"https://api.github.com/users/rkday/events{/privacy}","received_events_url":"https://api.github.com/users/rkday/received_events","type":"User","site_admin":false},{"login":"thedarkone","id":15688,"avatar_url":"https://avatars.githubusercontent.com/u/15688?v=3","gravatar_id":"","url":"https://api.github.com/users/thedarkone","html_url":"https://github.com/thedarkone","followers_url":"https://api.github.com/users/thedarkone/followers","following_url":"https://api.github.com/users/thedarkone/following{/other_user}","gists_url":"https://api.github.com/users/thedarkone/gists{/gist_id}","starred_url":"https://api.github.com/users/thedarkone/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/thedarkone/subscriptions","organizations_url":"https://api.github.com/users/thedarkone/orgs","repos_url":"https://api.github.com/users/thedarkone/repos","events_url":"https://api.github.com/users/thedarkone/events{/privacy}","received_events_url":"https://api.github.com/users/thedarkone/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:28 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/ruby-concurrency/thread_safe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4656'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"625c9e10258656c9031986511e241a58"
+      Last-Modified:
+      - Thu, 05 Jan 2017 03:24:50 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 8166eb1845e56d99ba68a6b1065016c1
+      X-Github-Request-Id:
+      - 554C962E:1D3E:4761F79:586FCFC0
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":20579727,"name":"thread_safe","full_name":"ruby-concurrency/thread_safe","owner":{"login":"ruby-concurrency","id":5462766,"avatar_url":"https://avatars.githubusercontent.com/u/5462766?v=3","gravatar_id":"","url":"https://api.github.com/users/ruby-concurrency","html_url":"https://github.com/ruby-concurrency","followers_url":"https://api.github.com/users/ruby-concurrency/followers","following_url":"https://api.github.com/users/ruby-concurrency/following{/other_user}","gists_url":"https://api.github.com/users/ruby-concurrency/gists{/gist_id}","starred_url":"https://api.github.com/users/ruby-concurrency/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ruby-concurrency/subscriptions","organizations_url":"https://api.github.com/users/ruby-concurrency/orgs","repos_url":"https://api.github.com/users/ruby-concurrency/repos","events_url":"https://api.github.com/users/ruby-concurrency/events{/privacy}","received_events_url":"https://api.github.com/users/ruby-concurrency/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/ruby-concurrency/thread_safe","description":"[DEPRECATED]
+        Thread-safe collections for Ruby (merged with concurrent-ruby)","fork":false,"url":"https://api.github.com/repos/ruby-concurrency/thread_safe","forks_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/forks","keys_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/keys{/key_id}","collaborators_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/teams","hooks_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/hooks","issue_events_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues/events{/number}","events_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/events","assignees_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/assignees{/user}","branches_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/branches{/branch}","tags_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/tags","blobs_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/refs{/sha}","trees_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/trees{/sha}","statuses_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/statuses/{sha}","languages_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/languages","stargazers_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/stargazers","contributors_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/contributors","subscribers_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/subscribers","subscription_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/subscription","commits_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/commits{/sha}","git_commits_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/git/commits{/sha}","comments_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/comments{/number}","issue_comment_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues/comments{/number}","contents_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/contents/{+path}","compare_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/compare/{base}...{head}","merges_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/merges","archive_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/downloads","issues_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/issues{/number}","pulls_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/pulls{/number}","milestones_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/milestones{/number}","notifications_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/labels{/name}","releases_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/releases{/id}","deployments_url":"https://api.github.com/repos/ruby-concurrency/thread_safe/deployments","created_at":"2014-06-06T22:13:43Z","updated_at":"2017-01-05T03:24:50Z","pushed_at":"2017-01-06T13:25:31Z","git_url":"git://github.com/ruby-concurrency/thread_safe.git","ssh_url":"git@github.com:ruby-concurrency/thread_safe.git","clone_url":"https://github.com/ruby-concurrency/thread_safe.git","svn_url":"https://github.com/ruby-concurrency/thread_safe","homepage":"http://concurrent-ruby.com","size":547,"stargazers_count":186,"watchers_count":186,"language":"Java","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":16,"mirror_url":null,"open_issues_count":4,"forks":16,"open_issues":4,"watchers":186,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"ruby-concurrency","id":5462766,"avatar_url":"https://avatars.githubusercontent.com/u/5462766?v=3","gravatar_id":"","url":"https://api.github.com/users/ruby-concurrency","html_url":"https://github.com/ruby-concurrency","followers_url":"https://api.github.com/users/ruby-concurrency/followers","following_url":"https://api.github.com/users/ruby-concurrency/following{/other_user}","gists_url":"https://api.github.com/users/ruby-concurrency/gists{/gist_id}","starred_url":"https://api.github.com/users/ruby-concurrency/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ruby-concurrency/subscriptions","organizations_url":"https://api.github.com/users/ruby-concurrency/orgs","repos_url":"https://api.github.com/users/ruby-concurrency/repos","events_url":"https://api.github.com/users/ruby-concurrency/events{/privacy}","received_events_url":"https://api.github.com/users/ruby-concurrency/received_events","type":"Organization","site_admin":false},"network_count":16,"subscribers_count":15}'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:29 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/tzinfo/tzinfo/stats/commit_activity
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.4.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZGFuY2luZ2xpZ2h0bmluZzpyYWtrYXVzMis=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 06 Jan 2017 17:11:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4655'
+      X-Ratelimit-Reset:
+      - '1483724286'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"044b09dc68318888c6570e00a3f4beb7"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - d0b3c2c33a23690498aa8e70a435a259
+      X-Github-Request-Id:
+      - 554C962E:1D3B:4D3EAEC:586FCFC1
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"days":[0,0,0,0,0,0,0],"total":0,"week":1452384000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1452988800},{"days":[0,0,0,0,3,0,0],"total":3,"week":1453593600},{"days":[0,0,0,1,0,0,0],"total":1,"week":1454198400},{"days":[0,2,0,0,0,0,0],"total":2,"week":1454803200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1455408000},{"days":[0,0,0,0,0,0,3],"total":3,"week":1456012800},{"days":[1,0,0,0,0,0,0],"total":1,"week":1456617600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1457222400},{"days":[0,0,0,0,0,1,0],"total":1,"week":1457827200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1458432000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1459036800},{"days":[0,0,0,0,0,0,0],"total":0,"week":1459641600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1460246400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1460851200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1461456000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1462060800},{"days":[0,0,7,0,0,0,0],"total":7,"week":1462665600},{"days":[0,0,0,0,0,0,1],"total":1,"week":1463270400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1463875200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1464480000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1465084800},{"days":[0,0,0,0,0,0,0],"total":0,"week":1465689600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1466294400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1466899200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1467504000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1468108800},{"days":[0,0,0,0,0,0,0],"total":0,"week":1468713600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1469318400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1469923200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1470528000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1471132800},{"days":[0,0,0,0,0,0,0],"total":0,"week":1471737600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1472342400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1472947200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1473552000},{"days":[0,5,2,0,0,0,0],"total":7,"week":1474156800},{"days":[0,0,0,0,0,0,0],"total":0,"week":1474761600},{"days":[0,5,0,0,0,0,0],"total":5,"week":1475366400},{"days":[0,0,0,0,0,0,2],"total":2,"week":1475971200},{"days":[0,0,0,0,1,0,0],"total":1,"week":1476576000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1477180800},{"days":[1,1,0,0,0,0,0],"total":2,"week":1477785600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1478390400},{"days":[0,0,0,0,0,3,0],"total":3,"week":1478995200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1479600000},{"days":[0,0,0,0,0,0,0],"total":0,"week":1480204800},{"days":[0,0,0,0,0,0,1],"total":1,"week":1480809600},{"days":[0,0,0,0,0,0,0],"total":0,"week":1481414400},{"days":[0,0,0,0,0,0,0],"total":0,"week":1482019200},{"days":[0,0,0,0,0,0,0],"total":0,"week":1482624000},{"days":[0,8,0,3,0,0,0],"total":11,"week":1483228800}]'
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:11:30 GMT
 recorded_with: VCR 3.0.3

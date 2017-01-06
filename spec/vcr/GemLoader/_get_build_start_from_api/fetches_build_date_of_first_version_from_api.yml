@@ -2,118 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://rubygems.org/api/v1/gems/tzinfo.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - 3702e9ca-2f20-4874-82ef-b142b89b9c2a
-      X-Runtime:
-      - '0.012630'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Transfer-Encoding:
-      - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:52 GMT
-      Via:
-      - 1.1 varnish
-      Age:
-      - '0'
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7023-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722592.746597,VS0,VE204
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Etag:
-      - '"f3c57615c00d5a8150b314fd6858df7c"'
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        ---
-        name: tzinfo
-        downloads: 99085899
-        version: 1.2.2
-        version_downloads: 46588325
-        platform: ruby
-        authors: Philip Ross
-        info: TZInfo provides daylight savings aware transformations between times in different
-          time zones.
-        licenses:
-        - MIT
-        metadata: {}
-        sha: fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0
-        project_uri: https://rubygems.org/gems/tzinfo
-        gem_uri: https://rubygems.org/gems/tzinfo-1.2.2.gem
-        homepage_uri: http://tzinfo.github.io
-        wiki_uri: ''
-        documentation_uri: http://www.rubydoc.info/gems/tzinfo/1.2.2
-        mailing_list_uri: http://rubyforge.org/mail/?group_id=894
-        source_code_uri: https://github.com/tzinfo/tzinfo
-        bug_tracker_uri: https://github.com/tzinfo/tzinfo/issues
-        dependencies:
-          development: []
-          runtime:
-          - name: thread_safe
-            requirements: "~> 0.1"
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:52 GMT
-- request:
-    method: get
     uri: https://rubygems.org/api/v1/versions/tzinfo.yaml
     body:
       encoding: US-ASCII
@@ -158,33 +46,33 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 309b9918-9eeb-4c5e-bb5f-24f997fbb4da
+      - daa11218-a302-421a-9170-9227a47ac573
       X-Runtime:
-      - '0.104476'
+      - '0.141077'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
       - F_Rails 54.186.104.15:443
       Content-Length:
-      - '4993'
+      - '4994'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
+      - Fri, 06 Jan 2017 17:09:09 GMT
       Via:
       - 1.1 varnish
       Age:
-      - '41'
+      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7025-BMA
+      - cache-bma7035-BMA
       X-Cache:
       - HIT
       X-Cache-Hits:
       - '1'
       X-Timer:
-      - S1483722593.115352,VS0,VE0
+      - S1483722549.752318,VS0,VE194
       Vary:
       - Accept-Encoding,Fastly-SSL
       Server:
@@ -194,14 +82,14 @@ http_interactions:
       string: "---\n- authors: Philip Ross\n  built_at: '2014-08-08T00:00:00.000Z'\n
         \ created_at: '2014-08-08T18:00:21.494Z'\n  description: TZInfo provides daylight
         savings aware transformations between times\n    in different time zones.\n
-        \ downloads_count: 46588325\n  metadata: {}\n  number: 1.2.2\n  summary: Daylight
+        \ downloads_count: 46582830\n  metadata: {}\n  number: 1.2.2\n  summary: Daylight
         savings aware timezone library\n  platform: ruby\n  rubygems_version: \">=
         0\"\n  ruby_version: \">= 1.8.7\"\n  prerelease: false\n  licenses:\n  - MIT\n
         \ requirements: []\n  sha: fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0\n-
         authors: Philip Ross\n  built_at: '2014-06-01T00:00:00.000Z'\n  created_at:
         '2014-06-01T14:57:46.796Z'\n  description: TZInfo provides daylight savings
         aware transformations between times\n    in different time zones.\n  downloads_count:
-        1706892\n  metadata: {}\n  number: 1.2.1\n  summary: Daylight savings aware
+        1706881\n  metadata: {}\n  number: 1.2.1\n  summary: Daylight savings aware
         timezone library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
         \">= 1.8.7\"\n  prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n
         \ sha: 52787314a74eea6d20b0df2fb0034fdb83b04415ff493cc39b4d4ad0cb80b6a0\n-
@@ -215,7 +103,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2013-09-25T00:00:00.000Z'\n  created_at:
         '2013-09-25T22:42:31.423Z'\n  description: TZInfo provides daylight savings
         aware transformations between times\n    in different time zones.\n  downloads_count:
-        1432267\n  metadata: {}\n  number: 1.1.0\n  summary: Daylight savings aware
+        1432261\n  metadata: {}\n  number: 1.1.0\n  summary: Daylight savings aware
         timezone library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
         \n  prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 715a47c25f8e4c2f106c92d5a97e612f84eb7e85f5822bf3d6cf615b44492abc\n-
         authors: Philip Ross\n  built_at: '2013-06-22T00:00:00.000Z'\n  created_at:
@@ -233,35 +121,35 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2016-10-27T00:00:00.000Z'\n  created_at:
         '2016-10-28T18:04:18.725Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 239581\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 239308\n  metadata:
         {}\n  number: 0.3.52\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 8354497af5f03549fbca9880074b6fa3f33c842accec0d8e5d5f19c3bae43c17\n-
         authors: Philip Ross\n  built_at: '2016-07-04T00:00:00.000Z'\n  created_at:
         '2016-07-05T21:49:23.523Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 724222\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 724113\n  metadata:
         {}\n  number: 0.3.51\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 92541efbd7fc48da746e34357adada9fdba9374d85a57441f36a584735b85c5e\n-
         authors: Philip Ross\n  built_at: '2016-06-13T00:00:00.000Z'\n  created_at:
         '2016-06-14T20:28:01.731Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 136985\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 136983\n  metadata:
         {}\n  number: 0.3.50\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 3e74ebcd0ba9ac2f0c5f0f48fe2dfc205fedbc094a1b2221c599781c59c4fccb\n-
         authors: Philip Ross\n  built_at: '2016-04-17T00:00:00.000Z'\n  created_at:
         '2016-04-18T21:52:37.514Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 394025\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 394007\n  metadata:
         {}\n  number: 0.3.49\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 1fe60be515209f3cadcb096c1b701fe37980bbb0b7935fb2aa0a3dc4acff0703\n-
         authors: Philip Ross\n  built_at: '2016-03-23T00:00:00.000Z'\n  created_at:
         '2016-03-23T23:58:24.540Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 407792\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 407776\n  metadata:
         {}\n  number: 0.3.48\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: f57acf2e8c433ba5d853d4505a7ef7e5e705ddb5908db5c076e649e4e3f7a537\n-
@@ -275,7 +163,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2015-12-02T00:00:00.000Z'\n  created_at:
         '2015-12-02T23:40:50.843Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1144467\n
+        between times in different time\n    zones.\n  downloads_count: 1144373\n
         \ metadata: {}\n  number: 0.3.46\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">=
         0\"\n  prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha:
@@ -283,14 +171,14 @@ http_interactions:
         Philip Ross\n  built_at: '2015-10-02T00:00:00.000Z'\n  created_at: '2015-10-03T15:07:03.952Z'\n
         \ description: TZInfo is a Ruby library that uses the standard tz (Olson)
         database\n    to provide daylight savings aware transformations between times
-        in different time\n    zones.\n  downloads_count: 635514\n  metadata: {}\n
+        in different time\n    zones.\n  downloads_count: 635510\n  metadata: {}\n
         \ number: 0.3.45\n  summary: Daylight-savings aware timezone library\n  platform:
         ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease:
         false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 936bc317761a47b7e0858bd7ce875c0e7f19b1eedf024b876a3dd6f799172ce7\n-
         authors: Philip Ross\n  built_at: '2015-04-23T00:00:00.000Z'\n  created_at:
         '2015-04-24T22:19:56.396Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1867669\n
+        between times in different time\n    zones.\n  downloads_count: 1867647\n
         \ metadata: {}\n  number: 0.3.44\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">=
         0\"\n  prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha:
@@ -298,14 +186,14 @@ http_interactions:
         Philip Ross\n  built_at: '2015-01-31T00:00:00.000Z'\n  created_at: '2015-01-31T20:24:25.433Z'\n
         \ description: TZInfo is a Ruby library that uses the standard tz (Olson)
         database\n    to provide daylight savings aware transformations between times
-        in different time\n    zones.\n  downloads_count: 1236836\n  metadata: {}\n
+        in different time\n    zones.\n  downloads_count: 1236828\n  metadata: {}\n
         \ number: 0.3.43\n  summary: Daylight-savings aware timezone library\n  platform:
         ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease:
         false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 4df52124b359789ac13aa12f46b9665d562b189fc6e60c44b9aa6d997b100a70\n-
         authors: Philip Ross\n  built_at: '2014-10-22T00:00:00.000Z'\n  created_at:
         '2014-10-23T20:12:58.749Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1705062\n
+        between times in different time\n    zones.\n  downloads_count: 1705052\n
         \ metadata: {}\n  number: 0.3.42\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">=
         0\"\n  prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha:
@@ -313,35 +201,35 @@ http_interactions:
         Philip Ross\n  built_at: '2014-08-07T00:00:00.000Z'\n  created_at: '2014-08-08T19:13:31.307Z'\n
         \ description: TZInfo is a Ruby library that uses the standard tz (Olson)
         database\n    to provide daylight savings aware transformations between times
-        in different time\n    zones.\n  downloads_count: 1462510\n  metadata: {}\n
+        in different time\n    zones.\n  downloads_count: 1462495\n  metadata: {}\n
         \ number: 0.3.41\n  summary: Daylight-savings aware timezone library\n  platform:
         ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease:
         false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 381b22fd1744a35d0a0239f563f505773681e626e6d900063b14cb9b1b68e98c\n-
         authors: Philip Ross\n  built_at: '2014-07-09T23:00:00.000Z'\n  created_at:
         '2014-07-10T20:57:11.589Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 621069\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 621068\n  metadata:
         {}\n  number: 0.3.40\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 4010840329184bc05374f108bb09bd99a0278aee9474c0f5c7e7d009ae502640\n-
         authors: Philip Ross\n  built_at: '2014-03-09T00:00:00.000Z'\n  created_at:
         '2014-03-09T20:19:53.295Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 3545119\n
+        between times in different time\n    zones.\n  downloads_count: 3545104\n
         \ metadata: {}\n  number: 0.3.39\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: f0ad9f7936aa6f8fd2222fbd33adc7e3e3c21800d36d46fd04edde9692e255d2\n-
         authors: Philip Ross\n  built_at: '2013-10-07T23:00:00.000Z'\n  created_at:
         '2013-10-08T22:28:55.762Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 5478728\n
+        between times in different time\n    zones.\n  downloads_count: 5478716\n
         \ metadata: {}\n  number: 0.3.38\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: []\n  requirements: []\n  sha: c8c8525a056b7e26228cc8fa1cdb969fe980a207346cd84ac519ccb7554e63e8\n-
         authors: Philip Ross\n  built_at: '2013-03-11T00:00:00.000Z'\n  created_at:
         '2013-03-11T22:38:22.171Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 8863690\n
+        between times in different time\n    zones.\n  downloads_count: 8863660\n
         \ metadata: {}\n  number: 0.3.37\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: []\n  requirements: \n  sha: 6c8e551f2067b64c4edb00da70b1b85ac761e611cd73c7c937709ca797da225e\n-
@@ -355,7 +243,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2012-11-04T00:00:00.000Z'\n  created_at:
         '2012-11-04T23:02:01.283Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 5892940\n
+        between times in different time\n    zones.\n  downloads_count: 5892801\n
         \ metadata: {}\n  number: 0.3.35\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: \n  requirements: \n  sha: b72ee96326a85fd2d8ccef97d94d10d15e46194aae2fca28ecef768665b3a2b0\n-
@@ -369,21 +257,21 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2012-04-07T23:00:00.000Z'\n  created_at:
         '2012-04-08T15:47:06.586Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 4534397\n
+        between times in different time\n    zones.\n  downloads_count: 4534394\n
         \ metadata: {}\n  number: 0.3.33\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: \n  requirements: \n  sha: 376cfdc347e0776348e20743e13edeaadeb908f737bce0aa328fb2aa445dee2d\n-
         authors: Philip Ross\n  built_at: '2012-03-04T00:00:00.000Z'\n  created_at:
         '2012-03-04T16:04:29.886Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 787754\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 787753\n  metadata:
         {}\n  number: 0.3.32\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
         false\n  licenses: \n  requirements: \n  sha: eb1c6d01783d17abf88229ca29676f930f6ba0cc05c6946b6defd6c4d26cc4e2\n-
         authors: Philip Ross\n  built_at: '2011-11-06T00:00:00.000Z'\n  created_at:
         '2011-11-06T16:45:39.224Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1939419\n
+        between times in different time\n    zones.\n  downloads_count: 1939418\n
         \ metadata: {}\n  number: 0.3.31\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: \n  requirements: \n  sha: 0b06e23121052135d228f750fdd24b10b5bc81e81add0ba5cf9ba11e58118ccf\n-
@@ -397,7 +285,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2011-06-26T23:00:00.000Z'\n  created_at:
         '2011-06-27T22:08:56.375Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1277142\n
+        between times in different time\n    zones.\n  downloads_count: 1277140\n
         \ metadata: {}\n  number: 0.3.29\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: \n  requirements: \n  sha: 32e6ea4fbab70c29796ebc49b9de014b60203b10a92d6c45786f07123223a080\n-
@@ -432,7 +320,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2011-01-15T00:00:00.000Z'\n  created_at:
         '2011-01-15T12:47:49.060Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 1069942\n
+        between times in different time\n    zones.\n  downloads_count: 1069941\n
         \ metadata: {}\n  number: 0.3.24\n  summary: Daylight-savings aware timezone
         library\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n
         \ prerelease: false\n  licenses: \n  requirements: \n  sha: a44418ed8b2422dd554d68a5d55d5f15b0777ae4f0a31745a638b812ade6d761\n-
@@ -488,7 +376,7 @@ http_interactions:
         authors: Philip Ross\n  built_at: '2010-01-05T00:00:00.000Z'\n  created_at:
         '2010-01-05T22:14:28.892Z'\n  description: TZInfo is a Ruby library that uses
         the standard tz (Olson) database\n    to provide daylight savings aware transformations
-        between times in different time\n    zones.\n  downloads_count: 141378\n  metadata:
+        between times in different time\n    zones.\n  downloads_count: 141376\n  metadata:
         {}\n  number: 0.3.16\n  summary: Daylight-savings aware timezone library\n
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
         false\n  licenses: \n  requirements: \n  sha: 13ffd39dc065714fe054acf350ef4346a59c979a2c529d84a2a0704938287800\n-
@@ -625,630 +513,5 @@ http_interactions:
         \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
         false\n  licenses: \n  requirements: \n  sha: 859413ad1026e079713dbf097cdd329cea09db6ef3ba10fc012718c849d09f33\n"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/gems/tzinfo/owners.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - b86d9889-fdf0-46a4-a69a-9383b6b2c250
-      X-Runtime:
-      - '0.006438'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Transfer-Encoding:
-      - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
-      Via:
-      - 1.1 varnish
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7035-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722593.281447,VS0,VE198
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Etag:
-      - '"a169add97eb31e403b646b88f8817832"'
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        ---
-        - id: 2981
-          handle: PhilRoss
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/gems/thread_safe.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - 68352ab6-85d0-4210-be46-4cf0cb30d0b7
-      X-Runtime:
-      - '0.012599'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Transfer-Encoding:
-      - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
-      Via:
-      - 1.1 varnish
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7029-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722593.627327,VS0,VE205
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Etag:
-      - '"b84f32f8d998249c9d957b3be488c578"'
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        ---
-        name: thread_safe
-        downloads: 66845432
-        version: 0.3.5
-        version_downloads: 30966244
-        platform: ruby
-        authors: Charles Oliver Nutter, thedarkone
-        info: Thread-safe collections and utilities for Ruby
-        licenses:
-        - Apache-2.0
-        metadata: {}
-        sha: 993da065f98b8575c537ebf984ffb79eecdb6064559a3b9d2a9d7aaf313704c3
-        project_uri: https://rubygems.org/gems/thread_safe
-        gem_uri: https://rubygems.org/gems/thread_safe-0.3.5.gem
-        homepage_uri: https://github.com/ruby-concurrency/thread_safe
-        wiki_uri: ''
-        documentation_uri: http://ruby-concurrency.github.io/thread_safe/frames.html
-        mailing_list_uri: https://groups.google.com/forum/#!forum/concurrent-ruby
-        source_code_uri: https://github.com/ruby-concurrency/thread_safe
-        bug_tracker_uri: https://github.com/ruby-concurrency/thread_safe/issues
-        dependencies:
-          development:
-          - name: atomic
-            requirements: "= 1.1.16"
-          - name: minitest
-            requirements: ">= 4"
-          - name: rake
-            requirements: ">= 0"
-          runtime: []
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/versions/thread_safe.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Etag:
-      - '"189358694ff4d5e04d01703c596065be"'
-      Last-Modified:
-      - Mon, 27 Jun 2016 15:40:17 GMT
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - max-age=0, public
-      X-Request-Id:
-      - ba2a5935-2d73-4baf-99dc-4d39c85a9b28
-      X-Runtime:
-      - '0.050812'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Content-Length:
-      - '1806'
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:53 GMT
-      Via:
-      - 1.1 varnish
-      Age:
-      - '39'
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7023-BMA
-      X-Cache:
-      - HIT
-      X-Cache-Hits:
-      - '1'
-      X-Timer:
-      - S1483722593.976477,VS0,VE0
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: "---\n- authors: Charles Oliver Nutter, thedarkone\n  built_at: '2015-03-11T00:00:00.000Z'\n
-        \ created_at: '2015-03-11T15:00:52.728Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 5963078\n  metadata: {}\n  number:
-        0.3.5\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: 52976573c9934c696a0c577ea57f51e38714191cc6bd0fac499f9ad5843e060c\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2015-03-11T00:00:00.000Z'\n
-        \ created_at: '2015-03-11T15:00:41.140Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 30966244\n  metadata: {}\n  number:
-        0.3.5\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: 993da065f98b8575c537ebf984ffb79eecdb6064559a3b9d2a9d7aaf313704c3\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-05-27T00:00:00.000Z'\n
-        \ created_at: '2014-05-27T20:10:29.698Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 20652475\n  metadata: {}\n  number:
-        0.3.4\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: 16315baa971c48d00104bcd35e8934e3f9ccfd3b8f429e3fca7ee2dfd81734b2\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-05-27T00:00:00.000Z'\n
-        \ created_at: '2014-05-27T20:10:16.778Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 382736\n  metadata: {}\n  number:
-        0.3.4\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: 903716024d787ea90b6647c81f3ff3710721279f1ed435fc0e219582ca851ba0\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-04-07T00:00:00.000Z'\n
-        \ created_at: '2014-04-07T10:05:01.221Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 59323\n  metadata: {}\n  number:
-        0.3.3\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: e8122caeee98b9294f36760ca1fcf5589b4e27ead202296ffef6854b01693731\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-04-07T00:00:00.000Z'\n
-        \ created_at: '2014-04-07T10:04:43.000Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 1622359\n  metadata: {}\n  number:
-        0.3.3\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: f0f4307ea85d6eff7f9c304587073e3465da58beb198ea686bf69ec87f2ddb7e\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-04-05T00:00:00.000Z'\n
-        \ created_at: '2014-04-05T12:15:16.825Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 2189\n  metadata: {}\n  number:
-        0.3.2\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: a475303101015f279b2791ddcb821e275d0f76cbce46251359a15d39dfb69117\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-04-05T00:00:00.000Z'\n
-        \ created_at: '2014-04-05T12:14:51.531Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 46275\n  metadata: {}\n  number:
-        0.3.2\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: e66e8c03414aa0e1982a5f505d659ed5fd1a411fee71b8e852ab57e0eb9e4853\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-03-21T00:00:00.000Z'\n
-        \ created_at: '2014-03-21T07:24:51.143Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 467233\n  metadata: {}\n  number:
-        0.3.1\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: aff0cf52e87876f46767c5327b8c4332381c6f6f832dff36679e928c30b82f3d\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-03-21T00:00:00.000Z'\n
-        \ created_at: '2014-03-21T07:24:24.214Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 24204\n  metadata: {}\n  number:
-        0.3.1\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: d71d0686a011d478562460c7734694c750afb03f769445bd46c6da740e869020\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-02-26T00:00:00.000Z'\n
-        \ created_at: '2014-02-26T17:43:22.372Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 28542\n  metadata: {}\n  number:
-        0.2.0\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: a184903697075973c6959e48ab28b8f6c3ad628728bb2817c2b0d0bc6aa67433\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2014-02-26T00:00:00.000Z'\n
-        \ created_at: '2014-02-26T17:40:40.192Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 650304\n  metadata: {}\n  number:
-        0.2.0\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: a85f7f14c3269fd6c77514aa4fdeef20bef19eee91839762b3b4a4f8cf323145\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2013-09-10T00:00:00.000Z'\n
-        \ created_at: '2013-09-10T14:35:21.960Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 4042232\n  metadata: {}\n  number:
-        0.1.3\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: f8b9f8db0889aa97676b4a1efe919b1e76601ed9c9662a986825755bba305c38\n-
-        authors: Charles Oliver Nutter, thedarkone\n  built_at: '2013-09-10T00:00:00.000Z'\n
-        \ created_at: '2013-09-10T14:34:01.740Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 145547\n  metadata: {}\n  number:
-        0.1.3\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: java\n  rubygems_version: \">=
-        0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache-2.0\n
-        \ requirements: []\n  sha: 24905e6433a692412ddfeb2105c4768266ef693b7e51d9b9dcdb789141b5a7e1\n-
-        authors: Charles Oliver Nutter\n  built_at: '2013-07-24T00:00:00.000Z'\n  created_at:
-        '2013-07-24T00:12:01.379Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 919881\n  metadata: {}\n  number: 0.1.2\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses:\n  - Apache-2.0\n  requirements: []\n  sha:
-        7e2b957c28f2676b0a5ba5c0ad3a92988887922edfcb7be66acac6106881beaf\n- authors:
-        Charles Oliver Nutter\n  built_at: '2013-07-24T00:00:00.000Z'\n  created_at:
-        '2013-07-24T00:11:38.470Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 95918\n  metadata: {}\n  number: 0.1.2\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: java\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses:\n  - Apache-2.0\n  requirements: []\n  sha:
-        d31bb9b0cafd67510f9d5d026064e00c99dcd2935fe310a9deba987788146da7\n- authors:
-        Charles Oliver Nutter\n  built_at: '2013-07-23T00:00:00.000Z'\n  created_at:
-        '2013-07-23T19:40:30.776Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 4830\n  metadata: {}\n  number: 0.1.1\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses:\n  - Apache-2.0\n  requirements: []\n  sha:
-        3102637a5f58ebb8adfbffad76acd9d40b2f0889c3fb4959a9b5e45b6f82942b\n- authors:
-        Charles Oliver Nutter\n  built_at: '2013-07-23T00:00:00.000Z'\n  created_at:
-        '2013-07-23T19:39:55.576Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 1124\n  metadata: {}\n  number: 0.1.1\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: java\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses:\n  - Apache-2.0\n  requirements: []\n  sha:
-        787f8084a847cbe26a9aad685a6e7b46ae113cd87aa144d78a9c3e4f631161db\n- authors:
-        Charles Oliver Nutter, thedarkone\n  built_at: '2012-12-12T23:00:00.000Z'\n
-        \ created_at: '2012-12-13T12:37:46.787Z'\n  description: Thread-safe collections
-        and utilities for Ruby\n  downloads_count: 734850\n  metadata: {}\n  number:
-        0.1.0\n  summary: A collection of data structures and utilities to make thread-safe
-        programming\n    in Ruby easier\n  platform: ruby\n  rubygems_version: \">=
-        0\"\n  ruby_version: \n  prerelease: false\n  licenses: []\n  requirements:
-        \n  sha: 4ee7605080ea11b1bfd8a5d7ddeef97a73609d1ad8355e648c91d00842201d3a\n-
-        authors: Charles Oliver Nutter\n  built_at: '2012-04-27T00:00:00.000Z'\n  created_at:
-        '2012-04-27T16:52:19.721Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 3359\n  metadata: {}\n  number: 0.0.3\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses: \n  requirements: \n  sha: d4fac31142dd3262bcf4e66f730e8ef5d0f058e4f5bc43d510fc4db92a4085e9\n-
-        authors: Charles Oliver Nutter\n  built_at: '2012-04-26T00:00:00.000Z'\n  created_at:
-        '2012-04-26T00:12:31.448Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 1559\n  metadata: {}\n  number: 0.0.2\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses: \n  requirements: \n  sha: bd74ee7ad95567721f7cd5757d6fb5a6cbf21e6613cf6f187ad3d72c245c2b39\n-
-        authors: Charles Oliver Nutter\n  built_at: '2012-04-26T00:00:00.000Z'\n  created_at:
-        '2012-04-26T00:02:37.807Z'\n  description: Thread-safe collections and utilities
-        for Ruby\n  downloads_count: 1570\n  metadata: {}\n  number: 0.0.1\n  summary:
-        A collection of data structures and utilities to make thread-safe programming\n
-        \   in Ruby easier\n  platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version:
-        \n  prerelease: false\n  licenses: \n  requirements: \n  sha: b1f7dfeb8bc765e421a90836c6a7e7dbe587abe238b2f660a89c6ad6e8e4975d\n"
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:53 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/gems/thread_safe/owners.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - 5776811b-be01-427f-b300-0e8976754047
-      X-Runtime:
-      - '0.004898'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Transfer-Encoding:
-      - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:54 GMT
-      Via:
-      - 1.1 varnish
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7020-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722594.166931,VS0,VE195
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Etag:
-      - '"d7967a42c27e9c5021f2d724da2703a1"'
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        ---
-        - id: 65379
-          handle: jdantonio
-        - id: 1825
-          handle: headius
-          email: headius@headius.com
-        - id: 58885
-          handle: thedarkone
-          email: thedarkone2@gmail.com
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:54 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/gems/tzinfo.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 1da62a2449ff2bdd425e9e82261f7b72
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/yaml
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - private
-      X-Request-Id:
-      - 999d38a4-5b11-4a3f-8d25-f47419504f67
-      X-Runtime:
-      - '0.014142'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Backend:
-      - F_Rails 54.186.104.15:443
-      Transfer-Encoding:
-      - chunked
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 06 Jan 2017 17:09:54 GMT
-      Via:
-      - 1.1 varnish
-      Age:
-      - '0'
-      Connection:
-      - keep-alive
-      X-Served-By:
-      - cache-bma7020-BMA
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1483722594.531509,VS0,VE205
-      Vary:
-      - Accept-Encoding,Fastly-SSL
-      Etag:
-      - '"ea6299c8b85e5f1b6146eae712e165c0"'
-      Server:
-      - RubyGems.org
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        ---
-        name: tzinfo
-        downloads: 99085899
-        version: 1.2.2
-        version_downloads: 46588325
-        platform: ruby
-        authors: Philip Ross
-        info: TZInfo provides daylight savings aware transformations between times in different
-          time zones.
-        licenses:
-        - MIT
-        metadata: {}
-        sha: fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0
-        project_uri: https://rubygems.org/gems/tzinfo
-        gem_uri: https://rubygems.org/gems/tzinfo-1.2.2.gem
-        homepage_uri: http://tzinfo.github.io
-        wiki_uri: ''
-        documentation_uri: http://www.rubydoc.info/gems/tzinfo/1.2.2
-        mailing_list_uri: http://rubyforge.org/mail/?group_id=894
-        source_code_uri: https://github.com/tzinfo/tzinfo
-        bug_tracker_uri: https://github.com/tzinfo/tzinfo/issues
-        dependencies:
-          development: []
-          runtime:
-          - name: thread_safe
-            requirements: "~> 0.1"
-    http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:54 GMT
+  recorded_at: Fri, 06 Jan 2017 17:09:09 GMT
 recorded_with: VCR 3.0.3

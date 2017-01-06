@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://rubygems.org/api/v1/gems/rails/owners.json
+    uri: https://rubygems.org/api/v1/gems/rails/owners.yaml
     body:
       encoding: US-ASCII
       string: ''
@@ -28,19 +28,23 @@ http_interactions:
       message: OK
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - text/yaml
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - private
       X-Request-Id:
-      - da76ce7c-1b91-43af-a346-529043b50a99
+      - b02535c4-5170-47de-9c46-c58f80cca8c0
       X-Runtime:
-      - '0.006402'
+      - '0.007999'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -50,7 +54,7 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 16:26:41 GMT
+      - Fri, 06 Jan 2017 17:09:10 GMT
       Via:
       - 1.1 varnish
       Age:
@@ -58,22 +62,32 @@ http_interactions:
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7021-BMA
+      - cache-bma7024-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483720001.518330,VS0,VE189
+      - S1483722550.127859,VS0,VE192
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"06fe11cd6097dff898f6ec34b0896d05"'
+      - '"bc5bb79730be22bf6f649b848decd22e"'
       Server:
       - RubyGems.org
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":71398,"handle":"kaspth","email":"kaspth@gmail.com"},{"id":528,"handle":"matthewd","email":"matthew@trebex.net"},{"id":939,"handle":"senny","email":"yves.senn@gmail.com"},{"id":59702,"handle":"chancancode","email":"godfreykfc@gmail.com"},{"id":662,"handle":"pixeltrix","email":"andyw@pixeltrix.co.uk"},{"id":337,"handle":null,"email":"jeremy@bitsweat.net"},{"id":1550,"handle":"webster132","email":"david@loudthinking.com"},{"id":32977,"handle":"fxn","email":"fxn@hashref.com"},{"id":207,"handle":"tenderlove","email":"aaron.patterson@gmail.com"},{"id":840,"handle":"spastorino","email":"santiago@wyeworks.com"},{"id":429,"handle":"cantoniodasilva","email":"carlosantoniodasilva@gmail.com"},{"id":43998,"handle":"guilleiguaran","email":"guilleiguaran@gmail.com"},{"id":47349,"handle":"rafaelfranca","email":"rafaelmfranca@gmail.com"}]'
+      string: "---\n- id: 71398\n  handle: kaspth\n  email: kaspth@gmail.com\n- id:
+        528\n  handle: matthewd\n  email: matthew@trebex.net\n- id: 939\n  handle:
+        senny\n  email: yves.senn@gmail.com\n- id: 59702\n  handle: chancancode\n
+        \ email: godfreykfc@gmail.com\n- id: 662\n  handle: pixeltrix\n  email: andyw@pixeltrix.co.uk\n-
+        id: 337\n  handle: \n  email: jeremy@bitsweat.net\n- id: 1550\n  handle: webster132\n
+        \ email: david@loudthinking.com\n- id: 32977\n  handle: fxn\n  email: fxn@hashref.com\n-
+        id: 207\n  handle: tenderlove\n  email: aaron.patterson@gmail.com\n- id: 840\n
+        \ handle: spastorino\n  email: santiago@wyeworks.com\n- id: 429\n  handle:
+        cantoniodasilva\n  email: carlosantoniodasilva@gmail.com\n- id: 43998\n  handle:
+        guilleiguaran\n  email: guilleiguaran@gmail.com\n- id: 47349\n  handle: rafaelfranca\n
+        \ email: rafaelmfranca@gmail.com\n"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 16:26:41 GMT
+  recorded_at: Fri, 06 Jan 2017 17:09:10 GMT
 recorded_with: VCR 3.0.3

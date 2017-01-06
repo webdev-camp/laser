@@ -1,0 +1,658 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/bootstrap-sass.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/yaml
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - private
+      X-Request-Id:
+      - ef331c47-fced-4d1b-a3d9-a2f98b1f1b08
+      X-Runtime:
+      - '0.013754'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 06 Jan 2017 17:23:27 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7035-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483723407.141420,VS0,VE204
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"a910d425457d98dbc43c251c83855610"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        ---
+        name: bootstrap-sass
+        downloads: 13862501
+        version: 3.3.7
+        version_downloads: 655229
+        platform: ruby
+        authors: Thomas McDonald
+        info: bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right
+          into your Sass powered applications.
+        licenses:
+        - MIT
+        metadata: {}
+        sha: a92f02af5be165be7e9934d1dfd597ab7ee64de96595b073b0b835c58c5b89ad
+        project_uri: https://rubygems.org/gems/bootstrap-sass
+        gem_uri: https://rubygems.org/gems/bootstrap-sass-3.3.7.gem
+        homepage_uri: https://github.com/twbs/bootstrap-sass
+        wiki_uri: ''
+        documentation_uri: http://www.rubydoc.info/gems/bootstrap-sass/3.3.7
+        mailing_list_uri: ''
+        source_code_uri: https://github.com/twbs/bootstrap-sass
+        bug_tracker_uri: ''
+        dependencies:
+          development:
+          - name: actionpack
+            requirements: ">= 4.1.5"
+          - name: activesupport
+            requirements: ">= 4.1.5"
+          - name: capybara
+            requirements: ">= 2.5.0"
+          - name: jquery-rails
+            requirements: ">= 3.1.0"
+          - name: json
+            requirements: ">= 1.8.1"
+          - name: minitest
+            requirements: "~> 5.8"
+          - name: minitest-reporters
+            requirements: "~> 1.1"
+          - name: poltergeist
+            requirements: ">= 0"
+          - name: slim-rails
+            requirements: ">= 0"
+          - name: sprockets-rails
+            requirements: ">= 2.1.3"
+          - name: term-ansicolor
+            requirements: ">= 0"
+          - name: uglifier
+            requirements: ">= 0"
+          runtime:
+          - name: autoprefixer-rails
+            requirements: ">= 5.2.1"
+          - name: sass
+            requirements: ">= 3.3.4"
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:23:27 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/bootstrap-sass.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/yaml
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"1d1448b1f7d04c7cc5c6b5c23d17abfb"'
+      Last-Modified:
+      - Mon, 25 Jul 2016 21:10:43 GMT
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - fd95dd4a-ec66-4601-bae5-2d575145b03e
+      X-Runtime:
+      - '0.089274'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Content-Length:
+      - '4450'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 06 Jan 2017 17:23:27 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7033-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483723407.500396,VS0,VE281
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: "---\n- authors: Thomas McDonald\n  built_at: '2016-07-25T00:00:00.000Z'\n
+        \ created_at: '2016-07-25T21:10:41.745Z'\n  description: ''\n  downloads_count:
+        655229\n  metadata: {}\n  number: 3.3.7\n  summary: bootstrap-sass is a Sass-powered
+        version of Bootstrap 3, ready to drop\n    right into your Sass powered applications.\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
+        \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: a92f02af5be165be7e9934d1dfd597ab7ee64de96595b073b0b835c58c5b89ad\n-
+        authors: Thomas McDonald\n  built_at: '2015-11-24T00:00:00.000Z'\n  created_at:
+        '2015-11-24T23:07:20.552Z'\n  description: ''\n  downloads_count: 1678944\n
+        \ metadata: {}\n  number: 3.3.6\n  summary: bootstrap-sass is a Sass-powered
+        version of Bootstrap 3, ready to drop\n    right into your Sass powered applications.\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \">= 0\"\n
+        \ prerelease: false\n  licenses:\n  - MIT\n  requirements: []\n  sha: 8d028045dc2969a7bf5d274a2b7db19997710b03bb7c6fa4e394a50905e1108a\n-
+        authors: Thomas McDonald\n  built_at: '2015-06-25T00:00:00.000Z'\n  created_at:
+        '2015-06-25T20:05:18.726Z'\n  description: ''\n  downloads_count: 819110\n
+        \ metadata: {}\n  number: 3.3.5.1\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 5ba2ec15f958eb13cb452e30ed615a2a281ecaf00bacd4556f5635d1f45aa22f\n-
+        authors: Thomas McDonald\n  built_at: '2015-06-16T00:00:00.000Z'\n  created_at:
+        '2015-06-16T17:03:17.244Z'\n  description: ''\n  downloads_count: 416251\n
+        \ metadata: {}\n  number: 3.3.5\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 3b9ad48e383e6168d50189e994cdfb3ca09431cc4bacb26648a49fe8e4a0cb3e\n-
+        authors: Thomas McDonald\n  built_at: '2015-03-18T00:00:00.000Z'\n  created_at:
+        '2015-03-18T21:39:58.681Z'\n  description: ''\n  downloads_count: 654037\n
+        \ metadata: {}\n  number: 3.3.4.1\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 4b501bcc95ce0c11d79a7b0148be34bddb7d61da4bcb1e1d9f24a4bba44a808c\n-
+        authors: Thomas McDonald\n  built_at: '2015-01-20T00:00:00.000Z'\n  created_at:
+        '2015-01-20T01:02:01.714Z'\n  description: ''\n  downloads_count: 342867\n
+        \ metadata: {}\n  number: 3.3.3\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 6fe5c0f2e07a510797e40802529ef3b3409b7d5632cc5767fdca710f0ebf282e\n-
+        authors: Thomas McDonald\n  built_at: '2015-01-19T00:00:00.000Z'\n  created_at:
+        '2015-01-19T23:47:45.723Z'\n  description: ''\n  downloads_count: 1629\n  metadata:
+        {}\n  number: 3.3.2.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: cd180e3dcac25719c7c2759622a9ab5120f64eafe79a97ba7b294ae5bf8a4f56\n-
+        authors: Thomas McDonald\n  built_at: '2015-01-19T00:00:00.000Z'\n  created_at:
+        '2015-01-19T17:29:07.320Z'\n  description: ''\n  downloads_count: 5379\n  metadata:
+        {}\n  number: 3.3.2.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 86ebf50e353adc8bc91676363f1512430607b29a9528e9bfe2f46df0756f3423\n-
+        authors: Thomas McDonald\n  built_at: '2014-11-12T00:00:00.000Z'\n  created_at:
+        '2014-11-12T17:22:30.028Z'\n  description: ''\n  downloads_count: 438689\n
+        \ metadata: {}\n  number: 3.3.1.0\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 2f348aa884e4795f9775eaa1fe39bff2679e91ba6804f2b750c08867d6a88fb8\n-
+        authors: Thomas McDonald\n  built_at: '2014-10-30T00:00:00.000Z'\n  created_at:
+        '2014-10-30T02:40:23.782Z'\n  description: ''\n  downloads_count: 87288\n
+        \ metadata: {}\n  number: 3.3.0.1\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 4118256e523869ad741147b3ca1d0c1c39a41f8a460fa59ddef500eb2466f329\n-
+        authors: Thomas McDonald\n  built_at: '2014-10-29T00:00:00.000Z'\n  created_at:
+        '2014-10-29T20:53:35.968Z'\n  description: ''\n  downloads_count: 18695\n
+        \ metadata: {}\n  number: 3.3.0.0\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 9f0e5c1824c1486d3b89bad3468c3ce56f8e4483718feeeee89a3485d90fb76b\n-
+        authors: Thomas McDonald\n  built_at: '2014-09-03T00:00:00.000Z'\n  created_at:
+        '2014-09-03T02:12:22.403Z'\n  description: ''\n  downloads_count: 752381\n
+        \ metadata: {}\n  number: 3.2.0.2\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 1e4d5ae4bbc5279da25d4821f4638935f13f7405c7425f4688b81055bf80e377\n-
+        authors: Thomas McDonald\n  built_at: '2014-07-29T00:00:00.000Z'\n  created_at:
+        '2014-07-29T00:11:28.839Z'\n  description: ''\n  downloads_count: 188813\n
+        \ metadata: {}\n  number: 3.2.0.1\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 85381e2e135ec2e5878ccc6c922605d16bc702d7755e0560eef56bbc42ae2a34\n-
+        authors: Thomas McDonald\n  built_at: '2014-06-26T00:00:00.000Z'\n  created_at:
+        '2014-06-26T16:56:58.438Z'\n  description: ''\n  downloads_count: 389232\n
+        \ metadata: {}\n  number: 3.2.0.0\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: 8d02058166b387448bf8c26a302acbba5a260f6208aded0fe50c464b0ece669b\n-
+        authors: Thomas McDonald\n  built_at: '2014-04-18T00:00:00.000Z'\n  created_at:
+        '2014-04-18T21:23:26.426Z'\n  description: \n  downloads_count: 655633\n  metadata:
+        {}\n  number: 3.1.1.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \">= 0\"\n  prerelease: false\n  licenses:\n  -
+        MIT\n  requirements: []\n  sha: e75b0f9c6737481c181e98629f5236f51dd869a5689a4efc40719517759711e2\n-
+        authors: Thomas McDonald\n  built_at: '2014-02-13T00:00:00.000Z'\n  created_at:
+        '2014-02-13T17:33:19.499Z'\n  description: \n  downloads_count: 508467\n  metadata:
+        {}\n  number: 3.1.1.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - MIT\n  requirements:
+        []\n  sha: 5f6c12ffc1126137b02b177dcbbca161fd208a9cc3fb3fefb2676ce6b2ee4153\n-
+        authors: Thomas McDonald\n  built_at: '2014-02-06T00:00:00.000Z'\n  created_at:
+        '2014-02-06T00:21:04.369Z'\n  description: \n  downloads_count: 102047\n  metadata:
+        {}\n  number: 3.1.0.2\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - MIT\n  requirements:
+        []\n  sha: 568c71f60f8ce8d143cd9b1e8d08ec79f9e731b79bcfa7852b976129c9db97de\n-
+        authors: Thomas McDonald\n  built_at: '2014-02-03T00:00:00.000Z'\n  created_at:
+        '2014-02-03T00:26:31.570Z'\n  description: \n  downloads_count: 18108\n  metadata:
+        {}\n  number: 3.1.0.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - MIT\n  requirements:
+        []\n  sha: ade0e8204dd3d0ea5abd9151dae0c6f53b77ed21baa624378420ca05c54cfc71\n-
+        authors: Thomas McDonald\n  built_at: '2014-01-30T00:00:00.000Z'\n  created_at:
+        '2014-01-30T16:55:18.822Z'\n  description: \n  downloads_count: 21363\n  metadata:
+        {}\n  number: 3.1.0.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - MIT\n  requirements:
+        []\n  sha: 87a13ca154540a101957aef1c4d7340a20de2c6e34c2bddfcb59b66714c8f643\n-
+        authors: Thomas McDonald\n  built_at: '2013-12-05T00:00:00.000Z'\n  created_at:
+        '2013-12-05T17:08:53.148Z'\n  description: \n  downloads_count: 635661\n  metadata:
+        {}\n  number: 3.0.3.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 3f9269bae459b9f48bcb46524497fe7c422919708d12d9d9b1096b45339654c7\n-
+        authors: Thomas McDonald\n  built_at: '2013-11-10T00:00:00.000Z'\n  created_at:
+        '2013-11-10T03:00:47.110Z'\n  description: \n  downloads_count: 84703\n  metadata:
+        {}\n  number: 3.0.2.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 24008dbe880cc4c4fc94e80078756e05fcfbf29c2975473159350a7ae34569a6\n-
+        authors: Thomas McDonald\n  built_at: '2013-11-08T00:00:00.000Z'\n  created_at:
+        '2013-11-08T05:21:53.099Z'\n  description: \n  downloads_count: 14120\n  metadata:
+        {}\n  number: 3.0.2.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 35b296cc2cdc846f2e9bc9b2cd551d21ca719988f01c4364a8c0dfd47702790f\n-
+        authors: Thomas McDonald\n  built_at: '2013-11-08T00:00:00.000Z'\n  created_at:
+        '2013-11-08T05:00:17.782Z'\n  description: \n  downloads_count: 6924\n  metadata:
+        {}\n  number: 3.0.1.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 9af897e3f6c859638564c80c170d2665e4ad3999b30ecb9eb146996470d4b325\n-
+        authors: Thomas McDonald\n  built_at: '2013-10-31T00:00:00.000Z'\n  created_at:
+        '2013-10-31T16:57:31.124Z'\n  description: \n  downloads_count: 3674\n  metadata:
+        {}\n  number: 3.0.1.0.rc\n  summary: Twitter's Bootstrap, converted to Sass
+        and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \"> 1.3.1\"\n  ruby_version: \n  prerelease: true\n  licenses:\n  - Apache
+        2.0\n  requirements: []\n  sha: 86db5697882accabb73382f4c965785cfd15275a28563257a5c90d1706ac8617\n-
+        authors: Thomas McDonald\n  built_at: '2013-10-31T00:00:00.000Z'\n  created_at:
+        '2013-10-31T16:55:48.841Z'\n  description: \n  downloads_count: 44579\n  metadata:
+        {}\n  number: 3.0.0.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: fe26d94f589e4462a550d819d416168006d1a1bc49ab8c5bce959424182d4060\n-
+        authors: Thomas McDonald\n  built_at: '2013-10-24T00:00:00.000Z'\n  created_at:
+        '2013-10-24T18:18:48.905Z'\n  description: \n  downloads_count: 5470\n  metadata:
+        {}\n  number: 3.0.0.0.rc2\n  summary: Twitter's Bootstrap, converted to Sass
+        and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \"> 1.3.1\"\n  ruby_version: \n  prerelease: true\n  licenses:\n  - Apache
+        2.0\n  requirements: []\n  sha: 10d74dd5775445243d39cbd84547b5fe8a860563ee8478305e03adf3ecda1fa5\n-
+        authors: Thomas McDonald\n  built_at: '2013-10-23T00:00:00.000Z'\n  created_at:
+        '2013-10-23T19:22:13.022Z'\n  description: \n  downloads_count: 1639\n  metadata:
+        {}\n  number: 3.0.0.0.rc\n  summary: Twitter's Bootstrap, converted to Sass
+        and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \"> 1.3.1\"\n  ruby_version: \n  prerelease: true\n  licenses:\n  - Apache
+        2.0\n  requirements: []\n  sha: c862bd57cd318aa4ab1a4b79c87720e7fd11272c6509987841f39f5717aa93cf\n-
+        authors: Thomas McDonald\n  built_at: '2013-08-28T00:00:00.000Z'\n  created_at:
+        '2013-08-28T17:27:00.624Z'\n  description: \n  downloads_count: 909424\n  metadata:
+        {}\n  number: 2.3.2.2\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 70b38ee9b4fef4dedc97d2c2a0760b80188466a1fd15621327dc0763fb785864\n-
+        authors: Thomas McDonald\n  built_at: '2013-07-19T00:00:00.000Z'\n  created_at:
+        '2013-07-19T16:36:59.321Z'\n  description: \n  downloads_count: 185917\n  metadata:
+        {}\n  number: 2.3.2.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: []\n  sha: 09023be87f2e6a51db833f3739b9b43fc9efb642ab542eeab6579ae92bfe4633\n-
+        authors: Thomas McDonald\n  built_at: '2013-06-11T00:00:00.000Z'\n  created_at:
+        '2013-06-11T20:00:27.561Z'\n  description: \n  downloads_count: 366417\n  metadata:
+        {}\n  number: 2.3.2.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: c3a590d613f563fa138224e89d3765fc3f34c6a99ebc8fdd80993e5094dca6fd\n-
+        authors: Thomas McDonald\n  built_at: '2013-05-31T00:00:00.000Z'\n  created_at:
+        '2013-05-31T22:43:43.430Z'\n  description: \n  downloads_count: 211581\n  metadata:
+        {}\n  number: 2.3.1.3\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: d671d0fa74001bfc52fe55d67486da580bae6e6ce433a27c7e5460cfae10501b\n-
+        authors: Thomas McDonald\n  built_at: '2013-05-24T00:00:00.000Z'\n  created_at:
+        '2013-05-24T14:16:54.124Z'\n  description: \n  downloads_count: 41179\n  metadata:
+        {}\n  number: 2.3.1.2\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: 0a1fc8a783dfbe55aff786cf9a20488c4b6b25ebd6b45274a912808b49cd4fb7\n-
+        authors: Thomas McDonald\n  built_at: '2013-03-16T00:00:00.000Z'\n  created_at:
+        '2013-03-16T14:50:45.336Z'\n  description: \n  downloads_count: 1695669\n
+        \ metadata: {}\n  number: 2.3.1.0\n  summary: Twitter's Bootstrap, converted
+        to Sass and ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: 9af2d4bbb4d86082deff815681ca6a3d82e854f20017e89fee4f73e218859109\n-
+        authors: Thomas McDonald\n  built_at: '2013-02-21T00:00:00.000Z'\n  created_at:
+        '2013-02-21T22:12:58.304Z'\n  description: \n  downloads_count: 168893\n  metadata:
+        {}\n  number: 2.3.0.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: dd8bd75f959559c26916a5a68d94479d32c98e01bc0ec9704fcfbcfac8f2db34\n-
+        authors: Thomas McDonald\n  built_at: '2013-02-14T00:00:00.000Z'\n  created_at:
+        '2013-02-14T21:13:50.393Z'\n  description: \n  downloads_count: 53518\n  metadata:
+        {}\n  number: 2.3.0.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: 95f907034da0423149b41fb12e41e020ea717442450903b94183f82795dd58be\n-
+        authors: Thomas McDonald\n  built_at: '2012-12-22T00:00:00.000Z'\n  created_at:
+        '2012-12-22T12:46:40.080Z'\n  description: \n  downloads_count: 307723\n  metadata:
+        {}\n  number: 2.2.2.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses:\n  - Apache 2.0\n
+        \ requirements: \n  sha: e174ee075db2cf6e4cf46310a09c92aaa80ea3d923ac01915bb6be0f25b8dff2\n-
+        authors: Thomas McDonald\n  built_at: '2012-11-18T00:00:00.000Z'\n  created_at:
+        '2012-11-18T22:57:41.758Z'\n  description: \n  downloads_count: 171216\n  metadata:
+        {}\n  number: 2.2.1.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: []\n  requirements:
+        \n  sha: ba6396cc3652315f6a69b3e5ae8cdc31021d0f1754eb28e1e8fa16b5f2e8bea2\n-
+        authors: Thomas McDonald\n  built_at: '2012-11-17T00:00:00.000Z'\n  created_at:
+        '2012-11-17T13:38:33.441Z'\n  description: \n  downloads_count: 13064\n  metadata:
+        {}\n  number: 2.2.1.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: []\n  requirements:
+        \n  sha: 2855bf67bcaaa26ea8e292c9fd9a771907e1ab887a8d72be235d53a32fbb0744\n-
+        authors: Thomas McDonald\n  built_at: '2012-10-31T00:00:00.000Z'\n  created_at:
+        '2012-10-31T14:45:38.039Z'\n  description: \n  downloads_count: 164642\n  metadata:
+        {}\n  number: 2.1.1.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: f2f7f1c28d44c9fecb6e03beeff2ecaa96590a11727e9feb401c98baebb17856\n-
+        authors: Thomas McDonald\n  built_at: '2012-10-16T00:00:00.000Z'\n  created_at:
+        '2012-10-16T18:21:02.024Z'\n  description: \n  downloads_count: 83273\n  metadata:
+        {}\n  number: 2.1.0.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: cab3d11496ff4c25731843715df94e2208917b5fcd7336d3234ab78e545e1579\n-
+        authors: Thomas McDonald\n  built_at: '2012-09-06T00:00:00.000Z'\n  created_at:
+        '2012-09-06T15:35:23.269Z'\n  description: \n  downloads_count: 200706\n  metadata:
+        {}\n  number: 2.1.0.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: c03485e34642a46f0fb0d887b4284f91cb6ef34b09281a71fe71a43e80c72453\n-
+        authors: Thomas McDonald\n  built_at: '2012-09-01T00:00:00.000Z'\n  created_at:
+        '2012-09-01T10:08:29.225Z'\n  description: \n  downloads_count: 98770\n  metadata:
+        {}\n  number: 2.0.4.2\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: cefeba0a0dc3e2e36e3adc4bf3df9531d9eb1f44be74c8d2c30f2d7398588219\n-
+        authors: Thomas McDonald\n  built_at: '2012-08-28T00:00:00.000Z'\n  created_at:
+        '2012-08-28T07:42:29.994Z'\n  description: \n  downloads_count: 14900\n  metadata:
+        {}\n  number: 2.0.4.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: 121f4c348f6a2262403db3a398bc90a4f4fc9dae3317934663696d0109171f79\n-
+        authors: Thomas McDonald\n  built_at: '2012-06-26T00:00:00.000Z'\n  created_at:
+        '2012-06-26T21:25:30.862Z'\n  description: \n  downloads_count: 193572\n  metadata:
+        {}\n  number: 2.0.4.0\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: 332bc79d68067f81e5f09d6dc7a0f6599f0f3156aedecc82a479bb57a7f2ab9b\n-
+        authors: Thomas McDonald\n  built_at: '2012-05-22T00:00:00.000Z'\n  created_at:
+        '2012-05-22T10:16:45.444Z'\n  description: \n  downloads_count: 108194\n  metadata:
+        {}\n  number: 2.0.3.1\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: 3b56f6a34712253b923c1612c41360c023a70c4466335ab9b9a3253a051e0bd0\n-
+        authors: Thomas McDonald\n  built_at: '2012-05-13T00:00:00.000Z'\n  created_at:
+        '2012-05-13T20:37:10.827Z'\n  description: \n  downloads_count: 27727\n  metadata:
+        {}\n  number: 2.0.3\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: 418798193588e5d389369cca862980d69a0c69768e5fe52b2553abfaadf221a6\n-
+        authors: Thomas McDonald\n  built_at: '2012-03-31T00:00:00.000Z'\n  created_at:
+        '2012-03-31T13:58:42.865Z'\n  description: \n  downloads_count: 68777\n  metadata:
+        {}\n  number: 2.0.2\n  summary: Twitter's Bootstrap, converted to Sass and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: 283d497430590f9f818c163c3c9d3c3d22895a707bf849b725bfa3e1b6c44489\n-
+        authors: Thomas McDonald\n  built_at: '2012-02-17T00:00:00.000Z'\n  created_at:
+        '2012-02-17T11:43:07.974Z'\n  description: \n  downloads_count: 46095\n  metadata:
+        {}\n  number: 2.0.1\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails or\n    Compass\n  platform: ruby\n  rubygems_version:
+        \">= 0\"\n  ruby_version: \n  prerelease: false\n  licenses: \n  requirements:
+        \n  sha: a9072199d47f35b05eecfa2993ad4c4e87f9969d06dcc71285fbd9ed0550c01e\n-
+        authors: Thomas McDonald\n  built_at: '2012-02-06T00:00:00.000Z'\n  created_at:
+        '2012-02-06T13:44:43.604Z'\n  description: \n  downloads_count: 75190\n  metadata:
+        {}\n  number: 2.0.0\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        0e247d4e5df65b748a94c5343af92da488b35b5c5ddf3723c1fa0e2be24c6457\n- authors:
+        Thomas McDonald\n  built_at: '2012-01-17T00:00:00.000Z'\n  created_at: '2012-01-17T17:08:07.648Z'\n
+        \ description: \n  downloads_count: 27080\n  metadata: {}\n  number: 1.4.4\n
+        \ summary: Twitter's Bootstrap, converted to SASS and ready to drop into Rails\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
+        false\n  licenses: \n  requirements: \n  sha: fc558d41eb4dd97e0d26b5db3e8387a1c9a30099f06523e84a9b65407b65438e\n-
+        authors: Thomas McDonald\n  built_at: '2011-12-24T00:00:00.000Z'\n  created_at:
+        '2011-12-24T17:59:23.681Z'\n  description: \n  downloads_count: 19597\n  metadata:
+        {}\n  number: 1.4.3\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        688fc5b7c90d82bf97be61ec7a98bad4046e0f7f76be18cd3804704f962844e3\n- authors:
+        Thomas McDonald\n  built_at: '2011-12-10T00:00:00.000Z'\n  created_at: '2011-12-10T16:47:38.716Z'\n
+        \ description: \n  downloads_count: 6728\n  metadata: {}\n  number: 1.4.2\n
+        \ summary: Twitter's Bootstrap, converted to SASS and ready to drop into Rails\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
+        false\n  licenses: \n  requirements: \n  sha: 607793948cab67c2d900a0e95fba19da04ec7b34c60013e005158384953a3a9a\n-
+        authors: Thomas McDonald\n  built_at: '2011-12-02T00:00:00.000Z'\n  created_at:
+        '2011-12-02T22:39:19.558Z'\n  description: \n  downloads_count: 5615\n  metadata:
+        {}\n  number: 1.4.1\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        c745f0b958e14cbbd5a04b8abe1ca7c77bd80c14c168f0d018a80a50c14a48e1\n- authors:
+        Thomas McDonald\n  built_at: '2011-11-04T00:00:00.000Z'\n  created_at: '2011-11-04T14:47:51.343Z'\n
+        \ description: \n  downloads_count: 11197\n  metadata: {}\n  number: 1.4.0\n
+        \ summary: Twitter's Bootstrap, converted to SASS and ready to drop into Rails\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
+        false\n  licenses: \n  requirements: \n  sha: 7f30d23d385ea63397cef5a7e28fe53ed82d08b0d4d9f104407eaa63e3a7e719\n-
+        authors: Thomas McDonald\n  built_at: '2011-10-22T00:00:00.000Z'\n  created_at:
+        '2011-10-22T13:59:39.801Z'\n  description: \n  downloads_count: 5689\n  metadata:
+        {}\n  number: 1.3.2\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        bf2c92ffcfaa074278c8df4e590845341aa9d661396bbe40e68ffc7f65bbd4e4\n- authors:
+        Thomas McDonald\n  built_at: '2011-10-12T00:00:00.000Z'\n  created_at: '2011-10-12T17:42:36.962Z'\n
+        \ description: \n  downloads_count: 4261\n  metadata: {}\n  number: 1.3.1\n
+        \ summary: Twitter's Bootstrap, converted to SASS and ready to drop into Rails\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
+        false\n  licenses: \n  requirements: \n  sha: 0964a2dfe2e821d1cfc74279fe79b8a0484ecc676f0791dff09f07b687638ead\n-
+        authors: Thomas McDonald\n  built_at: '2011-09-19T00:00:00.000Z'\n  created_at:
+        '2011-09-19T22:11:03.824Z'\n  description: \n  downloads_count: 4930\n  metadata:
+        {}\n  number: 1.3.0\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        fc5f73d43d14114c0bca793b1d93298fe4869b2f08a47fa2d39dc51ee6e3b2e2\n- authors:
+        Thomas McDonald\n  built_at: '2011-09-06T00:00:00.000Z'\n  created_at: '2011-09-06T23:12:51.906Z'\n
+        \ description: \n  downloads_count: 3305\n  metadata: {}\n  number: 1.2.1\n
+        \ summary: Twitter's Bootstrap, converted to SASS and ready to drop into Rails\n
+        \ platform: ruby\n  rubygems_version: \">= 0\"\n  ruby_version: \n  prerelease:
+        false\n  licenses: \n  requirements: \n  sha: 31986d7e529cfeb33a8527508752f83e27c764d2cdd7c04e79badf1c1117c596\n-
+        authors: Thomas McDonald\n  built_at: '2011-09-06T00:00:00.000Z'\n  created_at:
+        '2011-09-06T21:08:37.096Z'\n  description: \n  downloads_count: 2324\n  metadata:
+        {}\n  number: 1.2.0\n  summary: Twitter's Bootstrap, converted to SASS and
+        ready to drop into Rails\n  platform: ruby\n  rubygems_version: \">= 0\"\n
+        \ ruby_version: \n  prerelease: false\n  licenses: \n  requirements: \n  sha:
+        20038e5476d4ba647efec0f651f22578852813dee6644f8fbd7defd1a36bf91c\n"
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:23:27 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/bootstrap-sass/owners.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/yaml
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - private
+      X-Request-Id:
+      - 635f848e-751a-4e3e-8a41-769e8bc4f459
+      X-Runtime:
+      - '0.005116'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 06 Jan 2017 17:23:28 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7032-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483723407.973208,VS0,VE197
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"9d369c97320d6dc09f81d8a22d7df7bc"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        ---
+        - id: 53274
+          handle: tmcdonald
+          email: thomasmcdonald@ymail.com
+        - id: 45057
+          handle: glebm
+          email: glex.spb@gmail.com
+    http_version: 
+  recorded_at: Fri, 06 Jan 2017 17:23:28 GMT
+recorded_with: VCR 3.0.3

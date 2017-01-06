@@ -42,9 +42,9 @@ http_interactions:
       Cache-Control:
       - private
       X-Request-Id:
-      - 378e09ae-c51a-4e4e-986b-06f8463a7887
+      - 6b7f120f-35b9-4f13-b765-11a08fab4bb9
       X-Runtime:
-      - '0.008328'
+      - '0.006704'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
@@ -54,7 +54,7 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 06 Jan 2017 17:09:10 GMT
+      - Fri, 06 Jan 2017 17:12:58 GMT
       Via:
       - 1.1 varnish
       Age:
@@ -62,17 +62,17 @@ http_interactions:
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-bma7028-BMA
+      - cache-bma7029-BMA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1483722550.564767,VS0,VE191
+      - S1483722778.657180,VS0,VE202
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"bc5bb79730be22bf6f649b848decd22e"'
+      - '"c19b52bfff93c636422083adf0655663"'
       Server:
       - RubyGems.org
     body:
@@ -89,5 +89,5 @@ http_interactions:
         guilleiguaran\n  email: guilleiguaran@gmail.com\n- id: 47349\n  handle: rafaelfranca\n
         \ email: rafaelmfranca@gmail.com\n"
     http_version: 
-  recorded_at: Fri, 06 Jan 2017 17:09:10 GMT
+  recorded_at: Fri, 06 Jan 2017 17:12:58 GMT
 recorded_with: VCR 3.0.3
