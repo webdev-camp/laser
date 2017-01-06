@@ -10,6 +10,8 @@ class UpdateLaserGemJob < ApplicationJob
     gitloader = GitLoader.new
     gitloader.update_or_create_git(gem_name)
     laser_gem = LaserGem.find_by(name: gem_name)
+    laser_gem.touch
+    laser_gem.save
     Ranking.new(laser_gem).total_rank_calc
     Ranking.new(laser_gem).download_rank_string_calc
     Ranking.new(laser_gem).download_rank_percent_calc
