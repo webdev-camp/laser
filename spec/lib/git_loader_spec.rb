@@ -1,4 +1,5 @@
 require "git_loader"
+require "gem_loader"
 
 RSpec.describe GitLoader do
   it "instantiates a loader" do
@@ -6,7 +7,7 @@ RSpec.describe GitLoader do
   end
 
   describe "#get_git_from_api" do
-    it "returns nil if api response is an error", :ci => true do
+    it "returns nil if api response is an error", :vcr do
       repo_name = "xspond/paranoid"
       loader = GitLoader.new
       expect(loader.get_git_from_api(repo_name)).to be nil
@@ -17,7 +18,7 @@ RSpec.describe GitLoader do
     before :example do
       @loader = GitLoader.new
     end
-    it "saves an instance of ownership for each assignee in the array", :ci => true do
+    it "saves an instance of ownership for each assignee in the array", :vcr do
       tz = LaserGem.create(name: "tzinfo")
       loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(tz)
@@ -26,7 +27,7 @@ RSpec.describe GitLoader do
       expect(Ownership.count).not_to be nil
     end
 
-    it "updates an existing ownership if the handles match", :ci => true do
+    it "updates an existing ownership if the handles match", :vcr do
 
       tz = LaserGem.create(name: "tzinfo")
       loader2 = GemLoader.new
@@ -37,7 +38,7 @@ RSpec.describe GitLoader do
       expect(Ownership.where(["github_owner = ? and rubygem_owner = ?", true, true]).count).not_to be 0
     end
 
-    it "correctly populates ownerships for each laser_gem" , :ci => true do
+    it "correctly populates ownerships for each laser_gem" , :vcr do
       tz = LaserGem.create(name: "tzinfo")
       loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(tz)
@@ -47,7 +48,7 @@ RSpec.describe GitLoader do
       array.each { |a| expect(Ownership.where(["git_handle = ?", a[0]])[0].git_handle).to eq array[0][0] }
     end
 
-    it "saves instances of ownership for the dependents with the given laser_gem", :ci => true do
+    it "saves instances of ownership for the dependents with the given laser_gem", :vcr do
       tz = LaserGem.create(name: "tzinfo")
       loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(tz)
@@ -56,7 +57,7 @@ RSpec.describe GitLoader do
       expect(ts.ownerships.count).not_to be 0
     end
 
-    it "does not save a ownership if it already exists", :ci => true do
+    it "does not save a ownership if it already exists", :vcr do
       tz = LaserGem.create(name: "tzinfo")
       loader2 = GemLoader.new
       loader2.fetch_and_create_gem_spec(tz)
@@ -126,29 +127,29 @@ RSpec.describe GitLoader do
       expect(@loader.parse_additional_uris(@laser_gem)).to be nil
     end
 
-    it "returns repo name if any uris are in correct format AND are a real repo_name" do
+    it "returns repo name if any uris are in correct format AND are a real repo_name" , :vcr do
       make_spec homepage_uri: "www.rails.org", documentation_uri: "www.github.com/tzinfo/tzinfo", bug_tracker_uri: "https://issues/here/rails.uk"
       expect(@loader.parse_additional_uris(@laser_gem)).to eq "tzinfo/tzinfo"
     end
 
-    it "returns nil if any uris are in correct format but arent a real repo_name" do
+    it "returns nil if any uris are in correct format but arent a real repo_name" , :vcr do
       make_spec homepage_uri: "www.rails.org", documentation_uri: "www.github.com/bugsy/bugs", bug_tracker_uri: "https://issues/here/rails.uk"
       expect(@loader.parse_additional_uris(@laser_gem)).to eq nil
     end
 
-    it "returns repo name if any uris are in correct format" do
+    it "returns repo name if any uris are in correct format" , :vcr do
       make_spec homepage_uri: "www.rails.org", documentation_uri: "www.github.com", bug_tracker_uri: "https://github.com/rails/rails/issues"
       expect(@loader.parse_additional_uris(@laser_gem)).to eq "rails/rails"
     end
 
-    it "returns repo name if any uris are in correct format" do
+    it "returns repo name if any uris are in correct format" , :vcr do
       make_spec homepage_uri: "www.github.com/rails/rails", documentation_uri: "www.github.com", bug_tracker_uri: "https://com/rails/rails/issues"
       expect(@loader.parse_additional_uris(@laser_gem)).to eq "rails/rails"
     end
   end
 
 
-  describe "#fetch_and_create_gem_git", :ci => true  do
+  describe "#fetch_and_create_gem_git", :vcr  do
     it "saves an instance of GemGit for each laser_gem" do
       loader = GitLoader.new
       loader2 = GemLoader.new
@@ -159,7 +160,7 @@ RSpec.describe GitLoader do
     end
   end
 
-  it "fetches owners of the LaserGem and creates ownerships", :ci => true do
+  it "fetches owners of the LaserGem and creates ownerships", :vcr do
     tz = LaserGem.create(name: "tzinfo")
     loader = GemLoader.new
     loader.fetch_and_create_gem_spec(tz)
@@ -169,8 +170,8 @@ RSpec.describe GitLoader do
     expect(Ownership.count).not_to be nil
   end
 
-  describe "#fetch_and_create_gem_git", :ci => true do
-    it "calls fetch_and_create_gem_git recursively for the dependents of the given laser_gem, creating their GemGits and ownerships", :ci => true  do
+  describe "#fetch_and_create_gem_git", :vcr do
+    it "calls fetch_and_create_gem_git recursively for the dependents of the given laser_gem, creating their GemGits and ownerships", :vcr  do
       loader = GemLoader.new
       laser_gem = LaserGem.create(name: "tzinfo")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -288,7 +289,7 @@ RSpec.describe GitLoader do
         bug_tracker_uri: 'www.github.com/home/project/issues',
       )
       expect(@loader.github_repo_name_candidates(laser_gem)).to eq [
-        "home/uri", "docs/uri", "home/project" 
+        "home/uri", "docs/uri", "home/project"
       ]
     end
   end

@@ -46,7 +46,6 @@ RSpec.describe "LaserGems" do
     laser_gem = create :laser_gem
     create :laser_gem
     visit root_path
-    puts laser_gem.name
     page.fill_in 'q_gem_spec_name_or_gem_spec_info_cont', :with => laser_gem.gem_spec.name
     click_button "Search"
     expect(page.status_code).to be 200

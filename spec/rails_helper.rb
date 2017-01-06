@@ -48,8 +48,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  # Excludes tests for CI
-  unless ENV['CODECLIMATE_REPO_TOKEN']
-    config.filter_run_excluding :ci => true
-  end
 end
