@@ -64,7 +64,8 @@ class GemLoader
     return unless gem_data
     laser_gem = LaserGem.find_by!(name: gem_name)
     if(laser_gem)
-      laser_gem.touch.save
+      laser_gem.touch
+      laser_gem.save
     else
       laser_gem = LaserGem.create_by!(name: gem_name)
     end
