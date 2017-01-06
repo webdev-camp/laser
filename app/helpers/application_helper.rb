@@ -18,4 +18,10 @@ module ApplicationHelper
     link_to(name, options, html_options, &block)
   end
 
+  def tag_validation(tag)
+    return "Tag is empty" if tag.blank?
+    return "Tag may not contain spaces" if tag.include?(" ")
+    return "Tag must be longer than 1" if tag.length == 1
+  end
+
 end

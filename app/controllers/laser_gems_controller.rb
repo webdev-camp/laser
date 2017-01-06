@@ -1,4 +1,6 @@
 class LaserGemsController < ApplicationController
+  include ApplicationHelper
+
   before_action :authenticate_user!,   only: [:add_comment]
   before_action :load_gem ,            only: [:show ,   :add_tag , :add_comment]
   before_action :require_owner_rights, only: [:add_tag , :add_comment]
@@ -23,13 +25,13 @@ class LaserGemsController < ApplicationController
   end
 
   def add_tag
-    if tag_is_valid
+    if msg = tag_validation( params[:tag] )
+      flash[:notice] = "Please insert a valid tag. " + msg
+      render :show
+    else
       @laser_gem.tag_list.add(params[:tag])
       @laser_gem.save
       redirect_to laser_gem_path(@laser_gem.name)
-    else
-      flash[:notice] = "Please insert a valid tag."
-      render :show
     end
   end
 
@@ -55,13 +57,6 @@ class LaserGemsController < ApplicationController
     @laser_gem = LaserGem.find_by_name(params[:name])
   end
 
-  def tag_is_valid
-    if params[:tag].include?(" ")
-      false
-    else
-      true
-    end
-  end
 
   def require_owner_rights
     redirect_to laser_gem_path(@laser_gem.name) unless has_owner_rights?
