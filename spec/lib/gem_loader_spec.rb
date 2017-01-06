@@ -1,51 +1,39 @@
 require "gem_loader"
 require "git_loader"
 
-RSpec.describe GemLoader do
+RSpec.describe GemLoader , :vcr do
   it "instantiates a loader" do
     expect(GemLoader.new).not_to be nil
   end
 
   describe "#get_spec_from_api" do
     it "fetches using the client" do
-      api_response = { "name" => "rails" }
-      client = instance_double("Gems::Client", info: api_response)
-      loader = GemLoader.new(client: client)
-      expect(loader.get_spec_from_api("rails")).to be api_response
+      loader = GemLoader.new
+      expect(loader.get_spec_from_api("rails").length).to be 19
     end
 
     it "returns nil when the API doesn't respond" do
-      api_response =
-        "SocketError: Failed to open TCP connection to rubygems.org:443 (getaddrinfo: Name or service not known)"
-      client = instance_double("Gems::Client", info: api_response)
-      loader = GemLoader.new(client: client)
-      expect(loader.get_spec_from_api("rails")).to be api_response
+      loader = GemLoader.new
+      expect(loader.get_spec_from_api("pails")).to be nil
     end
   end
 
   describe "#get_owners_from_api" do
     it "fetches using the client" do
-      api_response = { "owners" => "mr tickle" }
-      client = instance_double("Gems::Client", owners: api_response)
-      loader = GemLoader.new(client: client)
-      expect(loader.get_owners_from_api("rails")).to be api_response
+      loader = GemLoader.new
+      expect(loader.get_owners_from_api("rails").length).to be 13
     end
 
-    it "returns an error when the API doesn't respond" do
-      api_response =
-        "SocketError: Failed to open TCP connection to rubygems.org:443 (getaddrinfo: Name or service not known)"
-      client = instance_double("Gems::Client", owners: api_response)
-      loader = GemLoader.new(client: client)
-      expect(loader.get_owners_from_api("rails")).to be api_response
+    it "gets owner data" do
+      loader = GemLoader.new
+      expect(loader.get_owners_from_api("rails").first["email"]).to eq "kaspth@gmail.com"
     end
   end
 
   describe "#get_build_start_from_api" do
-    it "fetches build date of first version from api", :vcr do
-      api_response = [{"stuff" => "stuffing"}, {"muppets" => "fraggles"}, {"build_date" => "2005-08-30T04:00:00.000Z"}]
-      client = instance_double("Gems::Client", versions: api_response)
-      loader = GemLoader.new(client: client)
-      expect(loader.get_build_start_from_api("tzinfo")["build_date"]).to eq "2005-08-30T04:00:00.000Z"
+    it "fetches build date of first version from api" do
+      loader = GemLoader.new
+      expect(loader.get_build_start_from_api("tzinfo")["built_at"]).to eq "2005-08-30T04:00:00.000Z"
     end
   end
 
@@ -53,7 +41,7 @@ RSpec.describe GemLoader do
     before :example do
       @loader = GemLoader.new
     end
-    it "saves an instance of ownership for each owner in the array", :vcr do
+    it "saves an instance of ownership for each owner in the array" do
       laser_gem = LaserGem.create(name: "rails")
       expect(Ownership.count).to eq 0
       @loader.fetch_owners(laser_gem)
@@ -61,7 +49,7 @@ RSpec.describe GemLoader do
     end
 
 
-    it "correctly populates ownerships for each laser_gem" , :vcr do
+    it "correctly populates ownerships for each laser_gem"  do
       laser_gem = LaserGem.create(name: "rails")
       @loader.fetch_owners(laser_gem)
       owner_handles =
@@ -81,7 +69,7 @@ RSpec.describe GemLoader do
         expect(Ownership.all.pluck(:gem_handle)).to eq owner_handles
     end
 
-    it "saves instances of ownership for the dependents with the given laser_gem", :vcr do
+    it "saves instances of ownership for the dependents with the given laser_gem" do
       laser_gem = LaserGem.create!(name: "tzinfo")
       @loader.fetch_and_create_gem_spec(laser_gem)
       @loader.fetch_owners(laser_gem)
@@ -89,7 +77,7 @@ RSpec.describe GemLoader do
       expect(ts.ownerships.count).not_to be nil
     end
 
-    it "does not save a ownership if it already exists", :vcr do
+    it "does not save a ownership if it already exists" do
       laser_gem = LaserGem.create!(name: "tzinfo")
       @loader.fetch_and_create_gem_spec(laser_gem)
       ts = LaserGem.find_by(name: "thread_safe")
@@ -102,7 +90,7 @@ RSpec.describe GemLoader do
   end
 
   describe "#fetch_and_create_gem_spec" do
-    it "saves an instance of GemSpec for each laser_gem", :vcr do
+    it "saves an instance of GemSpec for each laser_gem" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -110,13 +98,11 @@ RSpec.describe GemLoader do
     end
 
     it "does not create a laser_gem for gem name that do not exists" do
-      api_response = "This rubygem could not be found."
-      client = instance_double("Gems::Client", info: api_response)
-      GemLoader.new(client: client).create_or_update_spec("pails")
+      GemLoader.new.create_or_update_spec("pails")
       expect( LaserGem.find_by(name: "pails") ).to be nil
     end
 
-    it "correctly populates GemSpec for each laser_gem" , :vcr do
+    it "correctly populates GemSpec for each laser_gem"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -125,7 +111,7 @@ RSpec.describe GemLoader do
       expect(as_gem.rubygem_uri).to eq "https://rubygems.org/gems/activesupport"
     end
 
-    it "touches existing laser_gem" , :vcr do
+    it "touches existing laser_gem"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activerecord" , updated_at: Time.now - 2.days)
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -133,14 +119,14 @@ RSpec.describe GemLoader do
       expect(Time.now - laser_gem.updated_at).to be <= 30
     end
 
-    it "saves instances of LaserGem for the dependents of the given laser_gem that dont already exist", :vcr  do
+    it "saves instances of LaserGem for the dependents of the given laser_gem that dont already exist"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
       expect(LaserGem.exists?(name: "minitest")).to be true
     end
 
-    it "saves instances of GemDependency for the dependents with the given laser_gem", :vcr  do
+    it "saves instances of GemDependency for the dependents with the given laser_gem"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -148,28 +134,28 @@ RSpec.describe GemLoader do
     end
 
     # The problem with this test is that if the dependency for tzinfo changes the test will no longer be effective
-    it "does not save a GemDependency if it already exists", :vcr do
+    it "does not save a GemDependency if it already exists" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "tzinfo")
       loader.fetch_and_create_gem_spec(laser_gem)
       expect{ loader.fetch_and_create_gem_spec(laser_gem) }.not_to raise_error
     end
 
-    it "fetches the build_date of the first version for each LaserGem", :vcr do
+    it "fetches the build_date of the first version for each LaserGem" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "tzinfo")
       loader.fetch_and_create_gem_spec(laser_gem)
       expect(laser_gem.gem_spec.build_date).to eq "2005-08-30T04:00:00.000Z"
     end
 
-    it "fetches owners of the LaserGem and creates ownerships", :vcr do
+    it "fetches owners of the LaserGem and creates ownerships" do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "tzinfo")
       loader.fetch_and_create_gem_spec(laser_gem)
       expect(laser_gem.ownerships.count).to be > 0
     end
 
-    it "calls fetch_and_create_gem_spec recursively for the dependents of the given laser_gem, creating their GemSpecs, Ownerships and GemDependencies with their depenendents", :vcr  do
+    it "calls fetch_and_create_gem_spec recursively for the dependents of the given laser_gem, creating their GemSpecs, Ownerships and GemDependencies with their depenendents"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
@@ -182,19 +168,19 @@ RSpec.describe GemLoader do
     end
   end
 
-  describe "#create_or_update_spec", ci: true do
+  describe "#create_or_update_spec"  do
     before :example do
       @loader = GemLoader.new
     end
-    it "returns nil if laser_gem.name is not a valid gem name" do
+    it "returns nil if laser_gem.name is not a valid gem name"  do
       expect(@loader.create_or_update_spec("sassie")).to eq nil
     end
-    it "creates a gem if no gem of the name exists" do
+    it "creates a gem if no gem of the name exists"  do
       @loader.create_or_update_spec("sass")
       expect(LaserGem.where(name: "sass").exists?).to be true
     end
 
-    xit "creates laser gem and gem spec for dependencies if they dont exist", :vcr  do
+    xit "creates laser gem and gem spec for dependencies if they dont exist"  do
 
       @loader.create_or_update_spec("bootstrap-sass")
       laser_gem = LaserGem.find_by(name: "sass")
@@ -203,7 +189,7 @@ RSpec.describe GemLoader do
       expect(laser_gem.gem_spec).not_to be nil
     end
 
-    it "updates attributes, build date and ownerships for a vaild gem if it already exists" do
+    it "updates attributes, build date and ownerships for a vaild gem if it already exists"  do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
       loader.fetch_and_create_gem_spec(laser_gem)
