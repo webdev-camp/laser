@@ -7,7 +7,7 @@ gem 'sqlite3'
 gem 'sassc-rails'
 gem 'haml-rails'
 
-gem 'gems', github: "rubygems/gems"
+gem 'gems'
 gem "octokit", "~> 4.0"
 
 gem 'susy'

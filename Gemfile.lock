@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/rubygems/gems.git
-  revision: 7213224b67be34df0c678d9acd7786197badea3d
-  specs:
-    gems (0.8.3)
-      json (~> 1.8)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,6 +99,7 @@ GEM
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+    gems (0.8.3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     guard (2.14.0)
@@ -364,7 +358,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-rails
-  gems!
+  gems
   guard
   guard-rspec
   haml-rails

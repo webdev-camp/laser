@@ -1,7 +1,7 @@
 class GemLoader
 
-  def initialize(client: Gems::Client.new)
-    @client = client
+  def initialize()
+    @client = Gems::Client.new
   end
 
   def get_spec_from_api(gem_name)
@@ -62,12 +62,12 @@ class GemLoader
   def create_or_update_spec(gem_name)
     gem_data = get_spec_from_api(gem_name)
     return unless gem_data
-    laser_gem = LaserGem.find_by!(name: gem_name)
+    laser_gem = LaserGem.find_by(name: gem_name)
     if(laser_gem)
       laser_gem.touch
       laser_gem.save
     else
-      laser_gem = LaserGem.create_by!(name: gem_name)
+      laser_gem = LaserGem.create!(name: gem_name)
     end
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
