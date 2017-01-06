@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  include ApplicationHelper
+
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
   before_action :require_admin_rights
 
@@ -11,45 +13,32 @@ class TagsController < ApplicationController
   def show
   end
 
-  def new
-    @tag = ActsAsTaggableOn::Tag.new
-  end
-
   def edit
   end
 
-  def create
-    @tag = ActsAsTaggableOn::Tag.new(tag_params)
-
-    respond_to do |format|
-      if @tag.save
-        format.html { redirect_to tag_path(@tag), notice: 'Tag was successfully created.' }
-        format.json { render :show, status: :created, location: @tag }
-      else
-        format.html { render :new }
-        format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end
-    end
+  def new
+    redirect_to tags_path , notice: "Create tags on gem page"
   end
 
   def update
-    respond_to do |format|
-      if @tag.update(tag_params)
-        format.html { redirect_to tag_path(@tag), notice: 'Tag was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tag }
-      else
-        format.html { render :edit }
-        format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end
+    @tag.name = tag_params[:name]
+    if msg = tag_validation( @tag.name )
+      flash.now.notice = 'Invalid tag.' + msg
+      render :edit
+    else
+      @tag.save
+      redirect_to tag_path(@tag), notice: 'Tag was successfully updated.'
     end
   end
 
   def destroy
-    @tag.destroy
-    respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
-      format.json { head :no_content }
+    if @tag.taggings_count > 0
+      notice = "Only unused tags can be destroyed"
+    else
+      notice = 'Tag was successfully destroyed.'
+      @tag.destroy
     end
+    redirect_to tags_url, notice: notice
   end
 
   private
