@@ -1,0 +1,5 @@
+update_one_gem:
+  cron: "* * * * *"
+  class: UpdateOneGemJob
+  queue: default
+  

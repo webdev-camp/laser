@@ -36,7 +36,7 @@ gem 'will_paginate-bootstrap4'
 
 gem 'ransack'
 
-gem "sidekiq"
+gem "sidekiq-cron"
 
 gem "impressionist"
 
