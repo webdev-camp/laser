@@ -85,6 +85,7 @@ class GemLoader
       laser_gem.create_gem_spec!(attribs)
     end
     create_or_update_deps(laser_gem, gem_data["dependencies"]["runtime"] )
+    laser_gem
   end
 
   def create_or_update_deps(laser_gem, runtime_deps)
