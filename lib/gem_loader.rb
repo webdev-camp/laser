@@ -27,6 +27,7 @@ class GemLoader
       spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
       laser_gem.create_gem_spec!(attribs)
     end
+    laser_gem.touch
     fetch_owners(laser_gem)
     fetch_and_spec_deps(laser_gem, gem_data["dependencies"]["runtime"] )
   end
@@ -59,9 +60,14 @@ class GemLoader
   end
 
   def create_or_update_spec(gem_name)
-    laser_gem = LaserGem.find_or_create_by!(name: gem_name)
-    gem_data = get_spec_from_api(laser_gem.name)
+    gem_data = get_spec_from_api(gem_name)
     return unless gem_data
+    laser_gem = LaserGem.find_by!(name: gem_name)
+    if(laser_gem)
+      laser_gem.touch.save
+    else
+      laser_gem = LaserGem.create_by!(name: gem_name)
+    end
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
     spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}

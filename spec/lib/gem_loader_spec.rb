@@ -109,6 +109,13 @@ RSpec.describe GemLoader do
       expect(GemSpec.exists?(name: "activesupport")).to be true
     end
 
+    it "does not create a laser_gem for gem name that do not exists" do
+      api_response = "This rubygem could not be found."
+      client = instance_double("Gems::Client", info: api_response)
+      GemLoader.new(client: client).create_or_update_spec("pails")
+      expect( LaserGem.find_by(name: "pails") ).to be nil
+    end
+
     it "correctly populates GemSpec for each laser_gem" , :ci => true do
       loader = GemLoader.new
       laser_gem = LaserGem.create!(name: "activesupport")
@@ -116,6 +123,14 @@ RSpec.describe GemLoader do
       as_gem = GemSpec.find_by(name: "activesupport")
       expect(as_gem.name).to eq "activesupport"
       expect(as_gem.rubygem_uri).to eq "https://rubygems.org/gems/activesupport"
+    end
+
+    it "touches existing laser_gem" , :ci => true do
+      loader = GemLoader.new
+      laser_gem = LaserGem.create!(name: "activerecord" , updated_at: Time.now - 2.days)
+      loader.fetch_and_create_gem_spec(laser_gem)
+      laser_gem.reload
+      expect(Time.now - laser_gem.updated_at).to be <= 30
     end
 
     it "saves instances of LaserGem for the dependents of the given laser_gem that dont already exist", :ci => true  do
