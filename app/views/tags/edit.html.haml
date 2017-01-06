@@ -1,6 +1,15 @@
 %h1 Editing tag
 
-= render 'form'
+= simple_form_for(@tag , url: tag_path(@tag)) do |f|
+  - flash.each do |name, message|
+    .comment_error
+      =message
+
+  .form-inputs
+    = f.input :name
+
+  .form-actions
+    = f.button :submit
 
 = link_to 'Show', tag_path(@tag)
 \|
