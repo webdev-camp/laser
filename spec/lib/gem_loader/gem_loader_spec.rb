@@ -66,8 +66,8 @@ RSpec.describe GemLoader , :vcr do
       expect(LaserGem.where(name: "tzinfo").exists?).to be true
       dep = LaserGem.find_by(name: "tzinfo")
       fake_date = "2010-09-22T04:00:00.000Z"
-      dep.gem_spec.update(total_downloads: 3, build_date: fake_date , updated_at: 9.days.ago)
-      dep.reload
+      dep.gem_spec.update(total_downloads: 3, build_date: fake_date)
+      dep.update(updated_at: 9.days.ago)
       @loader.create_or_update_spec("activesupport")
       dep.reload
       expect(dep.gem_spec.total_downloads).not_to eq 3

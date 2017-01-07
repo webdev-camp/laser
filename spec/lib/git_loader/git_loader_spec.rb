@@ -27,18 +27,14 @@ RSpec.describe GitLoader  , :vcr do
       @gemloader = GemLoader.new
     end
 
-    it "returns nil if no valid repo name" do
-      expect(@loader.update_or_create_git("sassie")).to be nil
-    end
-
     it "updates existing gem_gits with owners, yearly commits and git data"  do
       laser_gem = @gemloader.create_or_update_spec("tzinfo")
-      @loader.fetch_and_create_gem_git(laser_gem)
+      @loader.update_or_create_git(laser_gem)
       expect(laser_gem.gem_spec).not_to be nil
       laser_gem.gem_git.update(stargazers_count: 1, commit_dates_year: [1,2,3], forks_count: 666)
       laser_gem.reload
       expect(laser_gem.gem_git.stargazers_count).to eq 1
-      @loader.update_or_create_git("tzinfo")
+      @loader.update_or_create_git(laser_gem)
       laser_gem.gem_git.reload
       expect(laser_gem.gem_git.stargazers_count).not_to eq 1
       expect(laser_gem.gem_git.forks_count).not_to eq 666
@@ -48,7 +44,7 @@ RSpec.describe GitLoader  , :vcr do
     it "creates a gem_git if one does not exsist and populates year of commits, owners and git data"  do
       laser_gem = @gemloader.create_or_update_spec("tzinfo")
       expect(laser_gem.gem_spec).not_to be nil
-      @loader.update_or_create_git("tzinfo")
+      @loader.update_or_create_git(laser_gem)
       laser_gem.gem_git.reload
       expect(laser_gem.gem_git).not_to be nil
       expect(laser_gem.gem_git.stargazers_count).not_to be nil
