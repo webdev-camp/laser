@@ -1,0 +1,5 @@
+---
+:pidfile: tmp/pids/sidekiq.pid
+:queues:
+  - rollbar
+  - default
