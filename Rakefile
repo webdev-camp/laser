@@ -11,8 +11,7 @@ Rails.application.load_tasks
 namespace :laser do
   desc "Load Gem, spec, github data and recurse for dependencies"
   task :load_rails => :environment do
-    rails_laser_gem = LaserGem.create!(name: "rails")
-    GemLoader.new.fetch_and_create_gem_spec(rails_laser_gem)
+    rails_laser_gem = GemLoader.new.create_or_update_spec("rails")
     # Gets Github data for Gems which have a source_code_uri
     GitLoader.new.fetch_and_create_gem_git(rails_laser_gem)
   end
