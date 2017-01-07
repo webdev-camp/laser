@@ -10,7 +10,9 @@
           .nav-link= link_to "LASER", root_path
           %span.sr-only (current)
         %li.nav-item
-          .nav-link= link_to "Browse All Gems", laser_gems_path
+          .nav-link= link_to "Gems", laser_gems_path
+        %li.nav-item
+          .nav-link= link_to "Tags", tags_path
       %ul.navbar-ul.pull-right
         %li.nav-item.pull-right
           -if user_signed_in?

@@ -12,6 +12,11 @@
     @extend .navbar-fixed-top;
     @extend .navbar-dark;
     background-color: $brand-warning;
+    .nav-item {
+      margin-right: 1em;
+      font-size: 1.2em;
+    }
+
   }
 
   .menu-button {
