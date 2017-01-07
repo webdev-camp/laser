@@ -5,9 +5,11 @@ class GemLoader
   end
 
   def get_spec_from_api(gem_name)
-    data = @client.info(gem_name)
-    return nil if data == "This rubygem could not be found."
-    return data
+    begin
+      @client.info(gem_name)
+    rescue JSON::ParserError
+      nil
+    end
   end
 
   def get_owners_from_api(gem_name)
