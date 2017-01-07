@@ -19,7 +19,7 @@ module LaserGemsHelper
     LaserGem.tagged_with(tag.name).limit(15)
   end
 
-  def taging_link tagging
+  def tagging_link tagging
     tag = tagging.tag
     link_to("#{tag}(#{tag.taggings_count})", search_tag_url(tag.name))
   end

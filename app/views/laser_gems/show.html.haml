@@ -12,7 +12,7 @@
         = @laser_gem.gem_spec.info
       %p.card-text
         - @laser_gem.taggings.each do |tagging|
-          %span.tag.tag-default= taging_link(tagging)
+          %span.tag.tag-default= tagging_link(tagging)
         - if has_owner_rights?
           = form_tag(add_tag_path(@laser_gem.name)) do
             = text_field_tag(:tag)
