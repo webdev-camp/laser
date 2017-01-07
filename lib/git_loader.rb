@@ -7,7 +7,6 @@ class GitLoader
   end
 
   def get_from_git repo_name
-    result = nil
     begin
       return yield
     rescue Octokit::NotFound # => not_found
@@ -18,7 +17,7 @@ class GitLoader
       puts e.message
       puts "Exception #{repo_name}"
     end
-    result
+    nil
   end
 
   def get_git_from_api(repo_name)
@@ -67,12 +66,11 @@ class GitLoader
   end
 
   def parse_git_uri(laser_gem)
-    return unless GemSpec.where(laser_gem_id: laser_gem.id).any?
+    code_uri = laser_gem.gem_spec.source_code_uri
     # try source_code_uri first, then homepage (must have the github.com in it)
     # if GemSpec.where(laser_gem_id: laser_gem.id).source_code_uri != nil
-    if laser_gem.gem_spec.source_code_uri != nil
-      uri = laser_gem.gem_spec.source_code_uri
-      matches = matcher(uri)
+    if code_uri
+      matches = matcher(code_uri)
       return matches[1] if matches
     end
     parse_additional_uris(laser_gem)
@@ -102,10 +100,9 @@ class GitLoader
     return nil unless array
     # Extracts [commits in week], oldest -> newest
     commit_dates_year = array.collect { |week| week[:total] }
-    if laser_gem.gem_git
-      laser_gem.gem_git.reload
-      laser_gem.gem_git.update(commit_dates_year: commit_dates_year)
-    end
+    return unless git = laser_gem.gem_git
+    git.reload
+    git.update(commit_dates_year: commit_dates_year)
   end
 
   def update_owners(laser_gem , repo_name)
@@ -128,6 +125,14 @@ class GitLoader
     update_owners(laser_gem , repo_name)
     git_data = get_git_from_api(repo_name)
     return unless git_data
+    do_update(laser_gem , git_data)
+    laser_gem.gem_git.reload
+    fetch_commit_activity_year(laser_gem)
+  end
+
+  private
+
+  def do_update(laser_gem , git_data)
     attribs = {}
     git_attributes.each {|laser,git| attribs[laser] = git_data[git] }
     if git = laser_gem.gem_git
@@ -135,11 +140,7 @@ class GitLoader
     else
       laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
     end
-    laser_gem.gem_git.reload
-    fetch_commit_activity_year(laser_gem)
   end
-
-  private
 
   # match the uri to see if it contains github.com and return the match_data
   def matcher(uri)
