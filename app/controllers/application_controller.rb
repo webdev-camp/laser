@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin_rights
-    redirect_to laser_gems_path unless current_user.admin?
+    redirect_to laser_gems_path unless current_user and current_user.admin?
   end
 
 end
