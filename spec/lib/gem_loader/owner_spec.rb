@@ -36,16 +36,14 @@ RSpec.describe GemLoader , :vcr do
     end
 
     it "saves instances of ownership for the dependents with the given laser_gem" do
-      laser_gem = LaserGem.create!(name: "tzinfo")
-      @loader.fetch_and_create_gem_spec(laser_gem)
+      laser_gem = @loader.create_or_update_spec("tzinfo")
       @loader.fetch_owners(laser_gem)
       ts = LaserGem.find_by(name: "thread_safe")
       expect(ts.ownerships.count).not_to be nil
     end
 
     it "does not save a ownership if it already exists" do
-      laser_gem = LaserGem.create!(name: "tzinfo")
-      @loader.fetch_and_create_gem_spec(laser_gem)
+      laser_gem = @loader.create_or_update_spec("tzinfo")
       ts = LaserGem.find_by(name: "thread_safe")
       @loader.fetch_owners(laser_gem)
       expect(ts.ownerships.count).not_to be nil

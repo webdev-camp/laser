@@ -14,13 +14,9 @@ RSpec.describe GitLoader  , :vcr do
     end
   end
 
-
   it "fetches owners of the LaserGem and creates ownerships" do
-    tz = LaserGem.create(name: "tzinfo")
-    loader = GemLoader.new
-    loader.fetch_and_create_gem_spec(tz)
-    loader2 = GitLoader.new
-    loader2.fetch_assignees(tz)
+    tz = GemLoader.new.create_or_update_spec("tzinfo")
+    GitLoader.new.fetch_assignees(tz)
     expect(Ownership.count).not_to be 0
     expect(Ownership.count).not_to be nil
   end
@@ -36,10 +32,8 @@ RSpec.describe GitLoader  , :vcr do
     end
 
     it "updates existing gem_gits with owners, yearly commits and git data"  do
-      laser_gem = LaserGem.create!(name: "tzinfo")
-      @gemloader.fetch_and_create_gem_spec(laser_gem)
+      laser_gem = @gemloader.create_or_update_spec("tzinfo")
       @loader.fetch_and_create_gem_git(laser_gem)
-      laser_gem.reload
       expect(laser_gem.gem_spec).not_to be nil
       laser_gem.gem_git.update(stargazers_count: 1, commit_dates_year: [1,2,3], forks_count: 666)
       laser_gem.reload
@@ -52,9 +46,7 @@ RSpec.describe GitLoader  , :vcr do
     end
 
     it "creates a gem_git if one does not exsist and populates year of commits, owners and git data"  do
-      laser_gem = LaserGem.create!(name: "tzinfo")
-      @gemloader.fetch_and_create_gem_spec(laser_gem)
-      laser_gem.reload
+      laser_gem = @gemloader.create_or_update_spec("tzinfo")
       expect(laser_gem.gem_spec).not_to be nil
       @loader.update_or_create_git("tzinfo")
       laser_gem.gem_git.reload

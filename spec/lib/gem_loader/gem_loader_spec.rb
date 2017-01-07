@@ -2,14 +2,17 @@ require "gem_loader"
 require "git_loader"
 
 RSpec.describe GemLoader , :vcr do
+  before :each do
+    @loader = GemLoader.new
+  end
+
   it "instantiates a loader" do
-    expect(GemLoader.new).not_to be nil
+    expect(@loader).not_to be nil
   end
 
   describe "#get_spec_from_api" do
     it "fetches using the client" do
-      loader = GemLoader.new
-      expect(loader.get_spec_from_api("rails").length).to be 19
+      expect(@loader.get_spec_from_api("rails").length).to be 19
     end
 
     it "returns nil when the API doesn't respond" do
@@ -37,8 +40,7 @@ RSpec.describe GemLoader , :vcr do
       expect(LaserGem.where(name: "sass").exists?).to be true
     end
 
-    xit "creates laser gem and gem spec for dependencies if they dont exist"  do
-
+    it "creates laser gem and gem spec for dependencies if they dont exist"  do
       @loader.create_or_update_spec("bootstrap-sass")
       laser_gem = LaserGem.find_by(name: "sass")
       expect(LaserGem.where(name: "sass").exists?).to be true
@@ -47,9 +49,7 @@ RSpec.describe GemLoader , :vcr do
     end
 
     it "updates attributes, build date and ownerships for a vaild gem if it already exists"  do
-      loader = GemLoader.new
-      laser_gem = LaserGem.create!(name: "activesupport")
-      loader.fetch_and_create_gem_spec(laser_gem)
+      laser_gem = @loader.create_or_update_spec("activesupport")
       laser_gem.gem_spec.update(total_downloads: 3, build_date: "2010-09-22T04:00:00.000Z")
       laser_gem.reload
       expect(laser_gem.gem_spec.total_downloads).to eq 3
@@ -60,18 +60,18 @@ RSpec.describe GemLoader , :vcr do
 
     end
 
-    xit "updates the attributes for all of the gem dependencies that do exist" do
-      loader = GemLoader.new
-      laser_gem = LaserGem.create!(name: "activesupport")
-      loader.fetch_and_create_gem_spec(laser_gem)
+    it "updates the attributes for all of the gem dependencies that do exist" do
+      LaserGem.create!(name: "activesupport")
+      @loader.create_or_update_spec("activesupport")
       expect(LaserGem.where(name: "tzinfo").exists?).to be true
       dep = LaserGem.find_by(name: "tzinfo")
-      dep.gem_spec.update(total_downloads: 3, build_date: "2010-09-22T04:00:00.000Z", updated_at: 5.days.ago)
+      fake_date = "2010-09-22T04:00:00.000Z"
+      dep.gem_spec.update(total_downloads: 3, build_date: fake_date , updated_at: 9.days.ago)
       dep.reload
       @loader.create_or_update_spec("activesupport")
       dep.reload
       expect(dep.gem_spec.total_downloads).not_to eq 3
-      expect(dep.gem_spec.build_date).not_to eq "2010-09-22T04:00:00.000Z"
+      expect(dep.gem_spec.build_date).not_to eq fake_date
     end
   end
 end
