@@ -10,49 +10,11 @@ Rails.application.load_tasks
 
 namespace :laser do
   desc "Load Gem, spec, github data and recurse for dependencies"
-  task :load_gem => :environment do
-    loader = GemLoader.new
+  task :load_rails => :environment do
     rails_laser_gem = LaserGem.create!(name: "rails")
-    loader.fetch_and_create_gem_spec(rails_laser_gem)
+    GemLoader.new.fetch_and_create_gem_spec(rails_laser_gem)
     # Gets Github data for Gems which have a source_code_uri
-    loader2 = GitLoader.new
-    loader2.fetch_and_create_gem_git(rails_laser_gem)
-  end
-
-  desc "Load spec for Gem and dependencies"
-  task :load_spec => :environment do
-    loader = GemLoader.new
-    rails_laser_gem = LaserGem.create!(name: "rails")
-    loader.fetch_and_create_gem_spec(rails_laser_gem)
-  end
-
-  desc "Load Github data for existing database Gems and deps"
-  task :load_git => :environment do
-    # Gets Github data for Gems which have a source_code_uri
-    rails_laser_gem = LaserGem.find_by(name: "rails")
-    loader = GitLoader.new
-    loader.fetch_and_create_gem_git(rails_laser_gem)
-  end
-
-  desc "Load tags for Gems"
-  task :load_tags => :environment do
-    loader = DataLoader.new
-    loader.load_tags
-  end
-
-  desc "Load commits per week in last year"
-  task :load_commits  => :environment do
-    loader = GitLoader.new
-    loader.fetch_commits_for_all
-  end
-
-  desc "Load rankings"
-  task :load_rank  => :environment do
-    LaserGem.all.each do |laser_gem|
-      Ranking.new(laser_gem).total_rank_calc
-      Ranking.new(laser_gem).download_rank_string_calc
-      Ranking.new(laser_gem).download_rank_percent_calc
-    end
+    GitLoader.new.fetch_and_create_gem_git(rails_laser_gem)
   end
 
   namespace :fixtures do

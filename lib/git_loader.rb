@@ -116,13 +116,6 @@ class GitLoader
     end
   end
 
-  # helper to add year of commits per week to db for each gem.
-  def fetch_commits_for_all
-    LaserGem.all.each do |laser_gem|
-      fetch_commit_activity_year(laser_gem)
-    end
-  end
-
   def fetch_commit_activity_year(laser_gem)
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
