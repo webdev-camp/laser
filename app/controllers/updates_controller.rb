@@ -11,7 +11,8 @@ class UpdatesController < ApplicationController
   def bounce
     @gem_name = params[:gem_name]
     count = params[:count].to_i
-    if LaserGem.find_by(name: @gem_name)
+    laser_gem = LaserGem.find_by(name: @gem_name)
+    if(laser_gem and laser_gem.gem_spec)
       redirect_to laser_gem_path(@gem_name)
     else
       if( count > 2 )

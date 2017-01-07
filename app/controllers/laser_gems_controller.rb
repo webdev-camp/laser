@@ -19,7 +19,7 @@ class LaserGemsController < ApplicationController
   end
   # GET /laser_gems/gem_name
   def show
-    redirect_to(root_path) unless @laser_gem
+    redirect_to(root_path) unless (@laser_gem and @laser_gem.gem_spec)
     impressionist(@laser_gem) if @laser_gem
   end
 

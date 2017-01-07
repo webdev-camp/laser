@@ -41,6 +41,12 @@ RSpec.describe "LaserGemsShow" do
     expect(page).to have_text(laser_gem.name)
   end
 
+  it "show redirects if no gem_spec" do
+    laser_gem = LaserGem.create(name: "gem_name")
+    visit laser_gem_path(laser_gem.name)
+    expect(page).to have_current_path(root_path)
+  end
+
   it "shows the laser gem dependencies" do
     laser_gem = create :laser_gem_with_dependencies
     visit laser_gem_path(laser_gem.name)
