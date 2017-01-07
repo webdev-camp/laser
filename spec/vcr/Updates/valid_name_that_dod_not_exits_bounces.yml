@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/rails.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 31cf0911-81ae-4ccf-b0f1-e1fcce9d4e77
+      X-Runtime:
+      - '0.016645'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 11:12:25 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7020-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483787545.309299,VS0,VE209
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"72bdfa927a20ad38226489151bc7dff8"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"rails","downloads":83621124,"version":"5.0.1","version_downloads":115296,"platform":"ruby","authors":"David
+        Heinemeier Hansson","info":"Ruby on Rails is a full-stack web framework optimized
+        for programmer happiness and sustainable productivity. It encourages beautiful
+        code by favoring convention over configuration.","licenses":["MIT"],"metadata":{},"sha":"3f9acd2c489c9eed11ff200a37cb32784cf15ddc5e561657d50b847ced3c361d","project_uri":"https://rubygems.org/gems/rails","gem_uri":"https://rubygems.org/gems/rails-5.0.1.gem","homepage_uri":"http://rubyonrails.org","wiki_uri":"","documentation_uri":"http://api.rubyonrails.org","mailing_list_uri":"http://groups.google.com/group/rubyonrails-talk","source_code_uri":"http://github.com/rails/rails","bug_tracker_uri":"http://github.com/rails/rails/issues","dependencies":{"development":[],"runtime":[{"name":"actioncable","requirements":"=
+        5.0.1"},{"name":"actionmailer","requirements":"= 5.0.1"},{"name":"actionpack","requirements":"=
+        5.0.1"},{"name":"actionview","requirements":"= 5.0.1"},{"name":"activejob","requirements":"=
+        5.0.1"},{"name":"activemodel","requirements":"= 5.0.1"},{"name":"activerecord","requirements":"=
+        5.0.1"},{"name":"activesupport","requirements":"= 5.0.1"},{"name":"bundler","requirements":"\u003c
+        2.0, \u003e= 1.3.0"},{"name":"railties","requirements":"= 5.0.1"},{"name":"sprockets-rails","requirements":"\u003e=
+        2.0.0"}]}}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 11:12:25 GMT
+recorded_with: VCR 3.0.3
