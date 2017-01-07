@@ -73,17 +73,5 @@ RSpec.describe "Tags" do
     expect(page).to have_current_path(tags_path)
   end
 
-  it "edit has tag delete link" do
-    visit edit_path
-    expect(page).to have_link("Destroy" , href: show_path)
-  end
-
-  it "delete link doesnt work if there is a gem" do
-    visit edit_path
-    edit_path = edit_path
-    click_link("Destroy")
-    expect(page).to have_current_path(tags_path)
-    expect(page).not_to have_link("Edit" , href: edit_path)
-  end
 
 end

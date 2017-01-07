@@ -1,9 +1,8 @@
 class LaserGemsController < ApplicationController
   include ApplicationHelper
 
-  before_action :authenticate_user!,   only: [:add_comment]
+  before_action :authenticate_user!,   only: [:add_comment , :add_tag]
   before_action :load_gem ,            only: [:show ,   :add_tag , :add_comment]
-  before_action :require_owner_rights, only: [:add_tag , :add_comment]
 
   impressionist actions: [ :index , :add_tag , :add_comment ]
 
@@ -57,8 +56,4 @@ class LaserGemsController < ApplicationController
     @laser_gem = LaserGem.find_by_name(params[:name])
   end
 
-
-  def require_owner_rights
-    redirect_to laser_gem_path(@laser_gem.name) unless has_owner_rights?
-  end
 end

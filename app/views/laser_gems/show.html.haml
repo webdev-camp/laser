@@ -13,7 +13,7 @@
       %p.card-text
         - @laser_gem.taggings.each do |tagging|
           %span.tag.tag-default= tagging_link(tagging)
-        - if has_owner_rights?
+        - if current_user
           = form_tag(add_tag_path(@laser_gem.name)) do
             = text_field_tag(:tag)
             %button.icon{id: "save_tag", type: "submit"}
@@ -81,7 +81,7 @@
     - flash.each do |name, message|
       .comment_error
         =message
-    - if has_owner_rights?
+    - if current_user
       = form_tag(add_comment_path(@laser_gem.name)) do
         .field
           = text_area_tag(:comment_body)
