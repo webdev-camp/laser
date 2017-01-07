@@ -13,7 +13,7 @@ namespace :laser do
   task :load_rails => :environment do
     rails_laser_gem = GemLoader.new.create_or_update_spec("rails")
     # Gets Github data for Gems which have a source_code_uri
-    GitLoader.new.fetch_and_create_gem_git(rails_laser_gem)
+    GitLoader.new.update_or_create_git(rails_laser_gem)
   end
 
   namespace :fixtures do

@@ -85,7 +85,6 @@ class GitLoader
     end
   end
 
-
   def github_repo_name_candidates(laser_gem)
     return [] unless laser_gem.gem_spec
     candidates = [:homepage_uri, :documentation_uri, :bug_tracker_uri]
@@ -94,26 +93,6 @@ class GitLoader
       matches = matcher(uri)
       matches[1] if matches
     end.select { |c| c != nil }
-  end
-
-  def fetch_and_create_gem_git(laser_gem)
-    repo_name = parse_git_uri(laser_gem)
-    if repo_name
-      git_data = get_git_from_api(repo_name)
-      if git_data and not laser_gem.gem_git
-        attribs = {}
-        git_attributes.each {|k,v| attribs[k] = git_data[v] }
-        laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
-        fetch_assignees(laser_gem)
-      end
-    end
-    fetch_git_for_deps(laser_gem)
-  end
-
-  def fetch_git_for_deps(laser_gem)
-    laser_gem.dependencies.each do |dep|
-      fetch_and_create_gem_git(dep) if dep.gem_git.nil?
-    end
   end
 
   def fetch_commit_activity_year(laser_gem)
@@ -129,12 +108,7 @@ class GitLoader
     end
   end
 
-  def update_or_create_git(gem_name)
-    laser_gem = LaserGem.find_by(name: gem_name)
-    return nil if laser_gem == nil
-    return unless laser_gem.gem_spec
-    repo_name = parse_git_uri(laser_gem)
-    return nil unless repo_name
+  def update_owners(laser_gem , repo_name)
     assignee_array = get_owners_from_github(repo_name)
     return unless assignee_array
     assignee_array.each do |assig|
@@ -145,19 +119,24 @@ class GitLoader
       # only github ownership
       Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
     end
+  end
+
+  def update_or_create_git(laser_gem)
+    return nil unless (laser_gem and  laser_gem.gem_spec)
+    repo_name = parse_git_uri(laser_gem)
+    return nil unless repo_name
+    update_owners(laser_gem , repo_name)
     git_data = get_git_from_api(repo_name)
-    if git_data
-      attribs = {}
-      git_attributes.each {|k,v| attribs[k] = git_data[v] }
-      if laser_gem.gem_git
-        laser_gem.gem_git.update(attribs.merge laser_gem_id: laser_gem.id)
-        laser_gem.gem_git.reload
-      else
-        laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
-        laser_gem.gem_git.reload
-      end
-      fetch_commit_activity_year(laser_gem)
+    return unless git_data
+    attribs = {}
+    git_attributes.each {|laser,git| attribs[laser] = git_data[git] }
+    if git = laser_gem.gem_git
+      git.update(attribs)
+    else
+      laser_gem.create_gem_git!(attribs.merge laser_gem_id: laser_gem.id)
     end
+    laser_gem.gem_git.reload
+    fetch_commit_activity_year(laser_gem)
   end
 
   private
