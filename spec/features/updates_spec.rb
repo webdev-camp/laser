@@ -15,6 +15,14 @@ RSpec.describe "Updates" , :vcr do
     expect(page).to have_text( "does not appear to be a valid gem")
   end
 
+  it "valid name enques a job" do
+    visit updates_show_path
+    fill_in(:'gem_name' , with: "bootstrap")
+    expect {
+      click_button('Update Gem')
+    }.to have_enqueued_job.with("bootstrap")
+  end
+
   it "valid name that did not exits bounces" do
     visit updates_show_path
     fill_in(:'gem_name' , with: "rails")
