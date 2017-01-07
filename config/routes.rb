@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/faq', to: 'main#faq', as: 'faq'
   get '/contribute', to: 'main#contribute', as: 'contribute'
   get '/updates/show', to: 'updates#show', as:'updates_show'
+  get '/updates/bounce/:gem_name', to: 'updates#bounce', as:'updates_bounce'
   post '/updates/update', to: 'updates#update', as: 'updates'
 
   #legacy
