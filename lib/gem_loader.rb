@@ -35,13 +35,8 @@ class GemLoader
   def create_or_update_spec(gem_name)
     gem_data = get_spec_from_api(gem_name)
     return unless gem_data
-    laser_gem = LaserGem.find_by(name: gem_name)
-    if(laser_gem)
-      laser_gem.touch
-      laser_gem.save
-    else
-      laser_gem = LaserGem.create!(name: gem_name)
-    end
+    laser_gem = LaserGem.find_or_create_by(name: gem_name)
+    laser_gem.touch
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
     spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
@@ -72,7 +67,7 @@ class GemLoader
         puts dep_name + " invalid " + e.message
       end
       if lg_dep.gem_spec
-        create_or_update_spec(lg_dep.name) unless lg_dep.gem_spec.updated_at > 7.day.ago
+        create_or_update_spec(lg_dep.name) unless lg_dep.updated_at > 7.day.ago
       else
         create_or_update_spec(lg_dep.name)
       end
