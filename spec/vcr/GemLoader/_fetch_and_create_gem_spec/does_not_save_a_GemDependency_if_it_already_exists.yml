@@ -1251,4 +1251,907 @@ http_interactions:
             requirements: "~> 0.1"
     http_version: 
   recorded_at: Fri, 06 Jan 2017 17:09:54 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/tzinfo.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6c21f957-e8b1-4d65-9c6f-95ee86b50679
+      X-Runtime:
+      - '0.011170'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:11 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7029-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483784290.834254,VS0,VE207
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"9da6f43492f701b3a871cfca8a4ffa64"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"tzinfo","downloads":99152310,"version":"1.2.2","version_downloads":46645708,"platform":"ruby","authors":"Philip
+        Ross","info":"TZInfo provides daylight savings aware transformations between
+        times in different time zones.","licenses":["MIT"],"metadata":{},"sha":"fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0","project_uri":"https://rubygems.org/gems/tzinfo","gem_uri":"https://rubygems.org/gems/tzinfo-1.2.2.gem","homepage_uri":"http://tzinfo.github.io","wiki_uri":"","documentation_uri":"http://www.rubydoc.info/gems/tzinfo/1.2.2","mailing_list_uri":"http://rubyforge.org/mail/?group_id=894","source_code_uri":"https://github.com/tzinfo/tzinfo","bug_tracker_uri":"https://github.com/tzinfo/tzinfo/issues","dependencies":{"development":[],"runtime":[{"name":"thread_safe","requirements":"~\u003e
+        0.1"}]}}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:11 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/tzinfo.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"0f43c79ff8803a5a931535807bcb7f8f"'
+      Last-Modified:
+      - Fri, 28 Oct 2016 18:04:19 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 1357d6ef-00f5-4bca-938b-e7ba5c251312
+      X-Runtime:
+      - '0.118312'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Content-Length:
+      - '4983'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:11 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '32'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7028-BMA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1483784291.198943,VS0,VE0
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"authors":"Philip Ross","built_at":"2014-08-08T00:00:00.000Z","created_at":"2014-08-08T18:00:21.494Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":46645708,"metadata":{},"number":"1.2.2","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":"\u003e= 1.8.7","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0"},{"authors":"Philip
+        Ross","built_at":"2014-06-01T00:00:00.000Z","created_at":"2014-06-01T14:57:46.796Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":1707119,"metadata":{},"number":"1.2.1","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":"\u003e= 1.8.7","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"52787314a74eea6d20b0df2fb0034fdb83b04415ff493cc39b4d4ad0cb80b6a0"},{"authors":"Philip
+        Ross","built_at":"2014-05-26T00:00:00.000Z","created_at":"2014-05-26T14:10:14.996Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":148388,"metadata":{},"number":"1.2.0","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":"\u003e= 1.8.7","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"d8c9aae397ecef24e04fb1acbe46c5dc45b1f42049407ade3f521f7e6f58d79d"},{"authors":"Philip
+        Ross","built_at":"2013-09-25T00:00:00.000Z","created_at":"2013-09-25T22:42:31.423Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":1432316,"metadata":{},"number":"1.1.0","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":null,"prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"715a47c25f8e4c2f106c92d5a97e612f84eb7e85f5822bf3d6cf615b44492abc"},{"authors":"Philip
+        Ross","built_at":"2013-06-22T00:00:00.000Z","created_at":"2013-06-22T17:30:50.204Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":155888,"metadata":{},"number":"1.0.1","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":null,"prerelease":false,"licenses":["MIT"],"requirements":null,"sha":"438297f420d1c48d55fc2a8df08e0b7ba47311f60fe02ad8212256612c505a42"},{"authors":"Philip
+        Ross","built_at":"2013-06-02T00:00:00.000Z","created_at":"2013-06-02T17:05:45.655Z","description":"TZInfo
+        provides daylight savings aware transformations between times in different
+        time zones.","downloads_count":28336,"metadata":{},"number":"1.0.0","summary":"Daylight
+        savings aware timezone library","platform":"ruby","rubygems_version":"\u003e=
+        0","ruby_version":null,"prerelease":false,"licenses":["MIT"],"requirements":null,"sha":"d43f3ab61e465a958782b4490f9a0b0a73bef8352945ba5eb5c6f12a92bd1c70"},{"authors":"Philip
+        Ross","built_at":"2016-10-27T00:00:00.000Z","created_at":"2016-10-28T18:04:18.725Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":242253,"metadata":{},"number":"0.3.52","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"8354497af5f03549fbca9880074b6fa3f33c842accec0d8e5d5f19c3bae43c17"},{"authors":"Philip
+        Ross","built_at":"2016-07-04T00:00:00.000Z","created_at":"2016-07-05T21:49:23.523Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":724928,"metadata":{},"number":"0.3.51","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"92541efbd7fc48da746e34357adada9fdba9374d85a57441f36a584735b85c5e"},{"authors":"Philip
+        Ross","built_at":"2016-06-13T00:00:00.000Z","created_at":"2016-06-14T20:28:01.731Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":137011,"metadata":{},"number":"0.3.50","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"3e74ebcd0ba9ac2f0c5f0f48fe2dfc205fedbc094a1b2221c599781c59c4fccb"},{"authors":"Philip
+        Ross","built_at":"2016-04-17T00:00:00.000Z","created_at":"2016-04-18T21:52:37.514Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":394292,"metadata":{},"number":"0.3.49","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"1fe60be515209f3cadcb096c1b701fe37980bbb0b7935fb2aa0a3dc4acff0703"},{"authors":"Philip
+        Ross","built_at":"2016-03-23T00:00:00.000Z","created_at":"2016-03-23T23:58:24.540Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":407877,"metadata":{},"number":"0.3.48","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"f57acf2e8c433ba5d853d4505a7ef7e5e705ddb5908db5c076e649e4e3f7a537"},{"authors":"Philip
+        Ross","built_at":"2016-03-15T00:00:00.000Z","created_at":"2016-03-15T23:20:23.256Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":411667,"metadata":{},"number":"0.3.47","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"99c573c72a36070217cd88b90aa3333c450ac52207e44c2f231a56802c42e069"},{"authors":"Philip
+        Ross","built_at":"2015-12-02T00:00:00.000Z","created_at":"2015-12-02T23:40:50.843Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1145125,"metadata":{},"number":"0.3.46","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"c5db7ee29ad295e98efc45b77c03912ebb005c851a96cde86794acd07a101789"},{"authors":"Philip
+        Ross","built_at":"2015-10-02T00:00:00.000Z","created_at":"2015-10-03T15:07:03.952Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":635545,"metadata":{},"number":"0.3.45","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"936bc317761a47b7e0858bd7ce875c0e7f19b1eedf024b876a3dd6f799172ce7"},{"authors":"Philip
+        Ross","built_at":"2015-04-23T00:00:00.000Z","created_at":"2015-04-24T22:19:56.396Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1867918,"metadata":{},"number":"0.3.44","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"a717f358872144fabf762da0f8a6ba23ce764550230ff0b831957247c8484ca8"},{"authors":"Philip
+        Ross","built_at":"2015-01-31T00:00:00.000Z","created_at":"2015-01-31T20:24:25.433Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1237040,"metadata":{},"number":"0.3.43","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"4df52124b359789ac13aa12f46b9665d562b189fc6e60c44b9aa6d997b100a70"},{"authors":"Philip
+        Ross","built_at":"2014-10-22T00:00:00.000Z","created_at":"2014-10-23T20:12:58.749Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1705271,"metadata":{},"number":"0.3.42","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"37452ed65ed2b1ff4bdb6d488313f833da85a00c426e23845ccf62ceaccac168"},{"authors":"Philip
+        Ross","built_at":"2014-08-07T00:00:00.000Z","created_at":"2014-08-08T19:13:31.307Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1462646,"metadata":{},"number":"0.3.41","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"381b22fd1744a35d0a0239f563f505773681e626e6d900063b14cb9b1b68e98c"},{"authors":"Philip
+        Ross","built_at":"2014-07-09T23:00:00.000Z","created_at":"2014-07-10T20:57:11.589Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":621080,"metadata":{},"number":"0.3.40","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"4010840329184bc05374f108bb09bd99a0278aee9474c0f5c7e7d009ae502640"},{"authors":"Philip
+        Ross","built_at":"2014-03-09T00:00:00.000Z","created_at":"2014-03-09T20:19:53.295Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":3545344,"metadata":{},"number":"0.3.39","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["MIT"],"requirements":[],"sha":"f0ad9f7936aa6f8fd2222fbd33adc7e3e3c21800d36d46fd04edde9692e255d2"},{"authors":"Philip
+        Ross","built_at":"2013-10-07T23:00:00.000Z","created_at":"2013-10-08T22:28:55.762Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":5478914,"metadata":{},"number":"0.3.38","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":[],"requirements":[],"sha":"c8c8525a056b7e26228cc8fa1cdb969fe980a207346cd84ac519ccb7554e63e8"},{"authors":"Philip
+        Ross","built_at":"2013-03-11T00:00:00.000Z","created_at":"2013-03-11T22:38:22.171Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":8863806,"metadata":{},"number":"0.3.37","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":[],"requirements":null,"sha":"6c8e551f2067b64c4edb00da70b1b85ac761e611cd73c7c937709ca797da225e"},{"authors":"Philip
+        Ross","built_at":"2013-03-03T00:00:00.000Z","created_at":"2013-03-03T16:26:42.312Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":293059,"metadata":{},"number":"0.3.36","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":[],"requirements":null,"sha":"1b72a19f2dd29c4937c9932c3c42db4722ffba37701dfc26838b969ca19567b6"},{"authors":"Philip
+        Ross","built_at":"2012-11-04T00:00:00.000Z","created_at":"2012-11-04T23:02:01.283Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":5895699,"metadata":{},"number":"0.3.35","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"b72ee96326a85fd2d8ccef97d94d10d15e46194aae2fca28ecef768665b3a2b0"},{"authors":"Philip
+        Ross","built_at":"2012-10-26T23:00:00.000Z","created_at":"2012-10-27T15:25:22.896Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":185124,"metadata":{},"number":"0.3.34","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"ae9b5377a1fb01939a7751b4378a3ad36eadf93af4d3f2af431bad2712e30392"},{"authors":"Philip
+        Ross","built_at":"2012-04-07T23:00:00.000Z","created_at":"2012-04-08T15:47:06.586Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":4534459,"metadata":{},"number":"0.3.33","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"376cfdc347e0776348e20743e13edeaadeb908f737bce0aa328fb2aa445dee2d"},{"authors":"Philip
+        Ross","built_at":"2012-03-04T00:00:00.000Z","created_at":"2012-03-04T16:04:29.886Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":787757,"metadata":{},"number":"0.3.32","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"eb1c6d01783d17abf88229ca29676f930f6ba0cc05c6946b6defd6c4d26cc4e2"},{"authors":"Philip
+        Ross","built_at":"2011-11-06T00:00:00.000Z","created_at":"2011-11-06T16:45:39.224Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1939440,"metadata":{},"number":"0.3.31","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"0b06e23121052135d228f750fdd24b10b5bc81e81add0ba5cf9ba11e58118ccf"},{"authors":"Philip
+        Ross","built_at":"2011-09-28T23:00:00.000Z","created_at":"2011-09-29T22:10:14.016Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":588363,"metadata":{},"number":"0.3.30","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"522d7bac90426926ae80639d512f2ed6f2152ee5b58719cf4eb0fcc9d762ff8f"},{"authors":"Philip
+        Ross","built_at":"2011-06-26T23:00:00.000Z","created_at":"2011-06-27T22:08:56.375Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1277153,"metadata":{},"number":"0.3.29","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"32e6ea4fbab70c29796ebc49b9de014b60203b10a92d6c45786f07123223a080"},{"authors":"Philip
+        Ross","built_at":"2011-06-12T23:00:00.000Z","created_at":"2011-06-13T21:41:04.133Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":207224,"metadata":{},"number":"0.3.28","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"9e0be2c610006e2232b5e7590a72839a7662d758e080ffec5543d3b535e806f3"},{"authors":"Philip
+        Ross","built_at":"2011-04-25T23:00:00.000Z","created_at":"2011-04-26T20:01:16.241Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":549027,"metadata":{},"number":"0.3.27","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"80c2feac5ecc7eaf2033e825519816d60edb1164c5f9bf7fd49aa4e660867e95"},{"authors":"Philip
+        Ross","built_at":"2011-04-01T23:00:00.000Z","created_at":"2011-04-02T16:11:49.930Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":340071,"metadata":{},"number":"0.3.26","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"37288f4ab4148855b1c3e25e1a53573d8785d44a615383f12907ceec02146d2d"},{"authors":"Philip
+        Ross","built_at":"2011-03-14T00:00:00.000Z","created_at":"2011-03-14T20:29:36.254Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":209780,"metadata":{},"number":"0.3.25","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"a87a3809aaf94d7dd941db63450fccac1910ed886e61833269d0bb02e8f4d072"},{"authors":"Philip
+        Ross","built_at":"2011-01-15T00:00:00.000Z","created_at":"2011-01-15T12:47:49.060Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1069963,"metadata":{},"number":"0.3.24","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"a44418ed8b2422dd554d68a5d55d5f15b0777ae4f0a31745a638b812ade6d761"},{"authors":"Philip
+        Ross","built_at":"2010-08-18T23:00:00.000Z","created_at":"2010-08-19T22:03:00.115Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":1593959,"metadata":{},"number":"0.3.23","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"eddd2989374c115b8f1fe8c43ce8988fd9054f4e5647224cac4513e67c9a1808"},{"authors":"Philip
+        Ross","built_at":"2010-05-28T23:00:00.000Z","created_at":"2010-05-29T08:12:11.023Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":344489,"metadata":{},"number":"0.3.22","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"2cc82336ee43e4b3d974305d49bfa7b9d01e95f7b4438c397027a10b73fa192d"},{"authors":"Philip
+        Ross","built_at":"2010-05-27T23:00:00.000Z","created_at":"2010-05-28T21:34:40.856Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":2423,"metadata":{},"number":"0.3.21","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"958e0f02f7371578afb1de32e4214605529c366279121419b174a823329edf5d"},{"authors":"Philip
+        Ross","built_at":"2010-04-18T23:00:00.000Z","created_at":"2010-04-19T21:37:54.076Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":32655,"metadata":{},"number":"0.3.20","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"176afa57e9cb62f77e7e1ff82463f4a0531b82cf8f6317ee1a6887e6b3b9df88"},{"authors":"Philip
+        Ross","built_at":"2010-04-04T23:00:00.000Z","created_at":"2010-04-05T21:31:02.239Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":13880,"metadata":{},"number":"0.3.19","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"e8c439eb7ac84bef58c97f9bb61c7d18a2374cf66cb19baaf69122168d39e2ff"},{"authors":"Philip
+        Ross","built_at":"2010-03-28T23:00:00.000Z","created_at":"2010-03-29T21:45:30.888Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":8096,"metadata":{},"number":"0.3.18","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"fb11182d0a9019209484c1da17a96f18c795e4be0650e81eb50c369a830c9671"},{"authors":"Philip
+        Ross","built_at":"2010-03-08T00:00:00.000Z","created_at":"2010-03-08T22:03:14.686Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":13608,"metadata":{},"number":"0.3.17","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"482b069c53ceacf2549704a6f9bcf181d3537a1a0e1f089f5a3c9d2545f0b21e"},{"authors":"Philip
+        Ross","built_at":"2010-01-05T00:00:00.000Z","created_at":"2010-01-05T22:14:28.892Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":141399,"metadata":{},"number":"0.3.16","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"13ffd39dc065714fe054acf350ef4346a59c979a2c529d84a2a0704938287800"},{"authors":"Philip
+        Ross","built_at":"2009-10-26T03:00:00.000Z","created_at":"2009-10-27T01:50:05.200Z","description":"TZInfo
+        is a Ruby library that uses the standard tz (Olson) database to provide daylight
+        savings aware transformations between times in different time zones.","downloads_count":13168,"metadata":{},"number":"0.3.15","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"9ebdb9d5ece5e2bf4bca461ae00cd26097a51b56dfe0efff17ce05d7ffeabd02"},{"authors":"Philip
+        Ross","built_at":"2009-08-19T02:00:00.000Z","created_at":"2009-08-20T05:42:02.000Z","description":"","downloads_count":5462,"metadata":{},"number":"0.3.14","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"cf04d428eab63c85d622689da9f889ada0512a8239916930c3088d6c54b2a007"},{"authors":"Philip
+        Ross","built_at":"2009-04-14T23:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":50503,"metadata":{},"number":"0.3.13","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"5921930f55a19bbb80d2319479177c18aa4ea70993ece92f584206791dcecd7f"},{"authors":"Philip
+        Ross","built_at":"2008-11-12T00:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":7939,"metadata":{},"number":"0.3.12","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"509f647f6874c0852b7b9227592860e34bd3b506cfebca8b85fa392efc5a76df"},{"authors":"Philip
+        Ross","built_at":"2008-10-06T23:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":2587,"metadata":{},"number":"0.3.11","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"6ed99c3b2fdd10629acf9f1b5a5a2895f8f69af28019e256ad6fdaaeface28a9"},{"authors":"Philip
+        Ross","built_at":"2008-09-15T23:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":2231,"metadata":{},"number":"0.3.10","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"3f01fc1b08ba4eb874e01be32f063e2540a24574ae44271b7eeb88d5d49c0678"},{"authors":"Philip
+        Ross","built_at":"2008-05-26T23:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":3729,"metadata":{},"number":"0.3.9","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"cc2c9816b7130e5096f9c377ad8f014295b2394529446a7b20a614fa7abcd886"},{"authors":"Philip
+        Ross","built_at":"2008-03-24T00:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":2200,"metadata":{},"number":"0.3.8","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"656fe8f6444bedfc1a9e4ccb11c7c9c2a030a76610ec92363559c958625ea884"},{"authors":"Philip
+        Ross","built_at":"2008-03-10T00:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":1956,"metadata":{},"number":"0.3.7","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"20b6713ae44c4146f998a564dc19cff824f090d35566f1bdb7bb56ed7315ae91"},{"authors":"Philip
+        Ross","built_at":"2008-01-01T00:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":2198,"metadata":{},"number":"0.3.6","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"323bd84db535687dba17c866ca1cbbfa23e630ae9bd2a1233e8fa2d331d7f64c"},{"authors":"Philip
+        Ross","built_at":"2007-09-30T23:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":2561,"metadata":{},"number":"0.3.5","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"05cebcf8784ff2b3ca96bb610bbbbe877f712631be7fd8d610044aac0ffaad8c"},{"authors":"Philip
+        Ross","built_at":"2007-08-20T23:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":1938,"metadata":{},"number":"0.3.4","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"b6e89f588a478067b511bb013e7184f6ed4247f4a37315466b75f7de82154a62"},{"authors":"Philip
+        Ross","built_at":"2006-11-27T00:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":2349,"metadata":{},"number":"0.3.3","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"f9222a8050410b8a035ca65652010771323f8178ccb4c9046a05216a939d017a"},{"authors":"Philip
+        Ross","built_at":"2006-10-10T23:00:00.000Z","created_at":"2009-07-25T17:48:35.000Z","description":"","downloads_count":1943,"metadata":{},"number":"0.3.2","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"c322b0a666986e19d046363cb5aea644380723a225a1ab9f592f8ab040537d4d"},{"authors":"Philip
+        Ross","built_at":"2006-08-20T23:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":1906,"metadata":{},"number":"0.3.1","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"21d199e0c2c7eae3425ba754e0f8c9b215dde2582d6daa818d51e85a97542d32"},{"authors":"Philip
+        Ross","built_at":"2006-07-16T23:00:00.000Z","created_at":"2009-07-25T17:48:36.000Z","description":"","downloads_count":2307,"metadata":{},"number":"0.3.0","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"f7b3e4e125e96457167101e223c5bf481fc7172703fed4a8834b0eef1226b45f"},{"authors":"Philip
+        Ross","built_at":"2006-05-16T23:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":3753,"metadata":{},"number":"0.2.2","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"bb04510c88413365158a29ffee7032c7e4699623894d4d2862923689b9e2a432"},{"authors":"Philip
+        Ross","built_at":"2006-04-16T23:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":1924,"metadata":{},"number":"0.2.1","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"50deb24ece072659b946993ca2d1e1c3b286ceef9a6ab6a56a71eb70eb75ca7c"},{"authors":"Philip
+        Ross","built_at":"2006-04-03T04:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":1920,"metadata":{},"number":"0.2.0","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"2f56eb348dae07ee35340c215f8413479d5d0878a179e199ca1ba78dd52993f0"},{"authors":"Philip
+        Ross","built_at":"2006-02-05T05:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":1899,"metadata":{},"number":"0.1.2","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"9483b180f0d9a3b3c65ff15b3006c67679a91e4212aaaffc12d3058c7f1016ee"},{"authors":"Philip
+        Ross","built_at":"2005-12-18T05:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":1868,"metadata":{},"number":"0.1.1","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"cff8552c1f45ac493003b32955ab2f188402b5f77d8885694eae32ab9a51a76c"},{"authors":"Philip
+        Ross","built_at":"2005-11-27T05:00:00.000Z","created_at":"2009-07-25T17:48:37.000Z","description":"","downloads_count":1937,"metadata":{},"number":"0.1.0","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"bbc4b7284f6795b50d5bb1b0b092b7621821761b8a1e025c1e4a6c7ecb7c3623"},{"authors":"Philip
+        Ross","built_at":"2005-09-18T04:00:00.000Z","created_at":"2009-07-25T17:48:38.000Z","description":"","downloads_count":1929,"metadata":{},"number":"0.0.4","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"7fa5815927035b2fae0a6843073009ae3420ed8ab999dcd1582039414e6e74eb"},{"authors":"Philip
+        Ross","built_at":"2005-09-17T04:00:00.000Z","created_at":"2009-07-25T17:48:38.000Z","description":"","downloads_count":1895,"metadata":{},"number":"0.0.3","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"9affb2d9c084add97908800388fb5ef8c4f31733abb9c0b867936e1487e0cb82"},{"authors":"Philip
+        Ross","built_at":"2005-09-13T04:00:00.000Z","created_at":"2009-07-25T17:48:38.000Z","description":"","downloads_count":1881,"metadata":{},"number":"0.0.2","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"5da51b81c85cbe7bd5728756e4ed735cb024cbd06b277f4a108caa22fbd1a96f"},{"authors":"Philip
+        Ross","built_at":"2005-08-30T04:00:00.000Z","created_at":"2009-07-25T17:48:38.000Z","description":"","downloads_count":1961,"metadata":{},"number":"0.0.1","summary":"Daylight-savings
+        aware timezone library","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"859413ad1026e079713dbf097cdd329cea09db6ef3ba10fc012718c849d09f33"}]'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:11 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/tzinfo/owners.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 230539d5-8892-4b6e-be45-5aef895a229f
+      X-Runtime:
+      - '0.004020'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:11 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7020-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483784291.368316,VS0,VE194
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"b9fd2b806a348ac1deb61a3133b2f02c"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":2981,"handle":"PhilRoss"}]'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:11 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/thread_safe.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9cd6d7ae-ce8f-48cd-a404-956ca49a646a
+      X-Runtime:
+      - '0.017579'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:11 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7025-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483784291.754282,VS0,VE217
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"9cd9d52da4be06e0a97d5141f1fd0e90"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"thread_safe","downloads":66913565,"version":"0.3.5","version_downloads":31003614,"platform":"ruby","authors":"Charles
+        Oliver Nutter, thedarkone","info":"Thread-safe collections and utilities for
+        Ruby","licenses":["Apache-2.0"],"metadata":{},"sha":"993da065f98b8575c537ebf984ffb79eecdb6064559a3b9d2a9d7aaf313704c3","project_uri":"https://rubygems.org/gems/thread_safe","gem_uri":"https://rubygems.org/gems/thread_safe-0.3.5.gem","homepage_uri":"https://github.com/ruby-concurrency/thread_safe","wiki_uri":"","documentation_uri":"http://ruby-concurrency.github.io/thread_safe/frames.html","mailing_list_uri":"https://groups.google.com/forum/#!forum/concurrent-ruby","source_code_uri":"https://github.com/ruby-concurrency/thread_safe","bug_tracker_uri":"https://github.com/ruby-concurrency/thread_safe/issues","dependencies":{"development":[{"name":"atomic","requirements":"=
+        1.1.16"},{"name":"minitest","requirements":"\u003e= 4"},{"name":"rake","requirements":"\u003e=
+        0"}],"runtime":[]}}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:11 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/thread_safe.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"189358694ff4d5e04d01703c596065be"'
+      Last-Modified:
+      - Mon, 27 Jun 2016 15:40:17 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - c8e0bb86-8d0a-4d00-b651-58c284a9c3b5
+      X-Runtime:
+      - '0.032751'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Content-Length:
+      - '1812'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:12 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '25'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7023-BMA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '2'
+      X-Timer:
+      - S1483784292.139548,VS0,VE0
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"authors":"Charles Oliver Nutter, thedarkone","built_at":"2015-03-11T00:00:00.000Z","created_at":"2015-03-11T15:00:52.728Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":5971160,"metadata":{},"number":"0.3.5","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"52976573c9934c696a0c577ea57f51e38714191cc6bd0fac499f9ad5843e060c"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2015-03-11T00:00:00.000Z","created_at":"2015-03-11T15:00:41.140Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":31003614,"metadata":{},"number":"0.3.5","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"993da065f98b8575c537ebf984ffb79eecdb6064559a3b9d2a9d7aaf313704c3"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-05-27T00:00:00.000Z","created_at":"2014-05-27T20:10:29.698Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":20674773,"metadata":{},"number":"0.3.4","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"16315baa971c48d00104bcd35e8934e3f9ccfd3b8f429e3fca7ee2dfd81734b2"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-05-27T00:00:00.000Z","created_at":"2014-05-27T20:10:16.778Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":382808,"metadata":{},"number":"0.3.4","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"903716024d787ea90b6647c81f3ff3710721279f1ed435fc0e219582ca851ba0"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-04-07T00:00:00.000Z","created_at":"2014-04-07T10:05:01.221Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":59324,"metadata":{},"number":"0.3.3","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"e8122caeee98b9294f36760ca1fcf5589b4e27ead202296ffef6854b01693731"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-04-07T00:00:00.000Z","created_at":"2014-04-07T10:04:43.000Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":1622410,"metadata":{},"number":"0.3.3","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"f0f4307ea85d6eff7f9c304587073e3465da58beb198ea686bf69ec87f2ddb7e"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-04-05T00:00:00.000Z","created_at":"2014-04-05T12:15:16.825Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":2189,"metadata":{},"number":"0.3.2","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"a475303101015f279b2791ddcb821e275d0f76cbce46251359a15d39dfb69117"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-04-05T00:00:00.000Z","created_at":"2014-04-05T12:14:51.531Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":46276,"metadata":{},"number":"0.3.2","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"e66e8c03414aa0e1982a5f505d659ed5fd1a411fee71b8e852ab57e0eb9e4853"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-03-21T00:00:00.000Z","created_at":"2014-03-21T07:24:51.143Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":467241,"metadata":{},"number":"0.3.1","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"aff0cf52e87876f46767c5327b8c4332381c6f6f832dff36679e928c30b82f3d"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-03-21T00:00:00.000Z","created_at":"2014-03-21T07:24:24.214Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":24207,"metadata":{},"number":"0.3.1","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":"\u003e=
+        0","prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"d71d0686a011d478562460c7734694c750afb03f769445bd46c6da740e869020"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-02-26T00:00:00.000Z","created_at":"2014-02-26T17:43:22.372Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":28542,"metadata":{},"number":"0.2.0","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"a184903697075973c6959e48ab28b8f6c3ad628728bb2817c2b0d0bc6aa67433"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2014-02-26T00:00:00.000Z","created_at":"2014-02-26T17:40:40.192Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":650370,"metadata":{},"number":"0.2.0","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"a85f7f14c3269fd6c77514aa4fdeef20bef19eee91839762b3b4a4f8cf323145"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2013-09-10T00:00:00.000Z","created_at":"2013-09-10T14:35:21.960Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":4042401,"metadata":{},"number":"0.1.3","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"f8b9f8db0889aa97676b4a1efe919b1e76601ed9c9662a986825755bba305c38"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2013-09-10T00:00:00.000Z","created_at":"2013-09-10T14:34:01.740Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":145550,"metadata":{},"number":"0.1.3","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"24905e6433a692412ddfeb2105c4768266ef693b7e51d9b9dcdb789141b5a7e1"},{"authors":"Charles
+        Oliver Nutter","built_at":"2013-07-24T00:00:00.000Z","created_at":"2013-07-24T00:12:01.379Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":919884,"metadata":{},"number":"0.1.2","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"7e2b957c28f2676b0a5ba5c0ad3a92988887922edfcb7be66acac6106881beaf"},{"authors":"Charles
+        Oliver Nutter","built_at":"2013-07-24T00:00:00.000Z","created_at":"2013-07-24T00:11:38.470Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":95920,"metadata":{},"number":"0.1.2","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"d31bb9b0cafd67510f9d5d026064e00c99dcd2935fe310a9deba987788146da7"},{"authors":"Charles
+        Oliver Nutter","built_at":"2013-07-23T00:00:00.000Z","created_at":"2013-07-23T19:40:30.776Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":4830,"metadata":{},"number":"0.1.1","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"3102637a5f58ebb8adfbffad76acd9d40b2f0889c3fb4959a9b5e45b6f82942b"},{"authors":"Charles
+        Oliver Nutter","built_at":"2013-07-23T00:00:00.000Z","created_at":"2013-07-23T19:39:55.576Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":1124,"metadata":{},"number":"0.1.1","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"java","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":["Apache-2.0"],"requirements":[],"sha":"787f8084a847cbe26a9aad685a6e7b46ae113cd87aa144d78a9c3e4f631161db"},{"authors":"Charles
+        Oliver Nutter, thedarkone","built_at":"2012-12-12T23:00:00.000Z","created_at":"2012-12-13T12:37:46.787Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":734853,"metadata":{},"number":"0.1.0","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":[],"requirements":null,"sha":"4ee7605080ea11b1bfd8a5d7ddeef97a73609d1ad8355e648c91d00842201d3a"},{"authors":"Charles
+        Oliver Nutter","built_at":"2012-04-27T00:00:00.000Z","created_at":"2012-04-27T16:52:19.721Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":3359,"metadata":{},"number":"0.0.3","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"d4fac31142dd3262bcf4e66f730e8ef5d0f058e4f5bc43d510fc4db92a4085e9"},{"authors":"Charles
+        Oliver Nutter","built_at":"2012-04-26T00:00:00.000Z","created_at":"2012-04-26T00:12:31.448Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":1560,"metadata":{},"number":"0.0.2","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"bd74ee7ad95567721f7cd5757d6fb5a6cbf21e6613cf6f187ad3d72c245c2b39"},{"authors":"Charles
+        Oliver Nutter","built_at":"2012-04-26T00:00:00.000Z","created_at":"2012-04-26T00:02:37.807Z","description":"Thread-safe
+        collections and utilities for Ruby","downloads_count":1570,"metadata":{},"number":"0.0.1","summary":"A
+        collection of data structures and utilities to make thread-safe programming
+        in Ruby easier","platform":"ruby","rubygems_version":"\u003e= 0","ruby_version":null,"prerelease":false,"licenses":null,"requirements":null,"sha":"b1f7dfeb8bc765e421a90836c6a7e7dbe587abe238b2f660a89c6ad6e8e4975d"}]'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:12 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/thread_safe/owners.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cb3b81ff-4f79-429a-827d-9d308c9aca2b
+      X-Runtime:
+      - '0.004911'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:12 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7021-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483784292.305369,VS0,VE199
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"c496bf54e422a9d12acd7a90a04a5fd0"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":65379,"handle":"jdantonio"},{"id":1825,"handle":"headius","email":"headius@headius.com"},{"id":58885,"handle":"thedarkone","email":"thedarkone2@gmail.com"}]'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:12 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/tzinfo.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a5101e10-af2c-48b9-8fb9-aa928b69eb97
+      X-Runtime:
+      - '0.011526'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 07 Jan 2017 10:18:12 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7032-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483784292.675641,VS0,VE209
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"e1edec85dec4c9fb3d8d775664060dc9"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"tzinfo","downloads":99152310,"version":"1.2.2","version_downloads":46645708,"platform":"ruby","authors":"Philip
+        Ross","info":"TZInfo provides daylight savings aware transformations between
+        times in different time zones.","licenses":["MIT"],"metadata":{},"sha":"fdb1d3fdf2776d490c82a0e589a08e7cbde70ac1ae7d2b1f0b7e77f3e6b801b0","project_uri":"https://rubygems.org/gems/tzinfo","gem_uri":"https://rubygems.org/gems/tzinfo-1.2.2.gem","homepage_uri":"http://tzinfo.github.io","wiki_uri":"","documentation_uri":"http://www.rubydoc.info/gems/tzinfo/1.2.2","mailing_list_uri":"http://rubyforge.org/mail/?group_id=894","source_code_uri":"https://github.com/tzinfo/tzinfo","bug_tracker_uri":"https://github.com/tzinfo/tzinfo/issues","dependencies":{"development":[],"runtime":[{"name":"thread_safe","requirements":"~\u003e
+        0.1"}]}}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 10:18:12 GMT
 recorded_with: VCR 3.0.3
