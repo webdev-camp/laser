@@ -2,12 +2,12 @@
 
 %p
   %b Name:
-  = @tag.name
+  = link_to @tag.name , search_tag_url(@tag.name)
 %p
   %b Gems:
   - LaserGem.tagged_with(@tag.name).each do |laser|
     =link_to_laser laser
 
-= link_to 'Edit', edit_tag_path(@tag)
-\|
 = link_to 'Back', tags_path
+\|
+= link_to 'Edit', edit_tag_path(@tag)

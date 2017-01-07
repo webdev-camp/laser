@@ -39,8 +39,8 @@ RSpec.describe "Tags" do
     expect(page).to have_link("Show" , href: show_path)
   end
 
-  it "index has tag edit link" do
-    visit tags_path
+  it "show has tag edit link" do
+    visit show_path
     expect(page).to have_link("Edit" , href: edit_path)
   end
 

@@ -15,5 +15,5 @@
 \|
 = link_to 'Back', tags_path
 
-
-= link_to 'Destroy', tag_path(@tag) , :method => :delete, :data => { :confirm => 'Are you sure?' }
+-unless LaserGem.tagged_with(@tag.name).count > 0
+  = link_to 'Destroy', tag_path(@tag) , :method => :delete, :data => { :confirm => 'Are you sure?' }
