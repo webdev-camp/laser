@@ -3,8 +3,8 @@ class Ranking
   # Scoring bands from 5(max) to 1 for each criterion
   # [a, b, c, d] where criterion > a scores 5, >b scores 4,
   # >c scores 3, >d scores 2, <d scores 1.
-  TOTAL_DOWNLOADS_BANDS = [10000000, 5000000, 3000000, 1000000] 
-  CURRENT_DOWNLOADS_BANDS = [500000, 50000, 25000, 5000] 
+  TOTAL_DOWNLOADS_BANDS = [10000000, 5000000, 3000000, 1000000]
+  CURRENT_DOWNLOADS_BANDS = [500000, 50000, 25000, 5000]
   DEPENDENT_GEMS_BANDS = [8000, 800, 80, 8]
   COMMIT_ACTIVITY_BANDS = [5, 3, 1, 0.5]
   RECENT_ACTIVITY_BANDS = [1.week.ago, 1.month.ago, 3.months.ago, 6.months.ago]
@@ -24,7 +24,7 @@ class Ranking
   MAX_SCORE = 5.0
   MAX_SPEC_WEIGHT_TOTAL = [DEPENDENT_GEMS_WEIGHT, TOTAL_DOWNLOADS_WEIGHT, CURRENT_DOWNLOADS_WEIGHT].sum
   MAX_GIT_WEIGHT_TOTAL = [COMMIT_ACTIVITY_WEIGHT, RECENT_ACTIVITY_WEIGHT, FORKS_WEIGHT, STARGAZERS_WEIGHT, WATCHERS_WEIGHT].sum
-  
+
   def initialize(laser_gem)
     @laser_gem = laser_gem
     @gem_git = GemGit.find_by(laser_gem_id: @laser_gem.id)
@@ -53,7 +53,7 @@ class Ranking
   end
 
   def spec_rank
-    score_weight_array = [ 
+    score_weight_array = [
       [dependent_gems_score, DEPENDENT_GEMS_WEIGHT],
       [total_downloads_score, TOTAL_DOWNLOADS_WEIGHT],
       [current_downloads_score, CURRENT_DOWNLOADS_WEIGHT],
@@ -65,7 +65,7 @@ class Ranking
   end
 
   def git_rank
-    score_weight_array = [ 
+    score_weight_array = [
       [commit_activity_score, COMMIT_ACTIVITY_WEIGHT],
       [recent_activity_score, RECENT_ACTIVITY_WEIGHT],
       [forks_score, FORKS_WEIGHT],
@@ -95,7 +95,7 @@ class Ranking
     n = @laser_gem.gem_spec.total_downloads
     download_array = GemSpec.all.pluck(:total_downloads).sort.reverse
     i = (download_array.index(n) + 1).ordinalize
-    download_rank_string = "#{i} most downloaded gem of #{t} gems"
+    download_rank_string = "#{i} most downloaded gem of #{t}"
     @laser_gem.update(download_rank_string: download_rank_string)
     @laser_gem.save
     download_rank_string
@@ -121,7 +121,7 @@ class Ranking
     return 0 unless @gem_spec
     score_calculation(@gem_spec.total_downloads, TOTAL_DOWNLOADS_BANDS)
   end
-  
+
   def current_downloads_score
     return 0 unless @gem_spec
     score_calculation(@gem_spec.current_version_downloads, CURRENT_DOWNLOADS_BANDS)
@@ -130,7 +130,7 @@ class Ranking
   # This is the number of commits per week averaged over a year
   def commit_activity_score
     return 0 unless @gem_git
-    commits_sum = @gem_git.commit_dates_year.reduce(0.0) do |acc, week| 
+    commits_sum = @gem_git.commit_dates_year.reduce(0.0) do |acc, week|
       acc + week
     end
     commits_average = commits_sum / @gem_git.commit_dates_year.length

@@ -16,8 +16,9 @@ class GemLoader
     @client.owners(gem_name)
   end
 
-  def get_build_start_from_api(gem_name)
-    @client.versions(gem_name)[-1]
+  def get_build_dates_api(gem_name)
+    versions = @client.versions(gem_name)
+    [ versions[0]["built_at"] ,  versions[-1]["built_at"]]
   end
 
   def create_or_update_spec(gem_name)
@@ -25,8 +26,10 @@ class GemLoader
     return unless gem_data
     laser_gem = LaserGem.find_or_create_by(name: gem_name)
     laser_gem.touch
-    first_version = get_build_start_from_api(laser_gem.name)
-    attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
+    current_version , first_version = get_build_dates_api(laser_gem.name)
+    attribs = {laser_gem_id: laser_gem.id,
+              build_date: first_version ,
+              current_version_creation: current_version }
     spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
     update_owners(laser_gem)
     if laser_gem.gem_spec
@@ -65,7 +68,6 @@ class GemLoader
       end
     end
   end
-
 
   private
   def spec_attributes

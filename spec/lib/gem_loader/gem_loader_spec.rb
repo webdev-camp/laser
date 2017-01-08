@@ -24,7 +24,9 @@ RSpec.describe GemLoader , :vcr do
   describe "#get_build_start_from_api" do
     it "fetches build date of first version from api" do
       loader = GemLoader.new
-      expect(loader.get_build_start_from_api("tzinfo")["built_at"]).to eq "2005-08-30T04:00:00.000Z"
+      current, first = loader.get_build_dates_api("tzinfo")
+      expect(first).to eq "2005-08-30T04:00:00.000Z"
+      expect(current).to eq "2014-08-08T00:00:00.000Z"
     end
   end
 

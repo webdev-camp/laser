@@ -53,6 +53,11 @@ RSpec.describe GemLoader , :vcr do
       expect(laser_gem.gem_spec.build_date).to eq "2005-08-30T04:00:00.000Z"
     end
 
+    it "fetches the date of the current version for each LaserGem" do
+      laser_gem = @loader.create_or_update_spec("tzinfo")
+      expect(laser_gem.gem_spec.current_version_creation.to_s).to eq "2014-08-08"
+    end
+
     it "fetches owners of the LaserGem and creates ownerships" do
       laser_gem = @loader.create_or_update_spec("tzinfo")
       expect(laser_gem.ownerships.count).to be > 0
