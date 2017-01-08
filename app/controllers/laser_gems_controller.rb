@@ -8,7 +8,9 @@ class LaserGemsController < ApplicationController
 
   # GET /laser_gems
   def index
-    @q = LaserGem.includes(:gem_spec , :gem_git, :taggings => :tag).ransack(params[:q])
+    @q = LaserGem.includes(:gem_spec, :gem_git, :taggings => :tag).
+                  joins( :gem_spec ).
+                  ransack(params[:q])
     @laser_count = @q.result(distinct: true)
     @laser_gems = @laser_count.paginate(page: params[:page], per_page: 20)
 

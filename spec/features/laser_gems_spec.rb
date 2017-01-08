@@ -10,6 +10,13 @@ RSpec.describe "LaserGems" do
     expect(page.status_code).to be 200
   end
 
+  it "index without gem_spec" do
+    create :laser_gem
+    LaserGem.create!(name: "gems")
+    visit laser_gems_path
+    expect(page.status_code).to be 200
+  end
+
   it "index with item and git works" do
     create :laser_gem_with_gem_git
     visit laser_gems_path
