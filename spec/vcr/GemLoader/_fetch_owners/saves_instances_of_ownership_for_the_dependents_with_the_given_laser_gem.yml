@@ -1961,4 +1961,80 @@ http_interactions:
       string: '[{"id":65379,"handle":"jdantonio"},{"id":1825,"handle":"headius","email":"headius@headius.com"},{"id":58885,"handle":"thedarkone","email":"thedarkone2@gmail.com"}]'
     http_version: 
   recorded_at: Sat, 07 Jan 2017 10:18:36 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/gems/tzinfo/owners.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 1.0.0
+      - Ruby
+      Authorization:
+      - 1da62a2449ff2bdd425e9e82261f7b72
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c597256f-b446-4923-aa89-52bbfea0974a
+      X-Runtime:
+      - '0.006490'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Backend:
+      - F_Rails 54.186.104.15:443
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 08 Jan 2017 14:41:44 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bma7023-BMA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1483886504.050722,VS0,VE198
+      Vary:
+      - Accept-Encoding,Fastly-SSL
+      Etag:
+      - '"b2d09298b98ee9ca93061970beda9927"'
+      Server:
+      - RubyGems.org
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":2981,"handle":"PhilRoss"}]'
+    http_version: 
+  recorded_at: Sun, 08 Jan 2017 14:41:48 GMT
 recorded_with: VCR 3.0.3

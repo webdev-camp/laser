@@ -20,18 +20,6 @@ class GemLoader
     @client.versions(gem_name)[-1]
   end
 
-  def fetch_owners(laser_gem)
-    return unless laser_gem.ownerships.where(rubygem_owner: true).empty?
-    owner_array = get_owners_from_api(laser_gem.name)
-    owner_array.each do |owner|
-      gem_handle = owner["handle"]
-      email = owner["email"]
-      ownership = Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, email: email)
-      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
-    end
-    laser_gem.dependencies.each { |dep| fetch_owners(dep) }
-  end
-
   def create_or_update_spec(gem_name)
     gem_data = get_spec_from_api(gem_name)
     return unless gem_data
@@ -40,13 +28,7 @@ class GemLoader
     first_version = get_build_start_from_api(laser_gem.name)
     attribs = {laser_gem_id: laser_gem.id, build_date: first_version["built_at"]}
     spec_attributes.each  { |k,v| attribs[k] = gem_data[v]}
-    owner_array = get_owners_from_api(laser_gem.name)
-    owner_array.each do |owner|
-      gem_handle = owner["handle"]
-      email = owner["email"]
-      ownership = Ownership.find_or_create_by(laser_gem_id: laser_gem.id, email: email)
-      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
-    end
+    update_owners(laser_gem)
     if laser_gem.gem_spec
       laser_gem.gem_spec.update(attribs)
     else
@@ -56,6 +38,16 @@ class GemLoader
     laser_gem
   end
 
+  def update_owners(laser_gem )
+    owner_array = get_owners_from_api(laser_gem.name)
+    owner_array.each do |owner|
+      gem_handle = owner["handle"]
+      email = owner["email"]
+      ownership = Ownership.find_or_create_by(laser_gem_id: laser_gem.id, email: email)
+      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
+    end
+  end
+  
   def create_or_update_deps(laser_gem, runtime_deps)
     runtime_deps.each do |gem_dep|
       dep_name = gem_dep["name"]
