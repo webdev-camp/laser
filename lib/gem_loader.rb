@@ -47,21 +47,21 @@ class GemLoader
       ownership.update(rubygem_owner: true, gem_handle: gem_handle)
     end
   end
-  
+
   def create_or_update_deps(laser_gem, runtime_deps)
     runtime_deps.each do |gem_dep|
       dep_name = gem_dep["name"]
       ver = gem_dep["requirements"]
-      lg_dep = LaserGem.find_or_create_by!(name: dep_name)
+      if lg_dep = LaserGem.find_by(name: dep_name)
+        create_or_update_spec(lg_dep.name) unless lg_dep.gem_spec.updated_at > 7.day.ago
+      else
+        lg_dep = LaserGem.create!(name: dep_name)
+        create_or_update_spec(lg_dep.name)
+      end
       begin
         laser_gem.register_dependency(lg_dep, ver) unless GemDependency.where("laser_gem_id = ? and dependency_id = ?", laser_gem.id, lg_dep.id).exists?
       rescue ActiveRecord::RecordInvalid => e
         puts dep_name + " invalid " + e.message
-      end
-      if lg_dep.gem_spec
-        create_or_update_spec(lg_dep.name) unless lg_dep.updated_at > 7.day.ago
-      else
-        create_or_update_spec(lg_dep.name)
       end
     end
   end
