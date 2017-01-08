@@ -36,39 +36,12 @@ class GitLoader
     repo = get_git_from_api(repo_name)
     return nil unless repo
     assignees = repo.rels[:assignees].get(:query => {:per_page => 100 }).data
-    assignees.collect do |user|
-      [user[:login], user[:html_url]]
-    end
+    assignees.collect { |user| [user[:login], user[:id]]}
   end
 
-  def fetch_assignees(laser_gem )
-    # For future use, check dependencies if returns.
-    return unless laser_gem.ownerships.where(github_owner: true).empty?
-    repo_name = parse_git_uri(laser_gem)
-    return unless repo_name
-    assignee_array = get_owners_from_github(repo_name)
-    return unless assignee_array
-    assignee_array.each do |assig|
-      git_handle = assig[0]
-      github_profile = assig[1]
-      # Joint ownership
-      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update(git_handle: git_handle, github_profile: github_profile, github_owner: true)
-      # only github ownership
-      Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
-    end
-    fetch_git_owners_for_deps(laser_gem)
-  end
-
-  def fetch_git_owners_for_deps(laser_gem)
-    laser_gem.dependencies.each do |dep|
-      fetch_assignees(dep) if dep.ownerships.where(github_owner: true).empty?
-    end
-  end
-
+  # try source_code_uri first, then homepage (must have the github.com in it)
   def parse_git_uri(laser_gem)
     code_uri = laser_gem.gem_spec.source_code_uri
-    # try source_code_uri first, then homepage (must have the github.com in it)
-    # if GemSpec.where(laser_gem_id: laser_gem.id).source_code_uri != nil
     if code_uri
       matches = matcher(code_uri)
       return matches[1] if matches
@@ -108,13 +81,8 @@ class GitLoader
   def update_owners(laser_gem , repo_name)
     assignee_array = get_owners_from_github(repo_name)
     return unless assignee_array
-    assignee_array.each do |assig|
-      git_handle = assig[0]
-      github_profile = assig[1]
-      # Joint ownership
-      Ownership.where(["gem_handle = ? and laser_gem_id = ?", git_handle, laser_gem.id]).update(git_handle: git_handle, github_profile: github_profile, github_owner: true)
-      # only github ownership
-      Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_profile: github_profile, github_owner: true)
+    assignee_array.each do |git_handle , git_id|
+      Ownership.find_or_create_by!(laser_gem_id: laser_gem.id, git_handle: git_handle, github_id: git_id)
     end
   end
 
@@ -122,10 +90,10 @@ class GitLoader
     return nil unless (laser_gem and  laser_gem.gem_spec)
     repo_name = parse_git_uri(laser_gem)
     return nil unless repo_name
-    update_owners(laser_gem , repo_name)
     git_data = get_git_from_api(repo_name)
     return unless git_data
     do_update(laser_gem , git_data)
+    update_owners(laser_gem , repo_name)
     laser_gem.gem_git.reload
     fetch_commit_activity_year(laser_gem)
   end

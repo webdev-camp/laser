@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203161040) do
+ActiveRecord::Schema.define(version: 20170108155421) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161203161040) do
     t.string   "authors"
     t.string   "build_date"
     t.string   "bug_tracker_uri"
+    t.date     "current_version_creation"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -117,16 +118,14 @@ ActiveRecord::Schema.define(version: 20161203161040) do
   end
 
   create_table "ownerships", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "email"
     t.integer  "laser_gem_id"
-    t.boolean  "rubygem_owner"
-    t.boolean  "github_owner"
-    t.string   "github_profile"
     t.string   "git_handle"
     t.string   "gem_handle"
     t.integer  "owner_id"
+    t.integer  "github_id"
     t.index ["laser_gem_id"], name: "index_ownerships_on_laser_gem_id"
     t.index ["owner_id", "laser_gem_id"], name: "index_ownerships_on_owner_id_and_laser_gem_id", unique: true
     t.index ["owner_id"], name: "index_ownerships_on_owner_id"

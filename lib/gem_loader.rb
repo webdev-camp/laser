@@ -44,7 +44,7 @@ class GemLoader
       gem_handle = owner["handle"]
       email = owner["email"]
       ownership = Ownership.find_or_create_by(laser_gem_id: laser_gem.id, email: email)
-      ownership.update(rubygem_owner: true, gem_handle: gem_handle)
+      ownership.update(gem_handle: gem_handle)
     end
   end
 

@@ -16,7 +16,7 @@ RSpec.describe GitLoader  , :vcr do
 
   it "fetches owners of the LaserGem and creates ownerships" do
     tz = GemLoader.new.create_or_update_spec("tzinfo")
-    GitLoader.new.fetch_assignees(tz)
+    GitLoader.new.update_owners(tz , "tzinfo/tzinfo")
     expect(Ownership.count).not_to be 0
     expect(Ownership.count).not_to be nil
   end
