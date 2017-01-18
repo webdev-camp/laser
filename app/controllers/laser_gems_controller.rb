@@ -12,7 +12,9 @@ class LaserGemsController < ApplicationController
                   joins( :gem_spec ).
                   ransack(params[:q])
     @laser_count = @q.result(distinct: true)
-    @laser_gems = @laser_count.paginate(page: params[:page], per_page: 20)
+    page = params[:page].to_i
+    page = 1 if page < 1 or page > 20
+    @laser_gems = @laser_count.paginate(page: page, per_page: 20)
 
     respond_to do |format|
       format.html
