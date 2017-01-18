@@ -23,6 +23,6 @@ RSpec.describe UpdateLaserGemJob, type: :job do
     laser.update_attributes( total_rank: 0 )
     UpdateLaserGemJob.perform_now("rails")
     laser.reload
-    expect(laser.total_rank).to be > 0.8
+    expect(laser.total_rank).to be > 0.6
   end
 end
