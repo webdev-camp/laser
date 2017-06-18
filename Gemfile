@@ -17,8 +17,8 @@ gem 'tether-rails'
 gem 'simple_form'
 gem 'animate-rails'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'uglifier'
+gem 'coffee-rails'
 
 gem 'acts-as-taggable-on'
 gem 'devise'
@@ -61,6 +61,11 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'puma'
   gem "rb-readline"
+  gem 'capistrano', "3.8.2"
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-passenger'
 end
 
 group :test do
