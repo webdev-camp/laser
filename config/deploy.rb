@@ -2,7 +2,7 @@
 lock '3.8.2'
 
 set :application, 'rubylaser'
-set :repo_url, 'https://github.com/dancinglightning/farfalla'
+set :repo_url, 'https://github.com/webdev-camp/laser'
 
 set :deploy_to, '/var/www/vhosts/rubylaser.org'
 
